@@ -1,0 +1,10 @@
+\select@language {bahasa}
+\contentsline {chapter}{Kata Pengantar}{xv}{chapter*.1}
+\contentsline {chapter}{Daftar Isi}{xvii}{section*.2}
+\contentsline {chapter}{Daftar Gambar}{xviii}{section*.3}
+\contentsline {chapter}{Daftar Tabel}{xix}{section*.4}
+\contentsline {chapter}{\numberline {1}Pendahuluan}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivasi}{1}{section.1.1}
+\contentsline {chapter}{Daftar Referensi}{3}{chapter*.5}
+\renewcommand {\cftchappresnum }{\bf \scshape }
+\contentsline {chapter}{\numberline {A}The Program}{5}{appendix.A}
