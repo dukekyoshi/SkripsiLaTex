@@ -4,7 +4,44 @@
 \contentsline {chapter}{Daftar Gambar}{xviii}{section*.3}
 \contentsline {chapter}{Daftar Tabel}{xix}{section*.4}
 \contentsline {chapter}{\numberline {1}Pendahuluan}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivasi}{1}{section.1.1}
-\contentsline {chapter}{Daftar Referensi}{3}{chapter*.5}
+\contentsline {section}{\numberline {1.1}\textbf {Latar Belakang}}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}\textbf {Rumusan Masalah}}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}\textbf {Tujuan}}{1}{section.1.3}
+\contentsline {section}{\numberline {1.4}\textbf {Batasan Masalah}}{2}{section.1.4}
+\contentsline {section}{\numberline {1.5}\textbf {Metodologi Penelitian}}{2}{section.1.5}
+\contentsline {section}{\numberline {1.6}\textbf {Sistematika Pembahasan}}{2}{section.1.6}
+\contentsline {chapter}{\numberline {2}Dasar Teori}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Kriptografi}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}\textit {Data Encryption Standard} (DES)}{5}{subsection.2.1.1}
+\contentsline {subsubsection}{Permutasi Awal dan Permutasi Akhir}{5}{subsubsection*.5}
+\contentsline {subsubsection}{Ronde}{6}{subsubsection*.6}
+\contentsline {subsubsection}{Fungsi DES}{7}{subsubsection*.7}
+\contentsline {subsection}{\numberline {2.1.2}Pembangunan Kunci Ronde}{9}{subsection.2.1.2}
+\contentsline {subsubsection}{\textit {Parity Drop}}{10}{subsubsection*.8}
+\contentsline {subsubsection}{\textit {Shift Left}}{10}{subsubsection*.9}
+\contentsline {subsubsection}{Kompresi \textit {P-box}}{11}{subsubsection*.10}
+\contentsline {section}{\numberline {2.2}Fungsi \textit {Hash}}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}\textit {Secure Hashing Algorithm} 512 (SHA-512)}{12}{subsection.2.2.1}
+\contentsline {subsubsection}{Persiapan \textit {Message}}{12}{subsubsection*.11}
+\contentsline {subsubsection}{\textit {Length Field} dan \textit {Padding}}{12}{subsubsection*.12}
+\contentsline {subsubsection}{\textit {Words}}{13}{subsubsection*.13}
+\contentsline {subsubsection}{Ekspansi \textit {Word}}{13}{subsubsection*.14}
+\contentsline {subsubsection}{Inisialisasi \textit {Message Digest}}{13}{subsubsection*.15}
+\contentsline {subsubsection}{Fungsi Kompresi}{14}{subsubsection*.16}
+\contentsline {subsubsection}{Ronde}{14}{subsubsection*.17}
+\contentsline {section}{\numberline {2.3}Otentikasi}{16}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Otentikasi Pesan (\textit {Message Authentication})}{16}{subsection.2.3.1}
+\contentsline {subsubsection}{\textit {Modification Detection Code}}{17}{subsubsection*.18}
+\contentsline {subsubsection}{\textit {Message Authentication Code}}{17}{subsubsection*.19}
+\contentsline {subsection}{\numberline {2.3.2}Otentikasi Entitas (\textit {Entity Authentication})}{18}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}\textit {Password}}{19}{subsection.2.3.3}
+\contentsline {subsubsection}{\textit {Password} Satu-Kali}{19}{subsubsection*.20}
+\contentsline {subsubsection}{\textit {Password} Tetap}{19}{subsubsection*.21}
+\contentsline {section}{\numberline {2.4}\textit {Secret Sharing}}{21}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Skema \textit {Threshold}(\textit {k},\textit {n})}{22}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}Probabilitas}{22}{section.2.5}
+\contentsline {section}{\numberline {2.6}Distribusi Binom}{23}{section.2.6}
+\contentsline {section}{\numberline {2.7}Entropi}{23}{section.2.7}
+\contentsline {chapter}{Daftar Referensi}{25}{chapter*.22}
 \renewcommand {\cftchappresnum }{\bf \scshape }
-\contentsline {chapter}{\numberline {A}The Program}{5}{appendix.A}
+\contentsline {chapter}{\numberline {A}The Program}{27}{appendix.A}

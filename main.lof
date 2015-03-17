@@ -1,3 +1,30 @@
 \select@language {bahasa}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Proses enkripsi dan dekripsi}}{4}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Proses enkripsi dengan DES}}{5}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Matriks Permutasi}}{6}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Proses Permutasi}}{6}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ronde dalam DES}}{7}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Proses permutasi ekspansi}}{8}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces \textit {P-box}}}{8}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Proses substitusi \textit {S-box}}}{9}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces \textit {S-box}}}{9}{figure.2.9}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Matriks Permutasi Langsung}}{9}{figure.2.10}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces \textit {Round-Key Generator}}}{10}{figure.2.11}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Matriks permutasi untuk \textit {Parity drop}}}{11}{figure.2.12}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Matriks kompresi \textit {P-box}}}{11}{figure.2.13}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Pembuatan \textit {message digest}}}{12}{figure.2.14}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces \textit {Length field} dan \textit {padding} dalam SHA-512}}{13}{figure.2.15}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Blok \textit {message} dan \textit {message digest} dalam \textit {word}}}{13}{figure.2.16}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Ekspansi \textit {word}}}{14}{figure.2.17}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Konstanta inisialisasi dalam SHA-512}}{14}{figure.2.18}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Fungsi kompresi dalam SHA-512}}{15}{figure.2.19}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Struktur ronde dalam SHA-512}}{16}{figure.2.20}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Fungsi kompleks dalam SHA-512}}{16}{figure.2.21}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces \textit {Modification detection code}}}{17}{figure.2.22}
+\contentsline {figure}{\numberline {2.23}{\ignorespaces \textit {Modification authentication code}}}{18}{figure.2.23}
+\contentsline {figure}{\numberline {2.24}{\ignorespaces \textit {Username} dan \textit {Password}}}{20}{figure.2.24}
+\contentsline {figure}{\numberline {2.25}{\ignorespaces \textit {Password hashing}}}{20}{figure.2.25}
+\contentsline {figure}{\numberline {2.26}{\ignorespaces \textit {Password salting}}}{21}{figure.2.26}
+\addvspace {10\p@ }
