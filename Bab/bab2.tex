@@ -18,6 +18,7 @@ Kriptografi memiliki 4 layanan utama:
 
 Dalam kriptografi, pesan yang dirahasiakan disebut \textit{plaintext}, sedangkan pesan hasil dari penyandian disebut \textit{ciphertext}. Pesan yang telah disandikan dapat dikembalikan lagi ke pesan aslinya hanya oleh orang yang berhak. Orang yang berhak adalah orang yang mengetahui cara penyandian atau memiliki kunci penyandian. Proses menyandikan \textit{plaintext} menjadi \textit{ciphertext} disebut enkripsi (\textit{encryption}) dan proses mengembalikan \textit{ciphertext} menjadi \textit{plaintext} disebut dekripsi (\textit{decryption}). Dalam proses enkripsi dan dekripsi menggunakan kunci (\textit{key}) yaitu sekumpulan huruf, angka, atau simbol. Kunci ini sifatnya rahasia dan tidak boleh diketahui pihak lain yang tidak berwenang. Diagram dibawah ini menunjukkan proses enkripsi dan dekripsi.
 
+\hfill \break
 %diagram
 \begin{figure}[h]
 \includegraphics[width=12cm,height=7cm]{Gambar/encryption_decryption}
@@ -123,13 +124,14 @@ Fungsi DES merupakan inti dari algoritma DES. Fungsi DES menerima masukkan kunci
 	\caption{\textit{P-box}}
 	\end{figure}
 
-\hfill \break
 	\item Operasi XOR\\
 	Setelah dilakukan ekspansi dengan menggunakan \textit{P-box}, dilakukan operasi XOR antara \begin{math}R_{I-1}\end{math} dengan kunci ronde. Perlu diketahui, bahwa panjang \begin{math}R_{I-1}\end{math} dan kunci ronde sudah sama, yaitu 48-\textit{bit} dan kunci ronde hanya digunakan dalam proses ini saja.
 
 	\item Substitusi \textit{S-box}\\
 	DES menggunakan 8 buah \textit{S-box}, masing-masing dengan 6-\textit{bit} masukkan dan 4-\textit{bit} keluaran. Gambar di bawah ini menunjukkan proses substitusi \textit{S-box} dan salah satu contoh dari \textit{S-box}.
-
+	
+\hfill \break
+\hfill \break
 	%diagram
 	\begin{figure}[h]
 	\includegraphics[scale=0.7]{Gambar/S-box}
@@ -171,13 +173,12 @@ Pembangunan kunci ronde adalah algoritma untuk membentuk kunci yang akan digunak
 	\caption{\textit{Round-Key Generator}}
 \end{figure}
 
-\hfill \break
-\hfill \break
-\hfill \break
-\hfill \break
 \subsubsection{\textit{Parity Drop}}
 Proses yang dilakukan sebelum pembangkitan kunci sandi adalah penghilangan \textit{parity bit} pada kunci sandi 64-\textit{bit}. Bit yang dihilangkan adalah \textit{bit} ke-8, 16, 24, 32, …, 64 sehingga hasil akhirnya adalah 56-\textit{bit} sandi kunci yang nanti kunci ini akan digunakan untuk membuat kunci setiap ronde. Matriks permutasi yang digunakan pada proses ini ditunjukkan pada gambar di bawah.
 
+\hfill \break
+\hfill \break
+\hfill \break
 %diagram
 \begin{figure}[ht]
 	\includegraphics[scale=0.8]{Gambar/parity_drop}
@@ -224,9 +225,6 @@ Contoh fungsi \textit{hash} antara lain SHA-0, SHA-1, SHA-512, MD-2, dan MD-5.
 	\caption{Pembuatan \textit{message digest}}
 \end{figure}
 
-\hfill \break
-\hfill \break
-\hfill \break
 \subsubsection{Persiapan \textit{Message}}
 SHA-512 menerima masukan \textit{message} dengan panjang kurang dari \begin{math}2^{128}-\textit{bit}\end{math}, berarti jika panjang \textit{message} sama dengan \begin{math}2^{128}\end{math} atau lebih maka SHA-512 tidak memroses \textit{message} tersebut. Hal ini tidak akan menjadi masalah karena ukuran \begin{math}2^{128}-\textit{bit}\end{math} cukup besar untuk tempat penyimpanan komputer manapun.
 
@@ -250,7 +248,7 @@ Sebelum menambahkan bagian 128-\textit{bit} yang menunjukkan panjang dari \texti
 	P = (-M - 128)\quad mod\quad 1024
 \end{displaymath}
 
-Cara menulisakan \textit{padding} diawali dengan angka 1 kemudian diikuti oleh beberapa angka 0 (nol) sampai panjangnya mencapai \textit{P}.
+Cara menuliskan \textit{padding} diawali dengan angka 1 kemudian diikuti oleh beberapa angka 0 (nol) sampai panjangnya mencapai \textit{P}.
 
 \subsubsection{\textit{Words}}
 SHA-512 beroperasi dengan ukuran \textit{words}. Panjang dari satu \textit{word} adalah 64-\textit{bit}. Ini berarti, setelah proses \textit{padding} ditambahkan pada \textit{message}, setiap blok \textit{message} akan terdiri dari 16 buah 64-\textit{bit word}. \textit{Message digest} atau \textit{digest} juga akan terdiri dari 64-\textit{bit word} namun panjangnya hanya 8 \textit{word} dan setiap \textit{word} nya dinamakan \begin{math}A, B, C, D, E, F, G\end{math}, dan \begin{math}H\end{math}.
@@ -267,11 +265,16 @@ Sebelum diproses, setiap blok \textit{message} harus diekspansi, panjang setiap 
 
 %diagram
 \begin{figure}[ht]
-	\includegraphics[scale=0.6]{Gambar/word_expansion}
+	\includegraphics[scale=0.4]{Gambar/word_expansion}
 	\centering
 	\caption{Ekspansi \textit{word}}
 \end{figure}
 
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
 \begin{displaymath}
 	RotShift_{l-m-n}(x):RotR_l(x) \oplus RotR_m(x) \oplus ShL_n(x)
 \end{displaymath}
@@ -318,7 +321,6 @@ Pada setiap ronde, 8 nilai baru pada 64-\textit{bit word} dibuat dari 8 nilai 64
 	\caption{Fungsi kompleks dalam SHA-512}
 \end{figure}
 
-\hfill \break
 Nilai dari \begin{math}Majority(A, B, C)\end{math}, \begin{math}Conditional(E, F, G)\end{math}, \begin{math}Rotate(A)\end{math}, dan \begin{math}Rotate(E)\end{math} pada gambar di atas didapat dari rumus di bawah ini.
 \begin{displaymath}
 	Majority(x,y,z) = (x\: AND\: y)  \oplus (y\: AND\: z) \oplus (z\: AND\: x)
@@ -388,10 +390,10 @@ Dalam otentikasi entitas, penuntut harus bisa membuktikan kebenaran identitas di
 Salah satu teknik otentikasi entitas yang paling sederhana dan mudah adalah otentikasi menggunakan \textit{password} atau kata kunci rahasia. \textit{Password} ini adalah sesuatu yang diketahui hanya oleh penuntut. \textit{Password} digunakan saat penuntut (selanjutnya akan dinamakan pengguna) perlu untuk mengakses sistem untuk menggunakan sumber daya dari sistem. Setiap pengguna akan diberikan \textit{username} yang sifatnya publik dan \textit{password} yang sifatnya rahasia atau pribadi. Ada dua skema otentikasi menggunakan \textit{password} ini, yaitu \textit{password} tetap (\textit{fixed password}) dan \textit{password} satu-kali (\textit{one-time password}).
 
 \subsubsection{\textit{Password} Satu-Kali}
-\textit{Password} satu-kali adalah \textit{password} yang digunakan hanya satu kali. Jadi, setiap kali pengguna akan mengakses sistem untuk setiap sesi waktu yang berbeda, maka \textit{password} yang digunakan akan selalu berbeda – beda. Beberapa teknik yang digunakan dalam \textit{password} satu-kali antara lain menggunakan \textit{list}, \textit{sequentially updated password}, dan \textit{password} satu-kali \textit{lamport}.
+\textit{Password} satu-kali adalah \textit{password} yang digunakan hanya satu kali. Jadi, setiap kali pengguna akan mengakses sistem untuk setiap sesi waktu yang berbeda, maka \textit{password} yang digunakan akan selalu berbeda-beda. Beberapa teknik yang digunakan dalam \textit{password} satu-kali antara lain menggunakan \textit{list}, \textit{sequentially updated password}, dan \textit{password} satu-kali \textit{lamport}.
 
 \subsubsection{\textit{Password} Tetap}
-\textit{Password} tetap (\textit{fixed password}) adalah \textit{password} yang digunakan berulang – ulang kali setiap saat pengguna akan mengakses sistem. \textit{Password} ini akan selalu sama untuk setiap kali pengguna akan mengakses sistem. Ada beberapa skema dari \textit{password} tetap ini.
+\textit{Password} tetap (\textit{fixed password}) adalah \textit{password} yang digunakan berulang-ulang kali setiap saat pengguna akan mengakses sistem. \textit{Password} ini akan selalu sama untuk setiap kali pengguna akan mengakses sistem. Ada beberapa skema dari \textit{password} tetap ini.
 
 \begin{itemize}
 	\item Skema 1\\
@@ -426,7 +428,7 @@ Saat pengguna akan mengakses sistem, pengguna memasukkan \textit{username} dan \
 \section{\textit{Secret Sharing}}
 Enkripsi digunakan untuk menjaga keamanan informasi dan setiap proses enkripsi disertai oleh sebuah kunci rahasia atau \textit{password}. \textit{Password} ini tentu saja harus selalu diingat oleh manusia atau disimpan dalam memori komputer. Namun, hal ini tidak sepenuhnya aman karena bisa saja manusia lupa atau terjadi kerusakan komputer atau bencana alam sehingga \textit{password} ini hilang dan informasi yang dienkripsi tidak akan bisa diakses atau dikembalikan.
 
-\textit{Secret sharing} adalah metode untuk membagi informasi (rahasia) menjadi beberapa bagian. Bagian – bagian tersebut disebut \textit{share} dan setiap bagian dibagikan kepada beberapa partisipan. Untuk mendapatkan kembali informasi, maka dibutuhkan sejumlah \textit{share}.
+\textit{Secret sharing} adalah metode untuk membagi informasi (rahasia) menjadi beberapa bagian. Bagian-bagian tersebut disebut \textit{share} dan setiap bagian dibagikan kepada beberapa partisipan. Untuk mendapatkan kembali informasi, maka dibutuhkan sejumlah \textit{share}.
 
 Shamir mendasarkan metode \textit{secret sharing} dalam sebuah masalah sebagai berikut:
 \begin{center}
@@ -444,7 +446,7 @@ Skema diatas dinamakan skema \textit{threshold}(\textit{k},\textit{n}).
 \subsection{Skema \textit{Threshold}(\textit{k},\textit{n})}
 Enkripsi dilakukan untuk melindungi kerahasiaan sebuah data atau informasi, namun karena setiap proses enkripsi memerlukan kunci maka diperlukan cara lain untuk melindungi kerahasiaan kunci tersebut. Salah satu cara yang paling aman dalam melindungi kunci kriptografi adalah dengan menyimpannya dalam sebuah lokasi yang aman dan tersembunyi (komputer, otak manusia, atau lemari besi).
 
-Namun cara ini tidak sepenuhnya aman karena bisa saja terjadi bencana alam, kematian, atau penipuan dan sabotase menyebabkan kunci yang disimpan menjadi rusak atau hilang sehingga data yang dienkripsi menjad tidak bisa diakses dan hilang sepenuhnya. Solusi lainnya adalah dengan memperbanyak kunci yang ada dan menyimpannya di tempat yang berbeda – beda, satu di memori komputer, satu diingat oleh manusia, dan yang lainnya disimpan di tempat yang berbeda – beda. Namun, cara ini juga tidak aman karena masih tidak terhindar dari bencana alam, \textit{human error}, dan malapetaka lainnya.
+Namun cara ini tidak sepenuhnya aman karena bisa saja terjadi bencana alam, kematian, atau penipuan dan sabotase menyebabkan kunci yang disimpan menjadi rusak atau hilang sehingga data yang dienkripsi menjad tidak bisa diakses dan hilang sepenuhnya. Solusi lainnya adalah dengan memperbanyak kunci yang ada dan menyimpannya di tempat yang berbeda-beda, satu di memori komputer, satu diingat oleh manusia, dan yang lainnya disimpan di tempat yang berbeda-beda. Namun, cara ini juga tidak aman karena masih tidak terhindar dari bencana alam, \textit{human error}, dan malapetaka lainnya.
 
 Skema \textit{threshold(k,n)} didasarkan pada interpolasi polinomial: diberikan k titik pada bidang kartersius \begin{math}(x_1,y_1), (x_2, y_2), ...,(x_k, y_k)\end{math} untuk setiap \begin{math}x_i\end{math} maka hanya akan ada 1 saja nilai \begin{math}q(x_i)\end{math} dalam derajat \begin{math}k-1\end{math} dimana \begin{math}q(x_i)=y_i\end{math} untuk seluruh \begin{math}x_i\end{math}. Misalkan diasumsikan bahwa \textit{D} adalah sebuah angka, kemudian akan dibagi menjadi \begin{math}D_i\end{math} bagian dan derajat dari polinomial \begin{math}q(x)\end{math} adalah \begin{math}k-1\end{math}, sehingga bentuknya menjadi:
 \begin{displaymath}

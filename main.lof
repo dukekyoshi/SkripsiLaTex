@@ -20,11 +20,12 @@
 \contentsline {figure}{\numberline {2.17}{\ignorespaces Ekspansi \textit {word}}}{14}{figure.2.17}
 \contentsline {figure}{\numberline {2.18}{\ignorespaces Konstanta inisialisasi dalam SHA-512}}{14}{figure.2.18}
 \contentsline {figure}{\numberline {2.19}{\ignorespaces Fungsi kompresi dalam SHA-512}}{15}{figure.2.19}
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Struktur ronde dalam SHA-512}}{16}{figure.2.20}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Struktur ronde dalam SHA-512}}{15}{figure.2.20}
 \contentsline {figure}{\numberline {2.21}{\ignorespaces Fungsi kompleks dalam SHA-512}}{16}{figure.2.21}
 \contentsline {figure}{\numberline {2.22}{\ignorespaces \textit {Modification detection code}}}{17}{figure.2.22}
 \contentsline {figure}{\numberline {2.23}{\ignorespaces \textit {Modification authentication code}}}{18}{figure.2.23}
 \contentsline {figure}{\numberline {2.24}{\ignorespaces \textit {Username} dan \textit {Password}}}{20}{figure.2.24}
-\contentsline {figure}{\numberline {2.25}{\ignorespaces \textit {Password hashing}}}{20}{figure.2.25}
+\contentsline {figure}{\numberline {2.25}{\ignorespaces \textit {Password hashing}}}{21}{figure.2.25}
 \contentsline {figure}{\numberline {2.26}{\ignorespaces \textit {Password salting}}}{21}{figure.2.26}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
