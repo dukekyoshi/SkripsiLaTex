@@ -16,15 +16,17 @@ Kriptografi memiliki 4 layanan utama:
 	Layanan yang menjamin bahwa tidak ada penyangkalan baik oleh pengirim atau penerima pesan.
 \end{enumerate}
 
-Dalam kriptografi, pesan yang dirahasiakan disebut \textit{plaintext}, sedangkan pesan hasil dari penyandian disebut \textit{ciphertext}. Pesan yang telah disandikan dapat dikembalikan lagi ke pesan aslinya hanya oleh orang yang berhak. Orang yang berhak adalah orang yang mengetahui cara penyandian atau memiliki kunci penyandian. Proses menyandikan \textit{plaintext} menjadi \textit{ciphertext} disebut enkripsi (\textit{encryption}) dan proses mengembalikan \textit{ciphertext} menjadi \textit{plaintext} disebut dekripsi (\textit{decryption}). Dalam proses enkripsi dan dekripsi menggunakan kunci (\textit{key}) yaitu sekumpulan huruf, angka, atau simbol. Kunci ini sifatnya rahasia dan tidak boleh diketahui pihak lain yang tidak berwenang. Diagram dibawah ini menunjukkan proses enkripsi dan dekripsi.
+Dalam kriptografi, pesan yang dirahasiakan disebut \textit{plaintext}, sedangkan pesan hasil dari penyandian disebut \textit{ciphertext}. Pesan yang telah disandikan dapat dikembalikan lagi ke pesan aslinya hanya oleh orang yang berhak. Orang yang berhak adalah orang yang mengetahui cara penyandian atau memiliki kunci penyandian. Proses menyandikan \textit{plaintext} menjadi \textit{ciphertext} disebut enkripsi (\textit{encryption}) dan proses mengembalikan \textit{ciphertext} menjadi \textit{plaintext} disebut dekripsi (\textit{decryption}). Dalam proses enkripsi dan dekripsi menggunakan kunci (\textit{key}) yaitu sekumpulan huruf, angka, atau simbol. Kunci ini sifatnya rahasia dan tidak boleh diketahui pihak lain yang tidak berwenang.
 
-\hfill \break
 %diagram
 \begin{figure}[h]
 \includegraphics[width=12cm,height=7cm]{Gambar/encryption_decryption}
 \centering
 \caption{Proses enkripsi dan dekripsi}
+\label{fig:prosesenkripsidekripsi}
 \end{figure}
+
+Gambar \ref{fig:prosesenkripsidekripsi} ini menunjukkan proses enkripsi dan dekripsi.
 
 Dalam proses enkripsi, \textit{plaintext} akan dipetakan pada fungsi enkripsi \textit{E} menjadi \textit{ciphertext} didasarkan pada kunci \textit{k} seperti notasi di bawah ini:
 \begin{displaymath}
@@ -285,7 +287,7 @@ Sebelum diproses, setiap blok \textit{message} harus diekspansi, panjang setiap 
 \subsubsection{Inisialisasi \textit{Message Digest}}
 SHA-512 menggunakan 8 buah konstanta dalam proses insialisasi \textit{message digest}. Konstanta ini akan diberi nama \begin{math}A_0\end{math} sampai \begin{math}H_0\end{math}. Setiap nilai dari konstanta didapat dari 8 bilangan prima pertama (2, 3, 5, 7, 11, 13, 17, 19). Setiap nilai merupakan nilai pecahan atau angka di belakang koma dari akar kuadrat bilangan prima yang bersangkutan.
 
-Sebagai contoh, \begin{math}H_0\end{math} didapat dari nilai \begin{math}\sqrt{19} = 4.35889894354\end{math}. Kemudian, nilai ini akan dikonversi ke biner sepanjang 64-\textit{bit} maka akan didapatkan \begin{math}(100.0101\quad 1011\quad 1110 … 1001)_2=(4.5BE0CD19137E2179)_{16}\end{math}. SHA-512 hanya mengambil nilai yang di belakang koma saja jadi nilai dari \begin{math}H_0 = 5BE0CD19137E2179\end{math}. Gambar di bawah ini menunjukkan nilai dari \begin{math}A_0\end{math} sampai \begin{math}H_0\end{math} dalam heksadesimal.
+Sebagai contoh, \begin{math}H_0\end{math} didapat dari nilai \begin{math}\sqrt{19} = 4.35889894354\end{math}. Kemudian, nilai ini akan dikonversi ke biner sepanjang 64-\textit{bit} maka akan diperoleh \begin{math}(100.0101\quad 1011\quad 1110 ... 1001)_2=(4.5BE0CD19137E2179)_{16}\end{math}. SHA-512 hanya mengambil nilai yang di belakang koma saja jadi nilai dari \begin{math}H_0 = 5BE0CD19137E2179\end{math}. Gambar di bawah ini menunjukkan nilai dari \begin{math}A_0\end{math} sampai \begin{math}H_0\end{math} dalam heksadesimal.
 
 %diagram
 \begin{figure}[ht]
@@ -295,7 +297,7 @@ Sebagai contoh, \begin{math}H_0\end{math} didapat dari nilai \begin{math}\sqrt{1
 \end{figure}
 
 \subsubsection{Fungsi Kompresi}
-SHA-512 membuat \textit{message digest} sepanjang 512-\textit{bit} (8 \textit{word}) dari beberapa blok \textit{message} yang masing-masing panjangnya 1024-\textit{bit}. Pemrosesan setiap blok \textit{message} ini dilakukan sebanyak 80 ronde. Setiap ronde akan terdiri dari \begin{math}W_i\end{math} digabungkan dengan \begin{math}K_i\end{math} untuk membuat \begin{math}W_i\end{math} baru yang akan digunakan pada ronde selanjutnya. Pada akhir ronde 79, nilai \begin{math}W_0\end{math} sampai \begin{math}W_7\end{math} pada ronde 79 akan ditambahkan oleh nilai \begin{math}W_0\end{math} sampai \begin{math}W_7\end{math} pada ronde yang paling awal (ronde 0) dan dimodulo oleh \begin{math}2^{64}\end{math}. Hasil yang didapatkan disebut \textit{message digest} atau \textit{final digest}. Gambar di bawah ini menunjukkan proses fungsi kompresi pada SHA-512.
+SHA-512 membuat \textit{message digest} sepanjang 512-\textit{bit} (8 \textit{word}) dari beberapa blok \textit{message} yang masing-masing panjangnya 1024-\textit{bit}. Pemrosesan setiap blok \textit{message} ini dilakukan sebanyak 80 ronde. Setiap ronde akan terdiri dari \begin{math}W_i\end{math} digabungkan dengan \begin{math}K_i\end{math} untuk membuat \begin{math}W_i\end{math} baru yang akan digunakan pada ronde selanjutnya. Pada akhir ronde 79, nilai \begin{math}W_0\end{math} sampai \begin{math}W_7\end{math} pada ronde 79 akan ditambahkan oleh nilai \begin{math}W_0\end{math} sampai \begin{math}W_7\end{math} pada ronde yang paling awal (ronde 0) dan dimodulo oleh \begin{math}2^{64}\end{math}. Hasil yang diperoleh disebut \textit{message digest} atau \textit{final digest}. Gambar di bawah ini menunjukkan proses fungsi kompresi pada SHA-512.
 
 %diagram
 \begin{figure}[ht]
@@ -305,7 +307,7 @@ SHA-512 membuat \textit{message digest} sepanjang 512-\textit{bit} (8 \textit{wo
 \end{figure}
 
 \subsubsection{Ronde}
-Pada setiap ronde, 8 nilai baru pada 64-\textit{bit word} dibuat dari 8 nilai 64-\textit{bit word} pada ronde sebelumnya. Nilai baru ini dinamakan \textit{buffer}. Enam dari delapan \textit{buffer} mendapatkan nilai dari \textit{buffer} ronde sebelumnya. Sedangkan untuk 2 \textit{buffer} lagi nilai keduanya didapatkan dari sebuah fungsi kompleks yang berhubungan dengan \textit{buffer} sisanya serta gabungan tambahan dari \begin{math}W_i\end{math} dan \begin{math}K_i\end{math}, bersangkutan dengan masing-masing ronde. Gambar di bawah ini akan menjelaskan struktur dari setiap ronde serta fungsi kompleks yang digunakan untuk mendapatkan nilai untuk 2 \textit{buffer} (\begin{math}A\end{math} dan \begin{math}E\end{math}).
+Pada setiap ronde, 8 nilai baru pada 64-\textit{bit word} dibuat dari 8 nilai 64-\textit{bit word} pada ronde sebelumnya. Nilai baru ini dinamakan \textit{buffer}. Enam dari delapan \textit{buffer} mendapatkan nilai dari \textit{buffer} ronde sebelumnya. Sedangkan untuk 2 \textit{buffer} lagi nilai keduanya diperoleh dari sebuah fungsi kompleks yang berhubungan dengan \textit{buffer} sisanya serta gabungan tambahan dari \begin{math}W_i\end{math} dan \begin{math}K_i\end{math}, bersangkutan dengan masing-masing ronde. Gambar di bawah ini akan menjelaskan struktur dari setiap ronde serta fungsi kompleks yang digunakan untuk mendapatkan nilai untuk 2 \textit{buffer} (\begin{math}A\end{math} dan \begin{math}E\end{math}).
 
 %diagram
 \begin{figure}[ht]
@@ -336,7 +338,7 @@ Nilai dari \begin{math}Majority(A, B, C)\end{math}, \begin{math}Conditional(E, F
 
 \begin{math}RotR_i(x)\end{math} adalah rotasi ke kanan \begin{math}x\end{math} sebanyak \begin{math}i\end{math} \textit{bit}. Simbol kotak yang berisi tanda tambah berarti adalah penambahan antar \textit{bit-bit} lalu kemudian hasilnya di modulo oleh \begin{math}2^{64}\end{math}. \begin{math}K_i\end{math} pada fungsi kompleks diatas didapat dengan cara yang sama saat mencari nilai dari konstanta awal \begin{math}A_0\end{math} sampai \begin{math}H_0\end{math}. Namun, karena yang digunakan sebanyak 80 buah dari \begin{math}K_0\end{math} sampai \begin{math}K_{79}\end{math} maka banyak bilangan prima yang digunakan juga sebanyak 80 bilangan prima pertama mulai dari 2 sampai 409.
 
-Perbedaannya dengan nilai dari konstanta awal adalah nilai \begin{math}K_i\end{math} pada fungsi kompleks didapat dari akar kubik bilangan prima yang bersangkutan. Selanjutnya, proses yang sama dengan cara menentukan nilai konstanta awal tetap digunakan untuk menentukan nilai \begin{math}K_i\end{math}. Sebagai contoh, \begin{math}\sqrt[3]{409} = 7.42291412044\end{math}, kemudian akan dikonversi ke dalam biner menjadi \begin{math}(111.0110\: 1100\: 0100\: 0100\: … 0111)_2\end{math} dan dikonversi ke dalam heksadesimal menjadi \begin{math}(7.6C44198C4A475817)_{16}\end{math}, kemudian nilai yang diambil hanya nilai di belakang koma, maka nilai dari \begin{math}K_{79} = 6C44198C4A475817\end{math}.
+Perbedaannya dengan nilai dari konstanta awal adalah nilai \begin{math}K_i\end{math} pada fungsi kompleks didapat dari akar kubik bilangan prima yang bersangkutan. Selanjutnya, proses yang sama dengan cara menentukan nilai konstanta awal tetap digunakan untuk menentukan nilai \begin{math}K_i\end{math}. Sebagai contoh, \begin{math}\sqrt[3]{409} = 7.42291412044\end{math}, kemudian akan dikonversi ke dalam biner menjadi \begin{math}(111.0110\: 1100\: 0100\: 0100\: ... 0111)_2\end{math} dan dikonversi ke dalam heksadesimal menjadi \begin{math}(7.6C44198C4A475817)_{16}\end{math}, kemudian nilai yang diambil hanya nilai di belakang koma, maka nilai dari \begin{math}K_{79} = 6C44198C4A475817\end{math}.
 
 \section{Otentikasi}
 Otentikasi adalah proses untuk menentukan apakah sebuah entitas diijinkan untuk mengakses sumber daya yang dimiliki sebuah sistem. Otentikasi juga merupakan proses untuk memastikan keaslian data. Otentikasi dibagi menjadi 2 jenis, yaitu:
@@ -462,7 +464,7 @@ Nilai \begin{math}a_1\end{math} sampai \begin{math}a_{k-1}\end{math} dipilih sec
 	D_1 = q(1), D_2 = q(2), ... , D_i = q(i), ... , D_n = q(n)
 \end{displaymath}
 
-Untuk setiap nilai dari \begin{math}D_n\end{math} yang diketahui, maka bisa dicari nilai koefesien dari fungsi \begin{math}q(x)\end{math} dengan interpolasi atau penyelesaian sistem persamaan linear dari situ bisa didapatkan nilai dari \begin{math}q(0)\end{math} sehingga nilai \textit{D} nanti bisa diketahui. Namun, \textit{D} bisa dihitung jika \textit{k} atau lebih \textit{share} diketahui, jika hanya \begin{math}k-1\end{math} atau kurang \textit{share} yang diketahui, maka nilai \textit{D} tidak bisa dihitung sehingga data tidak bisa dikembalikan.
+Untuk setiap nilai dari \begin{math}D_n\end{math} yang diketahui, maka bisa dicari nilai koefesien dari fungsi \begin{math}q(x)\end{math} dengan interpolasi atau penyelesaian sistem persamaan linear, dari situ bisa diperoleh nilai dari \begin{math}q(0)\end{math} sehingga nilai \textit{D} nanti bisa diketahui. Namun, \textit{D} bisa dihitung jika \textit{k} atau lebih \textit{share} diketahui, jika hanya \begin{math}k-1\end{math} atau kurang \textit{share} yang diketahui, maka nilai \textit{D} tidak bisa dihitung sehingga data tidak bisa dikembalikan.
 
 Namun, dengan nilai \textit{k} yang tinggi juga akan sulit untuk mendapatkan data, karena banyak \textit{share} yang dikumpulkan. Dengan mengurangi nilai \textit{k}, akan mempermudah untuk mendapatkan kembali data sehingga mengatasi akibat atau hilangnya beberapa \textit{share}. Pemilihan \textit{k} dan \textit{n} yang tepat dapat menjaga kerahasiaan data.
 
@@ -484,7 +486,7 @@ Sedangkan probabilitas akan kemungkinan bahwa kejadian \begin{math}x_i\end{math}
 \noindent dimana \begin{math}n\end{math} adalah banyaknya kemunculan kejadian \begin{math}x_i\end{math} dalam sebuah ruang sampel \begin{math}S\end{math} dan \begin{math}N\end{math} adalah banyaknya kejadian yang terjadi dalam ruang sampel \begin{math}S\end{math}.
 
 \section{Distribusi Binom}
-Setiap eksperimen atau percobaan yang dilakukan secara berkali-kali pasti memiliki dua keluaran, yaitu sukses atau gagal. Untuk setiap keluaran yang didapatkan (baik sukses maupun gagal) bisa ditetapkan sebagai sukses. Proses ini dinamakan proses bernouli dan setiap eksperimen yang dilakukan untuk setiap proses bernouli dinamakan percobaan bernouli. Ada beberapa syarat sebuah eksperimen bisa dinamakan percobaan bernouli:
+Setiap eksperimen atau percobaan yang dilakukan secara berkali-kali pasti memiliki dua keluaran, yaitu sukses atau gagal. Untuk setiap keluaran yang diperoleh (baik sukses maupun gagal) bisa ditetapkan sebagai sukses. Proses ini dinamakan proses bernouli dan setiap eksperimen yang dilakukan untuk setiap proses bernouli dinamakan percobaan bernouli. Ada beberapa syarat sebuah eksperimen bisa dinamakan percobaan bernouli:
 \begin{enumerate}
 	\item Eksperimen harus diulang sebanyak \begin{math}n\end{math} kali.
 	\item Setiap keluaran dari perulangan bisa dianggap sukses atau gagal.

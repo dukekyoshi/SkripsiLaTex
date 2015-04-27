@@ -13,12 +13,12 @@
 \contentsline {chapter}{\numberline {2}Dasar Teori}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Kriptografi}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}\textit {Data Encryption Standard} (DES)}{5}{subsection.2.1.1}
-\contentsline {subsubsection}{Permutasi Awal dan Permutasi Akhir}{6}{subsubsection*.5}
-\contentsline {subsubsection}{Ronde}{7}{subsubsection*.6}
+\contentsline {subsubsection}{Permutasi Awal dan Permutasi Akhir}{5}{subsubsection*.5}
+\contentsline {subsubsection}{Ronde}{6}{subsubsection*.6}
 \contentsline {subsubsection}{Fungsi DES}{7}{subsubsection*.7}
-\contentsline {subsection}{\numberline {2.1.2}Pembangunan Kunci Ronde}{10}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.2}Pembangunan Kunci Ronde}{9}{subsection.2.1.2}
 \contentsline {subsubsection}{\textit {Parity Drop}}{10}{subsubsection*.8}
-\contentsline {subsubsection}{\textit {Shift Left}}{11}{subsubsection*.9}
+\contentsline {subsubsection}{\textit {Shift Left}}{10}{subsubsection*.9}
 \contentsline {subsubsection}{Kompresi \textit {P-box}}{11}{subsubsection*.10}
 \contentsline {section}{\numberline {2.2}Fungsi \textit {Hash}}{11}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}\textit {Secure Hashing Algorithm} 512 (SHA-512)}{12}{subsection.2.2.1}
@@ -28,11 +28,11 @@
 \contentsline {subsubsection}{Ekspansi \textit {Word}}{13}{subsubsection*.14}
 \contentsline {subsubsection}{Inisialisasi \textit {Message Digest}}{14}{subsubsection*.15}
 \contentsline {subsubsection}{Fungsi Kompresi}{14}{subsubsection*.16}
-\contentsline {subsubsection}{Ronde}{15}{subsubsection*.17}
+\contentsline {subsubsection}{Ronde}{14}{subsubsection*.17}
 \contentsline {section}{\numberline {2.3}Otentikasi}{16}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Otentikasi Pesan (\textit {Message Authentication})}{17}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Otentikasi Pesan (\textit {Message Authentication})}{16}{subsection.2.3.1}
 \contentsline {subsubsection}{\textit {Modification Detection Code}}{17}{subsubsection*.18}
-\contentsline {subsubsection}{\textit {Message Authentication Code}}{18}{subsubsection*.19}
+\contentsline {subsubsection}{\textit {Message Authentication Code}}{17}{subsubsection*.19}
 \contentsline {subsection}{\numberline {2.3.2}Otentikasi Entitas (\textit {Entity Authentication})}{18}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}\textit {Password}}{19}{subsection.2.3.3}
 \contentsline {subsubsection}{\textit {Password} Satu-Kali}{19}{subsubsection*.20}
@@ -45,7 +45,6 @@
 \contentsline {chapter}{\numberline {3}Analisis}{25}{chapter.3}
 \contentsline {section}{\numberline {3.1}Studi Kasus}{25}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}\textit {Secret Sharing} Shamir}{25}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}Diagram Kelas}{27}{section.3.2}
 \contentsline {chapter}{Daftar Referensi}{29}{chapter*.22}
 \renewcommand {\cftchappresnum }{\bf \scshape }
 \contentsline {chapter}{\numberline {A}The Program}{31}{appendix.A}
