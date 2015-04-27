@@ -1,8 +1,106 @@
 \chapter{Analisis}
 \label{chap:analisis}
 
-Pada bab ini akan dibahas analisis terhadap teori-teori yang telah dibahas sebelumnya. Analisis akan meliputi studi kasus mengenai blablabla dan perancangan program.
+Pada bab ini akan dibahas analisis terhadap teori-teori yang telah dibahas sebelumnya. Analisis akan meliputi studi kasus untuk algoritma \textit{secret sharing} shamir yang telah dibahas sebelumnya, algoritma \textit{secret sharing} shamir yang dikembangkan, dan perancangan perangkat lunak.
 
 \section{Studi Kasus}
+
+Bagian ini akan berisi studi kasus mengenai algoritma \textit{secret sharing} shamir yang telah dibahas sebelumnya.
+
+\subsection{\textit{Secret Sharing} Shamir}
+Pada bagian ini akan dijelaskan proses pembangunan \textit{share} untuk \textit{secret sharing} shamir pada sebuah angka rahasia \textit{S} dan proses pembangunan kembali \textit{S} dari \textit{share-share} yang ada. Untuk kasus ini, dipilih \begin{math}S=1234\end{math}.
+
+\begin{flushleft}
+	\textbf{Proses pembangunan \textit{share}}
+\end{flushleft}
+
+Langkah yang perlu dilakukan pertama adalah memilih banyak \textit{share} \textit{n} yang diinginkan dan banyak minimal \textit{share} yang diperlukan untuk mengembalikan \textit{S}, yaitu \textit{k}. Untuk kasus ini, akan dipilih \begin{math}n=8\end{math} dan \begin{math}k=3\end{math}.
+
+Langkah selanjutnya adalah memilih \begin{math}k-1\end{math} angka acak yang nanti akan digunakan sebagai koefesien fungsi polinomial \begin{math}f(x)\end{math}. Karena pada kasus ini \begin{math}k=3\end{math} maka ada 2 angka acak yang dipilih, misalkan 237 dan 55. Maka fungsi \begin{math}f(x)\end{math} untuk menghitung nilai setiap \textit{share}:
+
+\begin{displaymath}
+	f(x) = 1234 + 237x + 55x^2
+\end{displaymath}
+
+Kemudian, akan dihitung nilai dari setiap \begin{math}f(x_i)\end{math} dari \begin{math}f(1)\end{math} sampai \begin{math}f(8)\end{math} karena \begin{math}n=8\end{math}:
+
+\begin{displaymath}
+	f(1) = 1234 + 237*1 + 55*1*1 = 1526
+\end{displaymath}
+\begin{displaymath}
+	f(2) = 1234 + 237*2 + 55*2*2 = 1928
+\end{displaymath}
+\begin{displaymath}
+	f(3) = 1234 + 237*3 + 55*3*3 = 2440
+\end{displaymath}
+\begin{displaymath}
+	f(4) = 1234 + 237*4 + 55*4*4 = 3062
+\end{displaymath}
+\begin{displaymath}
+	f(5) = 1234 + 237*5 + 55*5*5 = 3794
+\end{displaymath}
+\begin{displaymath}
+	f(6) = 1234 + 237*6 + 55*6*6 = 4636
+\end{displaymath}
+\begin{displaymath}
+	f(7) = 1234 + 237*7 + 55*7*7 = 5588
+\end{displaymath}
+\begin{displaymath}
+	f(8) = 1234 + 237*8 + 55*8*8 = 6650
+\end{displaymath}
+
+Maka didapatkan nilai untuk setiap \begin{math}S_1\end{math} sampai \begin{math}S_8\end{math}.
+\begin{displaymath}
+	S_1 = 1526, S_2 = 1928, S_3 = 2440, S_4 = 3062, S_5 = 3794, S_6 = 4636, S_7 = 5588, S_8 = 6650
+\end{displaymath}
+
+\begin{flushleft}
+	\textbf{Proses pembangunan kembali (rekonstruksi \textit{S})}
+\end{flushleft}
+
+Karena pada kasus ini \begin{math}k=3\end{math} maka untuk mengembalikan \begin{math}S\end{math} maka hanya dibutuhkan 3 \textit{share} aja. Misalkan \textit{share} yang dipilih adalah \begin{math}S_2\end{math}, \begin{math}S_4\end{math}, dan \begin{math}S_5\end{math}.
+
+Langkah selanjutnya adalah membentuk rumus dasar dari fungsi \begin{math}f(x)\end{math}. Karena pada kasus ini, \begin{math}k=3\end{math}, maka rumus dasar dari \begin{math}f(x)\end{math}:
+\begin{displaymath}
+	f(x) = c + bx + ax^2
+\end{displaymath}
+
+Setelah rumus dasar dari fungsi \begin{math}f(x)\end{math} dibentuk langkah selanjutnya adalah menghitung nilai masing-masing fungsi berdasarkan \textit{share} yang diketahui, dalam kasus ini adalah \begin{math}S_2\end{math}, \begin{math}S_4\end{math}, dan \begin{math}S_5\end{math}, maka nilai masing-masing fungsi \begin{math}f(x)\end{math}:
+\begin{displaymath}
+	f(2) = c + 2b + 4a = 1928
+\end{displaymath}
+\begin{displaymath}
+	f(4) = c + 2b + 16a = 3062
+\end{displaymath}
+\begin{displaymath}
+	f(5) = c + 5b + 25a = 3794
+\end{displaymath}
+
+Langkah selanjutnya adalah menyelesaikan persamaan linear diatas, sehingga nanti bisa didapatkan nilai \begin{math}c\end{math} dimana seperti yang diketahui nilai \begin{math}c\end{math} merupakan \begin{math}S\end{math} karena \begin{math}S\end{math} adalah konstanta tanpa koefesien dari \begin{math}f(x)\end{math} (\begin{math}f(0) = c\end{math}).
+
+\begin{flushleft}
+	\textbf{Proses penyelesaian persamaan linear untuk pembangunan kembali (rekonstruksi \textit{S})}
+\end{flushleft}
+
+Pada bagian ini akan dijelaskan proses penyelesaian persamaan linear menggunakan eliminasi gauss. Pada kasus ini, persamaan linear yang diperoleh:
+\begin{displaymath}
+	c + 2b + 4a = 1928
+\end{displaymath}
+\begin{displaymath}
+	c + 2b + 16a = 3062
+\end{displaymath}
+\begin{displaymath}
+	c + 5b + 25a = 3794
+\end{displaymath}
+
+Langkah awal yang perlu dilakukan dalam eliminasi gauss adalah transformasi persamaan linear ke matriks. Maka, dari persamaan linear diatas matriksnya:
+
+\begin{center}
+	\begin{bmatrix}
+			1 & 	2 & 	4  & 	1928 \\
+			1 & 	4 & 	16 & 	3062 \\
+			1 & 	5 & 	25 & 	3794
+	\end{bmatrix}
+\end{center}
 
 \section{Diagram Kelas}

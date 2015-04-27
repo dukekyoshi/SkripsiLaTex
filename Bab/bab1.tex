@@ -4,9 +4,9 @@
 \section{\textbf{Latar Belakang}}
 \label{sec:latar belakang}
 
-Otentikasi adalah proses untuk menentukan apakah sebuah entitas diijinkan untuk mengakses sumber daya yang dimiliki sebuah sistem. Salah satu teknik otentikasi yang paling sederhana dan mudah adalah dengan menggunakan \textit{password}. \textit{Password} ini digunakan dalam proses enkripsi dalam kriptografi. Enkripsi digunakan untuk menjaga keamanan sumber daya yang dimiliki sebuah sistem. \textit{Password} adalah sekumpulan huruf, simbol, dan angka yang sifatnya rahasia. \textit{Password} digunakan bersamaan dengan \textit{username} untuk menandakan bahwa orang yang memiliki \textit{password} dan \textit{username} ini adalah orang yang diberikan ijin untuk mengakses sumber daya yang dimiliki sistem.
+Enkripsi adalah proses merahasiakan sebuah informasi dengan cara menyandikan informasi tersebut sehingga informasi tersebut tidak dapat dibaca oleh pihak yang tidak berwenang. Dalam proses enkripsi, dibutuhkan sebuah kunci rahasia (\textit{private key}), untuk menyandikan informasi sehingga tidak bisa dibaca dan untuk mengembalikan informasi sehingga bisa kembali dibaca. Proses enkripsi ini memiliki kelemahan, yaitu jika kunci yang digunakan untuk enkripsi hilang maka  berakibat informasi yang dienkripsi tidak bisa dikembalikan seperti semula.
 
-Hilangnya \textit{password} dapat menyebabkan sumber daya yang dimiliki oleh sistem tidak dapat diakses, karena itu \textit{password} harus dijaga dengan baik. Namun, hal-hal seperti bencana alam, \textit{human error}, malapetaka lainnya merupakan masalah yang dapat menyebabkan hilangnya password dan masalah-masalah ini tidak dapat dihindari maka diperlukan teknik lain untuk menjaga \textit{password} ini agar tetap aman dan mudah diingat. Salah satu tekniknya dinamakan \textit{secret sharing} shamir. Dalam penelitian ini akan dilakukan analisis bagaimana teknik {\it secret sharing} shamir dapat digunakan untuk melindungi \textit{password}.
+Pada umumnya, untuk mengembalikan kunci yang hilang ini, beberapa sistem memiliki mekanisme dengan menyediakan sebuah pertanyaan keamanan yang pertanyaan dan jawabannya sudah dirancang oleh pengguna. Jika pengguna menjawab pertanyaan keamanan ini dengan benar maka pengguna bisa mendapatkan kembali kunci yang hilang. Tetapi, 
 
 \section{\textbf{Rumusan Masalah}}
 \label{sec:rumusan masalah}
@@ -31,7 +31,7 @@ Tujuan penelitian ini berupa:
 
 Batasan masalah pada penelitian ini berupa:
 \begin{itemize}
-	\item Panjang maksimum \textit{password} hanya mencapai 8 karakter.
+	\item Setiap pertanyaan selalu dijawab dengan jawaban yang relevan dengan pertanyaan.
 \end{itemize}
 
 \section{\textbf{Metodologi Penelitian}}
@@ -57,11 +57,11 @@ Sistematika pembahasan dalam penelitian ini berupa:
 	\item Bab Dasar Teori
 	\\Bab 2 berisi mengenai teori-teori dasar, antara lain kriptografi, algoritma enkripsi, algoritma fungsi \textit{hash}, otentikasi, \textit{secret sharing}, probabilitas, dan entropi.
 	\item Bab Analisis
-	\\Bab 3 berisi analisis terhadap kasus dan perangkat lunak
+	\\Bab 3 berisi analisis meliputi perhitungan, proses, \textit{flow chart}, \textit{use case}, skenario, diagram aktivitas, dan rancangan awal diagram kelas.
 	\item Bab Perancangan
-	\\Bab 4 berisi tahapan penjelasan rancangan perangkat lunak meliputi,
+	\\Bab 4 berisi tahapan penjelasan rancangan perangkat lunak meliputi algoritma, kelas diagram lengkap, dan rancangan tampilan perangkat lunak.
 	\item Bab Implementasi dan Pengujian
-	\\Bab 5 berisi tahapan implementasi pada perangkat lunak, pengujian yang telah dilakukan terhadap perangkat lunak dan analisis hasil yang diperoleh dari perangkat lunak
+	\\Bab 5 berisi tahapan implementasi pada perangkat lunak meliputi tampilan dari perangkat lunak, pengujian terdiri dari kasus, skenario, dan hasil observasi, dan kesimpulan
 	\item Bab Kesimpulan dan Saran
 	\\Bab 6 berisi kesimpulan serta beberapa saran untuk pengembangan lebih lanjut dari penelitian yang dilakukan dan perangkat lunak yang dibangun.
 \end{itemize}

@@ -446,18 +446,25 @@ Skema diatas dinamakan skema \textit{threshold}(\textit{k},\textit{n}).
 \subsection{Skema \textit{Threshold}(\textit{k},\textit{n})}
 Enkripsi dilakukan untuk melindungi kerahasiaan sebuah data atau informasi, namun karena setiap proses enkripsi memerlukan kunci maka diperlukan cara lain untuk melindungi kerahasiaan kunci tersebut. Salah satu cara yang paling aman dalam melindungi kunci kriptografi adalah dengan menyimpannya dalam sebuah lokasi yang aman dan tersembunyi (komputer, otak manusia, atau lemari besi).
 
-Namun cara ini tidak sepenuhnya aman karena bisa saja terjadi bencana alam, kematian, atau penipuan dan sabotase menyebabkan kunci yang disimpan menjadi rusak atau hilang sehingga data yang dienkripsi menjad tidak bisa diakses dan hilang sepenuhnya. Solusi lainnya adalah dengan memperbanyak kunci yang ada dan menyimpannya di tempat yang berbeda-beda, satu di memori komputer, satu diingat oleh manusia, dan yang lainnya disimpan di tempat yang berbeda-beda. Namun, cara ini juga tidak aman karena masih tidak terhindar dari bencana alam, \textit{human error}, dan malapetaka lainnya.
+Namun cara ini tidak sepenuhnya aman karena bisa saja terjadi bencana alam, kematian, penipuan dan sabotase menyebabkan kunci yang disimpan menjadi rusak atau hilang sehingga data yang dienkripsi menjadi tidak bisa diakses dan hilang sepenuhnya. Solusi lainnya adalah dengan memperbanyak kunci yang ada dan menyimpannya di tempat yang berbeda-beda, satu di memori komputer, satu diingat oleh manusia, dan yang lainnya disimpan di tempat yang berbeda-beda. Namun, cara ini juga tidak aman karena masih tidak terhindar dari bencana alam, \textit{human error}, dan malapetaka lainnya.
 
-Skema \textit{threshold(k,n)} didasarkan pada interpolasi polinomial: diberikan k titik pada bidang kartersius \begin{math}(x_1,y_1), (x_2, y_2), ...,(x_k, y_k)\end{math} untuk setiap \begin{math}x_i\end{math} maka hanya akan ada 1 saja nilai \begin{math}q(x_i)\end{math} dalam derajat \begin{math}k-1\end{math} dimana \begin{math}q(x_i)=y_i\end{math} untuk seluruh \begin{math}x_i\end{math}. Misalkan diasumsikan bahwa \textit{D} adalah sebuah angka, kemudian akan dibagi menjadi \begin{math}D_i\end{math} bagian dan derajat dari polinomial \begin{math}q(x)\end{math} adalah \begin{math}k-1\end{math}, sehingga bentuknya menjadi:
+Untuk mengatasi permasalahan ini maka dibutuhkan sebuah mekanisme atau skema, skema tersebut dinamakan skema \textit{threshold}(\textit{k},\textit{n}). Skema \textit{threshold(k,n)} didasarkan pada interpolasi polinomial: diberikan k titik pada bidang kartersius \begin{math}(x_1,y_1), (x_2, y_2), ...,(x_k, y_k)\end{math} untuk setiap \begin{math}x_i\end{math} maka hanya akan ada 1 saja nilai \begin{math}q(x_i)\end{math} dalam derajat \begin{math}k-1\end{math} dimana \begin{math}q(x_i)=y_i\end{math} untuk seluruh \begin{math}x_i\end{math}. Misalkan diasumsikan bahwa \textit{D} adalah representasi berupa angka dari kunci yang akan dipecah menjadi beberapa bagian atau \textit{share} menggunakan skema \textit{threshold(k,n)}, kemudian untuk membagi \textit{D} menjadi \begin{math}D_i\end{math} \textit{share}, dipilih \begin{math}k-1\end{math} derajat polinomial untuk membentuk fungsi \begin{math}q(x)\end{math}:
 \begin{displaymath}
-	q(x) = a[0] + a[1] * x + a[2] * x^2 + ... + a[k-1] * x^{k-1}
-	\qquad\qquad a[0] = D
+	q(x) = a_0 + a_1 * x + a_2 * x^2 + ... + a_{k-1} * x^{k-1}
+\end{displaymath}
+\begin{displaymath}
+	a_0 = D
 \end{displaymath}
 
-Agar lebih akurat, maka diperlukan sebuah bilangan prima \textit{p} dimana \textit{p} lebih besar dari \textit{D} dan \textit{n}. Koefesien untuk \begin{math}a[1], a[2], ..., a[k-1]\end{math} dalam \textit{q(x)} akan dipilih secara acak dalam range \begin{math}[0,p)\end{math}. Nantinya nilai dari \begin{math}D_1, D_2, ..., D_n\end{math} akan dihitung modulonya dengan bilangan prima \textit{p}. Dengan menggunakan skema \textit{threshold(k,n)} dengan nilai \begin{math}n=2k-1\end{math}, data masih dapat dikembalikan walaupun \begin{math}n/2\end{math} bagian hilang, dengan nilai \textit{n} yang sama, pihak lain juga tidak akan bisa mengembalikan data walaupun memiliki \begin{math}n/2\end{math} bagiannya. Nilai \textit{k} dan \textit{n} dapat diatur sedemikian rupa sesuai dengan kebutuhan. Nilai \textit{k} yang tinggi, \begin{math}k<n\end{math}, dapat menjaga kerahasian data karena membutuhkan banyak \textit{share} untuk mendapatkan kembali data.
+Nilai \begin{math}a_1\end{math} sampai \begin{math}a_{k-1}\end{math} dipilih secara acak kemudian dihitung nilai dari \begin{math}D_1\end{math} sampai \begin{math}D_n\end{math} dimana \begin{math}n\end{math} adalah banyaknya \textit{share}:
+
+\begin{displaymath}
+	D_1 = q(1), D_2 = q(2), ... , D_i = q(i), ... , D_n = q(n)
+\end{displaymath}
+
+Untuk setiap nilai dari \begin{math}D_n\end{math} yang diketahui, maka bisa dicari nilai koefesien dari fungsi \begin{math}q(x)\end{math} dengan interpolasi atau penyelesaian sistem persamaan linear dari situ bisa didapatkan nilai dari \begin{math}q(0)\end{math} sehingga nilai \textit{D} nanti bisa diketahui. Namun, \textit{D} bisa dihitung jika \textit{k} atau lebih \textit{share} diketahui, jika hanya \begin{math}k-1\end{math} atau kurang \textit{share} yang diketahui, maka nilai \textit{D} tidak bisa dihitung sehingga data tidak bisa dikembalikan.
 
 Namun, dengan nilai \textit{k} yang tinggi juga akan sulit untuk mendapatkan data, karena banyak \textit{share} yang dikumpulkan. Dengan mengurangi nilai \textit{k}, akan mempermudah untuk mendapatkan kembali data sehingga mengatasi akibat atau hilangnya beberapa \textit{share}. Pemilihan \textit{k} dan \textit{n} yang tepat dapat menjaga kerahasiaan data.
-
 
 \section{Probabilitas}
 Probabilitas atau peluang merupakan salah cara dalam ilmu matematika untuk mengukur tingkat kepercayaan akan suatu kejadian. Teori probabilitas sangat luas penggunaannya, baik dalam kehidupan sehari-hari maupun dalam percobaan-percobaan ilmiah. Teori probabilitas ini seringkali digunakan oleh para pengambil keputusan untuk memprediksi suatu kejadian sehingga nantinya bisa mengambil keputusan yang tepat.
