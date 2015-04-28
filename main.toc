@@ -45,6 +45,7 @@
 \contentsline {chapter}{\numberline {3}Analisis}{25}{chapter.3}
 \contentsline {section}{\numberline {3.1}Studi Kasus}{25}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}\textit {Secret Sharing} Shamir}{25}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Pengembangan Algoritma \textit {Secret Sharing} Shamir}{28}{subsection.3.1.2}
 \contentsline {chapter}{Daftar Referensi}{29}{chapter*.22}
 \renewcommand {\cftchappresnum }{\bf \scshape }
 \contentsline {chapter}{\numberline {A}The Program}{31}{appendix.A}

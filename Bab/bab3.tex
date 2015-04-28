@@ -4,17 +4,16 @@
 Pada bab ini akan dibahas analisis terhadap teori-teori yang telah dibahas sebelumnya. Analisis akan meliputi studi kasus untuk algoritma \textit{secret sharing} shamir yang telah dibahas sebelumnya, algoritma \textit{secret sharing} shamir yang dikembangkan, dan perancangan perangkat lunak.
 
 \section{Studi Kasus}
-
-Bagian ini akan berisi studi kasus mengenai algoritma \textit{secret sharing} shamir yang telah dibahas sebelumnya.
+Bagian ini akan berisi studi kasus mengenai algoritma \textit{secret sharing} shamir yang telah dibahas sebelumnya dan algoritma \textit{secret sharing} shamir yang telah dikembangkan.
 
 \subsection{\textit{Secret Sharing} Shamir}
-Pada bagian ini akan dijelaskan proses pembangunan \textit{share} untuk \textit{secret sharing} shamir pada sebuah angka rahasia \textit{S} dan proses pembangunan kembali \textit{S} dari \textit{share-share} yang ada. Untuk kasus ini, dipilih \begin{math}S=1234\end{math}.
+Pada bagian ini akan dijelaskan proses pembangunan \textit{share} untuk \textit{secret sharing} shamir pada sebuah data \textit{S} dan proses pembangunan kembali \begin{math}S\end{math} dari \textit{share-share} yang ada. Untuk contoh kasus ini, diasumsikan jenis data yang digunakan adalah angka positif, dipilih \begin{math}S=1234\end{math}.
 
 \begin{flushleft}
 	\textbf{Proses pembangunan \textit{share}}
 \end{flushleft}
 
-Langkah yang perlu dilakukan pertama adalah memilih banyak \textit{share} \textit{n} yang diinginkan dan banyak minimal \textit{share} yang diperlukan untuk mengembalikan \textit{S}, yaitu \textit{k}. Untuk kasus ini, akan dipilih \begin{math}n=8\end{math} dan \begin{math}k=3\end{math}.
+Langkah yang perlu dilakukan pertama adalah memilih banyak \textit{share} \begin{math}n\end{math} yang diinginkan dan banyak minimal \textit{share} yang diperlukan untuk mengembalikan \begin{math}S\end{math}, yaitu \begin{math}k\end{math}. Untuk kasus ini, akan dipilih \begin{math}n=8\end{math} dan \begin{math}k=3\end{math}.
 
 Langkah selanjutnya adalah memilih \begin{math}k-1\end{math} angka acak yang nanti akan digunakan sebagai koefesien fungsi polinomial \begin{math}f(x)\end{math}. Karena pada kasus ini \begin{math}k=3\end{math} maka ada 2 angka acak yang dipilih, misalkan 237 dan 55. Maka fungsi \begin{math}f(x)\end{math} untuk menghitung nilai setiap \textit{share}:
 
@@ -24,9 +23,9 @@ Langkah selanjutnya adalah memilih \begin{math}k-1\end{math} angka acak yang nan
 
 Kemudian, akan dihitung nilai dari setiap \begin{math}f(x_i)\end{math} dari \begin{math}f(1)\end{math} sampai \begin{math}f(8)\end{math} karena \begin{math}n=8\end{math}:
 
-\begin{displaymath}
+\begin{equation}
 	f(1) = 1234 + 237*1 + 55*1*1 = 1526
-\end{displaymath}
+\end{equation}
 \begin{displaymath}
 	f(2) = 1234 + 237*2 + 55*2*2 = 1928
 \end{displaymath}
@@ -104,13 +103,122 @@ Langkah awal yang perlu dilakukan dalam eliminasi gauss adalah transformasi pers
 	\end{bmatrix}
 \end{center}
 
-Langkah selanjutnya adalah proses yang dinamakan operasi baris, yaitu operasi aritmatika (tambah, kurang, kali dan bagi) pada setiap baris dari matriks. Proses ini dilakukan sampai diperoleh bentuk matriks segitiga atas, yaitu matriks bujur sangkar yang semua elemen di bawah diagonal utamanya 0. Berikut langkah-langkah proses untuk memperoleh matriks segitiga atas.
+Langkah selanjutnya adalah proses yang dinamakan operasi baris, yaitu operasi aritmatika (tambah, kurang, kali dan bagi) pada setiap baris dari matriks. Proses ini dilakukan sampai diperoleh bentuk matriks segitiga atas, yaitu matriks bujur sangkar yang semua elemen di bawah diagonal utamanya 0. Berikut langkah-langkah proses untuk memperoleh matriks segitiga atas. Sebelumnya, untuk akan diberi label untuk masing-masing baris, baris pertama, \begin{math}L_1\end{math}, baris kedua, \begin{math}L_2\end{math}, dan baris ketiga, \begin{math}L_3\end{math}.
+
+Langkah pertama dari operasi baris untuk membangun matriks segitiga atas adalah mengurangi \begin{math}L_2\end{math} dan \begin{math}L_3\end{math} dengan \begin{math}L_1\end{math} agar setiap elemen kolom pertama di bawah \begin{math}L_1\end{math} nilainya menjadi 0 (nol).
 
 \begin{center}
-	$$\bbordermatrix{
-			&  		&  		&  		&  		&				\cr
-			L_1		&	1 	& 2 	& 4 	& 1928 	\cr
-			L_2		&	1 	& 4 	& 16 	& 3062 	\cr
-			L_3		&	1 	& 5 	& 25 	& 3794 	\cr
-	}$$
+	\begin{math}
+		L_2 - L_1
+	\end{math}
+
+	\begin{math}
+		L_3 - L_1
+	\end{math}
 \end{center}
+
+\begin{flushleft}
+	Maka, matriksnya menjadi:
+\end{flushleft}
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 & 	2 & 	4  & 	1928 \\[1em]
+			0 & 	2 & 	12 & 	1134 \\[1em]
+			0 & 	3 & 	21 & 	1866
+	\end{bmatrix}
+\end{center}
+
+\begin{flushleft}
+	Kemudian, untuk \begin{math}L_2\end{math} dan \begin{math}L_3\end{math} akan disederhanakan nilainya, dengan cara membagi \begin{math}L_2\end{math} dengan 2 dan \begin{math}L_3\end{math} dengan 3.
+\end{flushleft}
+
+\begin{center}
+	\begin{math}
+		\frac{1}{2}L_2
+	\end{math}
+
+	\begin{math}
+		\frac{1}{3}L_3
+	\end{math}
+\end{center}
+
+\begin{flushleft}
+	Maka, matriksnya menjadi:
+\end{flushleft}
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 & 	2 & 	4  & 	1928 	\\[1em]
+			0 & 	1 & 	6 & 	567 	\\[1em]
+			0 & 	1 & 	7 & 	622
+	\end{bmatrix}
+\end{center}
+
+\begin{flushleft}
+	Kemudian, \begin{math}L_3\end{math} akan dikurangi oleh \begin{math}L_2\end{math} sehingga, bisa diperoleh matriks segitiga atas.
+\end{flushleft}
+
+\begin{center}
+	\begin{math}
+		L_3 - L_2
+	\end{math}
+\end{center}
+
+\begin{flushleft}
+	Maka, matriksnya menjadi:
+\end{flushleft}
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 & 	2 & 	4  & 	1928 	\\[1em]
+			0 & 	1 & 	6 & 	567 	\\[1em]
+			0 & 	0 & 	1 & 	55
+	\end{bmatrix}
+\end{center}
+
+Langkah selanjutnya adalah menghitung nilai konstanta untuk masing-masing koefesien dengan cara melakukan substitusi balik. Setiap koefesien pada persamaan diasosiasikan dengan kolom pada matriks, kolom pertama untuk \begin{math}c\end{math}, kolom kedua untuk \begin{math}b\end{math}, dan kolom ketiga untuk \begin{math}a\end{math}. Maka, dari substitusi balik ini diperoleh:
+
+Untuk nilai \begin{math}a\end{math} diperoleh dari \begin{math}L_3\end{math}.
+\begin{center}
+	\begin{gather}
+		a = 55
+	\end{gather}
+\end{center}
+
+\begin{flushleft}
+	Kemudian, untuk nilai \begin{math}b\end{math} diperoleh dari \begin{math}L_2\end{math} dengan mensubstitusi nilai \begin{math}a\end{math}.
+\end{flushleft}
+
+\begin{center}
+	\begin{gather}
+		b + 6a = 567 \\
+		b + 6*55 = 567 \\
+		b = 567 - 330 \\
+		b = 237
+	\end{gather}
+\end{center}
+
+\begin{flushleft}
+	Substitusi balik terakhir adalah untuk mendapatkan nilai \begin{math}c\end{math} dengan mensubstitusi nilai \begin{math}a\end{math} dan \begin{math}b\end{math} pada \begin{math}L_1\end{math}, dimana nilai \begin{math}c\end{math} adalah \begin{math}S\end{math} karena seperti yang diketahui, \begin{math}S\end{math} adalah konstanta bebas.
+\end{flushleft}
+
+\begin{center}
+	\begin{gather}
+		c + 2b + 4a = 1928 \\
+		c + 2*237 + 4*55 = 1925 \\
+		c = 1928 - 474 - 220 \\
+		c = 1234
+	\end{gather}
+\end{center}
+
+\subsection{Pengembangan Algoritma \textit{Secret Sharing} Shamir}
+
+Jika pada contoh kasus sebelumnya adalah algoritma \textit{secret sharing} shamir pada jenis data angka. Pada bagian ini akan dijelaskan pengembangan dari algoritma \textit{secret sharing} shamir untuk jenis data tulisan atau kalimat. Untuk contoh kasus ini, data \begin{math}S\end{math} bentuknya berupa tulisan atau kalimat.
+
+\begin{displaymath}
+	S = secret key
+\end{displaymath}
