@@ -297,18 +297,18 @@ Langkah selanjutnya adalah membentuk rumus dasar dari fungsi \begin{math}f(x)\en
 \begin{displaymath}
 	f(x) = d + cx + bx^2 + ax^3
 \end{displaymath}
-Selanjutnya, proses pembangunan kembali dimulai dari karakter pertama dari \begin{math}S\end{math} sampai karakter keenam karena pada kasus ini \begin{math}S\end{math} hanya terdiri dari 6 karakter.
+Selanjutnya, proses pembangunan kembali dimulai dari karakter pertama dari \begin{math}S\end{math} sampai karakter keenam karena pada kasus ini \begin{math}S\end{math} terdiri dari 6 karakter.
 
 \begin{flushleft}
 	\textbf{Karakter pertama}
 \end{flushleft}
 
-Misalkan \textit{share} yang diketahui untuk karakter utama adalah \begin{math}S_{11}\end{math}, \begin{math}S_{12}\end{math}, \begin{math}S_{14}\end{math}, dan \begin{math}S_{16}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
+Misalkan \textit{share} yang diketahui untuk karakter pertama adalah \begin{math}S_{11}\end{math}, \begin{math}S_{12}\end{math}, \begin{math}S_{14}\end{math}, dan \begin{math}S_{16}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
 
 \begin{gather}
-	f_1(1) = d + c + b + a = 230
-	f_1(2) = d + 2c + 4b + 8a = 597
-	f_1(4) = d + 4c + 16b + 64a = 2735
+	f_1(1) = d + c + b + a = 230 \\
+	f_1(2) = d + 2c + 4b + 8a = 597 \\
+	f_1(4) = d + 4c + 16b + 64a = 2735 \\
 	f_1(6) = d + 6c + 36b + 216a = 7825
 \end{gather}
 
@@ -323,3 +323,706 @@ Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menja
 			1 	& 6 	& 36 	& 216 	& 7825
 	\end{bmatrix}
 \end{center}
+
+Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
+
+\begin{align*}
+	L_4 - L_1 \\
+	L_3 - L_1 \\
+	L_2 - L_1
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 230 		\\[1em]
+			0 	& 1 	& 3 	& 7 		& 367			\\[1em]
+			0 	& 3 	& 15 	& 63 		& 2505		\\[1em]
+			0 	& 5 	& 35 	& 215 	& 7595
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya.
+\begin{align*}
+	\frac{1}{3}L_3 - \frac{1}{5}L_4 \\
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 230 		\\[1em]
+			0 	& 1 	& 3 	& 7 		& 367			\\[1em]
+			0 	& 3 	& 15 	& 63 		& 2505		\\[1em]
+			0 	& 1 	& 7 	& 43 		& 1519
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya.
+\begin{align*}
+	L_4 - L_2 \\
+	L_3 - L_2
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 230 		\\[1em]
+			0 	& 1 	& 3 	& 7 		& 367			\\[1em]
+			0 	& 0 	& 2 	& 14 		& 468		\\[1em]
+			0 	& 0 	& 4 	& 36 		& 1152
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
+\begin{align*}
+	\frac{1}{2}L_2 \\
+	L_4 - 2L_2
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 230 		\\[1em]
+			0 	& 1 	& 3 	& 7 		& 367			\\[1em]
+			0 	& 0 	& 1 	& 7 		& 234		\\[1em]
+			0 	& 0 	& 0 	& 8 		& 216
+	\end{bmatrix}
+\end{center}
+
+Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
+
+\begin{gather}
+	8a = 216 \\
+	a = 27
+\end{gather}
+
+\begin{gather}
+	b + 7a = 234 \\
+	b + 7*27 = 234 \\
+	b = 234 - 189 \\
+	b = 45
+\end{gather}
+
+\begin{gather}
+	c + 3b + 7a = 367 \\
+	c + 3*45 + 7*27 = 367 \\
+	c = 367 - 135 - 189 \\
+	c = 43
+\end{gather}
+
+\begin{gather}
+	d + c + b + a = 230 \\
+	d + 43 + 45 + 27 = 230 \\
+	d = 115
+\end{gather}
+
+Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter pertama adalah \begin{math}'s'\end{math}.
+
+\begin{flushleft}
+	\textbf{Karakter kedua}
+\end{flushleft}
+
+Misalkan \textit{share} yang diketahui untuk karakter kedua adalah \begin{math}S_{23}\end{math}, \begin{math}S_{24}\end{math}, \begin{math}S_{27}\end{math}, dan \begin{math}S_{28}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
+
+\begin{gather}
+	f_2(3) = d + 3c + 9b + 27a = 2423 \\
+	f_2(4) = d + 4c + 16b + 64a = 5061 \\
+	f_2(7) = d + 7c + 49b + 343a = 23103 \\
+	f_2(8) = d + 8c + 64b + 512a = 33573
+\end{gather}
+
+Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 3 	& 9 	& 27 		& 2423 		\\[1em]
+			1 	& 4 	& 16 	& 64 		& 5061		\\[1em]
+			1 	& 7 	& 49 	& 343 	& 23103		\\[1em]
+			1 	& 8 	& 64 	& 512 	& 33573
+	\end{bmatrix}
+\end{center}
+
+Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
+
+\begin{align*}
+	L_4 - L_1 \\
+	L_3 - L_1 \\
+	L_2 - L_1
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 3 	& 9 	& 27 		& 2423 		\\[1em]
+			0 	& 1 	& 7 	& 37 		& 2638		\\[1em]
+			0 	& 4 	& 40 	& 316 	& 20680		\\[1em]
+			0 	& 5 	& 55 	& 485 	& 31150
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya.
+\begin{align*}
+	L_4 - 5L_2 \\
+	L_3 - 4L_2
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 3 	& 9 	& 27 		& 2423 		\\[1em]
+			0 	& 1 	& 7 	& 37 		& 2638		\\[1em]
+			0 	& 6 	& 12 	& 168 	& 10128		\\[1em]
+			0 	& 5 	& 20 	& 300 	& 17960
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
+\begin{align*}
+	L_4 - \frac{20}{12}L_3
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 3 	& 9 	& 27 		& 2423 		\\[1em]
+			0 	& 1 	& 3 	& 37 		& 2638		\\[1em]
+			0 	& 0 	& 12 	& 168 	& 10128		\\[1em]
+			0 	& 0 	& 0 	& 20 		& 1080
+	\end{bmatrix}
+\end{center}
+
+Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
+
+\begin{gather}
+	20a = 1080 \\
+	a = 54
+\end{gather}
+
+\begin{gather}
+	12b + 168a = 10128 \\
+	b + 14a = 844 \\
+	b = 844 - 14*54 \\
+	b = 88
+\end{gather}
+
+\begin{gather}
+	c + 7b + 37a = 2638 \\
+	c + 7*88 + 37*54 = 2638 \\
+	c = 24
+\end{gather}
+
+\begin{gather}
+	d + 3c + 9b + 27a = 2423 \\
+	d + 3*24 + 9*88 + 27*54 = 2423 \\
+	d = 101
+\end{gather}
+
+Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter pertama adalah \begin{math}'e'\end{math}.
+
+\begin{flushleft}
+	\textbf{Karakter ketiga}
+\end{flushleft}
+
+Misalkan \textit{share} yang diketahui untuk karakter ketiga adalah \begin{math}S_{32}\end{math}, \begin{math}S_{33}\end{math}, \begin{math}S_{35}\end{math}, dan \begin{math}S_{36}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
+
+\begin{gather}
+	f_3(2) = d + 2c + 4b + 8a = 527 \\
+	f_3(3) = d + 3c + 9b + 27a = 1224 \\
+	f_3(5) = d + 5c + 25b + 125a = 4364 \\
+	f_3(6) = d + 6c + 36b + 216a = 7119
+\end{gather}
+
+Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 2 	& 4 	& 8 		& 527 		\\[1em]
+			1 	& 3 	& 9 	& 27 		& 1224		\\[1em]
+			1 	& 5 	& 25 	& 125 	& 4364		\\[1em]
+			1 	& 6 	& 36 	& 216 	& 7119
+	\end{bmatrix}
+\end{center}
+
+Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
+
+\begin{align*}
+	L_4 - L_1 \\
+	L_3 - L_1 \\
+	L_2 - L_1
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 2 	& 4 	& 8 		& 527 		\\[1em]
+			0 	& 1 	& 5 	& 19 		& 697			\\[1em]
+			0 	& 3 	& 21 	& 117		& 3837		\\[1em]
+			0 	& 4 	& 32 	& 208 	& 6592
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya.
+\begin{align*}
+	L_3 - 3L_2 \\
+	L_4 - 4L_2
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 2 	& 4 	& 8 		& 527 		\\[1em]
+			0 	& 1 	& 5 	& 19 		& 697			\\[1em]
+			0 	& 0 	& 6 	& 60 		& 1746		\\[1em]
+			0 	& 0 	& 12 	& 132 	& 3804
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya.
+\begin{align*}
+	\frac{1}{6}L_3 - \frac{1}{12}L_4
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 2 	& 4 	& 8 		& 527 	\\[1em]
+			0 	& 1 	& 5 	& 19 		& 697		\\[1em]
+			0 	& 0 	& 1 	& 10 		& 291		\\[1em]
+			0 	& 0 	& 2 	& 11 		& 317
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
+\begin{align*}
+	L_4 - 2L_3
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 2 	& 4 	& 8 		& 527 	\\[1em]
+			0 	& 1 	& 5 	& 19 		& 697		\\[1em]
+			0 	& 0 	& 1 	& 10 		& 291		\\[1em]
+			0 	& 0 	& 0 	& 1 		& 26
+	\end{bmatrix}
+\end{center}
+
+Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
+
+\begin{gather}
+	a = 26
+\end{gather}
+
+\begin{gather}
+	b + 10a = 291 \\
+	b + 10*26 = 291 \\
+	b = 31
+\end{gather}
+
+\begin{gather}
+	c + 5b + 19a = 697 \\
+	c + 5*31 + 19*26 = 697 \\
+	c = 48
+\end{gather}
+
+\begin{gather}
+	d + 2c + 4b + 8a = 527 \\
+	d + 2*48 + 4*31 + 8*26 = 230 \\
+	d = 99
+\end{gather}
+
+Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter pertama adalah \begin{math}'c'\end{math}.
+
+\begin{flushleft}
+	\textbf{Karakter keempat}
+\end{flushleft}
+
+Misalkan \textit{share} yang diketahui untuk karakter keempat adalah \begin{math}S_{41}\end{math}, \begin{math}S_{44}\end{math}, \begin{math}S_{47}\end{math}, dan \begin{math}S_{48}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
+
+\begin{gather}
+	f_4(1) = d + c + b + a = 252 \\
+	f_4(4) = d + 4c + 16b + 64a = 4974 \\
+	f_4(7) = d + 7c + 49b + 343a = 23718 \\
+	f_4(8) = d + 8c + 64b + 512a = 34762
+\end{gather}
+
+Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 252 		\\[1em]
+			1 	& 4 	& 16 	& 64 		& 4974		\\[1em]
+			1 	& 7 	& 49 	& 343 	& 23718		\\[1em]
+			1 	& 8 	& 64 	& 512 	& 34762
+	\end{bmatrix}
+\end{center}
+
+Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
+
+\begin{align*}
+	L_4 - L_1 \\
+	L_3 - L_1 \\
+	L_2 - L_1
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 252 		\\[1em]
+			0 	& 3 	& 15 	& 63 		& 4722		\\[1em]
+			0 	& 6 	& 48 	& 342 	& 23466		\\[1em]
+			0 	& 7 	& 63 	& 511 	& 34510
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya.
+\begin{align*}
+	\frac{1}{3}L_2 \\
+	\frac{1}{6}L_3 - \frac{1}{3}L_2 \\
+	\frac{1}{7}L_4 - \frac{1}{3}L_2
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 252 		\\[1em]
+			0 	& 1 	& 5 	& 21 		& 1574			\\[1em]
+			0 	& 0 	& 3 	& 36 		& 2337		\\[1em]
+			0 	& 0 	& 4 	& 52 		& 3356
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
+\begin{align*}
+	L_4 - \frac{4}{3}L_2 \\
+	\frac{1}{3}L_3
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 252 	\\[1em]
+			0 	& 1 	& 5 	& 21 		& 1574	\\[1em]
+			0 	& 0 	& 1 	& 12 		& 779		\\[1em]
+			0 	& 0 	& 0 	& 4 		& 240
+	\end{bmatrix}
+\end{center}
+
+Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
+
+\begin{gather}
+	4a = 240 \\
+	a = 60
+\end{gather}
+
+\begin{gather}
+	b + 12a = 779 \\
+	b + 12*60 = 779 \\
+	b = 59
+\end{gather}
+
+\begin{gather}
+	c + 5b + 21a = 1574 \\
+	c + 5*59 + 12*60 = 1574 \\
+	c = 19
+\end{gather}
+
+\begin{gather}
+	d + c + b + a = 252 \\
+	d + 19 + 59 + 60 = 252 \\
+	d = 114
+\end{gather}
+
+Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter pertama adalah \begin{math}'r'\end{math}.
+
+\begin{flushleft}
+	\textbf{Karakter kelima}
+\end{flushleft}
+
+Misalkan \textit{share} yang diketahui untuk karakter kelima adalah \begin{math}S_{52}\end{math}, \begin{math}S_{56}\end{math}, \begin{math}S_{57}\end{math}, dan \begin{math}S_{58}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
+
+\begin{gather}
+	f_5(2) = d + 2c + 4b + 8a = 847 \\
+	f_5(6) = d + 6c + 36b + 216a = 10283 \\
+	f_5(7) = d + 7c + 49b + 343a = 15417 \\
+	f_5(8) = d + 8c + 64b + 512a = 22045
+\end{gather}
+
+Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 2 	& 4 	& 8 		& 847 		\\[1em]
+			1 	& 6 	& 36 	& 216 	& 10283		\\[1em]
+			1 	& 7 	& 49 	& 343 	& 15417		\\[1em]
+			1 	& 8 	& 64 	& 512 	& 22045
+	\end{bmatrix}
+\end{center}
+
+Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
+
+\begin{align*}
+	L_4 - L_1 \\
+	L_3 - L_1 \\
+	L_2 - L_1
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 2 	& 4 	& 8 		& 847 		\\[1em]
+			0 	& 4 	& 32 	& 208 	& 9436		\\[1em]
+			0 	& 5 	& 45 	& 335 	& 14570		\\[1em]
+			0 	& 6 	& 60 	& 504 	& 21198
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya.
+\begin{align*}
+	\frac{1}{4}L_2 \\
+	\frac{1}{5}L_3 - \frac{1}{4}L_2 \\
+	\frac{1}{6}L_4 - \frac{1}{4}L_2
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 4 	& 8 		& 847 	\\[1em]
+			0 	& 1 	& 8 	& 52 		& 2359	\\[1em]
+			0 	& 0 	& 1 	& 15 		& 555		\\[1em]
+			0 	& 0 	& 2 	& 32 		& 1174
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
+\begin{align*}
+	L_4 - 2L_3
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 2 	& 4 	& 8 		& 847 	\\[1em]
+			0 	& 1 	& 8 	& 52 		& 2359	\\[1em]
+			0 	& 0 	& 1 	& 13 		& 555		\\[1em]
+			0 	& 0 	& 0 	& 2 		& 64
+	\end{bmatrix}
+\end{center}
+
+Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
+
+\begin{gather}
+	2a = 64 \\
+	a = 32
+\end{gather}
+
+\begin{gather}
+	b + 15a = 555 \\
+	b + 15*32 = 555 \\
+	b = 75
+\end{gather}
+
+\begin{gather}
+	c + 8b + 52a = 2359 \\
+	c + 15*32 + 52*60 = 2359 \\
+	c = 95
+\end{gather}
+
+\begin{gather}
+	d + 2c + 4b + 8a = 847 \\
+	d + 2*95 + 4*75 + 8*32 = 847 \\
+	d = 101
+\end{gather}
+
+Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter pertama adalah \begin{math}'e'\end{math}.
+
+\begin{flushleft}
+	\textbf{Karakter keenam}
+\end{flushleft}
+
+Misalkan \textit{share} yang diketahui untuk karakter keenam adalah \begin{math}S_{61}\end{math}, \begin{math}S_{63}\end{math}, \begin{math}S_{66}\end{math}, dan \begin{math}S_{68}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
+
+\begin{gather}
+	f_6(1) = d + c + b + a = 313 \\
+	f_6(3) = d + 3c + 9b + 27a = 2303 \\
+	f_6(6) = d + 6c + 36b + 216a = 13238 \\
+	f_6(8) = d + 8c + 64b + 512a = 28908
+\end{gather}
+
+Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 313 		\\[1em]
+			1 	& 3 	& 9 	& 27 		& 2303		\\[1em]
+			1 	& 6 	& 36 	& 216 	& 13238		\\[1em]
+			1 	& 8 	& 64 	& 512 	& 28908
+	\end{bmatrix}
+\end{center}
+
+Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
+
+\begin{align*}
+	L_4 - L_1 \\
+	L_3 - L_1 \\
+	L_2 - L_1
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 313 		\\[1em]
+			0 	& 2 	& 8 	& 26 		& 1990		\\[1em]
+			0 	& 5 	& 35 	& 215 	& 12925		\\[1em]
+			0 	& 7 	& 63 	& 511 	& 28595
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya.
+\begin{align*}
+	\frac{1}{2}L_2 \\
+	\frac{1}{5}L_3 - \frac{1}{2}L_2 \\
+	\frac{1}{7}L_4 - \frac{1}{2}L_2
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 313 		\\[1em]
+			0 	& 1 	& 4 	& 13 		& 995			\\[1em]
+			0 	& 0 	& 3 	& 30 		& 1590		\\[1em]
+			0 	& 0 	& 5 	& 60 		& 3090
+	\end{bmatrix}
+\end{center}
+
+Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
+\begin{align*}
+	\frac{1}{3}L_3
+	\frac{1}{5}L_4 - \frac{1}{3}L_3 \\
+\end{align}
+
+Maka, matriksnya menjadi
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 313 	\\[1em]
+			0 	& 1 	& 4 	& 13 		& 995		\\[1em]
+			0 	& 0 	& 1 	& 10 		& 530		\\[1em]
+			0 	& 0 	& 0 	& 2 		& 88
+	\end{bmatrix}
+\end{center}
+
+Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
+
+\begin{gather}
+	2a = 88 \\
+	a = 44
+\end{gather}
+
+\begin{gather}
+	b + 10a = 530 \\
+	b = 530 - 44*10 \\
+	b = 90
+\end{gather}
+
+\begin{gather}
+	c + 4b + 13a = 995 \\
+	c + 4*90 + 13*44 = 995 \\
+	c = 63
+\end{gather}
+
+\begin{gather}
+	d + c + b + a = 313 \\
+	d + 63 + 90 + 44 = 252 \\
+	d = 116
+\end{gather}
+
+Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter pertama adalah \begin{math}'t'\end{math}.
+
+Hasil akhir pembangunan kembali \begin{math}S\end{math} diperoleh dengan menyatukan keenam karakter yang sudah dibangun kembali dari \textit{share-share} yang diketahui, yaitu menjadi \begin{math}'secret'\end{math}, dimana \begin{math}'secret'\end{math} merupakan data awal dari \begin{math}S\end{math}.
+
+\begin{equation}
+	S = secret
+\end{equation}
+
+\section{Perancangan Perangkat Lunak}
+
+Bagian ini akan berisi mengenai perancangan perangkat lunak yang mencakup alur proses (\textit{flowchart}) yang bisa dilakukan, diagram \textit{use case}, dan rancangan awal diagram kelas.
+
+\subsection{Alur Proses}
+
+Algoritma \textit{secret sharing} shamir yang sudah dijelaskan pada bagian sebelumnya akan diterapkan sebagai perlindungan \textit{password} dengan menggunakan pertanyaan keamanan yang sifatnya personal. Proses ini akan dibagi menjadi 2 bagian, yaitu proses pembangunan \textit{share} dari pesan rahasia dan proses pembangunan kembali atau rekonstruksi pesan rahasia dari \textit{share-share} yang ada. Dalam alur proses ini diasumsikan bahwa \begin{math}n\end{math} dan \begin{math}k\end{math} sudah dipilih dengan baik dan optimal dan pesan rahasia disini adalah \textit{password}. Berikut alur proses pembangunan \textit{share} dari \textit{password}.
+
+%diagram
+\begin{figure}[h]
+	\includegraphics[scale=0.65]{Gambar/flowchart_share}
+	\centering
+	\label{fig:create_share}
+	\caption{Proses pembangunan \textit{share} dari \textit{password}}
+\end{figure}
+
+Kemudian, untuk alur proses pembangunan kembali atau rekonstruksi \textit{password} dari \textit{share-share} yang adalah sebagai berikut.
+
+%diagram
+\begin{figure}[h]
+	\includegraphics[scale=0.8]{Gambar/flowchart_reconstruct}
+	\centering
+	\label{fig:reconstruct_secret}
+	\caption{Proses pembangunan kembali atau rekonstruksi \textit{password}}
+\end{figure}
+
+\subsection{Diagram \textit{Use Case}}
+
+Perangkat lunak yang dibangun akan memiliki 2 fitur utama, yaitu menyimpan \textit{password} beserta pertanyaan keamanan yang sifatnya personal dan mengembalikan \textit{password}. Saat menyimpan \textit{password}, pengguna akan diminta untuk menambahkan pertanyaan keamanan yang sifatnya personal dan saat mengembalikan \textit{password}, pengguna akan diminta untuk menjawab pertanyaan keamanan yang sudah disimpan saat menyimpan \textit{password}. Diagram \textit{use case} di bawah ini menunjukkan kedua fitur utama yang sudah dijelaskan.
+
+%diagram
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Gambar/use_case}
+	\centering
+	\label{fig:use_case}
+	\caption{Diagram \textit{use case} dari perangkat lunak}
+\end{figure}

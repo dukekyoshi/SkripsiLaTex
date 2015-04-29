@@ -28,4 +28,7 @@
 \contentsline {figure}{\numberline {2.25}{\ignorespaces \textit {Password hashing}}}{20}{figure.2.25}
 \contentsline {figure}{\numberline {2.26}{\ignorespaces \textit {Password salting}}}{21}{figure.2.26}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Proses pembangunan \textit {share} dari \textit {password}}}{44}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Proses pembangunan kembali atau rekonstruksi \textit {password}}}{45}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram \textit {use case} dari perangkat lunak}}{46}{figure.3.3}
 \addvspace {10\p@ }

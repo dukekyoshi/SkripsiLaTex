@@ -46,6 +46,9 @@
 \contentsline {section}{\numberline {3.1}Studi Kasus}{25}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}\textit {Secret Sharing} Shamir}{25}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Pengembangan Algoritma \textit {Secret Sharing} Shamir}{28}{subsection.3.1.2}
-\contentsline {chapter}{Daftar Referensi}{31}{chapter*.22}
+\contentsline {section}{\numberline {3.2}Perancangan Perangkat Lunak}{44}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Alur Proses}{44}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Diagram \textit {Use Case}}{45}{subsection.3.2.2}
+\contentsline {chapter}{Daftar Referensi}{47}{chapter*.22}
 \renewcommand {\cftchappresnum }{\bf \scshape }
-\contentsline {chapter}{\numberline {A}The Program}{33}{appendix.A}
+\contentsline {chapter}{\numberline {A}The Program}{49}{appendix.A}
