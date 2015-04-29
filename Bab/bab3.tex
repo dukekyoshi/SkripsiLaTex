@@ -57,14 +57,14 @@ Maka diperoleh nilai untuk setiap \begin{math}S_1\end{math} sampai \begin{math}S
 	\textbf{Proses pembangunan kembali (rekonstruksi \textit{S})}
 \end{flushleft}
 
-Karena pada kasus ini \begin{math}k=3\end{math} maka untuk mengembalikan \begin{math}S\end{math} maka hanya dibutuhkan 3 \textit{share} aja. Misalkan \textit{share} yang dipilih adalah \begin{math}S_2\end{math}, \begin{math}S_4\end{math}, dan \begin{math}S_5\end{math}.
+Karena pada kasus ini \begin{math}k=3\end{math} maka untuk mengembalikan \begin{math}S\end{math} maka hanya dibutuhkan 3 \textit{share} saja. Misalkan \textit{share} yang dipilih adalah \begin{math}S_2\end{math}, \begin{math}S_4\end{math}, dan \begin{math}S_5\end{math}.
 
 Langkah selanjutnya adalah membentuk rumus dasar dari fungsi \begin{math}f(x)\end{math}. Karena pada kasus ini, \begin{math}k=3\end{math}, maka rumus dasar dari \begin{math}f(x)\end{math}:
 \begin{displaymath}
 	f(x) = c + bx + ax^2
 \end{displaymath}
 
-Setelah rumus dasar dari fungsi \begin{math}f(x)\end{math} dibentuk langkah selanjutnya adalah menghitung nilai masing-masing fungsi berdasarkan \textit{share} yang diketahui, dalam kasus ini adalah \begin{math}S_2\end{math}, \begin{math}S_4\end{math}, dan \begin{math}S_5\end{math}, maka nilai masing-masing fungsi \begin{math}f(x)\end{math}:
+Setelah rumus dasar dari fungsi \begin{math}f(x)\end{math} dibentuk, langkah selanjutnya adalah menghitung nilai masing-masing fungsi berdasarkan \textit{share} yang diketahui, dalam kasus ini adalah \begin{math}S_2\end{math}, \begin{math}S_4\end{math}, dan \begin{math}S_5\end{math}, maka nilai masing-masing fungsi \begin{math}f(x)\end{math}:
 \begin{displaymath}
 	f(2) = c + 2b + 4a = 1928
 \end{displaymath}
@@ -118,7 +118,7 @@ Langkah pertama dari operasi baris untuk membangun matriks segitiga atas adalah 
 \end{center}
 
 \begin{flushleft}
-	Maka, matriksnya menjadi:
+	Maka, matriksnya menjadi
 \end{flushleft}
 
 \begin{center}
@@ -145,7 +145,7 @@ Langkah pertama dari operasi baris untuk membangun matriks segitiga atas adalah 
 \end{center}
 
 \begin{flushleft}
-	Maka, matriksnya menjadi:
+	Maka, matriksnya menjadi
 \end{flushleft}
 
 \begin{center}
@@ -168,7 +168,7 @@ Langkah pertama dari operasi baris untuk membangun matriks segitiga atas adalah 
 \end{center}
 
 \begin{flushleft}
-	Maka, matriksnya menjadi:
+	Maka, matriksnya menjadi
 \end{flushleft}
 
 \begin{center}
@@ -220,7 +220,7 @@ Untuk nilai \begin{math}a\end{math} diperoleh dari \begin{math}L_3\end{math}.
 Jika pada contoh kasus sebelumnya adalah algoritma \textit{secret sharing} shamir pada jenis data angka. Pada bagian ini akan dijelaskan pengembangan dari algoritma \textit{secret sharing} shamir untuk jenis data tulisan atau kalimat. Sama seperti contoh kasus sebelumnya, pada bagian ini ada 3 proses, yaitu proses pembangunan pembangunan \textit{share} untuk data \begin{math}S\end{math}, proses rekonstruksi \begin{math}S\end{math} dari \textit{share-share}, dan proses penyelesaian persamaan linear untuk mengembalikan nilai \begin{math}S\end{math}. Untuk contoh kasus ini, data \begin{math}S\end{math} bentuknya berupa tulisan atau kalimat.
 
 \begin{displaymath}
-	S = \text{\textbf{\textit{the secret}}}
+	S = \text{\textbf{\textit{secret}}}
 \end{displaymath}
 
 \begin{flushleft}
@@ -229,13 +229,9 @@ Jika pada contoh kasus sebelumnya adalah algoritma \textit{secret sharing} shami
 
 Langkah yang perlu dilakukan pertama adalah memilih banyak \textit{share} \begin{math}n\end{math} yang diinginkan dan banyak minimal \textit{share} yang diperlukan untuk mengembalikan \begin{math}S\end{math}, yaitu \begin{math}k\end{math}. Untuk kasus ini, akan dipilih \begin{math}n=8\end{math} dan \begin{math}k=4\end{math}.
 
-Karena \begin{math}S\end{math} merupakan tulisan atau kalimat, sebelum menentukan angka acak untuk konstanta setiap koefesien, setiap karakter dari \begin{math}S\end{math} (termasuk spasi) harus diubah menjadi angka berdasarkan nilai ASCII. Jadi, untuk masing-masing karakter dalam \begin{math}S\end{math}:
+Karena \begin{math}S\end{math} merupakan tulisan atau kalimat, sebelum menentukan angka acak untuk konstanta setiap koefesien, setiap karakter dari \begin{math}S\end{math} (termasuk spasi) harus diubah menjadi angka berdasarkan nilai ASCII. Jadi, untuk masing-masing karakter dalam \begin{math}S\end{math}.
 
 \begin{align*}
-	't' &= 116 \\
-	'h' &= 104 \\
-	'e' &= 101 \\
-	'\text{  }' &= 32  \\
 	's' &= 115 \\
 	'e' &= 101 \\
 	'c' &= 99 \\
@@ -244,4 +240,86 @@ Karena \begin{math}S\end{math} merupakan tulisan atau kalimat, sebelum menentuka
 	't' &= 116 \\
 \end{align}
 
-Langkah berikutnya adalah memilih \begin{math}k-1\end{math} angka acak yang nanti akan digunakan sebagai koefesien fungsi polinomial \begin{math}f(x)\end{math}. Karena \begin{math}S\end{math} merupakan tulisan atau kalimat, maka perlu dipilih angka acak untuk setiap karakter dari \begin{math}S\end{math}.
+Langkah berikutnya adalah memilih \begin{math}k-1\end{math} angka acak yang nanti akan digunakan sebagai koefesien fungsi polinomial \begin{math}f(x)\end{math}. Karena \begin{math}S\end{math} merupakan tulisan atau kalimat, maka perlu dipilih angka acak untuk setiap karakter dari \begin{math}S\end{math}. Dalam contoh kasus ini, ada \begin{math}k-1\end{math} angka acak untuk masing-masing karakter dari \begin{math}S\end{math} dan karena \begin{math}k=4\end{math}, maka untuk masing-masing karakter terdapat 3 angka acak.
+\begin{itemize}
+	\item \begin{math}'s'\end{math}: 43, 45, dan 27
+	\item \begin{math}'e'\end{math}: 24, 88, dan 54
+	\item \begin{math}'c'\end{math}: 48, 31, dan 26
+	\item \begin{math}'r'\end{math}: 19, 59, dan 60
+	\item \begin{math}'e'\end{math}: 95, 75, dan 32
+	\item \begin{math}'t'\end{math}: 63, 90, dan 44
+\end{itemize}
+
+Perlu diketahui, pemilihan angka dari masing-masing karakter \begin{math}S\end{math} dilakukan secara acak dan tidak memiliki kaitan antara satu karakter dengan karakter lainnya. Langkah selanjutnya adalah membangun fungsi polinomial \begin{math}f(x)\end{math} yang akan digunakan untuk menghitung nilai-nilai \textit{share}.
+
+\begin{gather}
+	f_1(x) = 115 + 43x + 45x^2 + 27x^3 \\
+	f_2(x) = 101 + 24x + 88x^2 + 54x^3 \\
+	f_3(x) = 99 + 48x + 31x^2 + 26x^3 \\
+	f_4(x) = 114 + 19x + 59x^2 + 60x^3 \\
+	f_5(x) = 101 + 95x + 75x^2 + 32x^3 \\
+	f_6(x) = 116 + 63x + 90x^2 + 44x^3
+\end{gather}
+
+Langkah selanjutnya adalah menghitung nilai setiap \textit{share} untuk masing-masing fungsi. Setiap fungsi \begin{math}f(x)\end{math} memiliki 8 \textit{share} karena \begin{math}n=8\end{math}.
+
+\begin{table}
+	\begin{center}
+		\begin{tabular}{| >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} |}
+				\hline
+				& f_1(x) 	& f_2(x) 	& f_3(x) 	& f_4(x) 	& f_5(x) 	& f_6(x) 	\\ \hline
+			1 & 230	 		& 267 		& 204			& 252			& 303			& 313			\\ \hline
+			2 & 597 		& 933			& 527			& 868			& 847			& 954			\\ \hline
+			3 & 1378 		& 2423		& 1224		& 2322		& 1925		& 2303		\\ \hline
+			4 & 2735 		& 5061		& 2451		& 4974		& 3729		& 4624		\\ \hline
+			5 & 4830 		& 9171		& 4364		& 9184		& 6451		& 8181		\\ \hline
+			6 & 7825 		& 15077		& 7119		& 15312		& 10283		& 13238		\\ \hline
+			7 & 11882		& 23103		& 10872		& 23718		& 15417		& 20059		\\ \hline
+			8 & 17163		& 33573		& 15779		& 34762		& 22045		& 28908		\\ \hline
+		\end{tabular}
+	\end{center}
+	\label{table:share_data_s}
+	\caption{\textit{Share dari Data S}}
+\end{table}
+
+Dengan begitu, diperoleh 48 \textit{share} untuk data \begin{math}S\end{math}. Selanjutnya diberi label untuk masing-masing \textit{share}:
+\begin{gather}
+	S_{11} = f_1(1), S_{12} = f_1(2), S_{13} = f_1(3), ... , S_{68} = f_6(8)
+\end{gather}
+
+\begin{flushleft}
+	\textbf{Proses pembangunan kembali dan penyelesaian persamaan linear (rekonstruksi \textit{S})}
+\end{flushleft}
+
+Untuk mengembalikan \begin{math}S\end{math} dari \textit{share-share} yang ada maka proses pembangunan kembali harus dilakukan berulang-ulang untuk setiap karakter dari \begin{math}S\end{math}, karena \begin{math}S\end{math} adalah data tulisan atau kalimat. Pada contoh kasus ini, \begin{math}k\end{math} yang dipilih \begin{math}k=4\end{math} karena itu cukup 4 \textit{share} saja yang diketahui.
+
+Langkah selanjutnya adalah membentuk rumus dasar dari fungsi \begin{math}f(x)\end{math}. Karena pada kasus ini, \begin{math}k=4\end{math}, maka rumus dasar dari \begin{math}f(x)\end{math}:
+\begin{displaymath}
+	f(x) = d + cx + bx^2 + ax^3
+\end{displaymath}
+Selanjutnya, proses pembangunan kembali dimulai dari karakter pertama dari \begin{math}S\end{math} sampai karakter keenam karena pada kasus ini \begin{math}S\end{math} hanya terdiri dari 6 karakter.
+
+\begin{flushleft}
+	\textbf{Karakter pertama}
+\end{flushleft}
+
+Misalkan \textit{share} yang diketahui untuk karakter utama adalah \begin{math}S_{11}\end{math}, \begin{math}S_{12}\end{math}, \begin{math}S_{14}\end{math}, dan \begin{math}S_{16}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
+
+\begin{gather}
+	f_1(1) = d + c + b + a = 230
+	f_1(2) = d + 2c + 4b + 8a = 597
+	f_1(4) = d + 4c + 16b + 64a = 2735
+	f_1(6) = d + 6c + 36b + 216a = 7825
+\end{gather}
+
+Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
+
+\begin{center}
+	\setlength\arraycolsep{15pt}
+	\begin{bmatrix}
+			1 	& 1 	& 1 	& 1 		& 230 		\\[1em]
+			1 	& 2 	& 4 	& 8 		& 597			\\[1em]
+			1 	& 4 	& 16 	& 64 		& 2735		\\[1em]
+			1 	& 6 	& 36 	& 216 	& 7825
+	\end{bmatrix}
+\end{center}
