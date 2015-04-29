@@ -7,7 +7,7 @@ Pada bab ini akan dibahas analisis terhadap teori-teori yang telah dibahas sebel
 Bagian ini akan berisi studi kasus mengenai algoritma \textit{secret sharing} shamir yang telah dibahas sebelumnya dan algoritma \textit{secret sharing} shamir yang telah dikembangkan.
 
 \subsection{\textit{Secret Sharing} Shamir}
-Pada bagian ini akan dijelaskan proses pembangunan \textit{share} untuk \textit{secret sharing} shamir pada sebuah data \textit{S} dan proses pembangunan kembali \begin{math}S\end{math} dari \textit{share-share} yang ada. Untuk contoh kasus ini, diasumsikan jenis data yang digunakan adalah angka positif, dipilih \begin{math}S=1234\end{math}.
+Pada bagian ini akan dijelaskan proses pembangunan \textit{share} untuk \textit{secret sharing} shamir pada sebuah data \textit{S}, proses pembangunan kembali \begin{math}S\end{math} dari \textit{share-share} yang ada, dan proses penyelesaian persamaan linear untuk pembangunan kembali \begin{math}S\end{math}. Untuk contoh kasus ini, diasumsikan jenis data yang digunakan adalah angka positif, dipilih \begin{math}S=1234\end{math}.
 
 \begin{flushleft}
 	\textbf{Proses pembangunan \textit{share}}
@@ -217,8 +217,31 @@ Untuk nilai \begin{math}a\end{math} diperoleh dari \begin{math}L_3\end{math}.
 
 \subsection{Pengembangan Algoritma \textit{Secret Sharing} Shamir}
 
-Jika pada contoh kasus sebelumnya adalah algoritma \textit{secret sharing} shamir pada jenis data angka. Pada bagian ini akan dijelaskan pengembangan dari algoritma \textit{secret sharing} shamir untuk jenis data tulisan atau kalimat. Untuk contoh kasus ini, data \begin{math}S\end{math} bentuknya berupa tulisan atau kalimat.
+Jika pada contoh kasus sebelumnya adalah algoritma \textit{secret sharing} shamir pada jenis data angka. Pada bagian ini akan dijelaskan pengembangan dari algoritma \textit{secret sharing} shamir untuk jenis data tulisan atau kalimat. Sama seperti contoh kasus sebelumnya, pada bagian ini ada 3 proses, yaitu proses pembangunan pembangunan \textit{share} untuk data \begin{math}S\end{math}, proses rekonstruksi \begin{math}S\end{math} dari \textit{share-share}, dan proses penyelesaian persamaan linear untuk mengembalikan nilai \begin{math}S\end{math}. Untuk contoh kasus ini, data \begin{math}S\end{math} bentuknya berupa tulisan atau kalimat.
 
 \begin{displaymath}
-	S = secret key
+	S = \text{\textbf{\textit{the secret}}}
 \end{displaymath}
+
+\begin{flushleft}
+	\textbf{Proses pembangunan \textit{share}}
+\end{flushleft}
+
+Langkah yang perlu dilakukan pertama adalah memilih banyak \textit{share} \begin{math}n\end{math} yang diinginkan dan banyak minimal \textit{share} yang diperlukan untuk mengembalikan \begin{math}S\end{math}, yaitu \begin{math}k\end{math}. Untuk kasus ini, akan dipilih \begin{math}n=8\end{math} dan \begin{math}k=4\end{math}.
+
+Karena \begin{math}S\end{math} merupakan tulisan atau kalimat, sebelum menentukan angka acak untuk konstanta setiap koefesien, setiap karakter dari \begin{math}S\end{math} (termasuk spasi) harus diubah menjadi angka berdasarkan nilai ASCII. Jadi, untuk masing-masing karakter dalam \begin{math}S\end{math}:
+
+\begin{align*}
+	't' &= 116 \\
+	'h' &= 104 \\
+	'e' &= 101 \\
+	'\text{  }' &= 32  \\
+	's' &= 115 \\
+	'e' &= 101 \\
+	'c' &= 99 \\
+	'r' &= 114 \\
+	'e' &= 101 \\
+	't' &= 116 \\
+\end{align}
+
+Langkah berikutnya adalah memilih \begin{math}k-1\end{math} angka acak yang nanti akan digunakan sebagai koefesien fungsi polinomial \begin{math}f(x)\end{math}. Karena \begin{math}S\end{math} merupakan tulisan atau kalimat, maka perlu dipilih angka acak untuk setiap karakter dari \begin{math}S\end{math}.
