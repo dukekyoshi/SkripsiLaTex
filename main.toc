@@ -1,8 +1,8 @@
 \select@language {bahasa}
 \contentsline {chapter}{Kata Pengantar}{xv}{chapter*.1}
 \contentsline {chapter}{Daftar Isi}{xvii}{section*.2}
-\contentsline {chapter}{Daftar Gambar}{xviii}{section*.3}
-\contentsline {chapter}{Daftar Tabel}{xix}{section*.4}
+\contentsline {chapter}{Daftar Gambar}{xix}{section*.3}
+\contentsline {chapter}{Daftar Tabel}{xx}{section*.4}
 \contentsline {chapter}{\numberline {1}Pendahuluan}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}\textbf {Latar Belakang}}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}\textbf {Rumusan Masalah}}{1}{section.1.2}
@@ -49,6 +49,9 @@
 \contentsline {section}{\numberline {3.2}Perancangan Perangkat Lunak}{44}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Alur Proses}{44}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Diagram \textit {Use Case}}{45}{subsection.3.2.2}
-\contentsline {chapter}{Daftar Referensi}{47}{chapter*.22}
+\contentsline {subsection}{\numberline {3.2.3}Diagram Aktivitas}{45}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Perancangan}{47}{chapter.4}
+\contentsline {section}{\numberline {4.1}Algoritma}{47}{section.4.1}
+\contentsline {chapter}{Daftar Referensi}{49}{chapter*.22}
 \renewcommand {\cftchappresnum }{\bf \scshape }
-\contentsline {chapter}{\numberline {A}The Program}{49}{appendix.A}
+\contentsline {chapter}{\numberline {A}The Program}{51}{appendix.A}
