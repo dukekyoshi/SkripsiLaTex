@@ -1,8 +1,36 @@
 \chapter{Perancangan}
 \label{chap:perancangan}
 
-Pada bab ini akan dibahas mengenai perancangan perangkat lunak. Perancangan perangkat lunak akan mencakup algoritma, diagram kelas lengkap, dan perancangan antarmuka.
+Pada bab ini akan dibahas mengenai perancangan perangkat lunak. Perancangan perangkat lunak akan mencakup algoritma, perancangan antarmuka, diagram kelas lengkap, dan perancangan berorientasi objek.
 
 \section{Algoritma}
 
-Pada bagian sebelumnya sudah dibahas 
+Pada bagian ini akan berisi mengenai algoritma yang digunakan oleh perangkat lunak dalam menyimpan \textit{password} (\textit{sharing the secret}) and mengembalikan \textit{password} (\textit{reconstructing the secret}). Diasumsikan bahwa sekumpulan pertanyaan keamanan yang logis dengan jawabannya serta \begin{math}n\end{math} (banyak pertanyaan keamanan) dan \begin{math}k\end{math} (banyak minimal jawaban benar yang harus dijawab untuk mengembalikan \textit{password}) sudah ditentukan.
+
+\begin{flushleft}
+	\textbf{Algoritma untuk menyimpan \textit{password} \begin{math}p\end{math}}
+\end{flushleft}
+
+\begin{enumerate}[label={(\arabic*)}]
+	\item Membuat pertanyaan \begin{math}q_1, q_2, ..., q_n\end{math}.
+	\item Menjawab setiap pertanyaan \begin{math}q_1, q_2, ..., q_n\end{math} untuk menghasilkan jawaban \begin{math}a_1, a_2, ..., a_n\end{math}.
+	\item Menghitung nilai hash \textit{dari} gabungan pertanyaan, jawaban, dan angka acak dinamakan \textit{salt}: \begin{math}h_1 = H(q_1+a_1+r_s), ..., h_n = H(q_n+a_n+r_s)\end{math}.
+	\item Membagi \begin{math}p\end{math} menjadi beberapa karakter, kemudian setiap karakter akan diubah menjadi nilai ASCII: \begin{math}c_1, c_2, ..., c_m\end{math}.
+	\item Untuk setiap karakter \begin{math}c_1, c_2, ..., c_m\end{math}, dengan menggunakan skema \textit{threshold(k, n)} membagi setiap karakter \begin{math}c_1, c_2, ..., c_m\end{math} menjadi \begin{math}n\end{math} share \begin{math}s_{11}, s_{12}, ..., s_{mn}\end{math}.
+	\item Mengenkripsi setiap \textit{share} \begin{math}s\end{math} dengan nilai \textit{hash} sebagai kunci: \begin{math}E_{h_1}(s_{11}) = c_{11}, E_{h_2}(s_{12}) = c_{12}, E_{h_1}(s_{21}) = c_{21}, ..., E_{h_n}(s_{mn}) = c_{mn}\end{math}.
+\end{enumerate}
+
+Nilai \textit{salt} \begin{math}r_s\end{math} sebenarnya tidak terlalu dibutuhkan untuk keamanan. Karena walaupun ada kemungkinan bahwa untuk 2 atau lebih kasus  nilai \textit{hash} \begin{math}h_i\end{math} bisa sama tetapi \begin{math}s_{mn}\end{math} pasti akan berbeda sehingga \begin{math}c_{mn}\end{math} pasti akan berbeda juga. Tapi, untuk lebih lagi menjamin keamanan maka nilai \textit{salt} \begin{math}r_s\end{math} tetap akan digunakan.
+
+\begin{flushleft}
+	\textbf{Algoritma untuk mengembalikan \textit{password} \begin{math}p\end{math}}
+\end{flushleft}
+
+\begin{enumerate}[label={(\arabic*)}]
+	\item Menjawab setiap pertanyaan \begin{math}q_1, q_2, ..., q_n\end{math} yang sama untuk menghasilkan jawaban \begin{math}a'_1, a'_2, ..., a'_n\end{math}.
+	\item Menghitung nilai hash \textit{dari} gabungan pertanyaan, jawaban, dan \textit{salt}: \begin{math}h'_1 = H(q_1+a'_1+r_s), ..., h'_n = H(q_n+a'_n+r_s)\end{math}.
+	\item Mendekripsi setiap ciphertext \begin{math}c_{11}, c_{12}, ..., c{mn}\end{math} dengan nilai hash sebagai kunci: \begin{math}D_{h'_1}(c_{11}) = s'_{11}, D_{h'_2}(c_{12}) = s'_{12}, D_{h'_1}(c_{21}) = s'_{21}, ..., D_{h'_n}(c_{mn}) = s'_{mn}\end{math}.
+	\item Dengan menggunakan skema \textit{threshold(k, n)}, untuk setiap share \begin{math}s\end{math}, jika pertanyaan yang dijawab benar banyaknya sesuai atau lebih dari \begin{math}k\end{math}, maka \begin{math}p\end{math} bisa direkontruksi, jika hanya \begin{math}k-1\end{math} atau kurang pertanyaan yang dijawab benar, maka \begin{math}p\end{math} tidak bisa direkonstruksi.
+\end{enumerate}
+
+\section{Perancangan Antarmuka}
