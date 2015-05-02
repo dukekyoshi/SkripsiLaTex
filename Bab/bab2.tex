@@ -120,11 +120,11 @@ Fungsi DES merupakan inti dari algoritma DES. Fungsi DES menerima masukkan kunci
 	\end{figure}
 	
 	%diagram
-	\begin{figure}[h]
+\begin{figure}[h]
 	\includegraphics[scale=0.8]{Gambar/P-box}
 	\centering
 	\caption{\textit{P-box}}
-	\end{figure}
+\end{figure}
 
 	\item Operasi XOR\\
 	Setelah dilakukan ekspansi dengan menggunakan \textit{P-box}, dilakukan operasi XOR antara \begin{math}R_{I-1}\end{math} dengan kunci ronde. Perlu diketahui, bahwa panjang \begin{math}R_{I-1}\end{math} dan kunci ronde sudah sama, yaitu 48-\textit{bit} dan kunci ronde hanya digunakan dalam proses ini saja.
@@ -132,21 +132,19 @@ Fungsi DES merupakan inti dari algoritma DES. Fungsi DES menerima masukkan kunci
 	\item Substitusi \textit{S-box}\\
 	DES menggunakan 8 buah \textit{S-box}, masing-masing dengan 6-\textit{bit} masukkan dan 4-\textit{bit} keluaran. Gambar di bawah ini menunjukkan proses substitusi \textit{S-box} dan salah satu contoh dari \textit{S-box}.
 	
-\hfill \break
-\hfill \break
 	%diagram
-	\begin{figure}[h]
+\begin{figure}[h]
 	\includegraphics[scale=0.7]{Gambar/S-box}
 	\centering
 	\caption{Proses substitusi \textit{S-box}}
-	\end{figure}
+\end{figure}
 	
 	%diagram
-	\begin{figure}[ht]
+\begin{figure}[ht]
 	\includegraphics[scale=0.8]{Gambar/S-box1}
 	\centering
 	\caption{\textit{S-box}}
-	\end{figure}
+\end{figure}
 
 	Pada bagian ini, akan dilakukan operasi substitusi berdasarkan aturan pada \textit{S-box}. Setiap \textit{S-box} adalah matriks berukuran 4x16 (4 baris, 16 kolom). Setiap isi dari \textit{S-box} akan berbeda-beda. Kombinasi biner dari \textit{bit} ke-1 dan ke-6 masukan menunjukkan posisi baris yang akan dipilih dan kombinasi biner dari \textit{bit} masukan sisanya menunjukkan posisi kolom yang akan dipilih. Setelah itu, angka yang ditunjuk oleh baris dan kolom kombinasi biner ini akan diubah juga menjadi biner.
 
@@ -159,7 +157,7 @@ Bagian terakhir dari fungsi DES adalah permutasi langsung dengan masukan 32-\tex
 \begin{figure}[ht]
 	\includegraphics[scale=0.8]{Gambar/straight_permutation}
 	\centering
-	\caption{Matriks Permutasi Langsung}
+	\caption{Matriks Permutasi Langsung}\label{fig:permutasi_langsung}
 \end{figure}
 
 Sama halnya seperti proses permutasi yang dilakukan di awal enkripsi, angka 16 menunjukkan bahwa \textit{bit} ke-16 masukan akan menjadi \textit{bit} ke-1 keluaran, \textit{bit} ke-7 masukan akan menjadi \textit{bit} ke-2 keluaran, dan seterusnya.
@@ -176,7 +174,7 @@ Pembangunan kunci ronde adalah algoritma untuk membentuk kunci yang akan digunak
 \end{figure}
 
 \subsubsection{\textit{Parity Drop}}
-Proses yang dilakukan sebelum pembangkitan kunci sandi adalah penghilangan \textit{parity bit} pada kunci sandi 64-\textit{bit}. Bit yang dihilangkan adalah \textit{bit} ke-8, 16, 24, 32, …, 64 sehingga hasil akhirnya adalah 56-\textit{bit} sandi kunci yang nanti kunci ini akan digunakan untuk membuat kunci setiap ronde. Matriks permutasi yang digunakan pada proses ini ditunjukkan pada gambar di bawah.
+Proses yang dilakukan sebelum pembangkitan kunci sandi adalah penghilangan \textit{parity bit} pada kunci sandi 64-\textit{bit}. Bit yang dihilangkan adalah \textit{bit} ke-8, 16, 24, 32, ..., 64 sehingga hasil akhirnya adalah 56-\textit{bit} sandi kunci yang nanti kunci ini akan digunakan untuk membuat kunci setiap ronde. Matriks permutasi yang digunakan pada proses ini ditunjukkan pada gambar di bawah.
 
 \hfill \break
 \hfill \break
@@ -192,6 +190,7 @@ Proses yang dilakukan sebelum pembangkitan kunci sandi adalah penghilangan \text
 Pada tahap ini, kunci yang akan dibentuk akan dipisah menjadi 2 bagian masing-masing 28-\textit{bit}. Setiap bagian akan digeser ke arah kiri secara sirkular sebanyak 1 atau 2 \textit{bit}. Ronde ke-1, 2, 9, dan 16 akan digeser sebanyak 1 \textit{bit}, selain itu hanya akan digeser sebanyak 2 \textit{bit}. Kemudian, kedua bagian ini akan disatukan kembali menjadi satu bagian dengan panjang 56-\textit{bit}.
 
 \subsubsection{Kompresi \textit{P-box}}
+\label{sssec:kompresi_Pbox}
 Kompresi dengan \textit{P-box} adalah tahap permutasi untuk mengubah kunci 56-\textit{bit} menjadi 48-\textit{bit} agar bisa digunakan sebagai ronde kunci. Kompresi ini menggunakan matriks permutasi \textit{P-box} dengan ukuran 6x8 seperti gambar yang ditunjukkan di bawah ini.
 
 %diagram
@@ -218,6 +217,7 @@ Fungsi \textit{hash} adalah algoritma kriptografi yang membuat kompresi dari pes
 Contoh fungsi \textit{hash} antara lain SHA-0, SHA-1, SHA-512, MD-2, dan MD-5.
 
 \subsection{\textit{Secure Hashing Algorithm} 512 (SHA-512)}
+\label{subsec:SHA512}
 \textit{Secure hashing algorithm} 512 atau SHA-512 adalah algoritma fungsi \textit{hash} yang menghasilkan 512-\textit{bit} \textit{message digest}. SHA-512 merupakan algoritma fungsi \textit{hash} dalam versi SHA yang menghasilkan \textit{message digest} paling panjang (512-\textit{bit}). SHA-512 membuat 512-\textit{bit} digest yang diambil dari beberapa blok \textit{message}. Setiap blok \textit{message} panjangnya 1024 bit. Gambar di bawah ini menunjukkan cara pembuatan \textit{message digest}.
 
 %diagram
@@ -228,6 +228,7 @@ Contoh fungsi \textit{hash} antara lain SHA-0, SHA-1, SHA-512, MD-2, dan MD-5.
 \end{figure}
 
 \subsubsection{Persiapan \textit{Message}}
+\label{sssec:persiapan_message}
 SHA-512 menerima masukan \textit{message} dengan panjang kurang dari \begin{math}2^{128}-\textit{bit}\end{math}, berarti jika panjang \textit{message} sama dengan \begin{math}2^{128}\end{math} atau lebih maka SHA-512 tidak memroses \textit{message} tersebut. Hal ini tidak akan menjadi masalah karena ukuran \begin{math}2^{128}-\textit{bit}\end{math} cukup besar untuk tempat penyimpanan komputer manapun.
 
 \subsubsection{\textit{Length Field} dan \textit{Padding}}
@@ -263,6 +264,7 @@ SHA-512 beroperasi dengan ukuran \textit{words}. Panjang dari satu \textit{word}
 \end{figure}
 
 \subsubsection{Ekspansi \textit{Word}}
+\label{sssec:ekspansi_word}
 Sebelum diproses, setiap blok \textit{message} harus diekspansi, panjang setiap blok ini adalah 1024-\textit{bit} terdiri dari 16 buah 64-\textit{bit word}. Pada tahap pemrosesan, dibutuhkan 80 buah 64-\textit{bit word} maka dari itu, 16 \textit{word} ini harus diekspansi menjadi 80 \textit{word}, \begin{math}W_0\end{math} sampai \begin{math}W_79\end{math}. Gambar di bawah ini akan menunjukkan cara ekspansi \textit{word}.
 
 %diagram
@@ -272,11 +274,6 @@ Sebelum diproses, setiap blok \textit{message} harus diekspansi, panjang setiap 
 	\caption{Ekspansi \textit{word}}
 \end{figure}
 
-\hfill \break
-\hfill \break
-\hfill \break
-\hfill \break
-\hfill \break
 \begin{displaymath}
 	RotShift_{l-m-n}(x):RotR_l(x) \oplus RotR_m(x) \oplus ShL_n(x)
 \end{displaymath}
@@ -293,7 +290,7 @@ Sebagai contoh, \begin{math}H_0\end{math} didapat dari nilai \begin{math}\sqrt{1
 \begin{figure}[ht]
 	\includegraphics[scale=0.8]{Gambar/konstanta_sha}
 	\centering
-	\caption{Konstanta inisialisasi dalam SHA-512}
+	\caption{Konstanta inisialisasi dalam SHA-512}\label{fig:konstanta_sha}
 \end{figure}
 
 \subsubsection{Fungsi Kompresi}
@@ -307,6 +304,7 @@ SHA-512 membuat \textit{message digest} sepanjang 512-\textit{bit} (8 \textit{wo
 \end{figure}
 
 \subsubsection{Ronde}
+\label{sssec:rondesha512}
 Pada setiap ronde, 8 nilai baru pada 64-\textit{bit word} dibuat dari 8 nilai 64-\textit{bit word} pada ronde sebelumnya. Nilai baru ini dinamakan \textit{buffer}. Enam dari delapan \textit{buffer} mendapatkan nilai dari \textit{buffer} ronde sebelumnya. Sedangkan untuk 2 \textit{buffer} lagi nilai keduanya diperoleh dari sebuah fungsi kompleks yang berhubungan dengan \textit{buffer} sisanya serta gabungan tambahan dari \begin{math}W_i\end{math} dan \begin{math}K_i\end{math}, bersangkutan dengan masing-masing ronde. Gambar di bawah ini akan menjelaskan struktur dari setiap ronde serta fungsi kompleks yang digunakan untuk mendapatkan nilai untuk 2 \textit{buffer} (\begin{math}A\end{math} dan \begin{math}E\end{math}).
 
 %diagram

@@ -1071,13 +1071,12 @@ Dalam proses menyimpan \textit{password}, awalnya \textit{user} harus terlebih d
 
 Pertanyaan keamanan ini nantinya akan kembali digunakan untuk memperoleh kembali \textit{password} yang hilang atau dilupakan. Kemudian, setelah \textit{user} memilih dan menjawab setiap pertanyaan keamanan, setiap pertanyaan keamanan ini akan dihitung nilai \textit{hash}nya. Selanjutnya dengan menggunakan skema \textit{threshold (k, n)} untuk membagi \textit{password} menjadi sebanyak \begin{math}n\end{math} \textit{share}. Setiap \textit{share} ini akan dienkripsi dengan kunci nilai \textit{hash}.
 
-Selanjutnya adalah proses untuk mengembalikan \textit{password}. Diagram aktivitas di bawah ini menunjukkan proses mengembalikan \textit{password}
+Selanjutnya adalah proses untuk mengembalikan \textit{password}. Gambar \ref{fig:reconstruct} menunjukkan proses mengembalikan \textit{password}.
 
 %diagram
 \begin{figure}[H]
 	\centerline{\includegraphics[scale=0.4]{Gambar/reconstruct-secret}}
-	\label{fig:reconstruct-secret}
-	\caption{Diagram aktivitas untuk mengembalikan \textit{password}}
+	\caption{Diagram aktivitas untuk mengembalikan \textit{password}}\label{fig:reconstruct}
 \end{figure}
 
 Dalam proses untuk mengembalikan \textit{password}, \textit{user} akan diminta untuk menjawab beberapa pertanyaan keamanan yang sudah dipilih saat \textit{user} menyimpan \textit{password}. Selanjutnya adalah proses yang sama saat meyimpan \textit{password}, yaitu menghitung nilai \textit{hash} dari pertanyaan kemanan yang sudah dijawab oleh \textit{user}. Langkah selanjutnya adalah mendekripsi setiap \textit{share} dengan menggunakan kunci nilai \textit{hash}.

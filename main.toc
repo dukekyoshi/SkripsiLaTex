@@ -16,22 +16,22 @@
 \contentsline {subsubsection}{Ronde}{5}{subsubsection*.9}
 \contentsline {subsubsection}{Fungsi DES}{6}{subsubsection*.11}
 \contentsline {subsection}{\numberline {2.1.2}Pembangunan Kunci Ronde}{8}{subsection.2.1.2}
-\contentsline {subsubsection}{\textit {Parity Drop}}{9}{subsubsection*.18}
+\contentsline {subsubsection}{\textit {Parity Drop}}{8}{subsubsection*.18}
 \contentsline {subsubsection}{\textit {Shift Left}}{9}{subsubsection*.20}
 \contentsline {subsubsection}{Kompresi \textit {P-box}}{9}{subsubsection*.21}
 \contentsline {section}{\numberline {2.2}Fungsi \textit {Hash}}{9}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}\textit {Secure Hashing Algorithm} 512 (SHA-512)}{10}{subsection.2.2.1}
-\contentsline {subsubsection}{Persiapan \textit {Message}}{11}{subsubsection*.24}
+\contentsline {subsubsection}{Persiapan \textit {Message}}{10}{subsubsection*.24}
 \contentsline {subsubsection}{\textit {Length Field} dan \textit {Padding}}{11}{subsubsection*.25}
 \contentsline {subsubsection}{\textit {Words}}{12}{subsubsection*.27}
 \contentsline {subsubsection}{Ekspansi \textit {Word}}{12}{subsubsection*.29}
 \contentsline {subsubsection}{Inisialisasi \textit {Message Digest}}{12}{subsubsection*.31}
 \contentsline {subsubsection}{Fungsi Kompresi}{13}{subsubsection*.33}
-\contentsline {subsubsection}{Ronde}{14}{subsubsection*.35}
+\contentsline {subsubsection}{Ronde}{13}{subsubsection*.35}
 \contentsline {section}{\numberline {2.3}Otentikasi}{15}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Otentikasi Pesan (\textit {Message Authentication})}{15}{subsection.2.3.1}
 \contentsline {subsubsection}{\textit {Modification Detection Code}}{15}{subsubsection*.38}
-\contentsline {subsubsection}{\textit {Message Authentication Code}}{15}{subsubsection*.40}
+\contentsline {subsubsection}{\textit {Message Authentication Code}}{16}{subsubsection*.40}
 \contentsline {subsection}{\numberline {2.3.2}Otentikasi Entitas (\textit {Entity Authentication})}{16}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}\textit {Password}}{17}{subsection.2.3.3}
 \contentsline {subsubsection}{\textit {Password} Satu-Kali}{17}{subsubsection*.42}
@@ -54,6 +54,17 @@
 \contentsline {chapter}{\numberline {4}Perancangan}{47}{chapter.4}
 \contentsline {section}{\numberline {4.1}Algoritma}{47}{section.4.1}
 \contentsline {section}{\numberline {4.2}Perancangan Antarmuka}{48}{section.4.2}
-\contentsline {chapter}{Daftar Referensi}{49}{chapter*.55}
+\contentsline {section}{\numberline {4.3}Diagram Kelas Rinci}{49}{section.4.3}
+\contentsline {section}{\numberline {4.4}Deskripsi Kelas dan Fungsi}{50}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}SHA512}{50}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}\textit {Function}}{50}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}\textit {EquationSolver}}{51}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}\textit {SecretSharing}}{51}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}\textit {DESEncryption}}{51}{subsection.4.4.5}
+\contentsline {subsection}{\numberline {4.4.6}\textit {DESDecryption}}{52}{subsection.4.4.6}
+\contentsline {subsection}{\numberline {4.4.7}\textit {DataReader}}{52}{subsection.4.4.7}
+\contentsline {subsection}{\numberline {4.4.8}\textit {DataWriter}}{52}{subsection.4.4.8}
+\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{55}{chapter.5}
+\contentsline {chapter}{Daftar Referensi}{57}{chapter*.60}
 \renewcommand {\cftchappresnum }{\bf \scshape }
-\contentsline {chapter}{\numberline {A}The Program}{51}{appendix.A}
+\contentsline {chapter}{\numberline {A}The Program}{59}{appendix.A}
