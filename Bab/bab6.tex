@@ -1,0 +1,29 @@
+\chapter{Kesimpulan dan Saran}
+\label{chap:Kesimpulan dan Saran}
+
+Bab ini berisi kesimpulan dan saran dari penelitian yang dilakukan.
+
+\section{Kesimpulan}
+
+Dari penelitian yang dilakukan, \textit{secret sharing} shamir dapat melindungi \textit{password} dengan cara membagi \textit{password} menjadi beberapa bagian atau \textit{share} sehingga selain \textit{password} juga terlindungi dari pihak yang tidak berhak untuk mengetahui, \textit{password} juga terlindungi dari \textit{human error}, musibah, dan sebagainya yang bisa menyebabkan sebagian dari \textit{password} hilang.
+
+Selain itu, dengan adanya pertanyaan keamanan yang digunakan dalam metode \textit{secret sharing} shamir, kerahasiaan \textit{password} juga terjamin. Melalui penelitian ini, dapat disimpulkan bahwa metode \textit{secret sharing} shamir dapat melindungi \textit{password}.
+
+Kualitas dari pertanyaan keamanan bisa dinilai dari 5 sifat:
+\begin{itemize}
+	\item Aman
+	\item Stabil
+	\item Mudah diingat
+	\item Simpel
+	\item Memiliki banyak kemungkinan jawaban
+\end{itemize}
+Dari hasil penelitian juga dapat diketahui bahwa tidak ada pertanyaan keamanan yang memiliki kelima sifat secara sekaligus, beberapa dari sifat ada yang berlawanan sehingga tidak mungkin dapat dimiliki oleh sebuah pertanyaan keamanan sekaligus.
+Dari hasil penelitian yang dilakukan, dapat disimpulkan bahwa perangkat lunak yang mengimplementasikan \textit{secret sharing} shamir berhasil dibangun.
+
+\section{Saran}
+
+Dari penelitian ini, terdapat beberapa saran untuk pengembangan perangkat lunak lebih lanjut, yaitu:
+\begin{itemize}
+	\item Algoritma enkripsi yang digunakan bisa diganti dengan menggunakan algoritma enkripsi yang menggunakan panjang kunci lebih panjang dari 64-\textit{bit}. Pada penelitian ini, algoritma enkripsi yang digunakan adalah \textit{data encryption standard} (DES) dengan panjang kunci maksimal 64-\textit{bit}. Untuk ukuran keamanan informasi, 64-\textit{bit} merupakan ukuran yang kurang dan nantinya untuk pengembangan lebih lanjut bisa digunakan algoritma enkripsi yang memiliki panjang kunci lebih dari 64-\textit{bit} saja.
+	\item Metode \textit{secret sharing} shamir diharapkan dapat diimplementasikan tidak hanya pada perangkat lunak perorangan seperti dalam penelitian ini, tetapi bisa diimplementasikan pada sebuah sistem besar yang memiliki subsistem dan masing-masing dari subsistem ini menyimpan banyak informasi penting.
+\end{itemize}
