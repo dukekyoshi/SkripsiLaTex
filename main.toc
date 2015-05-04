@@ -5,9 +5,9 @@
 \contentsline {chapter}{\numberline {1}Pendahuluan}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}\textbf {Latar Belakang}}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}\textbf {Rumusan Masalah}}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}\textbf {Tujuan}}{1}{section.1.3}
-\contentsline {section}{\numberline {1.4}\textbf {Batasan Masalah}}{1}{section.1.4}
-\contentsline {section}{\numberline {1.5}\textbf {Metodologi Penelitian}}{1}{section.1.5}
+\contentsline {section}{\numberline {1.3}\textbf {Tujuan}}{2}{section.1.3}
+\contentsline {section}{\numberline {1.4}\textbf {Batasan Masalah}}{2}{section.1.4}
+\contentsline {section}{\numberline {1.5}\textbf {Metodologi Penelitian}}{2}{section.1.5}
 \contentsline {section}{\numberline {1.6}\textbf {Sistematika Pembahasan}}{2}{section.1.6}
 \contentsline {chapter}{\numberline {2}Dasar Teori}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Kriptografi}{3}{section.2.1}
@@ -17,29 +17,29 @@
 \contentsline {subsubsection}{Fungsi DES}{6}{subsubsection*.11}
 \contentsline {subsection}{\numberline {2.1.2}Pembangunan Kunci Ronde}{8}{subsection.2.1.2}
 \contentsline {subsubsection}{\textit {Parity Drop}}{8}{subsubsection*.18}
-\contentsline {subsubsection}{\textit {Shift Left}}{9}{subsubsection*.20}
-\contentsline {subsubsection}{Kompresi \textit {P-box}}{9}{subsubsection*.21}
+\contentsline {subsubsection}{\textit {Shift Left}}{8}{subsubsection*.20}
+\contentsline {subsubsection}{Kompresi \textit {P-box}}{8}{subsubsection*.21}
 \contentsline {section}{\numberline {2.2}Fungsi \textit {Hash}}{9}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}\textit {Secure Hashing Algorithm} 512 (SHA-512)}{10}{subsection.2.2.1}
-\contentsline {subsubsection}{Persiapan \textit {Message}}{10}{subsubsection*.24}
-\contentsline {subsubsection}{\textit {Length Field} dan \textit {Padding}}{11}{subsubsection*.25}
-\contentsline {subsubsection}{\textit {Words}}{12}{subsubsection*.27}
-\contentsline {subsubsection}{Ekspansi \textit {Word}}{12}{subsubsection*.29}
-\contentsline {subsubsection}{Inisialisasi \textit {Message Digest}}{12}{subsubsection*.31}
-\contentsline {subsubsection}{Fungsi Kompresi}{13}{subsubsection*.33}
-\contentsline {subsubsection}{Ronde}{13}{subsubsection*.35}
-\contentsline {section}{\numberline {2.3}Otentikasi}{15}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Otentikasi Pesan (\textit {Message Authentication})}{15}{subsection.2.3.1}
-\contentsline {subsubsection}{\textit {Modification Detection Code}}{15}{subsubsection*.38}
-\contentsline {subsubsection}{\textit {Message Authentication Code}}{16}{subsubsection*.40}
-\contentsline {subsection}{\numberline {2.3.2}Otentikasi Entitas (\textit {Entity Authentication})}{16}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}\textit {Password}}{17}{subsection.2.3.3}
-\contentsline {subsubsection}{\textit {Password} Satu-Kali}{17}{subsubsection*.42}
-\contentsline {subsubsection}{\textit {Password} Tetap}{17}{subsubsection*.43}
-\contentsline {section}{\numberline {2.4}\textit {Secret Sharing}}{19}{section.2.4}
+\contentsline {subsection}{\numberline {2.2.1}\textit {Secure Hashing Algorithm} 512 (SHA-512)}{9}{subsection.2.2.1}
+\contentsline {subsubsection}{Persiapan \textit {Message}}{9}{subsubsection*.24}
+\contentsline {subsubsection}{\textit {Length Field} dan \textit {Padding}}{10}{subsubsection*.25}
+\contentsline {subsubsection}{\textit {Words}}{11}{subsubsection*.27}
+\contentsline {subsubsection}{Ekspansi \textit {Word}}{11}{subsubsection*.29}
+\contentsline {subsubsection}{Inisialisasi \textit {Message Digest}}{11}{subsubsection*.31}
+\contentsline {subsubsection}{Fungsi Kompresi}{12}{subsubsection*.33}
+\contentsline {subsubsection}{Ronde}{12}{subsubsection*.35}
+\contentsline {section}{\numberline {2.3}Otentikasi}{13}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Otentikasi Pesan (\textit {Message Authentication})}{13}{subsection.2.3.1}
+\contentsline {subsubsection}{\textit {Modification Detection Code}}{13}{subsubsection*.38}
+\contentsline {subsubsection}{\textit {Message Authentication Code}}{14}{subsubsection*.40}
+\contentsline {subsection}{\numberline {2.3.2}Otentikasi Entitas (\textit {Entity Authentication})}{15}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}\textit {Password}}{16}{subsection.2.3.3}
+\contentsline {subsubsection}{\textit {Password} Satu-Kali}{16}{subsubsection*.42}
+\contentsline {subsubsection}{\textit {Password} Tetap}{16}{subsubsection*.43}
+\contentsline {section}{\numberline {2.4}\textit {Secret Sharing}}{18}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Skema \textit {Threshold}(\textit {k},\textit {n})}{19}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}Probabilitas}{20}{section.2.5}
-\contentsline {section}{\numberline {2.6}Distribusi Binom}{21}{section.2.6}
+\contentsline {section}{\numberline {2.6}Distribusi Binom}{20}{section.2.6}
 \contentsline {section}{\numberline {2.7}Entropi}{21}{section.2.7}
 \contentsline {chapter}{\numberline {3}Analisis}{23}{chapter.3}
 \contentsline {section}{\numberline {3.1}Studi Kasus}{23}{section.3.1}

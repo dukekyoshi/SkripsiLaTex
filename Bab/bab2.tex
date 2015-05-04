@@ -80,7 +80,7 @@ Sebagai contoh, \textit{bit} ke-58 dari input akan menjadi \textit{bit} ke-1 pad
 
 %diagram
 \begin{figure}[h]
-\includegraphics[]{Gambar/proses_permutasi}
+\includegraphics[scale=0.5]{Gambar/proses_permutasi}
 \centering
 \caption{Proses Permutasi}
 \end{figure}
@@ -114,7 +114,7 @@ Fungsi DES merupakan inti dari algoritma DES. Fungsi DES menerima masukkan kunci
 	
 	%diagram
 	\begin{figure}[h]
-	\includegraphics[scale=0.7]{Gambar/expansion_permutation}
+	\includegraphics[scale=0.5]{Gambar/expansion_permutation}
 	\centering
 	\caption{Proses permutasi ekspansi}
 	\end{figure}
@@ -134,7 +134,7 @@ Fungsi DES merupakan inti dari algoritma DES. Fungsi DES menerima masukkan kunci
 	
 	%diagram
 \begin{figure}[h]
-	\includegraphics[scale=0.7]{Gambar/S-box}
+	\includegraphics[scale=0.5]{Gambar/S-box}
 	\centering
 	\caption{Proses substitusi \textit{S-box}}
 \end{figure}
@@ -176,9 +176,6 @@ Pembangunan kunci ronde adalah algoritma untuk membentuk kunci yang akan digunak
 \subsubsection{\textit{Parity Drop}}
 Proses yang dilakukan sebelum pembangkitan kunci sandi adalah penghilangan \textit{parity bit} pada kunci sandi 64-\textit{bit}. Bit yang dihilangkan adalah \textit{bit} ke-8, 16, 24, 32, ..., 64 sehingga hasil akhirnya adalah 56-\textit{bit} sandi kunci yang nanti kunci ini akan digunakan untuk membuat kunci setiap ronde. Matriks permutasi yang digunakan pada proses ini ditunjukkan pada gambar di bawah.
 
-\hfill \break
-\hfill \break
-\hfill \break
 %diagram
 \begin{figure}[ht]
 	\includegraphics[scale=0.8]{Gambar/parity_drop}
@@ -384,7 +381,9 @@ Dalam otentikasi entitas, penuntut harus bisa membuktikan kebenaran identitas di
 	\item Sesuatu yang melekat (\textit{something inherent}). Hal ini menempel atau sebagai bagian dari penuntut. Contohnya antara lain adalah sidik jari, suara, tanda tangan, pola retina, dan tulisan tangan.
 \end{itemize}
 
-\noindent Beberapa teknik dalam otentikasi entitas antara lain, yaitu \textit{password}, \textit{zero-knowledge}, \textit{challenge-response}, dan biometrik.
+\begin{flushleft}
+	Beberapa teknik dalam otentikasi entitas antara lain, yaitu \textit{password}, \textit{zero-knowledge}, \textit{challenge-response}, dan biometrik.
+\end{flushleft}
 
 \subsection{\textit{Password}}
 Salah satu teknik otentikasi entitas yang paling sederhana dan mudah adalah otentikasi menggunakan \textit{password} atau kata kunci rahasia. \textit{Password} ini adalah sesuatu yang diketahui hanya oleh penuntut. \textit{Password} digunakan saat penuntut (selanjutnya akan dinamakan pengguna) perlu untuk mengakses sistem untuk menggunakan sumber daya dari sistem. Setiap pengguna akan diberikan \textit{username} yang sifatnya publik dan \textit{password} yang sifatnya rahasia atau pribadi. Ada dua skema otentikasi menggunakan \textit{password} ini, yaitu \textit{password} tetap (\textit{fixed password}) dan \textit{password} satu-kali (\textit{one-time password}).
@@ -419,7 +418,7 @@ Saat pengguna akan mengakses sistem, pengguna memasukkan \textit{username} dan \
 	Skema ketiga menggunakan teknik \textit{salting}. Ketika \textit{password} dibuat, sebuah \textit{string} acak, disebut \textit{salt}, akan ditambahkan pada \textit{password}. Setelah ditambahkan, \textit{password} yang bersangkutan akan dihitung nilai \textit{hash}nya. Sistem akan menyimpan \textit{username}, \textit{salt}, dan \textit{hash} atau \textit{digest} dari \textit{password} dalam tabel basis data. Ketika pengguna akan mengakses sistem, sistem akan mengambil \textit{salt} berdasarkan \textit{username} yang dimasukkan kemudian menambahkan \textit{salt} tersebut pada \textit{password} yang dimasukkan dan menghitung nilai \textit{hash}nya kemudian menyesuaikan dengan yang ada pada tabel basis data. Jika sesuai, maka akses diberikan, jika tidak maka akses akan ditolak.
 		% diagram
 	\begin{figure}[ht]
-		\includegraphics[scale=0.7]{Gambar/password_3}
+		\includegraphics[scale=0.5]{Gambar/password_3}
 		\centering
 		\caption{\textit{Password salting}}
 	\end{figure}

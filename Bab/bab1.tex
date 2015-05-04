@@ -4,9 +4,17 @@
 \section{\textbf{Latar Belakang}}
 \label{sec:latar belakang}
 
-Enkripsi adalah proses merahasiakan sebuah informasi dengan cara menyandikan informasi tersebut sehingga informasi tersebut tidak dapat dibaca oleh pihak yang tidak berwenang. Dalam proses enkripsi, dibutuhkan sebuah kunci rahasia (\textit{private key}), untuk menyandikan informasi sehingga tidak bisa dibaca dan untuk mengembalikan informasi sehingga bisa kembali dibaca. Proses enkripsi ini memiliki kelemahan, yaitu jika kunci yang digunakan untuk enkripsi hilang maka  berakibat informasi yang dienkripsi tidak bisa dikembalikan seperti semula.
+Dengan perkembangan teknologi yang semakin canggih, informasi merupakan hal yang berharga. Karena berharga, informasi harus dijaga kerahasiaannya. Enkripsi digunakan untuk menjaga kerahasiaan informasi ini. Enkripsi adalah proses merahasiakan sebuah informasi dengan cara menyandikan informasi tersebut sehingga informasi tersebut tidak dapat dibaca oleh pihak yang tidak berwenang.
 
-Pada umumnya, untuk mengembalikan kunci yang hilang ini, beberapa sistem memiliki mekanisme dengan menyediakan sebuah pertanyaan keamanan yang pertanyaan dan jawabannya sudah dirancang oleh pengguna. Jika pengguna menjawab pertanyaan keamanan ini dengan benar maka pengguna bisa mendapatkan kembali kunci yang hilang. Tetapi, 
+Dalam proses enkripsi, dibutuhkan sebuah kunci, untuk menyandikan informasi sehingga tidak bisa dibaca. Kunci digunakan untuk proses enkripsi untuk mengembalikan informasi supaya bisa dibaca. Kunci ini sifatnya rahasia dan tidak boleh diketahui oleh pihak yang tidak berhak. Salah satu jenis dari kunci yang digunakan dalam proses enkripsi ini adalah \textit{password}.
+
+Namun, proses enkripsi memiliki kelemahan, bila \textit{password} yang digunakan hilang maka kerahasiaan informasi tersebut akan hilang. Akibat lainnya jika \textit{password} hilang adalah informasi tidak bisa dibaca karena tidak bisa dikembalikan lagi oleh proses enkripsi. Permasalahan muncul karena informasi yang perlu dijaga kerahasiaannya tidaklah sedikit, karena itu membutuhkan banyak \textit{password}. Seiring berjalannya waktu, \textit{password} ini dapat hilang karena berbagai hal seperti musibah, kesalahan manusia, bencana alam, dan sebagainya. Karena itu, dibutuhkan metode untuk mengembalikan \textit{password} yang hilang.
+
+Skema \textit{secret sharing} adalah sebuah metode untuk menjaga kerahasiaan informasi dengan membaginya menjadi beberapa bagian. Skema \textit{secret sharing} atau seringkali disebut juga skema \textit{threshold}\begin{math}(k, n)\end{math} membagi informasi menjadi \begin{math}n\end{math} bagian yang disebut \textit{share} dan untuk mengembalikan informasi ini dibutuhkan setidaknya \begin{math}k\end{math} \textit{share}.
+
+Metode \textit{secret sharing} dapat diaplikasikan pada perlidungan \textit{password} yang digunakan dalam proses enkripsi. Dengan membuat beberapa pertanyaan keamanan yang sifatnya personal sebagai representasi dari \begin{math}n\end{math} \textit{share} dan dengan menentukan minimal banyak pertanyaan keamanan yang dijawab dengan benar sebagai representasi dari \begin{math}k\end{math} \textit{share} untuk bisa mengembalikan \textit{password}. Maka, dengan menggunakan metode \textit{secret sharing}, minimal ada \begin{math}k\end{math} \textit{share} maka \textit{password} masih tetap bisa dikembalikan.
+
+Dalam penelitian ini, akan dibahas mengenai cara kerja metode \textit{secret sharing} untuk melindungi \textit{password}, selain itu kualitas dari pertanyaan keamanan yang dibuat akan dinilai sehingga jawaban dari pertanyaan keamanan tidak akan mudah ditebak. Jika jawaban pertanyaan keamanan mudah ditebak tentu saja kerahasiaan \textit{password} akan hilang.
 
 \section{\textbf{Rumusan Masalah}}
 \label{sec:rumusan masalah}
@@ -40,12 +48,12 @@ Batasan masalah pada penelitian ini berupa:
 
 Metodologi dalam penelitian ini berupa:
 \begin{itemize}
-	\item Melakukan studi literatur mengenai {\it secret sharing} shamir
-	\item Melakukan studi literatur mengenai algoritma enkripsi \textit{data encryption standard} (DES)
-	\item Melakukan studi literatur mengenai \textit{secure-hash-algorithm-512} (SHA-512)
-	\item Melakukan analisis dan perancangan mengenai perangkat lunak yang akan dibangun
-	\item Implementasi terhadap hasil analisis dan perancangan perangkat lunak
-	\item Melakukan pengujian perangkat lunak
+	\item Melakukan studi literatur mengenai {\it secret sharing} shamir.
+	\item Melakukan studi literatur mengenai algoritma enkripsi \textit{data encryption standard} (DES).
+	\item Melakukan studi literatur mengenai \textit{secure-hash-algorithm-512} (SHA-512).
+	\item Melakukan analisis dan perancangan mengenai perangkat lunak yang akan dibangun.
+	\item Implementasi terhadap hasil analisis dan perancangan perangkat lunak.
+	\item Melakukan pengujian perangkat lunak.
 \end{itemize}
 
 \section{\textbf{Sistematika Pembahasan}}
@@ -62,7 +70,7 @@ Sistematika pembahasan dalam penelitian ini berupa:
 	\item Bab Perancangan
 	\\Bab 4 berisi tahapan penjelasan rancangan perangkat lunak meliputi algoritma, diagram kelas lengkap, dan rancangan tampilan perangkat lunak.
 	\item Bab Implementasi dan Pengujian
-	\\Bab 5 berisi tahapan implementasi pada perangkat lunak meliputi tampilan dari perangkat lunak, pengujian terdiri dari kasus, skenario, dan hasil observasi, dan kesimpulan
+	\\Bab 5 berisi tahapan implementasi pada perangkat lunak meliputi tampilan antarmuka perangkat lunak, pengujian perangkat lunak, dan kesimpulan.
 	\item Bab Kesimpulan dan Saran
 	\\Bab 6 berisi kesimpulan serta beberapa saran untuk pengembangan lebih lanjut dari penelitian yang dilakukan dan perangkat lunak yang dibangun.
 \end{itemize}
