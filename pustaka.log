@@ -1,0 +1,37 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdftex 2013.12.9)  5 MAY 2015 21:08
+entering extended mode
+**H:/Kuliah/Skripsi/SkripsiLaTex/pustaka.bib
+(H:/Kuliah/Skripsi/SkripsiLaTex/pustaka.bib
+Overfull \hbox (2.74619pt too wide) in paragraph at lines 8--14
+[]\tenrm @bookmunir2010matematikadiskrit, ti-tle=Matematika Diskrit, au-thor=Mu
+nir, Ri-naldi, year=2010, pub-|
+
+\hbox(6.94444+1.94444)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm @
+.\tenrm b
+.\kern0.27779
+.\tenrm o
+.etc.
+
+
+Overfull \hbox (14.4127pt too wide) in paragraph at lines 15--22
+[]\tenrm @bookwalpole1993probability, ti-tle=Probability and statis-tics for en
+-gi-neers and sci-en-tists, au-thor=Walpole,|
+
+\hbox(6.94444+1.94444)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm @
+.\tenrm b
+.\kern0.27779
+.\tenrm o
+.etc.
+
+)
+*
+! Emergency stop.
+<*> H:/Kuliah/Skripsi/SkripsiLaTex/pustaka.bib
+                                              
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

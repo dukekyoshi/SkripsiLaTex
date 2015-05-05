@@ -16,17 +16,15 @@ Kriptografi memiliki 4 layanan utama:
 	Layanan yang menjamin bahwa tidak ada penyangkalan baik oleh pengirim atau penerima pesan.
 \end{enumerate}
 
-Dalam kriptografi, pesan yang dirahasiakan disebut \textit{plaintext}, sedangkan pesan hasil dari penyandian disebut \textit{ciphertext}. Pesan yang telah disandikan dapat dikembalikan lagi ke pesan aslinya hanya oleh orang yang berhak. Orang yang berhak adalah orang yang mengetahui cara penyandian atau memiliki kunci penyandian. Proses menyandikan \textit{plaintext} menjadi \textit{ciphertext} disebut enkripsi (\textit{encryption}) dan proses mengembalikan \textit{ciphertext} menjadi \textit{plaintext} disebut dekripsi (\textit{decryption}). Dalam proses enkripsi dan dekripsi menggunakan kunci (\textit{key}) yaitu sekumpulan huruf, angka, atau simbol. Kunci ini sifatnya rahasia dan tidak boleh diketahui pihak lain yang tidak berwenang.
+Dalam kriptografi, pesan yang dirahasiakan disebut \textit{plaintext}, sedangkan pesan hasil dari penyandian disebut \textit{ciphertext}. Pesan yang telah disandikan dapat dikembalikan lagi ke pesan aslinya hanya oleh orang yang berhak. Orang yang berhak adalah orang yang mengetahui cara penyandian atau memiliki kunci penyandian. Proses menyandikan \textit{plaintext} menjadi \textit{ciphertext} disebut enkripsi (\textit{encryption}) dan proses mengembalikan \textit{ciphertext} menjadi \textit{plaintext} disebut dekripsi (\textit{decryption}). Dalam proses enkripsi dan dekripsi menggunakan kunci (\textit{key}) yaitu sekumpulan huruf, angka, atau simbol. Kunci ini sifatnya rahasia dan tidak boleh diketahui pihak lain yang tidak berwenang. Gambar \ref{fig:prosesenkripsidekripsi} ini menunjukkan proses enkripsi dan dekripsi.
 
 %diagram
-\begin{figure}[h]
-\includegraphics[width=12cm,height=7cm]{Gambar/encryption_decryption}
+\begin{figure}[H]
+\includegraphics[scale=0.5]{Gambar/encryption_decryption}
 \centering
 \caption{Proses enkripsi dan dekripsi}
 \label{fig:prosesenkripsidekripsi}
 \end{figure}
-
-Gambar \ref{fig:prosesenkripsidekripsi} ini menunjukkan proses enkripsi dan dekripsi.
 
 Dalam proses enkripsi, \textit{plaintext} akan dipetakan pada fungsi enkripsi \textit{E} menjadi \textit{ciphertext} didasarkan pada kunci \textit{k} seperti notasi di bawah ini:
 \begin{displaymath}
@@ -57,13 +55,13 @@ Algoritma kriptografi ini dibagi menjadi 2 jenis, yaitu:
 \end{enumerate}
 
 \subsection{\textit{Data Encryption Standard} (DES)}
-\textit{Data Encryption Standard} (DES) adalah algoritma kriptografi kunci simetris, yaitu menggunakan kunci yang sama pada proses enkripsi dan dekripsinya. Masukkan dari DES berupa 64-\textit{bit} \textit{plaintext} dan keluarannya berupa 64-\textit{bit} \textit{ciphertext} dengan 64-\textit{bit} kunci. Proses enkripsi terdiri dari 2 proses permutasi, yaitu permutasi awal dan permutasi akhir, dan 16 ronde sandi feistel. Setiap ronde menggunakan kunci 48-\textit{bit} yang berbeda-beda. Kunci dari setiap ronde ini akan didapat dari round-key generator yang berdasarkan pada 64-\textit{bit} kunci sandi. Gambar di bawah ini menunjukkan proses enkripsi dari DES.
+\textit{Data Encryption Standard} (DES) adalah algoritma kriptografi kunci simetris, yaitu menggunakan kunci yang sama pada proses enkripsi dan dekripsinya. Masukkan dari DES berupa 64-\textit{bit} \textit{plaintext} dan keluarannya berupa 64-\textit{bit} \textit{ciphertext} dengan 64-\textit{bit} kunci. Proses enkripsi terdiri dari 2 proses permutasi, yaitu permutasi awal dan permutasi akhir, dan 16 ronde sandi feistel. Setiap ronde menggunakan kunci 48-\textit{bit} yang berbeda-beda. Kunci dari setiap ronde ini akan didapat dari round-key generator yang berdasarkan pada 64-\textit{bit} kunci sandi. Gambar \ref{fig:enkripsides} menunjukkan proses enkripsi dari DES.
 
 %diagram
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.6]{Gambar/DES}%
 \centering
-\caption{Proses enkripsi dengan DES}
+\caption{Proses enkripsi dengan DES}\label{fig:enkripsides}
 \end{figure}
 
 \subsubsection{Permutasi Awal dan Permutasi Akhir}
@@ -76,8 +74,9 @@ Permutasi awal dan akhir dalam DES menggunakan matriks permutasi. Kedua permutas
 %\caption{Matriks Permutasi}
 %\end{figure}
 
-\begin{table}
-	\begin{center}
+\begin{table}[H]
+	\centering
+	\begin{minipage}[H]{.4\textwidth}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|}
 				\hline
 				\multicolumn{8}{|c|}{\textit{Permutasi Awal}} \\
@@ -86,17 +85,14 @@ Permutasi awal dan akhir dalam DES menggunakan matriks permutasi. Kedua permutas
 				60	&	52	&	44	&	36	&	28	&	20	&	12	&	4	\\ \hline
 				62	&	54	&	46	&	38	&	30	&	22	&	14	&	6	\\ \hline
 				64	&	56	&	48	&	40	&	32	&	24	&	16	&	8	\\ \hline
-				57	&	49	&	41	&	33	&	25	&	17	&	9	&	1		\\ \hline
+				57	&	49	&	41	&	33	&	25	&	17	&	9	&	1	\\ \hline
 				59	&	51	&	43	&	35	&	27	&	19	&	11	&	3	\\ \hline
 				61	&	53	&	45	&	37	&	29	&	21	&	13	&	5	\\ \hline
 				63	&	55	&	47	&	39	&	31	&	23	&	15	&	7	\\ \hline
 		\end{tabular}
-	\end{center}
-	\caption{Matriks Permutasi Awal}\label{table:awal}
-\end{table}
-
-\begin{table}
-	\begin{center}
+		\caption{Matriks Permutasi Awal}\label{table:awal}
+	\end{minipage}\qquad
+	\begin{minipage}[H]{.4\textwidth}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|}
 				\hline
 				\multicolumn{8}{|c|}{\textit{Permutasi Akhir}} \\
@@ -108,29 +104,30 @@ Permutasi awal dan akhir dalam DES menggunakan matriks permutasi. Kedua permutas
 				36	&	4	&	44	&	12	&	52	&	20	&	60	&	28	\\ \hline
 				35	&	3	&	43	&	11	&	51	&	19	&	59	&	27	\\ \hline
 				34	&	2	&	42	&	10	&	50	&	18	&	58	&	26	\\ \hline
-				33	&	1	&	41	&	9		&	49	&	17	&	57	&	25	\\ \hline
+				33	&	1	&	41	&	9	&	49	&	17	&	57	&	25	\\ \hline
 		\end{tabular}
-	\end{center}
-	\caption{Matriks Permutasi Akhir}\label{table:akhir}
+		\caption{Matriks Permutasi Akhir}\label{table:akhir}
+	\end{minipage}\hfill
 \end{table}
 
-Sebagai contoh, \textit{bit} ke-58 dari input akan menjadi \textit{bit} ke-1 pada output permutasi awal, \textit{bit} ke-50 akan menjadi \textit{bit} ke-2 pada output permutasi awal dan seterusnya. Cara yang sama akan diterapkan pada proses permutasi akhir nanti setelah 16 ronde sandi feistel.
+
+Sebagai contoh, \textit{bit} ke-58 dari input akan menjadi \textit{bit} ke-1 pada output permutasi awal, \textit{bit} ke-50 akan menjadi \textit{bit} ke-2 pada output permutasi awal dan seterusnya. Cara yang sama akan diterapkan pada proses permutasi akhir nanti setelah 16 ronde sandi feistel. Gambar \ref{fig:prosespermutasi} menunjukkan proses permutasi.
 
 %diagram
-\begin{figure}[h]
-\includegraphics[scale=0.5]{Gambar/proses_permutasi}
+\begin{figure}[H]
+\includegraphics[scale=0.6]{Gambar/proses_permutasi}
 \centering
-\caption{Proses Permutasi}
+\caption{Proses Permutasi}\label{fig:prosespermutasi}
 \end{figure}
 
 \subsubsection{Ronde}
-DES menggunakan 16 ronde. Setiap ronde dari DES adalah sandi feistel yang ditunjukkan pada gambar di bawah.
+DES menggunakan 16 ronde. Setiap ronde dari DES adalah sandi feistel yang ditunjukkan pada gambar \ref{fig:rondedes}.
 
 %diagram
-\begin{figure}[h]
-\includegraphics[scale=0.5]{Gambar/round}
+\begin{figure}[H]
+\includegraphics[scale=0.6]{Gambar/round}
 \centering
-\caption{Ronde dalam DES}
+\caption{Ronde dalam DES}\label{fig:rondedes}
 \end{figure}
 
 Setiap ronde menggunakan \begin{math}L_{I-1}\end{math} dan \begin{math}R_{I-1}\end{math} dari ronde sebelumnya (atau dari permutasi awal) dan memrosesnya menjadi \begin{math}L_I\end{math} dan \begin{math}R_I\end{math} untuk nanti dilanjutkan ke proses yang berikutnya (atau permutasi akhir). \begin{math}f(R_{I-1},K_I)\end{math}  merupakan fungsi DES. Plaintext (64-\textit{bit}) akan dibagi 2 menjadi bagian kiri (\textit{L}) dan bagian kanan (\textit{R}). Bagian kanan akan diproses lagi oleh fungsi \begin{math}f(R_{I-1},K_I)\end{math}. Kemudian, hasil dari fungsi \begin{math}f(R_{I-1},K_I)\end{math} akan di XOR dengan bagian kiri. Hasil dari XOR akan menjadi \begin{math}R_I\end{math} dan hasil dari fungsi \begin{math}f(R_{I-1},K_I)\end{math} akan menjadi \begin{math}L_I\end{math}. Pada ronde ke-16 tidak akan terjadi pertukaran antara bagian \begin{math}L_{I-1}\end{math} dan \begin{math}R_{I-1}\end{math}.
@@ -151,13 +148,13 @@ Fungsi DES merupakan inti dari algoritma DES. Fungsi DES menerima masukkan kunci
 	Ekspansi ini dilakukan berdasarkan nilai-nilai yang ada dalam \textit{P-box}. Gambar \ref{fig:expansi} menunjukkan proses ekspansi dan Tabel \ref{table:Pbox} menunjukkan matriks \textit{P-box}.
 	
 	%diagram
-	\begin{figure}[h]
-	\includegraphics[scale=0.5]{Gambar/expansion_permutation}
+	\begin{figure}[H]
+	\includegraphics[scale=0.6]{Gambar/expansion_permutation}
 	\centering
 	\caption{Proses permutasi ekspansi}\label{fig:expansi}
 	\end{figure}
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|}
 				\hline
@@ -183,13 +180,13 @@ Fungsi DES merupakan inti dari algoritma DES. Fungsi DES menerima masukkan kunci
 	DES menggunakan 8 buah \textit{S-box}, masing-masing dengan 6-\textit{bit} masukkan dan 4-\textit{bit} keluaran. Gambar \ref{fig:substitusi_s_box} menunjukkan proses substitusi \textit{S-box} dan Tabel \ref{table:s_box1} menunjukkan \textit{S-box} yang pertama.
 	
 	%diagram
-\begin{figure}[h]
+\begin{figure}[H]
 	\includegraphics[scale=0.5]{Gambar/S-box}
 	\centering
 	\caption{Proses substitusi \textit{S-box}}\label{fig:substitusi_s_box}
 \end{figure}
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 				\hline
@@ -205,7 +202,7 @@ Fungsi DES merupakan inti dari algoritma DES. Fungsi DES menerima masukkan kunci
 
 Berikut adalah \textit{S-box} ke-2 sampai dengan \textit{S-box} ke-8.
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 				\hline
@@ -219,7 +216,7 @@ Berikut adalah \textit{S-box} ke-2 sampai dengan \textit{S-box} ke-8.
 	\caption{\textit{S-box} 2}\label{table:s_box2}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 				\hline
@@ -234,7 +231,7 @@ Berikut adalah \textit{S-box} ke-2 sampai dengan \textit{S-box} ke-8.
 	\caption{\textit{S-box} 3}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 				\hline
@@ -249,7 +246,7 @@ Berikut adalah \textit{S-box} ke-2 sampai dengan \textit{S-box} ke-8.
 	\caption{\textit{S-box} 4}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 				\hline
@@ -264,7 +261,7 @@ Berikut adalah \textit{S-box} ke-2 sampai dengan \textit{S-box} ke-8.
 	\caption{\textit{S-box} 5}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 				\hline
@@ -279,7 +276,7 @@ Berikut adalah \textit{S-box} ke-2 sampai dengan \textit{S-box} ke-8.
 	\caption{\textit{S-box} 6}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 				\hline
@@ -294,7 +291,7 @@ Berikut adalah \textit{S-box} ke-2 sampai dengan \textit{S-box} ke-8.
 	\caption{\textit{S-box} 7}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 				\hline
@@ -311,12 +308,12 @@ Berikut adalah \textit{S-box} ke-2 sampai dengan \textit{S-box} ke-8.
 
 Pada bagian ini, akan dilakukan operasi substitusi berdasarkan aturan pada \textit{S-box}. Setiap \textit{S-box} adalah matriks berukuran 4x16 (4 baris, 16 kolom). Setiap isi dari \textit{S-box} akan berbeda-beda. Kombinasi biner dari \textit{bit} ke-1 dan ke-6 masukan menunjukkan posisi baris yang akan dipilih dan kombinasi biner dari \textit{bit} masukan sisanya menunjukkan posisi kolom yang akan dipilih. Setelah itu, angka yang ditunjuk oleh baris dan kolom kombinasi biner ini akan diubah juga menjadi biner.
 
-	Sebagai contoh, misalkan masukan untuk \textit{S-box} diatas adalah 110011. Maka, baris yang dipilih adalah 11 dalam biner dan 3 dalam desimal dan kolom yang dipilih adalah 1001 dalam biner dan 9 dalam desimal. Berarti, nilai yang didapat berdasarkan \textit{S-box} diatas adalah 11 dan dalam biner adalah 1011. Maka, keluaran dari 110011 adalah 1011.
+	Sebagai contoh, misalkan masukan untuk \textit{S-box} pertama adalah 110011. Maka, baris yang dipilih adalah 11 dalam biner dan 3 dalam desimal dan kolom yang dipilih adalah 1001 dalam biner dan 9 dalam desimal. Berarti, nilai yang didapat berdasarkan \textit{S-box} diatas adalah 11 dan dalam biner adalah 1011. Maka, keluaran dari 110011 adalah 1011.
 
 	\item Permutasi\\
-Bagian terakhir dari fungsi DES adalah permutasi langsung dengan masukan 32-\textit{bit} dan keluaran 32-\textit{bit}. Proses nya sama dengan permutasi yang dilakukan pada awal proses enkripsi tetapi ukuran matriks permutasi 4x8 (4 baris, 8 kolom). Gambar di bawah ini menunjukkan matriks permutasi langsung.
+Bagian terakhir dari fungsi DES adalah permutasi langsung dengan masukan 32-\textit{bit} dan keluaran 32-\textit{bit}. Proses nya sama dengan permutasi yang dilakukan pada awal proses enkripsi tetapi ukuran matriks permutasi 4x8 (4 baris, 8 kolom). Tabel \ref{table:permutasi_langsung} menunjukkan matriks permutasi langsung.
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|}
 				\hline
@@ -340,19 +337,19 @@ Sama halnya seperti proses permutasi yang dilakukan di awal enkripsi, angka 16 m
 \end{enumerate}
 
 \subsection{Pembangunan Kunci Ronde}
-Pembangunan kunci ronde adalah algoritma untuk membentuk kunci yang akan digunakan pada setiap ronde. Pembangunan kunci ronde akan menghasilkan 16 kunci masing-masing dengan panjang 48-\textit{bit} dari masukan 56-\textit{bit} kunci sandi. Tetapi, sebenarnya panjang sandi kunci ini adalah 64-\textit{bit} dengan 8-\textit{bit} \textit{parity bit}. \textit{Parity bit} akan dihilangkan sebelum proses pembangkitan kunci sandi 56-\textit{bit}. Proses pembangkitan kunci sandi 56-\textit{bit} bisa dilihat pada gambar di bawah.
+Pembangunan kunci ronde adalah algoritma untuk membentuk kunci yang akan digunakan pada setiap ronde. Pembangunan kunci ronde akan menghasilkan 16 kunci masing-masing dengan panjang 48-\textit{bit} dari masukan 56-\textit{bit} kunci sandi. Tetapi, sebenarnya panjang sandi kunci ini adalah 64-\textit{bit} dengan 8-\textit{bit} \textit{parity bit}. \textit{Parity bit} akan dihilangkan sebelum proses pembangkitan kunci sandi 56-\textit{bit}. Proses pembangkitan kunci sandi 56-\textit{bit} bisa dilihat pada Gambar \ref{fig:kuncironde}.
 
 %diagram
-\begin{figure}[h]
+\begin{figure}[H]
 	\includegraphics[scale=0.8]{Gambar/key_generation2}
 	\centering
-	\caption{\textit{Round-Key Generator}}
+	\caption{Proses Pembangunan Kunci Ronde}\label{fig:kuncironde}
 \end{figure}
 
 \subsubsection{\textit{Parity Drop}}
-Proses yang dilakukan sebelum pembangkitan kunci sandi adalah penghilangan \textit{parity bit} pada kunci sandi 64-\textit{bit}. Bit yang dihilangkan adalah \textit{bit} ke-8, 16, 24, 32, ..., 64 sehingga hasil akhirnya adalah 56-\textit{bit} sandi kunci yang nanti kunci ini akan digunakan untuk membuat kunci setiap ronde. Matriks permutasi yang digunakan pada proses ini ditunjukkan pada gambar di bawah.
+Proses yang dilakukan sebelum pembangkitan kunci sandi adalah penghilangan \textit{parity bit} pada kunci sandi 64-\textit{bit}. Bit yang dihilangkan adalah \textit{bit} ke-8, 16, 24, 32, ..., 64 sehingga hasil akhirnya adalah 56-\textit{bit} sandi kunci yang nanti kunci ini akan digunakan untuk membuat kunci setiap ronde. Matriks permutasi yang digunakan pada proses ini ditunjukkan pada Tabel \ref{table:parity_drop}.
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|}
 				\hline
@@ -365,8 +362,7 @@ Proses yang dilakukan sebelum pembangkitan kunci sandi adalah penghilangan \text
 				29	&	21	&	13	&	5	&	28	&	20	&	12	&	4	\\ \hline
 		\end{tabular}
 	\end{center}
-	\label{table:parity_drop}
-	\caption{Matriks Permutasi untuk \textit{Parity Drop}}
+	\caption{Matriks Permutasi untuk \textit{Parity Drop}}\label{table:parity_drop}
 \end{table}
 
 %diagram
@@ -383,7 +379,7 @@ Pada tahap ini, kunci yang akan dibentuk akan dipisah menjadi 2 bagian masing-ma
 \label{sssec:kompresi_Pbox}
 Kompresi dengan \textit{P-box} adalah tahap permutasi untuk mengubah kunci 56-\textit{bit} menjadi 48-\textit{bit} agar bisa digunakan sebagai ronde kunci. Kompresi ini menggunakan matriks permutasi \textit{P-box} dengan ukuran 6x8 seperti Tabel \ref{table:kompresi_p}.
 
-\begin{table}
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|l|l|l|}
 				\hline
@@ -395,8 +391,7 @@ Kompresi dengan \textit{P-box} adalah tahap permutasi untuk mengubah kunci 56-\t
 				32	&	29	&	36	&	50	&	42	&	46	&	53	&	34	\\ \hline
 		\end{tabular}
 	\end{center}
-	\label{table:kompresi_p}
-	\caption{Matriks kompresi \textit{P-box}}
+	\caption{Matriks kompresi \textit{P-box}}\label{table:kompresi_p}
 \end{table}
 
 %diagram
@@ -414,23 +409,21 @@ Fungsi \textit{hash} adalah algoritma kriptografi yang membuat kompresi dari pes
 
 \noindent Fungsi \textit{hash} memiliki 4 kriteria utama, yaitu:
 \begin{itemize}
-	\item Semua nilai hash memiliki panjang yang sama.
-	\item Mudah untuk menghitung nilai \textit{hash} untuk setiap \textit{message} masukkan.
+	\item Semua nilai \textit{hash} memiliki panjang yang sama.
 	\item Nilai \textit{hash} tidak bisa dikembalikan menjadi \textit{message}.
 	\item Tidak ada 2 atau lebih \textit{message} yang memiliki nilai \textit{hash} yang sama.
-	\item Saat \textit{message} berubah maka nilai hashnya juga akan berubah.
+	\item Saat \textit{message} berubah maka nilai \textit{hash}nya juga akan berubah.
 \end{itemize}
 Contoh fungsi \textit{hash} antara lain SHA-0, SHA-1, SHA-512, MD-2, dan MD-5.
 
 \subsection{\textit{Secure Hashing Algorithm} 512 (SHA-512)}
 \label{subsec:SHA512}
-\textit{Secure hashing algorithm} 512 atau SHA-512 adalah algoritma fungsi \textit{hash} yang menghasilkan 512-\textit{bit} \textit{message digest}. SHA-512 merupakan algoritma fungsi \textit{hash} dalam versi SHA yang menghasilkan \textit{message digest} paling panjang (512-\textit{bit}). SHA-512 membuat 512-\textit{bit} digest yang diambil dari beberapa blok \textit{message}. Setiap blok \textit{message} panjangnya 1024 bit. Gambar di bawah ini menunjukkan cara pembuatan \textit{message digest}.
+\textit{Secure hashing algorithm} 512 atau SHA-512 adalah algoritma fungsi \textit{hash} yang menghasilkan 512-\textit{bit} \textit{message digest}. SHA-512 merupakan algoritma fungsi \textit{hash} dalam versi SHA yang menghasilkan \textit{message digest} paling panjang (512-\textit{bit}). SHA-512 membuat 512-\textit{bit} digest yang diambil dari beberapa blok \textit{message}. Setiap blok \textit{message} panjangnya 1024 bit. Gambar \ref{fig:digestcreate} menunjukkan cara pembuatan \textit{message digest}.
 
 %diagram
-\begin{figure}[ht]
+\begin{figure}[H]
 	\includegraphics[scale=0.8]{Gambar/digest_creation}
-	\centering
-	\caption{Pembuatan \textit{message digest}}
+	\caption{Pembuatan \textit{message digest}}\label{fig:digestcreate}
 \end{figure}
 
 \subsubsection{Persiapan \textit{Message}}
@@ -441,7 +434,7 @@ SHA-512 menerima masukan \textit{message} dengan panjang kurang dari \begin{math
 Sebelum \textit{message digest} atau \textit{digest} dapat dibuat, SHA-512 membutuhkan tambahan 128-\textit{bit} yang menunjukkan panjang dari \textit{message}. Panjang dari \textit{message} ini direpresentasikan oleh 128-\textit{bit} tambahan.
 
 %diagram
-\begin{figure}[ht]
+\begin{figure}[H]
 	\includegraphics[scale=0.6]{Gambar/length_field_padding}
 	\centering
 	\caption{\textit{Length field} dan \textit{padding} dalam SHA-512}
@@ -463,21 +456,21 @@ Cara menuliskan \textit{padding} diawali dengan angka 1 kemudian diikuti oleh be
 SHA-512 beroperasi dengan ukuran \textit{words}. Panjang dari satu \textit{word} adalah 64-\textit{bit}. Ini berarti, setelah proses \textit{padding} ditambahkan pada \textit{message}, setiap blok \textit{message} akan terdiri dari 16 buah 64-\textit{bit word}. \textit{Message digest} atau \textit{digest} juga akan terdiri dari 64-\textit{bit word} namun panjangnya hanya 8 \textit{word} dan setiap \textit{word} nya dinamakan \begin{math}A, B, C, D, E, F, G\end{math}, dan \begin{math}H\end{math}.
 
 %diagram
-\begin{figure}[ht]
+\begin{figure}[H]
 	\includegraphics[scale=0.6]{Gambar/message_block_digest_as_words}
 	\centering
-	\caption{Blok \textit{message} dan \textit{message digest} dalam \textit{word}}
+	\caption{Blok \textit{message} dan \textit{message digest} dalam \textit{word}}\label{fig:blokmessagedigest}
 \end{figure}
 
 \subsubsection{Ekspansi \textit{Word}}
 \label{sssec:ekspansi_word}
-Sebelum diproses, setiap blok \textit{message} harus diekspansi, panjang setiap blok ini adalah 1024-\textit{bit} terdiri dari 16 buah 64-\textit{bit word}. Pada tahap pemrosesan, dibutuhkan 80 buah 64-\textit{bit word} maka dari itu, 16 \textit{word} ini harus diekspansi menjadi 80 \textit{word}, \begin{math}W_0\end{math} sampai \begin{math}W_79\end{math}. Gambar di bawah ini akan menunjukkan cara ekspansi \textit{word}.
+Sebelum diproses, setiap blok \textit{message} harus diekspansi, panjang setiap blok ini adalah 1024-\textit{bit} terdiri dari 16 buah 64-\textit{bit word}. Pada tahap pemrosesan, dibutuhkan 80 buah 64-\textit{bit word} maka dari itu, 16 \textit{word} ini harus diekspansi menjadi 80 \textit{word}, \begin{math}W_0\end{math} sampai \begin{math}W_79\end{math}. Gambar \ref{fig:wordexpand} menunjukkan cara ekspansi \textit{word}.
 
 %diagram
-\begin{figure}[ht]
-	\includegraphics[scale=0.4]{Gambar/word_expansion}
+\begin{figure}[H]
+	\includegraphics[scale=0.5]{Gambar/word_expansion}
 	\centering
-	\caption{Ekspansi \textit{word}}
+	\caption{Ekspansi \textit{word}}\label{fig:wordexpand}
 \end{figure}
 
 \begin{displaymath}
@@ -490,41 +483,41 @@ Sebelum diproses, setiap blok \textit{message} harus diekspansi, panjang setiap 
 \subsubsection{Inisialisasi \textit{Message Digest}}
 SHA-512 menggunakan 8 buah konstanta dalam proses insialisasi \textit{message digest}. Konstanta ini akan diberi nama \begin{math}A_0\end{math} sampai \begin{math}H_0\end{math}. Setiap nilai dari konstanta didapat dari 8 bilangan prima pertama (2, 3, 5, 7, 11, 13, 17, 19). Setiap nilai merupakan nilai pecahan atau angka di belakang koma dari akar kuadrat bilangan prima yang bersangkutan.
 
-Sebagai contoh, \begin{math}H_0\end{math} didapat dari nilai \begin{math}\sqrt{19} = 4.35889894354\end{math}. Kemudian, nilai ini akan dikonversi ke biner sepanjang 64-\textit{bit} maka akan diperoleh \begin{math}(100.0101\quad 1011\quad 1110 ... 1001)_2=(4.5BE0CD19137E2179)_{16}\end{math}. SHA-512 hanya mengambil nilai yang di belakang koma saja jadi nilai dari \begin{math}H_0 = 5BE0CD19137E2179\end{math}. Gambar di bawah ini menunjukkan nilai dari \begin{math}A_0\end{math} sampai \begin{math}H_0\end{math} dalam heksadesimal.
+Sebagai contoh, \begin{math}H_0\end{math} didapat dari nilai \begin{math}\sqrt{19} = 4.35889894354\end{math}. Kemudian, nilai ini akan dikonversi ke biner sepanjang 64-\textit{bit} maka akan diperoleh \begin{math}(100.0101\quad 1011\quad 1110 ... 1001)_2=(4.5BE0CD19137E2179)_{16}\end{math}. SHA-512 hanya mengambil nilai yang di belakang koma saja jadi nilai dari \begin{math}H_0 = 5BE0CD19137E2179\end{math}. Gambar \ref{fig:konstanta_sha} menunjukkan nilai dari \begin{math}A_0\end{math} sampai \begin{math}H_0\end{math} dalam heksadesimal.
 
 %diagram
-\begin{figure}[ht]
+\begin{figure}[H]
 	\includegraphics[scale=0.8]{Gambar/konstanta_sha}
 	\centering
 	\caption{Konstanta inisialisasi dalam SHA-512}\label{fig:konstanta_sha}
 \end{figure}
 
 \subsubsection{Fungsi Kompresi}
-SHA-512 membuat \textit{message digest} sepanjang 512-\textit{bit} (8 \textit{word}) dari beberapa blok \textit{message} yang masing-masing panjangnya 1024-\textit{bit}. Pemrosesan setiap blok \textit{message} ini dilakukan sebanyak 80 ronde. Setiap ronde akan terdiri dari \begin{math}W_i\end{math} digabungkan dengan \begin{math}K_i\end{math} untuk membuat \begin{math}W_i\end{math} baru yang akan digunakan pada ronde selanjutnya. Pada akhir ronde 79, nilai \begin{math}W_0\end{math} sampai \begin{math}W_7\end{math} pada ronde 79 akan ditambahkan oleh nilai \begin{math}W_0\end{math} sampai \begin{math}W_7\end{math} pada ronde yang paling awal (ronde 0) dan dimodulo oleh \begin{math}2^{64}\end{math}. Hasil yang diperoleh disebut \textit{message digest} atau \textit{final digest}. Gambar di bawah ini menunjukkan proses fungsi kompresi pada SHA-512.
+SHA-512 membuat \textit{message digest} sepanjang 512-\textit{bit} (8 \textit{word}) dari beberapa blok \textit{message} yang masing-masing panjangnya 1024-\textit{bit}. Pemrosesan setiap blok \textit{message} ini dilakukan sebanyak 80 ronde. Setiap ronde akan terdiri dari \begin{math}W_i\end{math} digabungkan dengan \begin{math}K_i\end{math} untuk membuat \begin{math}W_i\end{math} baru yang akan digunakan pada ronde selanjutnya. Pada akhir ronde 79, nilai \begin{math}W_0\end{math} sampai \begin{math}W_7\end{math} pada ronde 79 akan ditambahkan oleh nilai \begin{math}W_0\end{math} sampai \begin{math}W_7\end{math} pada ronde yang paling awal (ronde 0) dan dimodulo oleh \begin{math}2^{64}\end{math}. Hasil yang diperoleh disebut \textit{message digest} atau \textit{final digest}. Gambar \ref{fig:fungsikompresi} menunjukkan proses fungsi kompresi pada SHA-512.
 
 %diagram
-\begin{figure}[ht]
+\begin{figure}[H]
 	\includegraphics[scale=0.8]{Gambar/compression_function}
 	\centering
-	\caption{Fungsi kompresi dalam SHA-512}
+	\caption{Fungsi kompresi dalam SHA-512}\label{fig:fungsikompresi}
 \end{figure}
 
 \subsubsection{Ronde}
 \label{sssec:rondesha512}
-Pada setiap ronde, 8 nilai baru pada 64-\textit{bit word} dibuat dari 8 nilai 64-\textit{bit word} pada ronde sebelumnya. Nilai baru ini dinamakan \textit{buffer}. Enam dari delapan \textit{buffer} mendapatkan nilai dari \textit{buffer} ronde sebelumnya. Sedangkan untuk 2 \textit{buffer} lagi nilai keduanya diperoleh dari sebuah fungsi kompleks yang berhubungan dengan \textit{buffer} sisanya serta gabungan tambahan dari \begin{math}W_i\end{math} dan \begin{math}K_i\end{math}, bersangkutan dengan masing-masing ronde. Gambar di bawah ini akan menjelaskan struktur dari setiap ronde serta fungsi kompleks yang digunakan untuk mendapatkan nilai untuk 2 \textit{buffer} (\begin{math}A\end{math} dan \begin{math}E\end{math}).
+Pada setiap ronde, 8 nilai baru pada 64-\textit{bit word} dibuat dari 8 nilai 64-\textit{bit word} pada ronde sebelumnya. Nilai baru ini dinamakan \textit{buffer}. Enam dari delapan \textit{buffer} mendapatkan nilai dari \textit{buffer} ronde sebelumnya. Sedangkan untuk 2 \textit{buffer} lagi nilai keduanya diperoleh dari sebuah fungsi kompleks yang berhubungan dengan \textit{buffer} sisanya serta gabungan tambahan dari \begin{math}W_i\end{math} dan \begin{math}K_i\end{math}, bersangkutan dengan masing-masing ronde. Gambar \ref{fig:rondesha} menunjukkan struktur dari setiap ronde dan Gambar \ref{fig:fungsikompleks} menunjukkan fungsi kompleks yang digunakan untuk mendapatkan nilai untuk 2 \textit{buffer} (\begin{math}A\end{math} dan \begin{math}E\end{math}).
 
 %diagram
-\begin{figure}[ht]
+\begin{figure}[H]
 	\includegraphics[scale=0.8]{Gambar/sha_round}
 	\centering
-	\caption{Struktur ronde dalam SHA-512}
+	\caption{Struktur ronde dalam SHA-512}\label{fig:rondesha}
 \end{figure}
 
 %diagram
-\begin{figure}[ht]
+\begin{figure}[H]
 	\includegraphics[scale=0.7]{Gambar/complex_function}
 	\centering
-	\caption{Fungsi kompleks dalam SHA-512}
+	\caption{Fungsi kompleks dalam SHA-512}\label{fig:fungsikompleks}
 \end{figure}
 
 Nilai dari \begin{math}Majority(A, B, C)\end{math}, \begin{math}Conditional(E, F, G)\end{math}, \begin{math}Rotate(A)\end{math}, dan \begin{math}Rotate(E)\end{math} pada gambar di atas didapat dari rumus di bawah ini.
@@ -551,25 +544,25 @@ Otentikasi adalah proses untuk menentukan apakah sebuah entitas diijinkan untuk 
 Sebuah pesan inti (\textit{message digest}) dapat digunakan untuk menjamin integritas sebuah pesan, memastikan pesan tidak diubah. Namun, pesan inti tidak bisa memastikan keaslian pengirim pesan. Ketika Alice mengirim pesan kepada Bob, Bob harus bisa tahu bahwa pesan yang dikirim berasal dari Alice. Supaya Bob bisa memastikan bahwa Alice yang mengirim pesan, maka Alice harus bisa menyediakan bukti bahwa Alice adalah pengirimnya. Contoh dari otentikasi ini antara lain adalah \textit{modification detection code} (MDC) dan \textit{message authentication code} (MAC).
 
 \subsubsection{\textit{Modification Detection Code}}
-\textit{Modification detection code} merupakan sebuah pesan inti yang dapat memastikan integritas dari sebuah pesan, bahwa pesan tidak diubah saat proses pengiriman. Alice dapat membuat pesan inti, yaitu kode deteksi modifikasi dan mengirimkannya bersama dengan pesan asli kemudian Bob akan membuat juga secara terpisah kode deteksi modifikasi berdasarkan pesan asli yang dikirim Alice dan membandingkan dengan kode deteksi modifikasi yang dikirim Alice. Jika sama, maka pesan yang dikirim oleh Alice asli dan tidak berubah saat pengiriman. Proses diatas dapat ditunjukkan pada diagram di bawah ini.
+\textit{Modification detection code} merupakan sebuah pesan inti yang dapat memastikan integritas dari sebuah pesan, bahwa pesan tidak diubah saat proses pengiriman. Alice dapat membuat pesan inti, yaitu kode deteksi modifikasi dan mengirimkannya bersama dengan pesan asli kemudian Bob akan membuat juga secara terpisah kode deteksi modifikasi berdasarkan pesan asli yang dikirim Alice dan membandingkan dengan kode deteksi modifikasi yang dikirim Alice. Jika sama, maka pesan yang dikirim oleh Alice asli dan tidak berubah saat pengiriman. Proses diatas dapat ditunjukkan pada Gambar \ref{fig:MDC}.
 
 %diagram
-\begin{figure}[ht]
+\begin{figure}[H]
 	\includegraphics[scale=0.65]{Gambar/MDC}
 	\centering
-	\caption{\textit{Modification detection code}}
+	\caption{\textit{Modification detection code}}\label{fig:MDC}
 \end{figure}
 
 Diagram diatas menunjukkan bahwa pesan yang dikirim Alice dapat dikirim melalui saluran yang tidak aman, maksudnya pihak lain diluar Alice dan Bob bisa membacanya bahkan mengubah isinya, tapi MDC yang dibuat oleh Alice harus dikirimkan pada Bob di saluran aman. Dengan cara ini, MDC tidak akan bisa diubah isinya dan ketika pesan yang dikirim melalui saluran tidak aman diubah maka Bob akan tahu bahwa pesan sudah diubah oleh pihak lain dengan membandingkan hasil MDC dari pesan yang dia terima dengan MDC yang Alice kirimkan melalui saluran aman.
 
 \subsubsection{\textit{Message Authentication Code}}
-Untuk memastikan bahwa memang Alice yang mengirimkan pesan kepada Bob maka kode deteksi pesan yang digunakan harus diubah menjadi \textit{message authentication code} (MAC). Perbedaan MAC dengan MDC adalah MAC menggunakan sebuah kunci rahasia atau kunci pribadi yang hanya diketahui oleh Alice dan Bob saja. Diagram di bawah ini akan menunjukkan cara kerja MAC dalam mengotentikasi pesan.
+Untuk memastikan bahwa memang Alice yang mengirimkan pesan kepada Bob maka kode deteksi pesan yang digunakan harus diubah menjadi \textit{message authentication code} (MAC). Perbedaan MAC dengan MDC adalah MAC menggunakan sebuah kunci rahasia atau kunci pribadi yang hanya diketahui oleh Alice dan Bob saja. Gambar \ref{fig:MAC} menunjukkan cara kerja MAC dalam mengotentikasi pesan.
 
 %diagram
-\begin{figure}[ht]
+\begin{figure}[H]
 	\includegraphics[scale=0.7]{Gambar/MAC}
 	\centering
-	\caption{\textit{Modification authentication code}}
+	\caption{\textit{Modification authentication code}}\label{fig:MAC}
 \end{figure}
 
 Alice menggunakan fungsi \textit{hash} untuk membuat MAC dengan menggunakan gabungan dari pesan dan kunci rahasia yang hanya diketahui olehnya dan Bob saja. Kemudian, Alice mengirimkan pesan beserta dengan MAC pesan tersebut kepada Bob. Bob akan menerima pesan dan memisahkan MAC dengan pesan dan kemudian Bob akan membuat MAC dari pesan yang diterima dari Alice dengan menggunakan fungsi hash yang sama seperti Alice gunakan dan tentu saja MAC yang dibuat merupakan gabungan dari pesan dan kunci rahasia. Melalui cara ini, jika hasil keluaran MAC yang Bob buat sendiri dibandingkan dengan MAC yang Alice kirimkan sama, maka Bob bisa yakin dengan pasti bahwa pesan yang dia terima berasal dari Alice dan pesan tersebut asli, tidak diubah oleh pihak lain. Terdapat beberapa modifikasi dari \textit{message authentication code} antara lain adalah \textit{nested MAC}, \textit{hashed MAC}, dan CMAC. 
@@ -607,17 +600,17 @@ Salah satu teknik otentikasi entitas yang paling sederhana dan mudah adalah oten
 	\item Skema 1\\
 	Dalam skema ini, sistem menyimpan setiap \textit{password} dalam sebuah tabel basis data yang diurutkan berdasarkan nama pengguna (\textit{username}). Saat pengguna akan mengakses sistem, maka pengguna akan memasukkan \textit{username} dan \textit{password} dalam bentuk \textit{plaintext}. Kemudian, sistem akan mencari \textit{password} berdasarkan \textit{username}. Jika \textit{password} yang dimasukkan pengguna sesuai dengan \textit{password} yang ada dalam tabel basis data maka pengguna diberikan akses masuk ke dalam sistem, jika tidak sesuai maka pengguna tidak diberikan akses masuk ke dalam sistem. Kekurangan dari skema ini adalah karena \textit{password} disimpan dalam tabel basis data maka setiap orang yang memiliki akses ke dalam basis data dapat mengetahui setiap \textit{password} yang disimpan dan tentu saja hal ini melanggar salah satu layanan dari kriptografi yaitu, kerahasiaan data (\textit{data confidentiality}).
 	% diagram
-	\begin{figure}[ht]
+	\begin{figure}[H]
 		\includegraphics[scale=0.7]{Gambar/password_1}
 		\centering
 		\caption{\textit{Username} dan \textit{Password}}
 	\end{figure}
 	
 	\item Skema 2\\
-	Skema yang lebih aman dibandingkan skema diatas adalah skema penyimpanan password yang menggunakan fungsi \textit{hash}. Sistem tidak lagi menyimpan \textit{password} dengan bentuk \textit{plaintext} dalam tabel basis data, namun sistem menyimpan \textit{password} dalam bentuk hashnya dalam tabel basis data, sehingga saat sistem dibobol maka penyerang tidak dapat mengetahui \textit{password} secara langsung karena fungsi \textit{hash} adalah fungsi satu arah dan mustahil untuk mengembalikan ke \textit{plaintext}nya. Selain itu, orang-orang yang memiliki akses ke dalam basis data tidak bisa mengetahui \textit{password} dari setiap \textit{username} yang disimpan dalam tabel. Ketika \textit{password} dibuat, sistem akan menghitung nilai \textit{hash} dari \textit{password} dan menyimpan nilai hash tersebut dalam tabel basis data.
+	Skema yang lebih aman dibandingkan skema diatas adalah skema penyimpanan \textit{password} yang menggunakan fungsi \textit{hash}. Sistem tidak lagi menyimpan \textit{password} dengan bentuk \textit{plaintext} dalam tabel basis data, namun sistem menyimpan \textit{password} dalam bentuk hashnya dalam tabel basis data, sehingga saat sistem dibobol maka penyerang tidak dapat mengetahui \textit{password} secara langsung karena fungsi \textit{hash} adalah fungsi satu arah dan mustahil untuk mengembalikan ke \textit{plaintext}nya. Selain itu, orang-orang yang memiliki akses ke dalam basis data tidak bisa mengetahui \textit{password} dari setiap \textit{username} yang disimpan dalam tabel. Ketika \textit{password} dibuat, sistem akan menghitung nilai \textit{hash} dari \textit{password} dan menyimpan nilai hash tersebut dalam tabel basis data.
 Saat pengguna akan mengakses sistem, pengguna memasukkan \textit{username} dan \textit{password} dalam bentuk \textit{plaintext} kemudian sistem akan menghitung nilai hash dari \textit{password} tersebut dan menyesuaikan dengan nilai \textit{hash} dari \textit{password} yang bersangkutan dalam tabel basis data. Jika sesuai, maka pengguna diberikan ijin masuk ke dalam sistem, jika tidak maka pengguna tidak diberikan ijin masuk.
 	% diagram
-	\begin{figure}[ht]
+	\begin{figure}[H]
 		\includegraphics[scale=0.7]{Gambar/password_2}
 		\centering
 		\caption{\textit{Password hashing}}
@@ -626,7 +619,7 @@ Saat pengguna akan mengakses sistem, pengguna memasukkan \textit{username} dan \
 	\item Skema 3\\
 	Skema ketiga menggunakan teknik \textit{salting}. Ketika \textit{password} dibuat, sebuah \textit{string} acak, disebut \textit{salt}, akan ditambahkan pada \textit{password}. Setelah ditambahkan, \textit{password} yang bersangkutan akan dihitung nilai \textit{hash}nya. Sistem akan menyimpan \textit{username}, \textit{salt}, dan \textit{hash} atau \textit{digest} dari \textit{password} dalam tabel basis data. Ketika pengguna akan mengakses sistem, sistem akan mengambil \textit{salt} berdasarkan \textit{username} yang dimasukkan kemudian menambahkan \textit{salt} tersebut pada \textit{password} yang dimasukkan dan menghitung nilai \textit{hash}nya kemudian menyesuaikan dengan yang ada pada tabel basis data. Jika sesuai, maka akses diberikan, jika tidak maka akses akan ditolak.
 		% diagram
-	\begin{figure}[ht]
+	\begin{figure}[H]
 		\includegraphics[scale=0.5]{Gambar/password_3}
 		\centering
 		\caption{\textit{Password salting}}
