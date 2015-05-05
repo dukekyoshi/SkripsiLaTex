@@ -3,60 +3,54 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Proses enkripsi dan dekripsi\relax }}{4}{figure.caption.4}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Proses enkripsi dengan DES\relax }}{5}{figure.caption.5}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Matriks Permutasi\relax }}{5}{figure.caption.7}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Proses Permutasi\relax }}{6}{figure.caption.8}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Ronde dalam DES\relax }}{7}{figure.caption.10}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Proses permutasi ekspansi\relax }}{7}{figure.caption.12}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces \textit {P-box}\relax }}{8}{figure.caption.13}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Proses substitusi \textit {S-box}\relax }}{8}{figure.caption.14}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces \textit {S-box}\relax }}{9}{figure.caption.15}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Matriks Permutasi Langsung\relax }}{9}{figure.caption.16}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces \textit {Round-Key Generator}\relax }}{10}{figure.caption.17}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Matriks permutasi untuk \textit {Parity drop}\relax }}{10}{figure.caption.19}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Matriks kompresi \textit {P-box}\relax }}{11}{figure.caption.22}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Pembuatan \textit {message digest}\relax }}{11}{figure.caption.23}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces \textit {Length field} dan \textit {padding} dalam SHA-512\relax }}{12}{figure.caption.26}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Blok \textit {message} dan \textit {message digest} dalam \textit {word}\relax }}{12}{figure.caption.28}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Ekspansi \textit {word}\relax }}{13}{figure.caption.30}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Konstanta inisialisasi dalam SHA-512\relax }}{13}{figure.caption.32}
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Fungsi kompresi dalam SHA-512\relax }}{14}{figure.caption.34}
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Struktur ronde dalam SHA-512\relax }}{15}{figure.caption.36}
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Fungsi kompleks dalam SHA-512\relax }}{15}{figure.caption.37}
-\contentsline {figure}{\numberline {2.22}{\ignorespaces \textit {Modification detection code}\relax }}{16}{figure.caption.39}
-\contentsline {figure}{\numberline {2.23}{\ignorespaces \textit {Modification authentication code}\relax }}{17}{figure.caption.41}
-\contentsline {figure}{\numberline {2.24}{\ignorespaces \textit {Username} dan \textit {Password}\relax }}{17}{figure.caption.44}
-\contentsline {figure}{\numberline {2.25}{\ignorespaces \textit {Password hashing}\relax }}{18}{figure.caption.45}
-\contentsline {figure}{\numberline {2.26}{\ignorespaces \textit {Password salting}\relax }}{18}{figure.caption.46}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Proses Permutasi\relax }}{6}{figure.caption.9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ronde dalam DES\relax }}{7}{figure.caption.11}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Proses permutasi ekspansi\relax }}{7}{figure.caption.13}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Proses substitusi \textit {S-box}\relax }}{9}{figure.caption.15}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces \textit {Round-Key Generator}\relax }}{10}{figure.caption.25}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Pembuatan \textit {message digest}\relax }}{12}{figure.caption.31}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces \textit {Length field} dan \textit {padding} dalam SHA-512\relax }}{12}{figure.caption.34}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Blok \textit {message} dan \textit {message digest} dalam \textit {word}\relax }}{13}{figure.caption.36}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Ekspansi \textit {word}\relax }}{13}{figure.caption.38}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Konstanta inisialisasi dalam SHA-512\relax }}{14}{figure.caption.40}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Fungsi kompresi dalam SHA-512\relax }}{14}{figure.caption.42}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Struktur ronde dalam SHA-512\relax }}{15}{figure.caption.44}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Fungsi kompleks dalam SHA-512\relax }}{15}{figure.caption.45}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces \textit {Modification detection code}\relax }}{16}{figure.caption.47}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces \textit {Modification authentication code}\relax }}{17}{figure.caption.49}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces \textit {Username} dan \textit {Password}\relax }}{19}{figure.caption.52}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces \textit {Password hashing}\relax }}{19}{figure.caption.53}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces \textit {Password salting}\relax }}{20}{figure.caption.54}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Proses pembangunan \textit {share} dari \textit {password}\relax }}{41}{figure.caption.48}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Proses pembangunan kembali atau rekonstruksi \textit {password}\relax }}{41}{figure.caption.49}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram \textit {use case} dari perangkat lunak\relax }}{42}{figure.caption.50}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagram aktivitas untuk menyimpan \textit {password}\relax }}{42}{figure.caption.51}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagram aktivitas untuk mengembalikan \textit {password}\relax }}{43}{figure.caption.52}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagram kelas \textit {engine}\relax }}{44}{figure.caption.53}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Arsitektur perangkat lunak\relax }}{45}{figure.caption.54}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Proses pembangunan \textit {share} dari \textit {password}\relax }}{41}{figure.caption.56}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Proses pembangunan kembali atau rekonstruksi \textit {password}\relax }}{41}{figure.caption.57}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram \textit {use case} dari perangkat lunak\relax }}{42}{figure.caption.58}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagram aktivitas untuk menyimpan \textit {password}\relax }}{42}{figure.caption.59}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagram aktivitas untuk mengembalikan \textit {password}\relax }}{43}{figure.caption.60}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagram kelas \textit {engine}\relax }}{44}{figure.caption.61}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Arsitektur perangkat lunak\relax }}{45}{figure.caption.62}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Perancangan Tampilan Awal\relax }}{48}{figure.caption.55}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Perancangan Tampilan Menyimpan \textit {Password}\relax }}{48}{figure.caption.56}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Perancangan Tampilan Mengembalikan \textit {Password}\relax }}{49}{figure.caption.57}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Perancangan Tampilan Mengembalikan \textit {Password}\relax }}{49}{figure.caption.58}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagram Kelas Rinci\relax }}{53}{figure.caption.59}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Perancangan Tampilan Awal\relax }}{48}{figure.caption.63}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Perancangan Tampilan Menyimpan \textit {Password}\relax }}{48}{figure.caption.64}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Perancangan Tampilan Mengembalikan \textit {Password}\relax }}{49}{figure.caption.65}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Perancangan Tampilan Mengembalikan \textit {Password}\relax }}{49}{figure.caption.66}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagram Kelas Rinci\relax }}{53}{figure.caption.67}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Tampilan antarmuka awal\relax }}{55}{figure.caption.60}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Tampilan antarmuka untuk menyimpan \textit {password}\relax }}{56}{figure.caption.61}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Tampilan antarmuka untuk menyimpan \textit {password}\relax }}{56}{figure.caption.62}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Tampilan antarmuka untuk menyimpan \textit {password}\relax }}{57}{figure.caption.63}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Tampilan antarmuka untuk menyimpan \textit {password}\relax }}{57}{figure.caption.64}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Tampilan antarmuka untuk mengembalikan \textit {password}\relax }}{58}{figure.caption.65}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Tampilan antarmuka untuk mengembalikan \textit {password}\relax }}{58}{figure.caption.66}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Tampilan antarmuka untuk mengembalikan \textit {password}\relax }}{59}{figure.caption.67}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Langkah menyimpan \textit {password}\relax }}{60}{figure.caption.68}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Langkah menjawab pertanyaan keamanan\relax }}{60}{figure.caption.69}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces \textit {Password} berhasil dikembalikan\relax }}{60}{figure.caption.70}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Langkah menjawab pertanyaan keamanan\relax }}{61}{figure.caption.71}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces \textit {Password} tidak berhasil dikembalikan\relax }}{61}{figure.caption.72}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Pengujian survei kasus 1\relax }}{62}{figure.caption.74}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Pengujian survei kasus 1\relax }}{63}{figure.caption.76}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Pengujian survei kasus 1\relax }}{64}{figure.caption.79}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Tampilan antarmuka awal\relax }}{55}{figure.caption.68}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Tampilan antarmuka untuk menyimpan \textit {password}\relax }}{56}{figure.caption.69}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Tampilan antarmuka untuk menyimpan \textit {password}\relax }}{56}{figure.caption.70}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Tampilan antarmuka untuk menyimpan \textit {password}\relax }}{57}{figure.caption.71}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Tampilan antarmuka untuk menyimpan \textit {password}\relax }}{57}{figure.caption.72}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Tampilan antarmuka untuk mengembalikan \textit {password}\relax }}{58}{figure.caption.73}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Tampilan antarmuka untuk mengembalikan \textit {password}\relax }}{58}{figure.caption.74}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Tampilan antarmuka untuk mengembalikan \textit {password}\relax }}{59}{figure.caption.75}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Langkah menyimpan \textit {password}\relax }}{60}{figure.caption.76}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Langkah menjawab pertanyaan keamanan\relax }}{60}{figure.caption.77}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces \textit {Password} berhasil dikembalikan\relax }}{60}{figure.caption.78}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Langkah menjawab pertanyaan keamanan\relax }}{61}{figure.caption.79}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces \textit {Password} tidak berhasil dikembalikan\relax }}{61}{figure.caption.80}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Pengujian survei kasus 1\relax }}{62}{figure.caption.82}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Pengujian survei kasus 1\relax }}{63}{figure.caption.84}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Pengujian survei kasus 1\relax }}{64}{figure.caption.87}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
