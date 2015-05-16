@@ -1,1024 +1,401 @@
 \chapter{Analisis}
 \label{chap:analisis}
 
-Pada bab ini akan dibahas analisis terhadap teori-teori yang telah dibahas sebelumnya. Analisis akan meliputi studi kasus untuk algoritma \textit{secret sharing} shamir yang telah dibahas sebelumnya, algoritma \textit{secret sharing} shamir yang dikembangkan, dan perancangan perangkat lunak.
+Pada bab ini akan dibahas analisis terhadap teori-teori yang telah dibahas sebelumnya. Analisis akan meliputi studi kasus untuk penerapan metode \textit{secret sharing} Shamir, pemilihan \begin{math}n\end{math} dan \begin{math}k\end{math}, dan perancangan perangkat lunak.
 
 \section{Studi Kasus}
-Bagian ini akan berisi studi kasus mengenai algoritma \textit{secret sharing} shamir yang telah dibahas sebelumnya dan algoritma \textit{secret sharing} shamir yang telah dikembangkan.
 
-\subsection{\textit{Secret Sharing} Shamir}
-Pada bagian ini akan dijelaskan proses pembangunan \textit{share} untuk \textit{secret sharing} shamir pada sebuah data \textit{S}, proses pembangunan kembali \begin{math}S\end{math} dari \textit{share-share} yang ada, dan proses penyelesaian persamaan linear untuk pembangunan kembali \begin{math}S\end{math}. Untuk contoh kasus ini, diasumsikan jenis data yang digunakan adalah angka positif, dipilih \begin{math}S=1234\end{math}.
+Pada bagian ini akan dibahas studi kasus tentang bagaimana penerapan metode \textit{secret sharing} Shamir untuk banyak password. Studi kasus meliputi pengenalan kasus, pembangunan share, dan rekonstruksi rahasia.
 
-\begin{flushleft}
-	\textbf{Proses pembangunan \textit{share}}
-\end{flushleft}
+\subsection{Pengenalan Kasus}\label{subsec:pengenalankasus}
 
-Langkah yang perlu dilakukan pertama adalah memilih banyak \textit{share} \begin{math}n\end{math} yang diinginkan dan banyak minimal \textit{share} yang diperlukan untuk mengembalikan \begin{math}S\end{math}, yaitu \begin{math}k\end{math}. Untuk kasus ini, akan dipilih \begin{math}n=8\end{math} dan \begin{math}k=3\end{math}.
+Langkah awal yang dibutuhkan untuk mengembalikan banyak \textit{password} dengan metode \textit{secret sharing} Shamir, diperlukan beberapa tahap proses. Proses pertama adalah proses penyimpanan \textit{password}. Kemudian, proses selanjutnya adalah proses untuk mengembalikan banyak \textit{password}. Proses pertama membutuhkan beberapa \textit{password}. Untuk \begin{math}n\end{math} buah \textit{password}, maka akan dibuat \begin{math}n\end{math} buah pertanyaan keamanan. Sementara itu, untuk proses mengembalikan \textit{password} dibutuhkan pertanyaan keamanan yang sudah dibuat dalam proses sebelumnya.
 
-Langkah selanjutnya adalah memilih \begin{math}k-1\end{math} angka acak yang nanti akan digunakan sebagai koefesien fungsi polinomial \begin{math}f(x)\end{math}. Karena pada kasus ini \begin{math}k=3\end{math} maka ada 2 angka acak yang dipilih, misalkan 237 dan 55. Maka fungsi \begin{math}f(x)\end{math} untuk menghitung nilai setiap \textit{share}:
-
-\begin{equation}
-	f(x) = 1234 + 237x + 55x^2
-\end{equation}
-
-Kemudian, akan dihitung nilai dari setiap \begin{math}f(x_i)\end{math} dari \begin{math}f(1)\end{math} sampai \begin{math}f(8)\end{math} karena \begin{math}n=8\end{math}:
-
-\begin{gather*}
-	f(1) = 1234 + 237*1 + 55*1*1 = 1526	\\
-	f(2) = 1234 + 237*2 + 55*2*2 = 1928	\\
-	f(3) = 1234 + 237*3 + 55*3*3 = 2440	\\
-	f(4) = 1234 + 237*4 + 55*4*4 = 3062	\\
-	f(5) = 1234 + 237*5 + 55*5*5 = 3794	\\
-	f(6) = 1234 + 237*6 + 55*6*6 = 4636	\\
-	f(7) = 1234 + 237*7 + 55*7*7 = 5588	\\
-	f(8) = 1234 + 237*8 + 55*8*8 = 6650
-\end{gather*}
-
-Maka diperoleh nilai untuk setiap \begin{math}S_1\end{math} sampai \begin{math}S_8\end{math}.
-\begin{displaymath}
-	S_1 = 1526, S_2 = 1928, S_3 = 2440, S_4 = 3062, S_5 = 3794, S_6 = 4636, S_7 = 5588, S_8 = 6650
-\end{displaymath}
-
-\begin{flushleft}
-	\textbf{Proses pembangunan kembali (rekonstruksi \textit{S})}
-\end{flushleft}
-
-Karena pada kasus ini \begin{math}k=3\end{math} maka untuk mengembalikan \begin{math}S\end{math} maka hanya dibutuhkan 3 \textit{share} saja. Misalkan \textit{share} yang dipilih adalah \begin{math}S_2\end{math}, \begin{math}S_4\end{math}, dan \begin{math}S_5\end{math}.
-
-Langkah selanjutnya adalah membentuk rumus dasar dari fungsi \begin{math}f(x)\end{math}. Karena pada kasus ini, \begin{math}k=3\end{math}, maka rumus dasar dari \begin{math}f(x)\end{math}:
-\begin{displaymath}
-	f(x) = c + bx + ax^2
-\end{displaymath}
-
-Setelah rumus dasar dari fungsi \begin{math}f(x)\end{math} dibentuk, langkah selanjutnya adalah menghitung nilai masing-masing fungsi berdasarkan \textit{share} yang diketahui, dalam kasus ini adalah \begin{math}S_2\end{math}, \begin{math}S_4\end{math}, dan \begin{math}S_5\end{math}, maka nilai masing-masing fungsi \begin{math}f(x)\end{math}:
-\begin{gather*}
-	f(2) = c + 2b + 4a = 1928	\\
-	f(4) = c + 2b + 16a = 3062	\\
-	f(5) = c + 5b + 25a = 3794
-\end{gather*}
-
-Langkah selanjutnya adalah menyelesaikan persamaan linear di atas, sehingga nanti bisa diperoleh nilai \begin{math}c\end{math} dimana seperti yang diketahui nilai \begin{math}c\end{math} merupakan \begin{math}S\end{math} karena \begin{math}S\end{math} adalah konstanta tanpa koefesien dari \begin{math}f(x)\end{math} (\begin{math}f(0) = c\end{math}).
-
-\begin{flushleft}
-	\textbf{Proses penyelesaian persamaan linear untuk pembangunan kembali (rekonstruksi \textit{S})}
-\end{flushleft}
-
-Pada bagian ini akan dijelaskan proses penyelesaian persamaan linear menggunakan eliminasi gauss. Pada kasus ini, persamaan linear yang diperoleh:
-\begin{gather*}
-	c + 2b + 4a = 1928	\\
-	c + 2b + 16a = 3062	\\
-	c + 5b + 25a = 3794
-\end{gather*}
-
-Langkah awal yang perlu dilakukan dalam eliminasi gauss adalah transformasi persamaan linear ke matriks. Maka, dari persamaan linear di atas matriksnya:
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 & 	2 & 	4  & 	1928 \\[1em]
-			1 & 	4 & 	16 & 	3062 \\[1em]
-			1 & 	5 & 	25 & 	3794
-	\end{bmatrix}
-	\]
-\end{center}
-
-Langkah selanjutnya adalah proses yang dinamakan operasi baris, yaitu operasi aritmatika (tambah, kurang, kali dan bagi) pada setiap baris dari matriks. Proses ini dilakukan sampai diperoleh bentuk matriks segitiga atas, yaitu matriks bujur sangkar yang semua elemen di bawah diagonal utamanya 0. Berikut langkah-langkah proses untuk memperoleh matriks segitiga atas. Sebelumnya, untuk akan diberi label untuk masing-masing baris, baris pertama, \begin{math}L_1\end{math}, baris kedua, \begin{math}L_2\end{math}, dan baris ketiga, \begin{math}L_3\end{math}.
-
-Langkah pertama dari operasi baris untuk membangun matriks segitiga atas adalah mengurangi \begin{math}L_2\end{math} dan \begin{math}L_3\end{math} dengan \begin{math}L_1\end{math} agar setiap elemen kolom pertama di bawah \begin{math}L_1\end{math} nilainya menjadi 0 (nol).
-
-\begin{center}
-	\begin{gather*}
-		L_2 - L_1	\\
-		L_3 - L_1
-	\end{gather*}
-\end{center}
-
-\begin{flushleft}
-	Maka, matriksnya menjadi
-\end{flushleft}
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 & 	2 & 	4  & 	1928 \\[1em]
-			0 & 	2 & 	12 & 	1134 \\[1em]
-			0 & 	3 & 	21 & 	1866
-	\end{bmatrix}
-	\]
-\end{center}
-
-\begin{flushleft}
-	Kemudian, untuk \begin{math}L_2\end{math} dan \begin{math}L_3\end{math} akan disederhanakan nilainya, dengan cara membagi \begin{math}L_2\end{math} dengan 2 dan \begin{math}L_3\end{math} dengan 3.
-\end{flushleft}
-
-\begin{center}
-	\begin{gather*}
-		\frac{1}{2}L_2	\\
-		\frac{1}{3}L_3
-	\end{gather*}
-\end{center}
-
-\begin{flushleft}
-	Maka, matriksnya menjadi
-\end{flushleft}
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 & 	2 & 	4  & 	1928 	\\[1em]
-			0 & 	1 & 	6 & 	567 	\\[1em]
-			0 & 	1 & 	7 & 	622
-	\end{bmatrix}
-	\]
-\end{center}
-
-\begin{flushleft}
-	Kemudian, \begin{math}L_3\end{math} akan dikurangi oleh \begin{math}L_2\end{math} sehingga, bisa diperoleh matriks segitiga atas.
-\end{flushleft}
-
-\begin{center}
-	\begin{displaymath}
-		L_3 - L_2
-	\end{displaymath}
-\end{center}
-
-\begin{flushleft}
-	Maka, matriksnya menjadi
-\end{flushleft}
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 & 	2 & 	4  & 	1928 	\\[1em]
-			0 & 	1 & 	6 & 	567 	\\[1em]
-			0 & 	0 & 	1 & 	55
-	\end{bmatrix}
-	\]
-\end{center}
-
-Langkah selanjutnya adalah menghitung nilai konstanta untuk masing-masing koefesien dengan cara melakukan substitusi balik. Setiap koefesien pada persamaan diasosiasikan dengan kolom pada matriks, kolom pertama untuk \begin{math}c\end{math}, kolom kedua untuk \begin{math}b\end{math}, dan kolom ketiga untuk \begin{math}a\end{math}. Maka, dari substitusi balik ini diperoleh:
-
-Untuk nilai \begin{math}a\end{math} diperoleh dari \begin{math}L_3\end{math}.
-\begin{center}
-	\begin{gather*}
-		a = 55
-	\end{gather*}
-\end{center}
-
-\begin{flushleft}
-	Kemudian, untuk nilai \begin{math}b\end{math} diperoleh dari \begin{math}L_2\end{math} dengan mensubstitusi nilai \begin{math}a\end{math}.
-\end{flushleft}
-
-\begin{center}
-	\begin{gather*}
-		b + 6a = 567 \\
-		b + 6*55 = 567 \\
-		b = 567 - 330 \\
-		b = 237
-	\end{gather*}
-\end{center}
-
-\begin{flushleft}
-	Substitusi balik terakhir adalah untuk mendapatkan nilai \begin{math}c\end{math} dengan mensubstitusi nilai \begin{math}a\end{math} dan \begin{math}b\end{math} pada \begin{math}L_1\end{math}, dimana nilai \begin{math}c\end{math} adalah \begin{math}S\end{math} karena seperti yang diketahui, \begin{math}S\end{math} adalah konstanta bebas.
-\end{flushleft}
-
-\begin{center}
-	\begin{gather*}
-		c + 2b + 4a = 1928 \\
-		c + 2*237 + 4*55 = 1925 \\
-		c = 1928 - 474 - 220 \\
-		c = 1234
-	\end{gather*}
-\end{center}
-
-\subsection{Pengembangan Algoritma \textit{Secret Sharing} Shamir}
-
-Jika pada contoh kasus sebelumnya adalah algoritma \textit{secret sharing} shamir pada jenis data angka. Pada bagian ini akan dijelaskan pengembangan dari algoritma \textit{secret sharing} shamir untuk jenis data tulisan atau kalimat. Sama seperti contoh kasus sebelumnya, pada bagian ini ada 3 proses, yaitu proses pembangunan pembangunan \textit{share} untuk data \begin{math}S\end{math}, proses rekonstruksi \begin{math}S\end{math} dari \textit{share-share}, dan proses penyelesaian persamaan linear untuk mengembalikan nilai \begin{math}S\end{math}. Untuk contoh kasus ini, data \begin{math}S\end{math} bentuknya berupa tulisan atau kalimat.
-
-\begin{displaymath}
-	S = \text{\textbf{\textit{secret}}}
-\end{displaymath}
-
-\begin{flushleft}
-	\textbf{Proses pembangunan \textit{share}}
-\end{flushleft}
-
-Langkah yang perlu dilakukan pertama adalah memilih banyak \textit{share} \begin{math}n\end{math} yang diinginkan dan banyak minimal \textit{share} yang diperlukan untuk mengembalikan \begin{math}S\end{math}, yaitu \begin{math}k\end{math}. Untuk kasus ini, akan dipilih \begin{math}n=8\end{math} dan \begin{math}k=4\end{math}.
-
-Karena \begin{math}S\end{math} merupakan tulisan atau kalimat, sebelum menentukan angka acak untuk konstanta setiap koefesien, setiap karakter dari \begin{math}S\end{math} (termasuk spasi) harus diubah menjadi angka berdasarkan nilai ASCII. Jadi, untuk masing-masing karakter dalam \begin{math}S\end{math}.
-
-\begin{align*}
-	's' &= 115 \\
-	'e' &= 101 \\
-	'c' &= 99 \\
-	'r' &= 114 \\
-	'e' &= 101 \\
-	't' &= 116
-\end{align*}
-
-Langkah berikutnya adalah memilih \begin{math}k-1\end{math} angka acak yang nanti akan digunakan sebagai koefesien fungsi polinomial \begin{math}f(x)\end{math}. Karena \begin{math}S\end{math} merupakan tulisan atau kalimat, maka perlu dipilih angka acak untuk setiap karakter dari \begin{math}S\end{math}. Dalam contoh kasus ini, ada \begin{math}k-1\end{math} angka acak untuk masing-masing karakter dari \begin{math}S\end{math} dan karena \begin{math}k=4\end{math}, maka untuk masing-masing karakter terdapat 3 angka acak.
-\begin{itemize}
-	\item \begin{math}'s'\end{math}: 43, 45, dan 27
-	\item \begin{math}'e'\end{math}: 24, 88, dan 54
-	\item \begin{math}'c'\end{math}: 48, 31, dan 26
-	\item \begin{math}'r'\end{math}: 19, 59, dan 60
-	\item \begin{math}'e'\end{math}: 95, 75, dan 32
-	\item \begin{math}'t'\end{math}: 63, 90, dan 44
-\end{itemize}
-
-Perlu diketahui, pemilihan angka dari masing-masing karakter \begin{math}S\end{math} dilakukan secara acak dan tidak memiliki kaitan antara satu karakter dengan karakter lainnya. Langkah selanjutnya adalah membangun fungsi polinomial \begin{math}f(x)\end{math} yang akan digunakan untuk menghitung nilai-nilai \textit{share}.
+Untuk kedua proses di atas, diasumsikan banyak \textit{password} yang akan disimpan sebanyak 5 buah. Setiap \textit{password} akan diberi label \begin{math}p_1\end{math}, \begin{math}p_2\end{math}, sampai \begin{math}p_5\end{math}. Persamaan \ref{eq:passwords1} sampai \ref{eq:passwords5} menunjukkan \begin{math}p_1\end{math} sampai \begin{math}p_5\end{math}.
 
 \begin{gather}
-	f_1(x) = 115 + 43x + 45x^2 + 27x^3 \\
-	f_2(x) = 101 + 24x + 88x^2 + 54x^3 \\
-	f_3(x) = 99 + 48x + 31x^2 + 26x^3 \\
-	f_4(x) = 114 + 19x + 59x^2 + 60x^3 \\
-	f_5(x) = 101 + 95x + 75x^2 + 32x^3 \\
-	f_6(x) = 116 + 63x + 90x^2 + 44x^3
+	p_1 = 123456 \label{eq:passwords1} \\
+	p_2 = password \label{eq:passwords2} \\
+	p_3 = hello123 \label{eq:passwords3} \\
+	p_4 = secret \label{eq:passwords4} \\
+	p_5 = foobar \label{eq:passwords5}
 \end{gather}
 
-Langkah selanjutnya adalah menghitung nilai setiap \textit{share} untuk masing-masing fungsi. Setiap fungsi \begin{math}f(x)\end{math} memiliki 8 \textit{share} karena \begin{math}n=8\end{math}. Tabel \ref{table:share_data_s} menunjukkan nilai setiap \textit{share} dari \textit{share} ke-1 sampai \textit{share} ke-8 untuk setiap fungsi \begin{math}f(x)\end{math}.
+\subsection{Proses Penyimpanan \textit{Password}}\label{subsec:simpanpassword}
+
+Proses penyimpanan \textit{password} dibagi menjadi 2 proses, yaitu proses pembangunan \textit{share} untuk masing-masing \textit{password} dan proses enkripsi dari setiap \textit{share} yang sudah dibangun. Pada bagian ini akan dibahas kedua proses tersebut.
+
+\subsubsection{Proses Pembangunan \textit{Share}}
+
+Pada proses ini, akan dilakukan pembangunan \textit{share} dari masing-masing \textit{password}. Langkah-langkah untuk membangun share adalah sebagai berikut.
+
+\begin{enumerate}
+	\item Membagi setiap \textit{password} \begin{math}p_i\end{math} menjadi beberapa karakter, masing-masing karakter akan diubah menjadi nilai ASCIInya, \begin{math}c_1, c_2, ..., c_m\end{math}.
+		\item Memilih nilai \begin{math}n\end{math}, yaitu banyak \textit{share} yang akan dibangun.
+	\item Memilih nilai \begin{math}k\end{math}, yaitu banyak minimal pertanyaan keamanan yang harus dijawab dengan benar, dimana \begin{math}0 < k \leq n\end{math}.
+	\item Memilih \begin{math}k-1\end{math} angka acak, \begin{math}d_1, d_2, ..., d_{k-1}\end{math}, untuk masing-masing karakter \begin{math}c_1, c_2, ..., c_m\end{math}.
+	\item Membentuk fungsi \begin{math}f_m(x)\end{math} untuk masing-masing karakter \begin{math}c_1, c_2, ..., c_m\end{math}. 
+	Komponen dari fungsi \begin{math}f_m(x)\end{math} terdiri atas \begin{math}c_m\end{math} sebagai konstanta tanpa koefesien, \begin{math}d_1, d_2, ..., d_{k-1}\end{math} sebagai konstanta dengan koefesien. Persamaan \ref{eq:fungsifx} menunjukkan persamaan dari fungsi \begin{math}f_m(x)\end{math} yang harus dibentuk.
+	\begin{equation}
+		f_m(x) = c_m + d_1x + d_2x^2 + d_3x^3 + ... + d_{k-1}x^{k-1}
+		\label{eq:fungsifx}
+	\end{equation}
+	\item Menghitung masing-masing nilai \begin{math}x\end{math} dari \begin{math}x=1, x=2, ..., x=n\end{math} untuk fungsi \begin{math}f_m(x)\end{math}.
+	\item Nilai \begin{math}f_m(1)\end{math} sampai \begin{math}f_m(n)\end{math} adalah nilai \textit{share} untuk password \begin{math}p_i\end{math}.
+\end{enumerate}
+
+Kembali kepada kasus pada Subbab \ref{subsec:pengenalankasus}, misalkan \textit{password} yang akan dibangun \textit{share-share}nya adalah \begin{math}p_1\end{math}. Langkah pertama adalah membagi \begin{math}p_1\end{math} menjadi beberapa karakter dan mengubah masing-masing karakter menjadi nilai ASCIInya. Persamaan \ref{eq:ubahascii1} sampai \ref{eq:ubahascii7} menunjukkan langkah pertama.
+
+\begin{gather}
+	p_1 = 123456 \label{eq:ubahascii1} \\
+	c_1 = '1' = 49 \label{eq:ubahascii2} \\
+	c_2 = '2' = 50 \label{eq:ubahascii3} \\
+	c_3 = '3' = 51 \label{eq:ubahascii4} \\
+	c_4 = '4' = 52 \label{eq:ubahascii5} \\
+	c_5 = '5' = 53 \label{eq:ubahascii6} \\
+	c_6 = '6' = 54 \label{eq:ubahascii7}
+\end{gather}
+
+Langkah selanjutnya adalah memilih nilai \begin{math}n\end{math}. Karena banyak \textit{password} \begin{math}p_i\end{math} adalah 5, maka banyak \textit{share} untuk masing-masing \textit{password} sebanyak 5. Maka, \begin{math}n=5\end{math}.
+
+Setelah memilih nilai \begin{math}n\end{math}, langkah berikutnya adalah memilih nilai \begin{math}k\end{math}. Nilai \begin{math}k\end{math} ini nanti akan berhubungan dengan banyak minimal pertanyaan keamanan yang harus dijawab benar untuk mengembalikan \textit{password}. Untuk kasus ini, dipilih \begin{math}k=3\end{math}.
+
+Langkah selanjutnya adalah memilih \begin{math}k-1\end{math} angka acak untuk masing-masing karakter \begin{math}c_1\end{math} sampai \begin{math}c_6\end{math}. Karena \begin{math}k=3\end{math}, maka dipilih 2 angka acak untuk masing-masing karakter. Berikut angka acak untuk masing-masing karakter.
+
+\begin{itemize}
+	\item \begin{math}c_1\end{math}: 12 dan 6.
+	\item \begin{math}c_2\end{math}: 15 dan 11.
+	\item \begin{math}c_3\end{math}: 22 dan 1.
+	\item \begin{math}c_4\end{math}: 21 dan 3.
+	\item \begin{math}c_5\end{math}: 19 dan 8.
+	\item \begin{math}c_6\end{math}: 25 dan 17.
+\end{itemize}
+
+Setelah memilih angka acak untuk masing-masing karakter, langkah selanjutnya adalah membentuk fungsi \begin{math}f(x)\end{math} untuk masing-masing karakter. Maka, fungsi \begin{math}f_1(x)\end{math} sampai \begin{math}f_6(x)\end{math} yang dibentuk adalah sebagai ditunjukkan pada persamaan \ref{eq:fungsi1} sampai \ref{eq:fungsi6}.
+
+\begin{gather}
+	f_1(x) = 49 + 12x + 6x^2 \label{eq:fungsi1} \\
+	f_2(x) = 50 + 15x + 11x^2 \label{eq:fungsi2} \\
+	f_3(x) = 51 + 22x + x^2 \label{eq:fungsi3} \\
+	f_4(x) = 52 + 21x + 3x^2 \label{eq:fungsi4} \\
+	f_5(x) = 53 + 19x + 8x^2 \label{eq:fungsi5} \\
+	f_6(x) = 54 + 25x + 17x^2 \label{eq:fungsi6}
+\end{gather}
+
+Langkah selanjutnya adalah menghitung nilai \begin{math}x=1, x=2, ..., x=n\end{math} untuk fungsi \begin{math}f_1(x)\end{math} sampai \begin{math}f_6(x)\end{math}. Tabel \ref{table:itungx} menunjukkan nilai \begin{math}x=1\end{math} sampai \begin{math}x=5\end{math} untuk masing-masing fungsi \begin{math}f(x)\end{math}.
 
 \begin{table}[H]
 	\begin{center}
+		\caption{Nilai \textit{x} untuk masing-masing \textit{f(x)}}\label{table:itungx}
 		\begin{tabular}{| >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} |}
 				\hline
 				& f_1(x) 	& f_2(x) 	& f_3(x) 	& f_4(x) 	& f_5(x) 	& f_6(x) 	\\ \hline
-			1 & 230	 		& 267 		& 204			& 252			& 303			& 313			\\ \hline
-			2 & 597 		& 933			& 527			& 868			& 847			& 954			\\ \hline
-			3 & 1378 		& 2423		& 1224		& 2322		& 1925		& 2303		\\ \hline
-			4 & 2735 		& 5061		& 2451		& 4974		& 3729		& 4624		\\ \hline
-			5 & 4830 		& 9171		& 4364		& 9184		& 6451		& 8181		\\ \hline
-			6 & 7825 		& 15077		& 7119		& 15312		& 10283		& 13238		\\ \hline
-			7 & 11882		& 23103		& 10872		& 23718		& 15417		& 20059		\\ \hline
-			8 & 17163		& 33573		& 15779		& 34762		& 22045		& 28908		\\ \hline
+			1 & 67	 		& 76 			& 74			& 76			& 80			& 96			\\ \hline
+			2 & 97 			& 124			& 99			& 106			& 123			& 172			\\ \hline
+			3 & 139 		& 194			& 126			& 142			& 182			& 282			\\ \hline
+			4 & 193 		& 286			& 155			& 184			& 257			& 426			\\ \hline
+			5 & 259 		& 400			& 186			& 232			& 348			& 604			\\ \hline
 		\end{tabular}
 	\end{center}
-	\caption{\textit{Share} dari Data \textit{S}}\label{table:share_data_s}
 \end{table}
 
-Dengan begitu, diperoleh 48 \textit{share} untuk data \begin{math}S\end{math}. Selanjutnya diberi label untuk masing-masing \textit{share}:
-\begin{displaymath}
-	S_{11} = f_1(1), S_{12} = f_1(2), S_{13} = f_1(3), ... , S_{68} = f_6(8)
-\end{displaymath}
+Setiap nilai \begin{math}x\end{math} pada Tabel \ref{table:itungx} adalah nilai \textit{share-share} untuk password \begin{math}p_1\end{math}. Setiap nilai \begin{math}x\end{math} ini akan diberi label \begin{math}s_{11}\end{math} untuk \textit{share} pertama dari fungsi pertama, \begin{math}s_{21}\end{math} untuk \textit{share} kedua dari fungsi pertama, dan seterusnya sampai \begin{math}s_{56}\end{math} untuk \textit{share} kelima dari fungsi keenam. Nilai \textit{share} yang sudah diberi label ditunjukkan pada persamaan \ref{eq:nilaishare}.
 
-\begin{flushleft}
-	\textbf{Proses pembangunan kembali dan penyelesaian persamaan linear (rekonstruksi \textit{S})}
-\end{flushleft}
+\begin{equation}
+	s_{11} = 67, s_{21} = 97, ..., s_{34} = 155, ..., s_{56} = 604 \label{eq:nilaishare}
+\end{equation}
 
-Untuk mengembalikan \begin{math}S\end{math} dari \textit{share-share} yang ada maka proses pembangunan kembali harus dilakukan berulang-ulang untuk setiap karakter dari \begin{math}S\end{math}, karena \begin{math}S\end{math} adalah data tulisan atau kalimat. Pada contoh kasus ini, \begin{math}k\end{math} yang dipilih \begin{math}k=4\end{math} karena itu cukup 4 \textit{share} saja yang diketahui.
+Sementara itu, untuk menghitung nilai share dari \textit{password} \begin{math}p_2\end{math} sampai \begin{math}p_5\end{math}, proses yang sama untuk menghitung \textit{password} \begin{math}p_1\end{math} akan dilakukan. Setelah menghitung nilai \textit{share} untuk \textit{password} \begin{math}p_1\end{math}, langkah selanjutnya adalah proses enkripsi masing-masing \textit{share} ini.
 
-Langkah selanjutnya adalah membentuk rumus dasar dari fungsi \begin{math}f(x)\end{math}. Karena pada kasus ini, \begin{math}k=4\end{math}, maka rumus dasar dari \begin{math}f(x)\end{math}:
-\begin{displaymath}
-	f(x) = d + cx + bx^2 + ax^3
-\end{displaymath}
-Selanjutnya, proses pembangunan kembali dimulai dari karakter pertama dari \begin{math}S\end{math} sampai karakter keenam karena pada kasus ini \begin{math}S\end{math} terdiri dari 6 karakter.
+\subsubsection{Proses Enkripsi \textit{Share}}
 
-\begin{flushleft}
-	\textbf{Karakter pertama}
-\end{flushleft}
+Pada proses ini, sebelum masing-masing \textit{share} disimpan, masing-masing \textit{share} harus dienkripsi terlebih dahulu. Dalam proses ini juga, \begin{math}n\end{math} buah pertanyaan keamanan akan dibuat. Langkah-langkah proses enkripsi \textit{share} adalah sebagai berikut.
 
-Misalkan \textit{share} yang diketahui untuk karakter pertama adalah \begin{math}S_{11}\end{math}, \begin{math}S_{12}\end{math}, \begin{math}S_{14}\end{math}, dan \begin{math}S_{16}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
+\begin{enumerate}
+	\item Membuat \begin{math}n\end{math} pertanyaan keamanan, \begin{math}q_1, q_2, ..., q_n\end{math}.
+	\item Menentukan jawaban dari masing-masing pertanyaan keamanan, \begin{math}a_1, a_2, ..., a_n\end{math}.
+	\item Menentukan nilai \textit{salt}, \begin{math}r_s\end{math}.
+	\item Menghitung \textit{digest} untuk masing-masing konkatenasi dari pertanyaan, jawaban, dan \textit{salt}. Persamaan \ref{eq:itunghash} menunjukkan proses menghitung \textit{digest}.
+	\begin{equation}
+		h_n = H(q_n + a_n + r_s) \label{eq:itunghash}
+	\end{equation}
+	\item Setiap nilai \textit{share}, \begin{math}s_{11}, s_{21}, ..., s_{56}\end{math} akan dienkripsi dengan menggunakan digest sebagai kunci. Persamaan \ref{eq:enkripsi} menunjukkan langkah enkripsi \textit{share}.
+	\begin{equation}
+		E_{h_n}(s_{nm}) = c_{nm}
+	\end{equation}
+	Pada persamaan \ref{eq:enkripsi}, \begin{math}m\end{math} merupakan banyak karakter dari masing-masing \textit{password} \begin{math}p_i\end{math}.
+\end{enumerate}
 
-\begin{gather*}
-	f_1(1) = d + c + b + a = 230 \\
-	f_1(2) = d + 2c + 4b + 8a = 597 \\
-	f_1(4) = d + 4c + 16b + 64a = 2735 \\
-	f_1(6) = d + 6c + 36b + 216a = 7825
-\end{gather*}
+Kembali kepada kasus pada Subbab \ref{subsec:pengenalankasus}, misalkan \textit{password} yang akan dienkripsi \textit{share-share}nya adalah \begin{math}p_1\end{math}. Langkah pertama adalah membuat \begin{math}n\end{math} pertanyaan keamanan, karena \begin{math}n=5\end{math} maka ada 5 pertanyaan keamanan. Setiap pertanyaan keamanan akan diberi label \begin{math}q_1, q_2, ..., q_5\end{math}. Untuk kasus ini, diasumsikan pertanyaan keamanan yang dibuat adalah sebagai berikut.
 
-Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
+\begin{enumerate}
+	\item Siapa nama anda? (\begin{math}q_1\end{math})
+	\item Dimana kota tempat anda tinggal? (\begin{math}q_2\end{math})
+	\item Apa jenis kelamin anda? (\begin{math}q_3\end{math})
+	\item Pada bulan apa anda lahir? (\begin{math}q_4\end{math})
+	\item Apa nama belakang anda? (\begin{math}q_5\end{math})
+\end{enumerate}
 
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 230 		\\[1em]
-			1 	& 2 	& 4 	& 8 		& 597			\\[1em]
-			1 	& 4 	& 16 	& 64 		& 2735		\\[1em]
-			1 	& 6 	& 36 	& 216 	& 7825
-	\end{bmatrix}
-	\]
-\end{center}
+Setelah membuat pertanyaan keamanan yang akan digunakan, langkah selanjutnya adalah menentukan jawaban dari masing-masing pertanyaan keamanan. Setiap jawaban untuk pertanyaan keamanan akan diberi label \begin{math}a_1\end{math} untuk \begin{math}q_1\end{math}, \begin{math}a_2\end{math} untuk \begin{math}q_2\end{math}, dan seterusnya sampai \begin{math}a_5\end{math} untuk \begin{math}q_5\end{math}. Jawaban dari masing-masing pertanyaan keamanan adalah sebagai berikut.
 
-Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
+\begin{enumerate}
+	\item Samuel (\begin{math}a_1\end{math})
+	\item Bandung (\begin{math}a_2\end{math})
+	\item Laki-laki (\begin{math}a_3\end{math})
+	\item Juli (\begin{math}a_4\end{math})
+	\item Christian (\begin{math}a_5\end{math})
+\end{enumerate}
 
-\begin{align*}
-	L_4 - L_1 \\
-	L_3 - L_1 \\
-	L_2 - L_1
-\end{align*}
+Langkah selanjutnya adalah memilih nilai \textit{salt}, \begin{math}r_s\end{math}. Untuk kasus ini, misalkan \begin{math}r_s=31\end{math}.
 
-Maka, matriksnya menjadi
+Setelah memilih nilai \textit{salt}, langkah selanjutnya adalah menghitung \textit{digest}. Masing-masing dari pertanyaan keamanan akan dikonkatenasi dengan jawabannya dan \begin{math}r_s\end{math}. Asumsi hasil penghitungan \textit{digest}, \begin{math}h_n\end{math}, untuk setiap pertanyaan ditunjukkan pada persamaan \ref{eq:itungdigest1} sampai \ref{eq:itungdigest5}.
 
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 230 		\\[1em]
-			0 	& 1 	& 3 	& 7 		& 367			\\[1em]
-			0 	& 3 	& 15 	& 63 		& 2505		\\[1em]
-			0 	& 5 	& 35 	& 215 	& 7595
-	\end{bmatrix}
-	\]
-\end{center}
+\begin{gather}
+	h_1 = (q_1 + a_1 + r_s) = 7a916 \label{eq:itungdigest1} \\
+	h_2 = (q_2 + a_2 + r_s) = cdc62 \label{eq:itungdigest2} \\
+	h_3 = (q_3 + a_3 + r_s) = de09b \label{eq:itungdigest3} \\
+	h_4 = (q_4 + a_4 + r_s) = d1320 \label{eq:itungdigest4} \\
+	h_5 = (q_5 + a_5 + r_s) = b59e9 \label{eq:itungdigest5}
+\end{gather}
 
-Operasi baris berikutnya.
-\begin{align*}
-	\frac{1}{3}L_3 - \frac{1}{5}L_4 \\
-\end{align*}
+Langkah selanjutnya adalah mengenkripsi setiap nilai \textit{share} yang sudah dibangun dengan \textit{digest} yang sudah dihitung sebagai kuncinya. Asumsi hasil enkripsi setiap \textit{share} untuk \begin{math}p_1\end{math}, ditunjukkan pada Tabel \ref{table:enkripsi1}.
 
-Maka, matriksnya menjadi
+\begin{table}[H]
+	\begin{center}
+		\caption{Hasil Enkripsi setiap \textit{Share} untuk \textit{Password} Pertama}\label{table:enkripsi1}
+		\begin{tabular}{| >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} |}
+				\hline
+						& E(f_1) 	& E(f_2) 	& E(f_3) 	& E(f_4) 	& E(f_5) 	& E(f_6) 	\\ \hline
+				h_1 & aa7cm	 	& a45sf 	& 1xz5q		& x15z6		& cx96v		& 6zx51		\\ \hline
+				h_2 & ff3ds 	& 5cv1s		& rf51s		& xcq89		& a9er8		& 9wrt8		\\ \hline
+				h_3 & fg9e5 	& afa65		& ge65r		& we65q		& s6dv5		& xf8xj		\\ \hline
+				h_4 & d3d64 	& eq89v		& 85vbn		& nm6f5		& 51gvq		& x91qw		\\ \hline
+				h_5 & a54q1 	& z1x56		& as46c		& na6e5		& cz98q		& ha658		\\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
 
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 230 		\\[1em]
-			0 	& 1 	& 3 	& 7 		& 367			\\[1em]
-			0 	& 3 	& 15 	& 63 		& 2505		\\[1em]
-			0 	& 1 	& 7 	& 43 		& 1519
-	\end{bmatrix}
-	\]
-\end{center}
+Angka yang ditunjuk oleh kolom \begin{math}E(f_1)\end{math} dan baris \begin{math}h_1\end{math} adalah hasil enkripsi untuk share pertama dari fungsi pertama. Sementara itu, angka yang ditunjuk oleh kolom \begin{math}E(f_2)\end{math} dan baris \begin{math}h_1\end{math} adalah hasil enkripsi untuk share pertama dari fungsi kedua dan seterusnya.
 
-Operasi baris berikutnya.
-\begin{align*}
-	L_4 - L_2 \\
-	L_3 - L_2
-\end{align*}
+Langkah enkripsi setiap \textit{share} ini dilakukan untuk setiap \textit{password} \begin{math}p_2\end{math} sampai \begin{math}p_5\end{math}. Kemudian setelah proses enkripsi ini, pertanyaan keamanan, jawaban, hasil enkripsi (\textit{ciphertext}), nilai \textit{salt}, dan nilai \begin{math}k\end{math} akan disimpan.
 
-Maka, matriksnya menjadi
+\subsection{Proses Pengembalian \textit{Password}}
 
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 230 		\\[1em]
-			0 	& 1 	& 3 	& 7 		& 367			\\[1em]
-			0 	& 0 	& 2 	& 14 		& 468		\\[1em]
-			0 	& 0 	& 4 	& 36 		& 1152
-	\end{bmatrix}
-	\]
-\end{center}
+Setelah \textit{password} disimpan dalam proses Penyimpanan \textit{Password} (Subbab \ref{subsec:simpanpassword}), pada bagian ini akan dijelaskan proses bagaimana \textit{password} bisa dikembalikan dengan menggunakan metode \textit{secret sharing} Shamir. Proses pengembalian \textit{password} ini dibagi menjadi 2 proses, yaitu proses dekripsi setiap \textit{share} dan proses rekonstruksi kembali \textit{password} dari \textit{share-share} yang sudah didekripsi.
 
-Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
-\begin{align*}
-	\frac{1}{2}L_2 \\
-	L_4 - 2L_2
-\end{align*}
+\subsubsection{Proses Dekripsi \textit{Share}}
 
-Maka, matriksnya menjadi
+Proses dekripsi \textit{share} adalah proses mengembalikan \textit{ciphertext} dari masing-masing share kembali kepada bentuk \textit{plaintext}nya. Langkah-langkah dari proses dekripsi \textit{share} adalah sebagai berikut.
 
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 230 		\\[1em]
-			0 	& 1 	& 3 	& 7 		& 367			\\[1em]
-			0 	& 0 	& 1 	& 7 		& 234		\\[1em]
-			0 	& 0 	& 0 	& 8 		& 216
-	\end{bmatrix}
-	\]
-\end{center}
+\begin{enumerate}
+	\item Menjawab \begin{math}n\end{math} pertanyaan keamanan yang sebelumnya disimpan, \begin{math}q_1, q_2, ..., q_n\end{math} untuk menghasilkan jawaban \begin{math}a'_1, a'_2, ..., a'_n\end{math}.
+	\item Menghitung \textit{digest} untuk masing-masing konkatenasi dari pertanyaan yang disimpan, jawaban, dan \textit{salt} yang disimpan. Persamaan \ref{eq:itunghashbalik} menunjukkan proses menghitung \textit{digest}.
+	\begin{equation}
+		h'_n = H(q_n + a'_n + r_s) \label{eq:itunghashbalik}
+	\end{equation}
+	\item Mendekripsi \begin{math}c_{11}, c_{21}, ..., c{nm}\end{math} dengan menggunakan \begin{math}h'_1, h'_2, ..., h'_n\end{math} sebagai kunci. Persamaan \ref{eq:dekripsibalik} menunjukkan langkah yang dijelaskan.
+	\begin{equation}
+		D_{h'_n}(c_{nm}) = s'_{nm} \label{eq:dekripsibalik}
+	\end{equation}
+\end{enumerate}
 
-Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
+Kembali kepada kasus yang dijelaskan pada Subbab \ref{subsec:pengenalankasus}, langkah pertama adalah menjawab pertanyaan keamanan yang sebelumnya disimpan. Berikut pertanyaan keamanan yang disimpan dan jawaban untuk masing-masing pertanyaan keamanan.
 
-\begin{gather*}
-	8a = 216 \\
-	a = 27
-\end{gather*}
+\begin{enumerate}
+	\item Siapa nama anda? (\begin{math}q_1\end{math}): Samuel (\begin{math}a'_1\end{math})
+	\item Dimana kota tempat anda tinggal? (\begin{math}q_2\end{math}): Bandung (\begin{math}a'_2\end{math})
+	\item Apa jenis kelamin anda? (\begin{math}q_3\end{math}): Laki-laki (\begin{math}a'_3\end{math})
+	\item Pada bulan apa anda lahir? (\begin{math}q_4\end{math}): Juli (\begin{math}a'_4\end{math})
+	\item Apa nama belakang anda? (\begin{math}q_5\end{math}): Christian (\begin{math}a'_5\end{math})
+\end{enumerate}
 
-\begin{gather*}
-	b + 7a = 234 \\
-	b + 7*27 = 234 \\
-	b = 234 - 189 \\
-	b = 45
-\end{gather*}
+Kemudian, langkah selanjutnya adalah menghitung \textit{digest} masing-masing konkatenasi dari pertanyaan yang disimpan, jawaban, dan \textit{salt} yang disimpan, \begin{math}r_s=31\end{math}. Asumsi hasil penghitungan \textit{digest}, \begin{math}h'_n\end{math}, untuk setiap pertanyaan ditunjukkan pada persamaan \ref{eq:itungdigestbalik1} sampai \ref{eq:itungdigestbalik5}.
 
-\begin{gather*}
-	c + 3b + 7a = 367 \\
-	c + 3*45 + 7*27 = 367 \\
-	c = 367 - 135 - 189 \\
-	c = 43
-\end{gather*}
+\begin{gather}
+	h'_1 = (q_1 + a'_1 + r_s) = 7a916 \label{eq:itungdigestbalik1} \\
+	h'_2 = (q_2 + a'_2 + r_s) = cdc62 \label{eq:itungdigestbalik2} \\
+	h'_3 = (q_3 + a'_3 + r_s) = de09b \label{eq:itungdigestbalik3} \\
+	h'_4 = (q_4 + a'_4 + r_s) = d1320 \label{eq:itungdigestbalik4} \\
+	h'_5 = (q_5 + a'_5 + r_s) = b59e9 \label{eq:itungdigestbalik5}
+\end{gather}
 
-\begin{gather*}
-	d + c + b + a = 230 \\
-	d + 43 + 45 + 27 = 230 \\
-	d = 115
-\end{gather*}
+Setelah memperoleh \textit{digest}, langkah selanjutnya adalah mendekripsi setiap \textit{share} dalam Tabel \ref{table:enkripsi1} dengan \textit{digest} \begin{math}h'1, h'2, ..., h'5\end{math} sebagai kunci. Persamaan \ref{eq:dekripsishare1} dan \ref{eq:dekripsishare2} menunjukkan langkah dari dekripsi salah satu \textit{share}.
 
-Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter pertama adalah \begin{math}'s'\end{math}.
+\begin{gather}
+	c_{11} = aa7cm \label{eq:dekripsishare1} \\
+	D_{h_1}(c_{11}) = s_{11} = 67 \label{eq:dekripsishare2}
+\end{gather}
 
-\begin{flushleft}
-	\textbf{Karakter kedua}
-\end{flushleft}
+Kemudian, proses dekripsi diulang untuk setiap \textit{share} dari \textit{password} \begin{math}p_1\end{math}. Tabel \ref{table:tabeldekripsi1} menunjukkan hasil dari dekripsi setiap \textit{share}.
 
-Misalkan \textit{share} yang diketahui untuk karakter kedua adalah \begin{math}S_{23}\end{math}, \begin{math}S_{24}\end{math}, \begin{math}S_{27}\end{math}, dan \begin{math}S_{28}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
+\begin{table}[H]
+	\begin{center}
+		\caption{Hasil Dekripsi \textit{Share}}\label{table:tabeldekripsi1}
+		\begin{tabular}{| >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} |}
+				\hline
+						& 1		 		& 2		 		& 3		 		& 4		 		& 5		 		& 6		 	\\ \hline
+				s_1 & 67	 		& 76 			& 74			& 76			& 80			& 96			\\ \hline
+				s_2 & 97 			& 124			& 99			& 106			& 123			& 172			\\ \hline
+				s_3 & 139 		& 194			& 126			& 142			& 182			& 282			\\ \hline
+				s_4 & 193 		& 286			& 155			& 184			& 257			& 426			\\ \hline
+				s_5 & 259 		& 400			& 186			& 232			& 348			& 604			\\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
 
-\begin{gather*}
-	f_2(3) = d + 3c + 9b + 27a = 2423 \\
-	f_2(4) = d + 4c + 16b + 64a = 5061 \\
-	f_2(7) = d + 7c + 49b + 343a = 23103 \\
-	f_2(8) = d + 8c + 64b + 512a = 33573
-\end{gather*}
+Kolom pada Tabel \ref{table:tabeldekripsi1} menunjukkan urutan karakter dari \textit{password} \begin{math}p_1\end{math}, sedangkan baris pada Tabel \ref{table:tabeldekripsi1} menunjukkan urutan \textit{share} dari masing-masing karakter. Sebagai contoh, baris \begin{math}s_1\end{math} kolom 1 menunjukkan \textit{share} pertama untuk karakter pertama dari \textit{password} \begin{math}p_1\end{math} dan seterusnya sampai baris \begin{math}s_5\end{math} kolom 6 menunjukkan \textit{share} kelima untuk karakter keenam \textit{password} \begin{math}p_1\end{math}.
 
-Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
+\subsubsection{Proses Rekonstruksi \textit{Password}}
 
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 3 	& 9 	& 27 		& 2423 		\\[1em]
-			1 	& 4 	& 16 	& 64 		& 5061		\\[1em]
-			1 	& 7 	& 49 	& 343 	& 23103		\\[1em]
-			1 	& 8 	& 64 	& 512 	& 33573
-	\end{bmatrix}
-	\]
-\end{center}
+Setelah memperoleh hasil dekripsi \textit{share} untuk masing-masing karakter dari masing-masing \textit{password} \begin{math}p_1\end{math} sampai \begin{math}p_5\end{math}, proses selanjutnya adalah proses rekonstruksi masing-masing password. Dalam kasus ini, password yang akan direkonstruksi adalah \begin{math}p_1\end{math}. Berikut langkah-langkah dari rekonstruksi \begin{math}p_1\end{math}.
 
-Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
+\begin{enumerate}
+	\item Membentuk fungsi dasar \begin{math}f(x)\end{math} untuk masing-masing karakter dari password \begin{math}p_i\end{math} berdasarkan nilai \begin{math}k\end{math} yang disimpan. Nilai \begin{math}k\end{math} mempengaruhi derajat dari fungsi \begin{math}f(x)\end{math} yang akan dibentuk. Persamaan \ref{eq:fungsifxbalik} menunjukkan fungsi \begin{math}f(x)\end{math} yang akan dibentuk.
+	\begin{equation}
+		f(x) = a_0 + a_1x + a_2x^2 + ... + a_{k-1}x^{k-1} \label{eq:fungsifxbalik}
+	\end{equation}
+	\item Setiap karakter dari \textit{password} \begin{math}p_i\end{math} diwakili oleh 1 fungsi \begin{math}f(x)\end{math}. Maka, untuk setiap karakter dibentuk fungsi \begin{math}f_m(x)\end{math} masing-masing, dimana \begin{math}m\end{math} adalah banyak karakter dari \textit{password} \begin{math}p_i\end{math}. Persamaan \ref{eq:fungsimasingmasing} menunjukkan langkah yang dijelaskan.
+	\begin{equation}
+		f_m(x) = a_0 + a_1x + a_2x^2 + ... + a_{k-1}x^{k-1} \label{eq:fungsimasingmasing}
+	\end{equation}
+	\item Menghitung nilai \textit{share} yang dimiliki untuk masing-masing fungsi \begin{math}f(x)\end{math} setiap karakter. Persamaan \ref{eq:fxkaraktershare} menunjukkan langkah yang dijelaskan.
+	\begin{equation}
+		f_m(n) = a_0 + a_1n + a_2n^2 + ... + a_{k-1}n^{k-1} = s_{nm} \label{eq:fxkaraktershare}
+	\end{equation}
+	\item Menghitung konstanta bebas dari berdasarkan fungsi \begin{math}f(x)\end{math} yang ada untuk masing-masing karakter, dari \begin{math}f_1(x), f_2(x), ..., f_m(x)\end{math}.
+	\item Mengubah konstanta bebas yang diperoleh dari langkah sebelumnya menjadi karakter ASCII.
+\end{enumerate}
 
-\begin{align*}
-	L_4 - L_1 \\
-	L_3 - L_1 \\
-	L_2 - L_1
-\end{align*}
+Setelah diperoleh nilai setiap \textit{share} yang ditunjukkan pada Tabel \ref{table:tabeldekripsi1}, langkah pertama yang dilakukan untuk mengembalikan \textit{password} adalah membentuk fungsi dasar \begin{math}f(x)\end{math} untuk masing-masing karakter dari password \begin{math}p_i\end{math} berdasarkan nilai \begin{math}k\end{math} yang disimpan. Dalam kasus Subbab \ref{subsec:pengenalankasus}, \begin{math}k\end{math} yang dipilih adalah \begin{math}k=3\end{math}, maka fungsi \begin{math}f(x)\end{math} yang dibentuk memiliki derajat \begin{math}k-1\end{math}. Persamaan \ref{eq:fungsifxkarakter} menunjukkan fungsi \begin{math}f(x)\end{math} yang dibentuk.
 
-Maka, matriksnya menjadi
+\begin{equation}
+	f(x) = c + bx + ax^2 \label{eq:fungsifxkarakter}
+\end{equation}
 
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 3 	& 9 	& 27 		& 2423 		\\[1em]
-			0 	& 1 	& 7 	& 37 		& 2638		\\[1em]
-			0 	& 4 	& 40 	& 316 	& 20680		\\[1em]
-			0 	& 5 	& 55 	& 485 	& 31150
-	\end{bmatrix}
-	\]
-\end{center}
+Langkah selanjutnya adalah membentuk fungsi \begin{math}f(x)\end{math} untuk setiap karakter \textit{password} \begin{math}p_1\end{math}. Persamaan \ref{eq:fungsifxkarakter1} sampai \ref{eq:fungsifxkarakter6} menunjukkan fungsi \begin{math}f(x)\end{math} untuk setiap karakter \textit{password} \begin{math}p_1\end{math}.
 
-Operasi baris berikutnya.
-\begin{align*}
-	L_4 - 5L_2 \\
-	L_3 - 4L_2
-\end{align*}
+\begin{align}
+	f_1(x) = c + bx + ax^2 \label{eq:fungsifxkarakter1} \\
+	f_2(x) = c + bx + ax^2 \label{eq:fungsifxkarakter2} \\
+	f_3(x) = c + bx + ax^2 \label{eq:fungsifxkarakter3} \\
+	f_4(x) = c + bx + ax^2 \label{eq:fungsifxkarakter4} \\
+	f_5(x) = c + bx + ax^2 \label{eq:fungsifxkarakter5} \\
+	f_6(x) = c + bx + ax^2 \label{eq:fungsifxkarakter6}
+\end{align}
 
-Maka, matriksnya menjadi
+Setelah itu, langkah selanjutnya adalah menghitung nilai \textit{share} yang dimiliki pada fungsi \begin{math}f(x)\end{math} yang sudah dibentuk. Untuk langkah ini, akan ditunjukkan proses pengembalian salah satu karakter dari \textit{password} \begin{math}p_1\end{math}, yaitu karakter pertama.
+
+Diasumsikan share yang digunakan untuk rekonstruksi karakter pertama adalah \begin{math}s_{11}, s_{21}, \end{math} dan \begin{math}s_{31}\end{math}. Maka, nilai masing-masing share ini pada fungsi \begin{math}f_1(x)\end{math} ditunjukkan pada persamaan \ref{eq:karakterpertamafx1} sampai \ref{eq:karakterpertamafx3}.
+
+\begin{align}
+	f_1(1) = c + b + a = 67 \label{eq:karakterpertamafx1} \\
+	f_1(2) = c + 2b + 4a = 97 \label{eq:karakterpertamafx2} \\
+	f_1(3) = c + 3b + 9a = 139 \label{eq:karakterpertamafx3}
+\end{align}
+
+Langkah selanjutnya adalah menghitung konstanta bebas, yaitu dalam kasus ini konstanta bebas \begin{math}c\end{math}. Proses eliminasi Gauss-Jordan digunakan dalam menghitung konstanta bebas. Langkah pertama adalah transformasi \begin{math}f_1(x), f_2(x),\end{math} dan \begin{math}f_3(x)\end{math} menjadi matriks. Matriks \ref{eq:gauss1} menunjukkan hasil tranformasi \begin{math}f_1(x), f_2(x),\end{math} dan \begin{math}f_3(x)\end{math}.
 
 \begin{center}
 	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 3 	& 9 	& 27 		& 2423 		\\[1em]
-			0 	& 1 	& 7 	& 37 		& 2638		\\[1em]
-			0 	& 6 	& 12 	& 168 	& 10128		\\[1em]
-			0 	& 5 	& 20 	& 300 	& 17960
-	\end{bmatrix}
-	\]
+	\begin{equation}
+		\begin{bmatrix}
+				1 	& 1 	& 1 	& 67 		\\[1em]
+				1 	& 2 	& 4 	& 97 		\\[1em]
+				1 	& 3 	& 9 	& 139
+		\end{bmatrix}
+		\label{eq:gauss1}
+	\end{equation}
 \end{center}
 
-Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
-\begin{align*}
-	L_4 - \frac{20}{12}L_3
-\end{align*}
+Kolom paling kanan dari Matriks \ref{eq:gauss1} menunjukkan nilai \begin{math}f_1(x), f_2(x),\end{math} dan \begin{math}f_3(x)\end{math}, sedangkan kolom lainnya menunjukkan nilai koefesien dari setiap variabel dalam \begin{math}f_1(x), f_2(x),\end{math} dan \begin{math}f_3(x)\end{math}. Kemudian, setiap baris akan diberi label. Baris 1 diberi label \begin{math}L_1\end{math}, baris 2 diberi label \begin{math}L_2\end{math}, dan baris 3 diberi label \begin{math}L_3\end{math}.
 
-Maka, matriksnya menjadi
+Setelah transformasi matriks, langkah selanjutnya adalah operasi setiap baris untuk memperoleh matriks segitiga atas. Operasi pertama yang dilakukan ditunjukkan oleh persamaan \ref{eq:gauss2}.
+
+\begin{gather}
+	L_3 - L_1 \nonumber \\
+	L_2 - L_1 \label{eq:gauss2}
+\end{gather}
+
+Operasi pertama menghasilkan Matriks \ref{eq:gauss3}.
 
 \begin{center}
 	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 3 	& 9 	& 27 		& 2423 		\\[1em]
-			0 	& 1 	& 3 	& 37 		& 2638		\\[1em]
-			0 	& 0 	& 12 	& 168 	& 10128		\\[1em]
-			0 	& 0 	& 0 	& 20 		& 1080
-	\end{bmatrix}
-	\]
+	\begin{equation}
+		\begin{bmatrix}
+				1 	& 1 	& 1 	& 67 		\\[1em]
+				0 	& 1 	& 3 	& 30 		\\[1em]
+				0 	& 2 	& 8 	& 72
+		\end{bmatrix}
+		\label{eq:gauss3}
+	\end{equation}
 \end{center}
 
-Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
+Langkah selanjutnya adalah operasi baris kembali sampai memperoleh matriks segitiga atas. Operasi kedua ditunjukkan pada persamaan \ref{eq:gauss4}.
 
-\begin{gather*}
-	20a = 1080 \\
-	a = 54
-\end{gather*}
+\begin{equation}
+	L_3 - 2L_2 \label{eq:gauss4}
+\end{equation}
 
-\begin{gather*}
-	12b + 168a = 10128 \\
-	b + 14a = 844 \\
-	b = 844 - 14*54 \\
-	b = 88
-\end{gather*}
-
-\begin{gather*}
-	c + 7b + 37a = 2638 \\
-	c + 7*88 + 37*54 = 2638 \\
-	c = 24
-\end{gather*}
-
-\begin{gather*}
-	d + 3c + 9b + 27a = 2423 \\
-	d + 3*24 + 9*88 + 27*54 = 2423 \\
-	d = 101
-\end{gather*}
-
-Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter kedua adalah \begin{math}'e'\end{math}.
-
-\begin{flushleft}
-	\textbf{Karakter ketiga}
-\end{flushleft}
-
-Misalkan \textit{share} yang diketahui untuk karakter ketiga adalah \begin{math}S_{32}\end{math}, \begin{math}S_{33}\end{math}, \begin{math}S_{35}\end{math}, dan \begin{math}S_{36}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
-
-\begin{gather*}
-	f_3(2) = d + 2c + 4b + 8a = 527 \\
-	f_3(3) = d + 3c + 9b + 27a = 1224 \\
-	f_3(5) = d + 5c + 25b + 125a = 4364 \\
-	f_3(6) = d + 6c + 36b + 216a = 7119
-\end{gather*}
-
-Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
+Operasi kedua menghasilkan Matriks \ref{eq:gauss5}.
 
 \begin{center}
 	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 2 	& 4 	& 8 		& 527 		\\[1em]
-			1 	& 3 	& 9 	& 27 		& 1224		\\[1em]
-			1 	& 5 	& 25 	& 125 	& 4364		\\[1em]
-			1 	& 6 	& 36 	& 216 	& 7119
-	\end{bmatrix}
-	\]
+	\begin{equation}
+		\begin{bmatrix}
+				1 	& 1 	& 1 	& 67 		\\[1em]
+				0 	& 1 	& 3 	& 30 		\\[1em]
+				0 	& 0 	& 2 	& 12
+		\end{bmatrix}
+		\label{eq:gauss5}
+	\end{equation}
 \end{center}
 
-Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
+Setelah operasi kedua, diperoleh matriks segitiga atas yang ditunjukkan oleh Matriks \ref{eq:gauss5}. Langkah selanjutnya setelah memperoleh matriks segitiga atas adalah substitusi balik untuk memperoleh masing-masing nilai koefesien untuk setiap variabel \begin{math}a, b,\end{math} dan \begin{math}c\end{math}. Proses substitusi balik pertama adalah untuk memperoleh nilai \begin{math}a\end{math}. Persamaan \ref{eq:gauss6} menunjukkan proses substitusi balik pertama.
 
-\begin{align*}
-	L_4 - L_1 \\
-	L_3 - L_1 \\
-	L_2 - L_1
-\end{align*}
+\begin{align}
+	2a = 12 \nonumber \\
+	a = 6 \label{eq:gauss6}
+\end{align}
 
-Maka, matriksnya menjadi
+Proses substitusi balik kedua adalah untuk memperoleh nilai \begin{math}b\end{math}. Proses substitusi balik kedua ditunjukkan pada persamaan \ref{eq:gauss7}.
 
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 2 	& 4 	& 8 		& 527 		\\[1em]
-			0 	& 1 	& 5 	& 19 		& 697			\\[1em]
-			0 	& 3 	& 21 	& 117		& 3837		\\[1em]
-			0 	& 4 	& 32 	& 208 	& 6592
-	\end{bmatrix}
-	\]
-\end{center}
+\begin{align}
+	b + 3a = 30 \nonumber \\
+	b + 3\cdot6 = 30 \nonumber \\
+	b + 18 = 30 \nonumber \\
+	b = 12 \label{eq:gauss7}
+\end{align}
 
-Operasi baris berikutnya.
-\begin{align*}
-	L_3 - 3L_2 \\
-	L_4 - 4L_2
-\end{align*}
+Proses substitusi balik ketiga adalah untuk memperoleh nilai \begin{math}c\end{math}. Proses substitusi balik ketiga ditunjukkan pada persamaan \ref{eq:gauss8}.
 
-Maka, matriksnya menjadi
+\begin{align}
+	c + b + a = 67 \nonumber \\
+	c + 12 + 6 = 67 \nonumber \\
+	c + 18 = 67 \nonumber \\
+	c = 49 \label{eq:gauss8}
+\end{align}
 
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 2 	& 4 	& 8 		& 527 		\\[1em]
-			0 	& 1 	& 5 	& 19 		& 697			\\[1em]
-			0 	& 0 	& 6 	& 60 		& 1746		\\[1em]
-			0 	& 0 	& 12 	& 132 	& 3804
-	\end{bmatrix}
-	\]
-\end{center}
+Setelah proses substitusi balik ketiga diperoleh konstanta bebas \begin{math}c=49\end{math} untuk karakter pertama. Langkah selanjutnya setelah memperoleh konstanta bebas adalah mengubah konstanta bebas menjadi karakter ASCII. Karakter ASCII ke-49 adalah '1'. Maka, untuk karakter pertama dari \begin{math}p_1\end{math} adalah '1'.
 
-Operasi baris berikutnya.
-\begin{align*}
-	\frac{1}{6}L_3 - \frac{1}{12}L_4
-\end{align*}
+Proses yang sama akan dilakukan untuk karakter kedua, ketiga, sampai karakter keenam. Setelah semua karakter diperoleh, setiap karakter akan dikonkatenasi menjadi sebuah \textit{string}. Maka, hasil akhir dari \begin{math}p_1\end{math} ditunjukkan pada persamaan \ref{eq:passwordbalik1}.
 
-Maka, matriksnya menjadi
+\begin{equation}
+	p_1 = 123456 \label{eq:passwordbalik1}
+\end{equation}
 
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 2 	& 4 	& 8 		& 527 	\\[1em]
-			0 	& 1 	& 5 	& 19 		& 697		\\[1em]
-			0 	& 0 	& 1 	& 10 		& 291		\\[1em]
-			0 	& 0 	& 2 	& 11 		& 317
-	\end{bmatrix}
-	\]
-\end{center}
+\section{Pemilihan \textit{n} dan \textit{k}}
 
-Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
-\begin{align*}
-	L_4 - 2L_3
-\end{align*}
+Pengguna dapat memilih \begin{math}n\end{math} dan \begin{math}k\end{math} sesuai dengan kebutuhan. Pemilihan \begin{math}n\end{math} dan \begin{math}k\end{math} yang baik, tidak hanya dapat membuat \textit{password} tidak akan mudah dikembalikan oleh pihak yang tidak berhak, tetapi dapat juga membuat pengguna bisa dengan mudah mengembalikan \textit{password}\cite{ellison2000protecting}. Pada bagian ini, akan dijelaskan bagaimana pemilihan \begin{math}n\end{math} dan \begin{math}k\end{math} dapat mempengaruhi kedua hal tersebut.
 
-Maka, matriksnya menjadi
+\subsection{Pemilihan \textit{k}}
 
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 2 	& 4 	& 8 		& 527 	\\[1em]
-			0 	& 1 	& 5 	& 19 		& 697		\\[1em]
-			0 	& 0 	& 1 	& 10 		& 291		\\[1em]
-			0 	& 0 	& 0 	& 1 		& 26
-	\end{bmatrix}
-	\]
-\end{center}
+Nilai \begin{math}k\end{math} adalah banyak minimal pertanyaan benar yang perlu dijawab agar bisa memperoleh \textit{password}. Setiap dari pertanyaan keamanan memiliki kemungkinan jawabannya masing-masing. Setiap kemungkinan jawaban dari pertanyaan ini memiliki nilai entropi \begin{math}e_i\end{math}. Pertanyaan keamanan yang memiliki kemungkinan jawaban hanya 2 (ya/tidak) memiliki nilai entropi \begin{math}e_i\end{math} yang besar sehingga mudah ditebak.
 
-Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
+Maka dengan bertambahnya nilai \begin{math}k\end{math} dan diasumsikan \begin{math}e_i\end{math} dari setiap pertanyaan sangat kecil, maka kemungkinan jawaban dari setiap pertanyaan akan bervariasi. Namun, nilai \begin{math}k\end{math} yang terlalu besar juga akan menyulitkan pemilik \textit{password} untuk mengembalikan \textit{password} karena semakin banyak pertanyaan yang harus dijawab dengan tepat.
 
-\begin{gather*}
-	a = 26
-\end{gather*}
+\subsection{Pemilihan \textit{n}}
 
-\begin{gather*}
-	b + 10a = 291 \\
-	b + 10*26 = 291 \\
-	b = 31
-\end{gather*}
-
-\begin{gather*}
-	c + 5b + 19a = 697 \\
-	c + 5*31 + 19*26 = 697 \\
-	c = 48
-\end{gather*}
-
-\begin{gather*}
-	d + 2c + 4b + 8a = 527 \\
-	d + 2*48 + 4*31 + 8*26 = 230 \\
-	d = 99
-\end{gather*}
-
-Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter ketiga adalah \begin{math}'c'\end{math}.
-
-\begin{flushleft}
-	\textbf{Karakter keempat}
-\end{flushleft}
-
-Misalkan \textit{share} yang diketahui untuk karakter keempat adalah \begin{math}S_{41}\end{math}, \begin{math}S_{44}\end{math}, \begin{math}S_{47}\end{math}, dan \begin{math}S_{48}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
-
-\begin{gather*}
-	f_4(1) = d + c + b + a = 252 \\
-	f_4(4) = d + 4c + 16b + 64a = 4974 \\
-	f_4(7) = d + 7c + 49b + 343a = 23718 \\
-	f_4(8) = d + 8c + 64b + 512a = 34762
-\end{gather*}
-
-Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 252 		\\[1em]
-			1 	& 4 	& 16 	& 64 		& 4974		\\[1em]
-			1 	& 7 	& 49 	& 343 	& 23718		\\[1em]
-			1 	& 8 	& 64 	& 512 	& 34762
-	\end{bmatrix}
-	\]
-\end{center}
-
-Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
-
-\begin{align*}
-	L_4 - L_1 \\
-	L_3 - L_1 \\
-	L_2 - L_1
-\end{align*}
-
-Maka, matriksnya menjadi
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 252 		\\[1em]
-			0 	& 3 	& 15 	& 63 		& 4722		\\[1em]
-			0 	& 6 	& 48 	& 342 	& 23466		\\[1em]
-			0 	& 7 	& 63 	& 511 	& 34510
-	\end{bmatrix}
-	\]
-\end{center}
-
-Operasi baris berikutnya.
-\begin{align*}
-	\frac{1}{3}L_2 \\
-	\frac{1}{6}L_3 - \frac{1}{3}L_2 \\
-	\frac{1}{7}L_4 - \frac{1}{3}L_2
-\end{align*}
-
-Maka, matriksnya menjadi
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 252 		\\[1em]
-			0 	& 1 	& 5 	& 21 		& 1574			\\[1em]
-			0 	& 0 	& 3 	& 36 		& 2337		\\[1em]
-			0 	& 0 	& 4 	& 52 		& 3356
-	\end{bmatrix}
-	\]
-\end{center}
-
-Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
-\begin{align*}
-	L_4 - \frac{4}{3}L_2 \\
-	\frac{1}{3}L_3
-\end{align*}
-
-Maka, matriksnya menjadi
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 252 	\\[1em]
-			0 	& 1 	& 5 	& 21 		& 1574	\\[1em]
-			0 	& 0 	& 1 	& 12 		& 779		\\[1em]
-			0 	& 0 	& 0 	& 4 		& 240
-	\end{bmatrix}
-	\]
-\end{center}
-
-Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
-
-\begin{gather*}
-	4a = 240 \\
-	a = 60
-\end{gather*}
-
-\begin{gather*}
-	b + 12a = 779 \\
-	b + 12*60 = 779 \\
-	b = 59
-\end{gather*}
-
-\begin{gather*}
-	c + 5b + 21a = 1574 \\
-	c + 5*59 + 12*60 = 1574 \\
-	c = 19
-\end{gather*}
-
-\begin{gather*}
-	d + c + b + a = 252 \\
-	d + 19 + 59 + 60 = 252 \\
-	d = 114
-\end{gather*}
-
-Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter keempat adalah \begin{math}'r'\end{math}.
-
-\begin{flushleft}
-	\textbf{Karakter kelima}
-\end{flushleft}
-
-Misalkan \textit{share} yang diketahui untuk karakter kelima adalah \begin{math}S_{52}\end{math}, \begin{math}S_{56}\end{math}, \begin{math}S_{57}\end{math}, dan \begin{math}S_{58}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
-
-\begin{gather*}
-	f_5(2) = d + 2c + 4b + 8a = 847 \\
-	f_5(6) = d + 6c + 36b + 216a = 10283 \\
-	f_5(7) = d + 7c + 49b + 343a = 15417 \\
-	f_5(8) = d + 8c + 64b + 512a = 22045
-\end{gather*}
-
-Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 2 	& 4 	& 8 		& 847 		\\[1em]
-			1 	& 6 	& 36 	& 216 	& 10283		\\[1em]
-			1 	& 7 	& 49 	& 343 	& 15417		\\[1em]
-			1 	& 8 	& 64 	& 512 	& 22045
-	\end{bmatrix}
-	\]
-\end{center}
-
-Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
-
-\begin{align*}
-	L_4 - L_1 \\
-	L_3 - L_1 \\
-	L_2 - L_1
-\end{align*}
-
-Maka, matriksnya menjadi
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 2 	& 4 	& 8 		& 847 		\\[1em]
-			0 	& 4 	& 32 	& 208 	& 9436		\\[1em]
-			0 	& 5 	& 45 	& 335 	& 14570		\\[1em]
-			0 	& 6 	& 60 	& 504 	& 21198
-	\end{bmatrix}
-	\]
-\end{center}
-
-Operasi baris berikutnya.
-\begin{align*}
-	\frac{1}{4}L_2 \\
-	\frac{1}{5}L_3 - \frac{1}{4}L_2 \\
-	\frac{1}{6}L_4 - \frac{1}{4}L_2
-\end{align*}
-
-Maka, matriksnya menjadi
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 4 	& 8 		& 847 	\\[1em]
-			0 	& 1 	& 8 	& 52 		& 2359	\\[1em]
-			0 	& 0 	& 1 	& 15 		& 555		\\[1em]
-			0 	& 0 	& 2 	& 32 		& 1174
-	\end{bmatrix}
-	\]
-\end{center}
-
-Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
-\begin{align*}
-	L_4 - 2L_3
-\end{align*}
-
-Maka, matriksnya menjadi
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 2 	& 4 	& 8 		& 847 	\\[1em]
-			0 	& 1 	& 8 	& 52 		& 2359	\\[1em]
-			0 	& 0 	& 1 	& 13 		& 555		\\[1em]
-			0 	& 0 	& 0 	& 2 		& 64
-	\end{bmatrix}
-	\]
-\end{center}
-
-Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
-
-\begin{gather*}
-	2a = 64 \\
-	a = 32
-\end{gather*}
-
-\begin{gather*}
-	b + 15a = 555 \\
-	b + 15*32 = 555 \\
-	b = 75
-\end{gather*}
-
-\begin{gather*}
-	c + 8b + 52a = 2359 \\
-	c + 15*32 + 52*60 = 2359 \\
-	c = 95
-\end{gather*}
-
-\begin{gather*}
-	d + 2c + 4b + 8a = 847 \\
-	d + 2*95 + 4*75 + 8*32 = 847 \\
-	d = 101
-\end{gather*}
-
-Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter kelima adalah \begin{math}'e'\end{math}.
-
-\begin{flushleft}
-	\textbf{Karakter keenam}
-\end{flushleft}
-
-Misalkan \textit{share} yang diketahui untuk karakter keenam adalah \begin{math}S_{61}\end{math}, \begin{math}S_{63}\end{math}, \begin{math}S_{66}\end{math}, dan \begin{math}S_{68}\end{math}. Langkah selanjutnya adalah menghitung nilai dari fungsi \begin{math}f(x)\end{math} untuk masing-masing \textit{share} yang diketahui.
-
-\begin{gather*}
-	f_6(1) = d + c + b + a = 313 \\
-	f_6(3) = d + 3c + 9b + 27a = 2303 \\
-	f_6(6) = d + 6c + 36b + 216a = 13238 \\
-	f_6(8) = d + 8c + 64b + 512a = 28908
-\end{gather*}
-
-Kemudian, untuk proses penyelesaian persamaan linear, setiap fungsi diubah menjadi matriks.
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 313 		\\[1em]
-			1 	& 3 	& 9 	& 27 		& 2303		\\[1em]
-			1 	& 6 	& 36 	& 216 	& 13238		\\[1em]
-			1 	& 8 	& 64 	& 512 	& 28908
-	\end{bmatrix}
-	\]
-\end{center}
-
-Untuk setiap barisnya, akan diberi label \begin{math}L_1\end{math}, \begin{math}L_2\end{math}, \begin{math}L_3\end{math}, dan \begin{math}L_4\end{math}. Langkah selanjutnya adalah operasi baris untuk memperoleh matriks segitiga atas.
-
-\begin{align*}
-	L_4 - L_1 \\
-	L_3 - L_1 \\
-	L_2 - L_1
-\end{align*}
-
-Maka, matriksnya menjadi
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 313 		\\[1em]
-			0 	& 2 	& 8 	& 26 		& 1990		\\[1em]
-			0 	& 5 	& 35 	& 215 	& 12925		\\[1em]
-			0 	& 7 	& 63 	& 511 	& 28595
-	\end{bmatrix}
-	\]
-\end{center}
-
-Operasi baris berikutnya.
-\begin{align*}
-	\frac{1}{2}L_2 \\
-	\frac{1}{5}L_3 - \frac{1}{2}L_2 \\
-	\frac{1}{7}L_4 - \frac{1}{2}L_2
-\end{align*}
-
-Maka, matriksnya menjadi
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 313 		\\[1em]
-			0 	& 1 	& 4 	& 13 		& 995			\\[1em]
-			0 	& 0 	& 3 	& 30 		& 1590		\\[1em]
-			0 	& 0 	& 5 	& 60 		& 3090
-	\end{bmatrix}
-	\]
-\end{center}
-
-Operasi baris berikutnya untuk memperoleh matriks segitiga atas.
-\begin{align*}
-	\frac{1}{3}L_3 \\
-	\frac{1}{5}L_4 - \frac{1}{3}L_3
-\end{align*}
-
-Maka, matriksnya menjadi
-
-\begin{center}
-	\setlength\arraycolsep{10pt}
-	\[
-	\begin{bmatrix}
-			1 	& 1 	& 1 	& 1 		& 313 	\\[1em]
-			0 	& 1 	& 4 	& 13 		& 995		\\[1em]
-			0 	& 0 	& 1 	& 10 		& 530		\\[1em]
-			0 	& 0 	& 0 	& 2 		& 88
-	\end{bmatrix}
-	\]
-\end{center}
-
-Setelah memperoleh matriks segitiga atas, dilakukan proses substitusi balik untuk mendapatkan konstanta masing-masing koefesien. Maka, hasil akhir untuk masing-masing konstanta koefesiennya:
-
-\begin{gather*}
-	2a = 88 \\
-	a = 44
-\end{gather*}
-
-\begin{gather*}
-	b + 10a = 530 \\
-	b = 530 - 44*10 \\
-	b = 90
-\end{gather*}
-
-\begin{gather*}
-	c + 4b + 13a = 995 \\
-	c + 4*90 + 13*44 = 995 \\
-	c = 63
-\end{gather*}
-
-\begin{gather*}
-	d + c + b + a = 313 \\
-	d + 63 + 90 + 44 = 252 \\
-	d = 116
-\end{gather*}
-
-Karena \begin{math}d\end{math} adalah konstanta bebas pada fungsi \begin{math}f(x)\end{math}, maka nilai \begin{math}d\end{math} merupakan \textit{secret} untuk karakter pertama dari data \begin{math}S\end{math}. Kemudian, nilai \begin{math}d\end{math} ini akan diubah dari nilai ASCII ke karakter. Maka, karakter keenam adalah \begin{math}'t'\end{math}.
-
-Hasil akhir pembangunan kembali \begin{math}S\end{math} diperoleh dengan menyatukan keenam karakter yang sudah dibangun kembali dari \textit{share-share} yang diketahui, yaitu menjadi \begin{math}'secret'\end{math}, dimana \begin{math}'secret'\end{math} merupakan data awal dari \begin{math}S\end{math}.
-
-\begin{displaymath}
-	S = secret
-\end{displaymath}
+Nilai \begin{math}n\end{math} adalah banyak pertanyaan keamanan yang dibuat. Pemilihan nilai \begin{math}n\end{math} bergantung pada pemilihan nilai \begin{math}k\end{math}. Jika diasumsikan \begin{math}P_0\end{math} adalah probabilitas masing-masing pertanyaan dijawab dengan benar, maka untuk menghitung probabilitas \begin{math}k\end{math} pertanyaan yang benar dari \begin{math}n\end{math} pertanyaan. (?)
 
 \section{Perancangan Perangkat Lunak}
 
@@ -1026,7 +403,7 @@ Bagian ini akan berisi mengenai perancangan perangkat lunak yang mencakup alur p
 
 \subsection{Alur Proses}
 
-Algoritma \textit{secret sharing} shamir yang sudah dijelaskan pada bagian sebelumnya akan diterapkan sebagai perlindungan \textit{password} dengan menggunakan pertanyaan keamanan yang sifatnya personal. Proses ini akan dibagi menjadi 2 bagian, yaitu proses pembangunan \textit{share} dari pesan rahasia dan proses pembangunan kembali atau rekonstruksi pesan rahasia dari \textit{share-share} yang ada. Dalam alur proses ini diasumsikan bahwa \begin{math}n\end{math} dan \begin{math}k\end{math} sudah dipilih dengan baik dan optimal dan pesan rahasia disini adalah \textit{password}. Gambar \ref{fig:create_share} menunjukkan alur proses pembangunan \textit{share} dari \textit{password}.
+Pada bagian ini akan dijelaskan alur proses berdasarkan proses-proses yang sudah dipaparkan sebelumnya. Proses ini akan dibagi menjadi 2 bagian, yaitu proses pembangunan \textit{share} dari \textit{password} dan proses pembangunan kembali atau rekonstruksi \textit{password} dari \textit{share-share} yang ada. Dalam alur proses ini diasumsikan bahwa \begin{math}n\end{math} dan \begin{math}k\end{math} sudah dipilih dengan baik dan optimal dan pesan rahasia disini adalah \textit{password}. Gambar \ref{fig:create_share} menunjukkan alur proses pembangunan \textit{share} dari \textit{password}.
 
 %diagram
 \begin{figure}[H]

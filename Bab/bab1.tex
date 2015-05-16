@@ -4,56 +4,41 @@
 \section{\textbf{Latar Belakang}}
 \label{sec:latar belakang}
 
-Dengan perkembangan teknologi yang semakin canggih, informasi merupakan hal yang berharga. Karena berharga, informasi harus dijaga kerahasiaannya. Enkripsi digunakan untuk menjaga kerahasiaan informasi ini. Enkripsi adalah proses merahasiakan sebuah informasi dengan cara menyandikan informasi tersebut sehingga informasi tersebut tidak dapat dibaca oleh pihak yang tidak berwenang.
+Otentikasi adalah proses untuk menentukan keaslian identitas dari sebuah entitas saat akan mengakses sumber daya sebuah sistem. Proses otentikasi menentukan apakah sebuah entitas berhak atau tidak untuk mengakses sumber daya sistem tersebut.
 
-Dalam proses enkripsi, dibutuhkan sebuah kunci, untuk menyandikan informasi sehingga tidak bisa dibaca. Kunci digunakan untuk proses enkripsi untuk mengembalikan informasi supaya bisa dibaca. Kunci ini sifatnya rahasia dan tidak boleh diketahui oleh pihak yang tidak berhak. Salah satu jenis dari kunci yang digunakan dalam proses enkripsi ini adalah \textit{password}.
-
-Namun, proses enkripsi memiliki kelemahan, bila \textit{password} yang digunakan hilang maka kerahasiaan informasi tersebut akan hilang. Akibat lainnya jika \textit{password} hilang adalah informasi tidak bisa dibaca karena tidak bisa dikembalikan lagi oleh proses enkripsi. Permasalahan muncul karena informasi yang perlu dijaga kerahasiaannya tidaklah sedikit, karena itu membutuhkan banyak \textit{password}. Seiring berjalannya waktu, \textit{password} ini dapat hilang karena berbagai hal seperti musibah, kesalahan manusia, bencana alam, dan sebagainya. Karena itu, dibutuhkan metode untuk mengembalikan \textit{password} yang hilang.
-
-Skema \textit{secret sharing} adalah sebuah metode untuk menjaga kerahasiaan informasi dengan membaginya menjadi beberapa bagian. Skema \textit{secret sharing} atau seringkali disebut juga skema \textit{threshold}\begin{math}(k, n)\end{math} membagi informasi menjadi \begin{math}n\end{math} bagian yang disebut \textit{share} dan untuk mengembalikan informasi ini dibutuhkan setidaknya \begin{math}k\end{math} \textit{share}.
-
-Metode \textit{secret sharing} dapat diaplikasikan pada perlidungan \textit{password} yang digunakan dalam proses enkripsi. Dengan membuat beberapa pertanyaan keamanan yang sifatnya personal sebagai representasi dari \begin{math}n\end{math} \textit{share} dan dengan menentukan minimal banyak pertanyaan keamanan yang dijawab dengan benar sebagai representasi dari \begin{math}k\end{math} \textit{share} untuk bisa mengembalikan \textit{password}. Maka, dengan menggunakan metode \textit{secret sharing}, minimal ada \begin{math}k\end{math} \textit{share} maka \textit{password} masih tetap bisa dikembalikan.
-
-Dalam penelitian ini, akan dibahas mengenai cara kerja metode \textit{secret sharing} untuk melindungi \textit{password}, selain itu kualitas dari pertanyaan keamanan yang dibuat akan dinilai sehingga jawaban dari pertanyaan keamanan tidak akan mudah ditebak. Jika jawaban pertanyaan keamanan mudah ditebak tentu saja kerahasiaan \textit{password} akan hilang.
+Salah satu dari metode otentikasi adalah dengan menggunakan \textit{password}. \textit{Password} adalah sekumpulan huruf, angka, dan simbol yang sifatnya rahasia. Umumnya, \textit{password} digunakan bersamaan dengan \textit{username} untuk mengakses sebuah akun, email, dan sebagainya. Entitas yang memiliki \textit{password} dan \textit{username} diijinkan untuk mengakses akun.
 
 \section{\textbf{Rumusan Masalah}}
 \label{sec:rumusan masalah}
 
-Rumusan masalah pada penelitian ini berupa:
+Berdasarkan latar belakang yang sudah dibuat, maka permasalahan yang akan dibahas dalam penelitian ini adalah:
 \begin{itemize}
-	\item Bagaimana cara melindungi \textit{password} dengan \textit{secret sharing} shamir?
-	\item Bagaimana cara mengimplementasikan {\it secret sharing} shamir pada perangkat lunak?
+	\item Bagaimana mengembalikan \textit{password} untuk banyak akun dengan metode \textit{secret sharing} Shamir?
+	\item Bagaimana cara membangun perangkat lunak pengingat \textit{password} yang mengimplementasikan metode \textit{secret sharing} Shamir?
 \end{itemize}
 
 \section{\textbf{Tujuan}}
 \label{sec:tujuan}
 
-Tujuan penelitian ini berupa:
+Berdasarkan rumusan masalah yang sudah ditetapkan, maka tujuan dari penelitian ini adalah:
 \begin{itemize}
-	\item Mempelajari cara kerja {\it secret sharing} shamir dalam melindungi {\it password}.
-	\item Membangun perangkat lunak yang mengimplementasikan {\it secret sharing} shamir.
-	\item Mempelajari cara mengukur kualitas pertanyaan keamanan dalam metode {\it secret sharing} shamir dan mengimplementasikannya.
+	\item Mempelajari bagaimana metode \textit{secret sharing} Shamir dapat mengembalikan \textit{password} untuk banyak akun.
+	\item Membangun perangkat lunak pengingat \textit{password} yang mengimplementasikan metode \textit{secret sharing} Shamir.
 \end{itemize}
 
 \section{\textbf{Batasan Masalah}}
 \label{sec:batasan masalah}
 
-Batasan masalah pada penelitian ini berupa:
-\begin{itemize}
-	\item Setiap pertanyaan selalu dijawab dengan jawaban yang relevan dengan pertanyaan.
-\end{itemize}
+Batasan masalah pada penelitian ini adalah setiap pertanyaan keamanan dijawab dengan jawaban yang relevan.
 
 \section{\textbf{Metodologi Penelitian}}
 \label{sec:metodologi penelitian}
 
 Metodologi dalam penelitian ini berupa:
 \begin{itemize}
-	\item Melakukan studi literatur mengenai {\it secret sharing} shamir.
-	\item Melakukan studi literatur mengenai algoritma enkripsi \textit{data encryption standard} (DES).
-	\item Melakukan studi literatur mengenai \textit{secure-hash-algorithm-512} (SHA-512).
-	\item Melakukan analisis dan perancangan mengenai perangkat lunak yang akan dibangun.
-	\item Implementasi terhadap hasil analisis dan perancangan perangkat lunak.
-	\item Melakukan pengujian perangkat lunak.
+	\item Melakukan studi literatur untuk mempelajari hal-hal yang diperlukan dalam penggunaan dan implementasi metode \textit{secret sharing} Shamir.
+	\item Membangun perangkat lunak yang mengimplementasikan metode \textit{secret sharing} Shamir.
+	\item Melakukan pengujian pada perangkat lunak yang sudah dibangun.
 \end{itemize}
 
 \section{\textbf{Sistematika Pembahasan}}

@@ -1,3 +1,35 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{munir2010matematikadiskrit}
+R.~Munir, {\em Matematika Diskrit}.
+\newblock Informatika Bandung, 2010.
+
+\bibitem{forouzan2007cryptography}
+B.~A. Forouzan, {\em Cryptography \& Network Security}.
+\newblock McGraw-Hill, Inc., 2007.
+
+\bibitem{norman2012introduction}
+D.~Norman and D.~Wolczuk, {\em Introduction to Linear Algebra for Science and
+  Engineering}.
+\newblock Pearson, 2012.
+
+\bibitem{shamir1979share}
+A.~Shamir, ``How to share a secret,'' {\em Communications of the ACM}, vol.~22,
+  no.~11, pp.~612--613, 1979.
+
+\bibitem{walpole1993probability}
+R.~E. Walpole, R.~H. Myers, S.~L. Myers, and K.~Ye, {\em Probability and
+  statistics for engineers and scientists}, vol.~5.
+\newblock Macmillan New York, 1993.
+
+\bibitem{shannon1948mathematical}
+C.~Shannon, ``A mathematical theory of communication, bell system technical
+  journal 27: 379-423 and 623--656,'' {\em Mathematical Reviews (MathSciNet):
+  MR10, 133e}, 1948.
+
+\bibitem{ellison2000protecting}
+C.~Ellison, C.~Hall, R.~Milbert, and B.~Schneier, ``Protecting secret keys with
+  personal entropy,'' {\em Future Generation Computer Systems}, vol.~16, no.~4,
+  pp.~311--318, 2000.
 
 \end{thebibliography}
