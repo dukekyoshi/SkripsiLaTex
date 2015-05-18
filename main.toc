@@ -73,11 +73,11 @@
 \contentsline {subsection}{\numberline {3.2.2}Pemilihan \textit {n}}{43}{subsection.3.2.2}
 \contentsline {section}{\numberline {3.3}Analisis Proses}{43}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Proses Penyimpanan \textit {Password}}{43}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Proses Rekonstruksi \textit {Password}}{45}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Diagram}{46}{section.3.4}
+\contentsline {subsection}{\numberline {3.3.2}Proses Rekonstruksi \textit {Password}}{44}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Diagram}{45}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Diagram \textit {Use Case}}{46}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Diagram Aktivitas}{47}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Diagram Kelas}{49}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.3}Diagram Kelas}{48}{subsection.3.4.3}
 \contentsline {chapter}{\numberline {4}Perancangan}{51}{chapter.4}
 \contentsline {section}{\numberline {4.1}Diagram Kelas Rinci}{51}{section.4.1}
 \contentsline {section}{\numberline {4.2}Deskripsi Kelas dan Fungsi}{51}{section.4.2}

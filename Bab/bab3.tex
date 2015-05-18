@@ -309,14 +309,16 @@ Langkah selanjutnya adalah menghitung konstanta bebas, yaitu dalam kasus ini kon
 
 Kolom paling kanan dari Matriks \ref{eq:gauss1} menunjukkan nilai \begin{math}f_1(x), f_2(x),\end{math} dan \begin{math}f_3(x)\end{math}, sedangkan kolom lainnya menunjukkan nilai koefesien dari setiap variabel dalam \begin{math}f_1(x), f_2(x),\end{math} dan \begin{math}f_3(x)\end{math}. Kemudian, setiap baris akan diberi label. Baris 1 diberi label \begin{math}L_1\end{math}, baris 2 diberi label \begin{math}L_2\end{math}, dan baris 3 diberi label \begin{math}L_3\end{math}.
 
-Setelah transformasi matriks, langkah selanjutnya adalah operasi setiap baris untuk memperoleh matriks segitiga atas. Operasi pertama yang dilakukan ditunjukkan oleh persamaan \ref{eq:gauss2}.
+Setelah transformasi matriks, langkah selanjutnya adalah operasi setiap baris untuk memperoleh matriks bentuk eselon baris tereduksi. Operasi pertama yang dilakukan ditunjukkan oleh persamaan \ref{eq:gauss2}.
 
 \begin{gather}
 	L_3 - L_1 \nonumber \\
 	L_2 - L_1 \label{eq:gauss2}
 \end{gather}
 
-Operasi pertama menghasilkan Matriks \ref{eq:gauss3}.
+\begin{flushleft}
+	Operasi pertama menghasilkan Matriks \ref{eq:gauss3}.
+\end{flushleft}
 
 \begin{center}
 	\setlength\arraycolsep{10pt}
@@ -330,13 +332,15 @@ Operasi pertama menghasilkan Matriks \ref{eq:gauss3}.
 	\end{equation}
 \end{center}
 
-Langkah selanjutnya adalah operasi baris kembali sampai memperoleh matriks segitiga atas. Operasi kedua ditunjukkan pada persamaan \ref{eq:gauss4}.
+Langkah selanjutnya adalah operasi baris kembali sampai memperoleh matriks bentuk eselon baris tereduksi. Operasi kedua ditunjukkan pada persamaan \ref{eq:gauss4}.
 
 \begin{equation}
 	L_3 - 2L_2 \label{eq:gauss4}
 \end{equation}
 
-Operasi kedua menghasilkan Matriks \ref{eq:gauss5}.
+\begin{flushleft}
+	Operasi kedua menghasilkan Matriks \ref{eq:gauss5}.
+\end{flushleft}
 
 \begin{center}
 	\setlength\arraycolsep{10pt}
@@ -350,7 +354,7 @@ Operasi kedua menghasilkan Matriks \ref{eq:gauss5}.
 	\end{equation}
 \end{center}
 
-Setelah operasi kedua, diperoleh matriks segitiga atas yang ditunjukkan oleh Matriks \ref{eq:gauss5}. Langkah selanjutnya setelah memperoleh matriks segitiga atas adalah substitusi balik untuk memperoleh masing-masing nilai koefesien untuk setiap variabel \begin{math}a, b,\end{math} dan \begin{math}c\end{math}. Proses substitusi balik pertama adalah untuk memperoleh nilai \begin{math}a\end{math}. Persamaan \ref{eq:gauss6} menunjukkan proses substitusi balik pertama.
+Setelah operasi kedua, diperoleh matriks segitiga atas yang ditunjukkan oleh Matriks \ref{eq:gauss5}. Langkah selanjutnya setelah memperoleh matriks bentuk eselon baris tereduksi adalah substitusi balik untuk memperoleh masing-masing nilai koefesien untuk setiap variabel \begin{math}a, b,\end{math} dan \begin{math}c\end{math}. Proses substitusi balik pertama adalah untuk memperoleh nilai \begin{math}a\end{math}. Persamaan \ref{eq:gauss6} menunjukkan proses substitusi balik pertama.
 
 \begin{align}
 	2a = 12 \nonumber \\
@@ -444,7 +448,7 @@ Pada bagian ini akan dijelaskan tahapan dari proses penyimpanan \textit{password
 	\caption{Proses Penyimpanan \textit{Password}}\label{fig:create_share}
 \end{figure}
 
-Secara umum, proses penyimpanan \textit{password} memiliki tahapan yang sama. Perbedaannya terdapat pada metode yang digunakan untuk masing-masing tahapan. Dalam penelitian ini, pembangunan \textit{share} menggunakan metode \textit{secret sharing} Shamir. Berikut penjelasan masing-masing tahapan:
+Tahapan-tahapan pada proses yang ditunjukkan oleh Gambar \ref{fig:create_share} adalah tahapan-tahapan untuk menyimpan \textit{password}. Dalam penelitian ini, tahapan pembangunan \textit{share} menggunakan metode \textit{secret sharing} Shamir. Berikut penjelasan masing-masing tahapan:
 
 \begin{itemize}
 	\item Tahap Pembangunan \textit{Share} \\
@@ -465,7 +469,7 @@ Pada bagian ini akan dijelaskan tahapan dari proses rekonstruksi \textit{passwor
 	\caption{Proses Rekonstruksi \textit{Password}}\label{fig:flowchart_reconstruct_secret}
 \end{figure}
 
-Tahapan-tahapan ini pada proses yang ditunjukkan oleh Gambar \ref{fig:flowchart_reconstruct_secret} adalah tahapan untuk merekonstruksi \textit{password}. Tujuan dari proses rekonstruksi \textit{password} adalah mengembalikan password yang sudah disimpan. Berikut dijelaskan tahapan-tahapan dalam proses rekonstruksi \textit{password}:
+Tahapan-tahapan pada proses yang ditunjukkan oleh Gambar \ref{fig:flowchart_reconstruct_secret} adalah tahapan-tahapan untuk merekonstruksi \textit{password}. Tujuan dari proses rekonstruksi \textit{password} adalah mengembalikan \textit{password} yang sudah disimpan. Berikut dijelaskan tahapan-tahapan dalam proses rekonstruksi \textit{password}:
 
 \begin{itemize}
 	\item Tahap Pembuatan \textit{Digest} \\
@@ -507,7 +511,7 @@ Adapun skenario-skenario yang pengguna dapat lakukan. Skenario untuk menyimpan \
 	\end{tabular}
 \end{table}
 
-Skenario untuk mengembalikan \textit{password} ditunjukkan oleh Tabel \ref{table:scenario2}. Aktor dari skenario ini adalah pengguna dari sistem. Data masukan dari skenario ini adalah $n$ jawab dari pertanyaan keamanan yang sudah dibuat.
+Skenario untuk mengembalikan \textit{password} ditunjukkan oleh Tabel \ref{table:scenario2}. Aktor dari skenario ini adalah pengguna dari sistem. Data masukan dari skenario ini adalah $n$ jawaban dari pertanyaan keamanan yang sudah dibuat.
 
 \begin{table}[H]
 	\centering
