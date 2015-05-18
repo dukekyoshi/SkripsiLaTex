@@ -17,7 +17,7 @@ Kemunculan kriptografi ini diawali karena kebutuhan manusia untuk merahasiakan i
 
 Zaman sekarang ini, kerahasiaan informasi menjadi hal yang penting. Informasi yang berharga perlu dirahasiakan sehingga tidak diketahui oleh orang yang tidak berhak. Kriptografi berperan dalam merahasiakan informasi berharga tersebut. Jadi, kriptografi adalah ilmu atau seni untuk menjaga kerahasiaan informasi.
 
-Kriptografi memiliki 4 layanan utama:
+Kriptografi memiliki 4 layanan utama\cite{forouzan2007cryptography}:
 \begin{enumerate}
 	\item Kerahasiaan (\textit{confidentiality})\\
 	Layanan ini menjamin bahwa informasi yang dikirimkan tidak diketahui oleh pihak yang tidak berhak melihat atau membacanya.
@@ -55,9 +55,9 @@ Algoritma kunci simetris menggunakan kunci yang sama untuk proses enkripsi dan d
 
 Algoritma kunci asimetris menggunakan kunci yang berbeda untuk proses enkripsi dan dekripsi. Pemilik informasi melakukan proses enkripsi menggunakan kunci yang dinamakan kunci publik dan melakukan proses dekripsi menggunakan kunci yang dinamakan kunci pribadi. Kunci publik sifatnya tidak rahasia dan kunci pribadi sifatnya rahasia. Contoh dari algoritma kriptografi kunci asimetris antara lain, Rivest-Shamir-Adleman (RSA), ElGamal, Diffie-Helman, \textit{Digital Signature Algorithm}, dan \textit{Elliptic Curve Digital Signature Algorithm} (ECDSA).
 
-\section{\textit{Data Encryption Standard} (DES)}
+\section{\textit{Data Encryption Standard} (DES)}\label{sec:des}
 
-Pada bagian ini akan dijelaskan hal-hal mengenai data encryption standard dimulai dari sejarah data encryption standard dan algoritma dari data encryption standard (?).
+Pada bagian ini akan dijelaskan hal-hal mengenai \textit{data encryption standard} dimulai dari sejarah \textit{data encryption standard}, struktur \textit{data encryption standard}, dan proses enkripsi \textit{data encryption standard}.
 
 \subsection{Sejarah}
 
@@ -227,14 +227,28 @@ Masukan dari jaringan Feistel adalah \textit{plaintext} dengan panjang 64-\texti
 	\item \textit{Plaintext} dibagi menjadi 2 bagian sama panjang, yaitu bagian kiri (\begin{math}L_{i-1}\end{math}) dan bagian kanan (\begin{math}R_{i-1}\end{math}). Huruf \begin{math}i\end{math} menunjukkan urutan dari putaran. Panjang masing-masing bagian adalah 32-\textit{bit}.
 	\item Bagian kanan (\begin{math}R_{i-1}\end{math}) pada \textit{plaintext} akan menjadi bagian kiri (\begin{math}L_i\end{math}) dari \textit{ciphertext}. Persamaan \ref{eq:swap} menunjukkan langkah yang sudah dijelaskan.
 	\begin{equation}
-		L_i = R{i-1}
+		L_i = R_{i-1}
 		\label{eq:swap}
 	\end{equation}
-	\item Untuk memperoleh bagian kanan dari \textit{ciphertext} (\begin{math}R_i\end{math}), bagian kanan dari \textit{plaintext} (\begin{math}R_{i-1}\end{math}) dan kunci putaran \begin{math}K_i\end{math} dipetakan dengan fungsi \begin{math}f\end{math}. Kemudian, hasil pemetaan dengan fungsi \begin{math}f\end{math} akan di \textit{exclusive-or} (XOR) dengan bagian kiri dari plaintext (\begin{math}L\end{math}). Persamaan \ref{eq:xor} menunjukkan langkah yang sudah dijelaskan.
+	\item Untuk memperoleh bagian kanan dari \textit{ciphertext} (\begin{math}R_i\end{math}), bagian kanan dari \textit{plaintext} (\begin{math}R_{i-1}\end{math}) dan kunci putaran \begin{math}K_i\end{math} dipetakan dengan fungsi \begin{math}f\end{math}. Kemudian, hasil pemetaan dengan fungsi \begin{math}f\end{math} akan di \textit{exclusive-or} (XOR) dengan bagian kiri dari plaintext (\begin{math}L_{i-1}\end{math}). Persamaan \ref{eq:xor} menunjukkan langkah yang sudah dijelaskan.
 	\begin{equation}
-		R_i = L \oplus f(R{i-1}, K_i)
+		R_i = L_{i-1} \oplus f(R_{i-1}, K_i)
 		\label{eq:xor}
 	\end{equation}
+	\item Tetapi, untuk putaran ke-16, bagian kiri dari \textit{ciphertext} (\begin{math}L_i\end{math}) diperoleh dari bagian kiri dari \textit{plaintext} (\begin{math}L_{i-1}\end{math}) yang di \textit{exclusive-or} (XOR) hasil pemetaan bagian kanan dari \textit{plaintext} (\begin{math}R_{i-1}\end{math}) dan kunci putaran \begin{math}K_i\end{math} dengan fungsi \begin{math}f\end{math}. Persamaan \ref{eq:lastround1} menunjukkan langkah yang sudah dijelaskan.
+	
+	\begin{equation}
+		L_{16} = L_{15} \oplus f(R_{15}, K_{16})
+		\label{eq:lastround1}
+	\end{equation}
+	
+	Sementara itu, bagian kanan dari ciphertext (\begin{math}R_{i}\end{math}) diperoleh dari bagian kanan dari \textit{plaintext} (\begin{math}R_{i-1}\end{math}). Persamaan \ref{eq:lastround2} menunjukkan langkah yang sudah dijelaskan.
+	
+	\begin{equation}
+		R_{16} = R_{15}
+		\label{eq:lastround2}
+	\end{equation}
+	
 	\item Hasil akhirnya berupa \textit{ciphertext} dengan 2 bagian sama panjang, yaitu bagian kiri (\begin{math}L_i\end{math}) dan bagian kanan (\begin{math}R_i\end{math}). 
 \end{enumerate}
 
@@ -547,7 +561,7 @@ Sementara itu, \begin{math}ShL_i(x)\end{math} pada persamaan \ref{eq:ekspansiwor
 
 Setelah ekspansi blok \textit{message} menjadi 80 \textit{word} untuk setiap blok \textit{message}, proses selanjutnya adalah putaran dari SHA-512. Proses putaran SHA-512 akan dijelaskan pada bagian selanjutnya.
 
-\subsection{Fungsi Kompresi dan Putaran}
+\subsection{Fungsi Kompresi dan Putaran}\label{subsec:putaransha}
 
 Fungsi kompresi adalah proses yang mengkompresi blok 512-\textit{bit} dan blok \textit{message} yang berukuran 1024-\textit{bit} menjadi blok keluaran dengan panjang 512-\textit{bit}. Fungsi kompresi ini terdiri dari 80 putaran SHA-512. 
 
@@ -871,7 +885,7 @@ Kemudian, untuk nilai \begin{math}x\end{math}.
 
 Jadi, solusi dari persamaan \ref{eq:gaussmatriks0} yang diselesaikan dengan eliminasi Gauss-Jordan adalah \begin{math}x=5, y=2,\end{math} dan \begin{math}z=3\end{math}.
 
-\section{\textit{Secret Sharing} Shamir}
+\section{\textit{Secret Sharing} Shamir}\label{sec:secretsharingshamir}
 
 Pada bagian ini akan dijelaskan mengenai sejarah singkat yang mengawali munculnya secret sharing Shamir dan pembahasan mengenai secret sharing Shamir.
 

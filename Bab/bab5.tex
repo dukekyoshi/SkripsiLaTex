@@ -12,8 +12,8 @@ Pada bagian ini akan dibahas mengenai tampilan antarmuka perangkat lunak yang su
 Tampilan antarmuka awal perangkat lunak dapat dilihat pada Gambar \ref{fig:tampilan1} dengan keterangan bagian-bagian sebagai berikut.
 
 \begin{itemize}
-	\item Bagian no 1 merupakan tombol untuk mengembalikan \textit{password}.
-	\item Bagian no 2 merupakan tombol untuk menyimpan \textit{password}.
+	\item Bagian nomor 1 merupakan tombol untuk mengembalikan \textit{password}.
+	\item Bagian nomor 2 merupakan tombol untuk menyimpan \textit{password}.
 \end{itemize}
 
 %diagram
@@ -25,11 +25,11 @@ Tampilan antarmuka awal perangkat lunak dapat dilihat pada Gambar \ref{fig:tampi
 Setelah tombol \textit{"Store Password"} ditekan, tampilan antarmuka perangkat lunak akan terlihat seperti pada Gambar \ref{fig:tampilan2} dengan keterangan sebagai berikut.
 
 \begin{itemize}
-	\item Bagian no 3 merupakan tombol untuk menambah \textit{password}. Pengguna minimal harus menambahkan 1 \textit{password}, jika tidak maka akan muncul notifikasi seperti pada Gambar \ref{fig:tampilan2_2}.
-	\item Bagian no 4 merupakan tombol untuk menambah pertanyaan keamanan. Pengguna minimal harus menambahkan 5 pertanyaan keamanan, jika kurang maka akan muncul notifikasi seperti pada Gambar \ref{fig:tampilan2_3}.
-	\item Bagian no 5 merupakan tombol untuk melanjutkan menyimpan \textit{password}.
-	\item Bagian no 6 merupakan tombol untuk kembali ke tampilan antarmuka awal.
-	\item Bagian no 7 merupakan teks masukkan untuk pertanyaan keamanan yang hendak ditambahkan.
+	\item Bagian nomor 3 merupakan tombol untuk menambah \textit{password}. Pengguna minimal harus menambahkan 1 \textit{password}, jika tidak maka akan muncul notifikasi seperti pada Gambar \ref{fig:tampilan2_2}.
+	\item Bagian nomor 4 merupakan tombol untuk menambah pertanyaan keamanan.
+	\item Bagian nomor 5 merupakan tombol untuk melanjutkan menyimpan \textit{password}.
+	\item Bagian nomor 6 merupakan tombol untuk kembali ke tampilan antarmuka awal.
+	\item Bagian nomor 7 merupakan teks masukan untuk pertanyaan keamanan yang hendak ditambahkan.
 \end{itemize}
 
 %diagram
@@ -43,14 +43,7 @@ Setelah tombol \textit{"Store Password"} ditekan, tampilan antarmuka perangkat l
 \begin{figure}[H]
 	\includegraphics[scale=0.5]{Gambar/tampilan2_2}
 	\centering
-	\caption{Tampilan antarmuka untuk menyimpan \textit{password}}\label{fig:tampilan2_2}
-\end{figure}
-
-%diagram
-\begin{figure}[H]
-	\includegraphics[scale=0.5]{Gambar/tampilan2_3}
-	\centering
-	\caption{Tampilan antarmuka untuk menyimpan \textit{password}}\label{fig:tampilan2_3}
+	\caption{Tampilan notifikasi pada antarmuka jika \textit{password} kurang}\label{fig:tampilan2_2}
 \end{figure}
 
 Setelah tombol \textit{"Add Password"} ditekan, maka tampilan antarmuka akan menambahkan masukkan teks untuk memasukkan \textit{password} yang hendak disimpan. Setelah tombol \textit{"Add"} ditekan, maka tampilan antarmuka akan menambahkan teks masukkan untuk jawaban dari pertanyaan keamanan yang sudah diisi di Bagian no 7. Tampilan yang ditunjukkan perangkat lunak dapat dilihat pada Gambar \ref{fig:tampilan2_1}.
@@ -59,16 +52,16 @@ Setelah tombol \textit{"Add Password"} ditekan, maka tampilan antarmuka akan men
 \begin{figure}[H]
 	\includegraphics[scale=0.5]{Gambar/tampilan2_1}
 	\centering
-	\caption{Tampilan antarmuka untuk menyimpan \textit{password}}\label{fig:tampilan2_1}
+	\caption{Tampilan antarmuka menambah \textit{password}}\label{fig:tampilan2_1}
 \end{figure}
 
 Setelah tombol \textit{"Store"} ditekan, maka tampilan antarmuka perangkat lunak akan kembali ke tampilan antarmuka awal. \textit{Password} sudah berhasil disimpan. Kemudian, setelah tombol \textit{"Retrieve Password"} ditekan, maka tampilan perangkat lunak akan terlihat seperti pada Gambar \ref{fig:tampilan3} dengan keterangan sebagai berikut.
 
 \begin{itemize}
-	\item Bagian no 8 merupakan bagian dari pertanyaan keamanan yang harus dijawab oleh pengguna.
-	\item Bagian no 9 merupakan bagian dari jawaban setiap pertanyaan keamanan yang harus dijawab.
-	\item Bagian no 10 merupakan tombol untuk mengembalikan \textit{password}.
-	\item Bagian no 11 merupakan tombol untuk kembali ke tampilan antarmuka awal.
+	\item Bagian nomor 8 merupakan bagian dari pertanyaan keamanan yang harus dijawab oleh pengguna.
+	\item Bagian nomor 9 merupakan bagian dari jawaban setiap pertanyaan keamanan yang harus dijawab.
+	\item Bagian nomor 10 merupakan tombol untuk mengembalikan \textit{password}.
+	\item Bagian nomor 11 merupakan tombol untuk kembali ke tampilan antarmuka awal.
 \end{itemize}
 
 %diagram
@@ -87,7 +80,7 @@ Setelah tombol "Submit" pada Gambar \ref{fig:tampilan3} ditekan, perangkat lunak
 	\caption{Tampilan antarmuka untuk mengembalikan \textit{password}}\label{fig:tampilan4}
 \end{figure}
 
-Sedangkan, jika tidak sesuai, maka tampilan perangkat lunak akan terlihat seperti pada Gambar \ref{fig:tampilan4_1}.
+Sedangkan, jika pertanyaan keamanan yang dijawab benar kurang dari minimal pertanyaan keamanan yang harus dijawab benar, maka tampilan perangkat lunak akan menunjukkan notifikasi bahwa \textit{password} tidak bisa dikembalikan. Gambar \ref{fig:tampilan4_1} menunjukkan tampilan antarmuka perangkat lunak dengan notifikasi \textit{password} tidak bisa dikembalikan.
 
 %diagram
 \begin{figure}[H]
@@ -102,82 +95,122 @@ Pada bagian ini akan berisi tentang metode pengujian, hasil pengujian, analisis 
 
 \subsection{Metode Pengujian}
 
-Pengujian terhadap perangkat lunak yang sudah dibangun akan dibagi menjadi 2 bagian, yaitu
-\begin{itemize}
-	\item Pengujian fungsional
-	\item Pengujian survei
-\end{itemize}
-Pengujian fungsional bertujuan untuk menguji apakah perangkat lunak yang dibangun sudah bisa mengimplementasikan \textit{secret sharing} shamir. Pengujian survei bertujuan untuk menguji bagaimana kualitas pertanyaan keamanan yang dibuat.
+Pengujian terhadap perangkat lunak yang sudah dibangun akan dibagi menjadi 2 bagian, yaitu pengujian fungsional dan pengujian suvei. Pada bagian ini akan dijelaskan masing-masing dari pengujian dan kasus yang akan digunakan dalam masing-masing pengujian yang dilakukan.
+
+\subsubsection{Pengujian Fungsional}
+	
+Pengujian fungsional bertujuan untuk menguji apakah perangkat lunak dapat berfungsi sesuai dengan harapan. Dalam penelitian ini, perangkat lunak yang dibangun diharapkan dapat menyimpan \textit{password} dalam bentuk \textit{share-share} dan bisa mengembalikan banyak \textit{password} sekaligus dengan menjawab beberapa pertanyaan keamanan.
+
+Kasus yang digunakan dalam pengujian fungsional terdiri dari 2 kasus. Kasus pertama adalah kasus dimana jika sebagian besar pertanyaan keamanan dapat dijawab dengan benar maka password akan bisa dikembalikan. Kasus kedua adalah kasus dimana jika pertanyaan keamanan yang dijawab benar tidak mencapai minimal pertanyaan keamanan yang dijawab benar sehingga password tidak bisa dikembalikan.
+
+\subsubsection{Pengujian Survei}
+
+Pengujian survei bertujuan untuk menguji kualitas dari pertanyaan keamanan yang dibuat saat proses menyimpan \textit{password}. Pengujian survei akan menguji pertanyaan keamanan dibuat berpengaruh pada mudah atau tidaknya password bisa dikembalikan. Setiap pertanyaan ini akan dikelompokkan menjadi beberapa topik kasus yang sesuai dengan jenisnya.
+
+Kasus yang digunakan dalam terdiri dari 4 kasus yang masing-masing terbagi atas topiknya masing-masing. Berikut penjelasan masing-masing topik kasus.
+
+\begin{enumerate}[itemsep=0mm]
+	\item Topik 1 \\
+	Pertanyaan keamanan yang kemungkinan jawabannya hanya 2, yaitu Ya atau Tidak. Selain itu, dalam topik ini digunakan pertanyaan keamanan yang jawabannya bisa dicari di \textit{internet} atau media sosial.
+	\item Topik 2 \\
+	Pertanyaan keamanan yang sebagian besar jawabannya mengenai angka, seperti tanggal, bulan, tahun, dan sebagainya.
+	\item Topik 3 \\
+	Pertanyaan keamanan yang jawabannya mengenai hal-hal personal.
+	\item Topik 4 \\
+	Topik 4 akan berisi gabungan dari topik 1, topik 2, dan topik 3.
+\end{enumerate}
 
 \subsection{Hasil Pengujian Fungsional}\label{subsec:hasil_pengujian_fungsional}
 
-Pengujian fungsional adalah pengujian yang dilakukan terhadap perangkat lunak yang sudah dibangun dengan tujuan untuk memastikan bahwa perangkat lunak yang dibangun sudah bisa mengimplementasikan \textit{secret sharing} shamir. Pada bagian ini akan diberikan satu contoh kasus dimana \textit{password} dapat dikembalikan dan satu contoh kasus dimana \textit{password} tidak bisa dikembalikan.
-
-Pada bagian ini juga akan dijelaskan langkah-langkah dimulai dari menyimpan \textit{password} sampai dengan mengembalikan \textit{password}. Dalam contoh kasus untuk pengujian fungsional, banyak \textit{share} 5, \begin{math}n=5\end{math} dan minimal \textit{share} yang dimiliki supaya bisa mengembalikan password sebanyak 4, \begin{math}k=4\end{math}. Langkah awal adalah menyimpan \textit{password}. Gambar \ref{fig:simpan_password} menunjukkan tampilan antarmuka perangkat lunak untuk langkah awal.
+Sebelum dibahas hasil pengujian terhadap kasus-kasus yang sudah dijelaskan pada bagian metode pengujian fungsional, langkah pertama yang harus dilakukan adalah menyimpan \textit{password}. Untuk pengujian fungsional ini, $n$ yang dipilih adalah $n=5$ dan $k$ yang dipilih adalah $k=4$. Karena itu, ada 5 \textit{password} yang akan disimpan dan ada 5 pertanyaan keamanan yang dibuat untuk masing-masing \textit{password}. Langkah ini ditunjukkan pada Gambar \ref{fig:simpan_password}.
 
 %diagram
 \begin{figure}[H]
-	\includegraphics[scale=0.5]{Gambar/simpan_password}
+	\includegraphics[scale=0.8]{Gambar/simpan_password}
 	\centering
 	\caption{Langkah menyimpan \textit{password}}\label{fig:simpan_password}
 \end{figure}
 
-Pada bagian ini, jenis pertanyaan yang dibuat tidak dipermasalahkan karena tujuannya hanya untuk fungsionalitas. Selain itu, pada bagian masukkan teks untuk \textit{password}, \textit{password} ditunjukkan sekedar bagian dari pengujian. Langkah selanjutnya setelah menyimpan \textit{password} adalah mengembalikan \textit{password}. Gambar \ref{fig:balik_password_sukses} menunjukkan tampilan antarmuka perangkat lunak untuk mengembalikan \textit{password}.
+Masukan password akan pada Gambar \ref{fig:simpan_password} ditunjukkan hanya sebagai bagian dari pengujian saja. Selanjutnya, setelah tombol "\textit{Store}" ditekan, maka password akan disimpan dan tampilan antarmuka perangkat lunak akan kembali ke tampilan antarmuka awal. Tampilan antarmuka awal ditunjukkan pada Gambar \ref{fig:tampilan1}.
+
+Sesudah menyimpan password, langkah selanjutnya adalah melakukan pengujian terhadap kasus-kasus yang sudah dibahas pada bagian sebelumnya. Kasus pertama dari pengujian fungsional adalah kasus pertanyaan yang dijawab dengan benar sebanyak nilai $k$ atau lebih. Hasil yang diharapkan dari kasus pertama adalah password bisa dikembalikan karena banyak pertanyaan yang dijawab dengan benar sebanyak nilai $k$ atau lebih.
+
+Langkah pertama yang perlu dilakukan dalam pengujian terhadap kasus-kasus adalah menjawab pertanyaan keamanan yang sudah disimpan. Untuk bisa menjawab pertanyaan keamanan yang sudah disimpan, tombol "\textit{Retrieve Password}" pada tampilan antarmuka awal harus ditekan. Setelah tombol tersebut ditekan, perangkat lunak akan menampilan tampilan pada Gambar \ref{fig:fungsional1}. Setiap pertanyaan pada Gambar \ref{fig:fungsional1} dijawab dengan mengisi masukan teks yang ada di samping masing-masing pertanyaan keamanan.
 
 %diagram
 \begin{figure}[H]
-	\includegraphics[scale=0.5]{Gambar/balik_password_sukses}
+	\includegraphics[scale=0.6]{Gambar/fungsional1}
 	\centering
-	\caption{Langkah menjawab pertanyaan keamanan}\label{fig:balik_password_sukses}
+	\caption{Tampilan Menjawab Pertanyaan Keamanan}\label{fig:fungsional1}
 \end{figure}
-
-Gambar \ref{fig:balik_password_sukses} menunjukkan bahwa seluruh pertanyaan keamanan dijawab dengan benar dan \textit{password} akan berhasil dikembalikan. Gambar \ref{fig:balik_password_sukses_next} menunjukkan bahwa \textit{password} berhasil dikembalikan.
-
-%diagram
-\begin{figure}[H]
-	\includegraphics[scale=0.5]{Gambar/balik_password_sukses_next}
-	\centering
-	\caption{\textit{Password} berhasil dikembalikan}\label{fig:balik_password_sukses_next}
-\end{figure}
-
-Contoh kasus diatas adalah contoh kasus \textit{password} berhasil didapatkan, berikutnya akan ditunjukkan contoh kasus dimana \textit{password} tidak berhasil dikembalikan. Langkah awal dimulai langsung dari langkah mengembalikan \textit{password} dan ditunjukkan pada Gambar \ref{fig:balik_password_gagal}.
-
-%diagram
-\begin{figure}[H]
-	\includegraphics[scale=0.5]{Gambar/balik_password_gagal}
-	\centering
-	\caption{Langkah menjawab pertanyaan keamanan}\label{fig:balik_password_gagal}
-\end{figure}
-
-Gambar \ref{fig:balik_password_gagal} menunjukkan bahwa dari \begin{math}k=4\end{math}, banyak pertanyaan keamanan yang bisa dijawab benar hanya 3 pertanyaan saja atau \begin{math}k-1\end{math}, yaitu pertanyaan nomor 3, 4, dan 5. Gambar \ref{fig:balik_password_gagal_next} menunjukkan bahwa \textit{password} tidak berhasil didapatkan.
-
-%diagram
-\begin{figure}[H]
-	\includegraphics[scale=0.5]{Gambar/balik_password_gagal_next}
-	\centering
-	\caption{\textit{Password} tidak berhasil dikembalikan}\label{fig:balik_password_gagal_next}
-\end{figure}
-
-\subsection{Hasil Pengujian Survei}\label{subsec:hasil_pengujian_survei}
-
-Pada bagian ini akan ditunjukkan hasil pengujian survei. Hasil pengujian survei bertujuan untuk menilai kualitas dari pertanyaan keamanan dengan melihat tingkat kesulitan untuk menebak atau menjawab jawaban benar. Asumsi yang digunakan dalam pengujian ini adalah seluruh jawaban relevan dengan pertanyaan keamanan.
-
-Pengujian survei ini dilakukan terhadap 7 orang responden terbagi atas 4 kasus. Responden melakukan survei dengan cara mencoba untuk menebak jawaban dari pertanyaan keamanan untuk mengembalikan password. Setiap orang bebas memilih cara untuk mendapatkan jawaban dari pertanyaan selain tidak bertanya kepada pembuat pertanyaan keamanan. 
-
-Tujuh orang responden yang melakukan survei terdiri dari 3 responden teman, 2 responden teman dekat, dan 2 responden keluarga dari pembuat pertanyaan keamanan. Kasus yang digunakan untuk pengujian survei terbagi menjadi 4 topik, yaitu
-\begin{itemize}
-	\item Topik kasus 1: pertanyaan yang kemungkinan jawabannya hanya 2, yaitu Ya dan Tidak dan pertanyaan yang bisa ditemukan dalam sosial media.
-	\item Topik kasus 2: pertanyaan yang jawabannya berupa angka (tanggal lahir, bulan, tahun, dan sebagainya) dan pertanyaan yang tidak stabil, yaitu ketika mengisi dan nanti menjawab belum tentu sama.
-	\item Topik kasus 3: pertanyaan keamanan yang sifatnya personal (ada kemungkinan bisa dijawab bila ada hubungan keluarga).
-	\item Topik kasus 4: gabungan dari topik 1, 2, dan 3 secara merata.
-\end{itemize}
-
-Setiap kasus memiliki minimal banyak pertanyaan keamanan yang dijawab benar yang sama, \begin{math}n=10, k=4\end{math}. Berikut tabel hasil survei untuk setiap kasus beserta dengan penjelasannya.
 
 \subsubsection{Kasus 1}
 
-Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 1.
-\begin{itemize}
+Dalam kasus pertama, hasil yang diharapkan adalah password bisa dikembalikan. Maka dari itu, masukan teks ini akan diisi dengan jawaban yang benar dari masing-masing pertanyaan. Gambar \ref{fig:fungsional2} menunjukkan masukan teks yang sudah diisi dengan jawaban yang benar dari masing-masing pertanyaan.
+
+%diagram
+\begin{figure}[H]
+	\includegraphics[scale=0.6]{Gambar/fungsional2}
+	\centering
+	\caption{Tampilan Menjawab Pertanyaan Keamanan Kasus Pertama}\label{fig:fungsional2}
+\end{figure}
+
+Setelah mengisi jawaban untuk masing-masing pertanyaan, langkah berikutnya adalah memroses jawaban dari masing-masing pertanyaan ini dengan metode skema threshold(k, n) yang sudah dibahas pada Bab \ref{sec:secretsharingshamir}. Untuk memroses hal ini, maka tombol "\textit{Submit}" pada Gambar \ref{fig:fungsional2} perlu ditekan.
+
+Setelah tombol "Submit" pada Gambar \ref{fig:fungsional2} ditekan, perangkat lunak akan memroses setiap jawaban masing-masing pertanyaan. Dalam kasus pertama, seluruh pertanyaan bisa dijawab dengan benar, maka \textit{password} bisa dikembalikan. Gambar \ref{fig:fungsional3} menunjukkan bahwa \textit{password} bisa dikembalikan.
+
+%diagram
+\begin{figure}[H]
+	\includegraphics[scale=0.7]{Gambar/fungsional3}
+	\centering
+	\caption{Hasil Pengujian Fungsional Kasus Pertama}\label{fig:fungsional3}
+\end{figure}
+
+\subsubsection{Kasus 2}
+
+Kasus selanjutnya adalah kasus kedua dimana \textit{password} tidak bisa dikembalikan. Dalam kasus ini, diasumsikan hanya 3 pertanyaan saja yang bisa dijawab dengan benar. Gambar \ref{fig:fungsional4} menunjukkan tampilan menjawab pertanyaan untuk kasus 2.
+
+%diagram
+\begin{figure}[H]
+	\includegraphics[scale=0.6]{Gambar/fungsional4}
+	\centering
+	\caption{Tampilan Menjawab Pertanyaan Keamanan Kasus Kedua}\label{fig:fungsional4}
+\end{figure}
+
+Pada Gambar \ref{fig:fungsional4} dapat dilihat bahwa hanya ada 3 pertanyaan yang dijawab dengan benar. Pertanyaan nomor 2 dan 3 diberi tanda untuk menunjukkan bahwa jawaban dari pertanyaan tersebut tidak tepat.
+
+Langkah selanjutnya adalah memroses jawaban dari masing-masing pertanyaan dengan menekan tombol "\textit{Submit}". Setelah tombol "\textit{Submit}" ditekan, perangkat lunak akan menampilkan hasil pengujian kasus kedua. Dalam kasus kedua, karena $k$ yang dipilih $k=4$ dan hanya 3 pertanyaan yang dijawab dengan benar, maka \textit{password} tidak bisa dikembalikan. Gambar \ref{fig:fungsional5} menunjukkan langkah yang sudah dijelaskan.
+
+%diagram
+\begin{figure}[H]
+	\includegraphics[scale=0.7]{Gambar/fungsional5}
+	\centering
+	\caption{Hasil Pengujian Fungsional Kasus Kedua}\label{fig:fungsional5}
+\end{figure}
+
+\subsection{Analisis Hasil Pengujian Fungsional}
+
+Pada bagian ini akan dibahas analisis dari hasil pengujian fungsional yang sudah dilakukan. Seperti yang sudah dibahas, pengujian fungsional dibagi menjadi 2 kasus, yaitu kasus \textit{password} bisa dikembalikan dan kasus dimana \textit{password} tidak bisa dikembalikan.
+
+Untuk kasus pertama, dapat dilihat bahwa jika pertanyaan keamanan yang dijawab benar lebih besar atau sama dengan nilai $k$ yang sudah ditentukan, maka semua password bisa dikembalikan. Dalam kasus pertama, seluruh pertanyaan dapat dijawab dengan benar, $pertanyaan benar = 5$. Kemudian untuk kasus pertama, nilai $k=4$ dan $pertanyaan benar > k$. Maka dari itu, \textit{password} bisa dikembalikan.
+
+Untuk kasus kedua, dapat dilihat bahwa jika pertanyaan keamanan yang dijawab benar kurang dari $k$, maka password tidak bisa dikembalikan. Dalam kasus kedua, banyak pertanyaan yang dijawab benar hanya 3 pertanyaan, $pertanyaan benar=3$. Jadi, karena $k=4$ dan $pertanyaan benar < k$, \textit{password} tidak bisa dikembalikan.
+
+Jadi, kesimpulan yang dapat diambil dari hasil pengujian kasus pertama dan kedua adalah perangkat lunak sudah bisa mengimplementasikan metode \textit{secret sharing} Shamir untuk mengembalikan $n$ password dengan menjawab $n$ pertanyaan.
+
+\subsection{Analisis dan Hasil Pengujian Survei}\label{subsec:hasil_pengujian_survei}
+
+Pada bagian ini akan ditunjukkan hasil pengujian survei. Seperti yang sudah dijelaskan, pengujian survei bertujuan untuk menilai kualitas dari pertanyaan keamanan dengan melihat tingkat kesulitan untuk menebak atau menjawab jawaban benar. Asumsi yang digunakan dalam pengujian ini adalah seluruh jawaban relevan dengan pertanyaan keamanan.
+
+Pengujian survei ini terbagi atas 4 kasus. Responden melakukan survei dengan cara mencoba untuk menebak jawaban dari pertanyaan keamanan untuk mengembalikan password. Setiap orang bebas memilih cara untuk mendapatkan jawaban dari pertanyaan selain tidak bertanya kepada pembuat pertanyaan keamanan.
+
+Kasus 1, 2, dan 3 memiliki 10 pertanyaan keamanan, $n=10$, dan minimal 4 pertanyaan keamanan dijawab benar, $k=4$. Sementara itu, untuk kasus 4 nilai $n$ dan $k$ ditambah. Dalam kasus 4, terdapat 15 pertanyaan keamanan, $n=15$, dan minimal 6 pertanyaan keamanan dijawab benar, $k=6$. Berikut tabel hasil survei untuk setiap kasus beserta dengan penjelasannya. Untuk kasus 1 dan 2 survei dilakukan terhadap 7 orang responden, sedangkan untuk kasus 3 dan 4 survei dilakukan terhadap 20 orang responden.
+
+\subsubsection{Kasus 1}
+
+Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 1:
+
+\begin{enumerate}[itemsep=0mm]
 	\item Apa jenis kelamin anda? (Laki-laki/Perempuan)
 	\item Apakah anda pernah ke luar negeri?
 	\item Apakah anda mempunyai binatang peliharaan?
@@ -188,19 +221,26 @@ Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 1.
 	\item Apa nama belakang anda?
 	\item Siapa nama ibu anda?
 	\item Siapa nama ayah anda?
-\end{itemize}
-Kemudian, Grafik \ref{fig:kasus1} menunjukkan hasil survei kasus 1.
+\end{enumerate}
+
+Kemudian, hasil dari survei kasus 1 ditunjukkan oleh Grafik \ref{fig:kasus1}.
+
 %diagram
 \begin{figure}[H]
-	\includegraphics[scale=0.7]{Gambar/kasus1}
+	\includegraphics[scale=0.8]{Gambar/kasus1}
 	\centering
 	\caption{Pengujian survei kasus 1}\label{fig:kasus1}
 \end{figure}
 
+\subsubsection{Analisis Kasus 1}
+
+Dilihat dari grafik \ref{fig:kasus1} untuk topik kasus 1, seluruh responden bisa berhasil mengembalikan \textit{password}. Hal ini karena mayoritas kemungkinan jawaban dari pertanyaan keamanan adalah kemungkinan biner dengan hanya 2 kemungkinan saja (Ya atau Tidak). Pertanyaan keamanan yang kemungkinan jawabannya hanya 2 kemungkinan saja bisa dengan mudah ditebak. Karena setiap jawaban bisa dengan mudah ditebak, maka seluruh responden bisa mengembalikan \textit{password} dengan mudah.
+
 \subsubsection{Kasus 2}
 
-Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 2.
-\begin{itemize}
+Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 2:
+
+\begin{enumerate}[itemsep=0mm]
 	\item Pada tahun berapa anda lahir?
 	\item Pada tanggal berapa anda lahir?
 	\item Pada bulan apa anda lahir?
@@ -211,20 +251,28 @@ Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 2.
 	\item Dimana anda tinggal?
 	\item Apa merek kendaraan yang anda pakai?
 	\item Pada hari apa anda lahir?
-\end{itemize}
+\end{enumerate}
 
-Kemudian, Grafik \ref{fig:kasus2} menunjukkan hasil survei kasus 2.
+Kemudian, hasil dari survei kasus 2 ditunjukkan oleh Grafik \ref{fig:kasus2}.
+
 %diagram
 \begin{figure}[H]
-	\includegraphics[scale=0.7]{Gambar/kasus2}
+	\includegraphics[scale=0.8]{Gambar/kasus2}
 	\centering
-	\caption{Pengujian survei kasus 1}\label{fig:kasus2}
+	\caption{Pengujian survei kasus 2}\label{fig:kasus2}
 \end{figure}
+
+\subsubsection{Analisis Kasus 2}
+
+Dilihat dari grafik \ref{fig:kasus2} untuk topik kasus 2, seluruh responden berhasil untuk mengembalikan password. Hal ini disebabkan karena kemungkinan jawaban dari pertanyaan keamanan hanya berupa angka saja, khususnya hanya tanggal ulang tahun, bulan lahir, atau tahun lahir.
+
+Responden dapat menjawab tanggal lahir karena hanya memiliki 30-31 kemungkinan, sedangkan untuk bulan hanya ada 12 kemungkinan, dan juga beberapa pertanyaan lain yang menyangkut angka. Dapat dilihat juga, bahwa beberapa jawaban untuk pertanyaan keamanan merupakan informasi yang sering ditunjukkan dalam profil sosial media, karena dari itu jawaban yang tepat bisa dengan mudah didapatkan.
 
 \subsubsection{Kasus 3}
 
-Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 3.
-\begin{itemize}
+Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 3:
+
+\begin{enumerate}[itemsep=0mm]
 	\item Pada jam berapa anda lahir?(jj:mm)
 	\item Apa nama sekolah dasar tempat anda bersekolah?
 	\item Siapa nama belakang sepupu paling tua dari keluarga sisi ibu anda?
@@ -235,16 +283,26 @@ Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 3.
 	\item Apa alat musik yang anda mainkan pertama kali?
 	\item Dimana kerabat terdekat anda tinggal/berasal?
 	\item Siapa nama guru kelas 3 SD anda?
-\end{itemize}
+\end{enumerate}
 
-Tidak ada responden yang berhasil mengembalikan password untuk kasus 3, karena dari itu grafik untuk kasus 3 tidak ditunjukkan.
+Kemudian, hasil dari survei kasus 3 ditunjukkan oleh Grafik \ref{fig:kasus3}.
+
+%diagram
+\begin{figure}[H]
+	\includegraphics[scale=0.8]{Gambar/kasus3}
+	\centering
+	\caption{Pengujian survei kasus 3}\label{fig:kasus3}
+\end{figure}
+
+\subsubsection{Analisis Kasus 3}
+
+Untuk topik kasus 3, tidak ada responden yang berhasil mengembalikan \textit{password}. Hal ini karena beberapa pertanyaan sifatnya sangat personal dan jawaban tidak bisa dengan mudah ditebak atau dicari di \textit{internet} atau media sosial. Pertanyaan yang sifatnya sangat personal akan mempersulit untuk mengembalikan \textit{password} kecuali bagi pembuat pertanyaan.
 
 \subsubsection{Kasus 4}
 
-Untuk kasus 4, karena merupakan gabungan dari kasus 1, 2, dan 3 maka banyak pertanyaan pun ditambah menjadi 15 pertanyaan, masing-masing 5 pertanyaan untuk setiap kasus.
+Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 4:
 
-Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 4.
-\begin{itemize}
+\begin{enumerate}[itemsep=0mm]
 	\item Apakah anda mempunyai binatang peliharaan?
 	\item Apakah anda bermain alat musik?
 	\item Apakah anda pernah tidak naik kelas?
@@ -260,33 +318,22 @@ Berikut daftar pertanyaan keamanan yang digunakan dalam kasus 4.
 	\item Siapa nama anak paling tua dari nenek sisi ibu anda?
 	\item Apa binatang peliharaan pertama anda?
 	\item Siapa nama guru kelas 3 SD anda?
-\end{itemize}
+\end{enumerate}
 
 Kemudian, Grafik \ref{fig:kasus4} menunjukkan hasil survei kasus 4.
+
 %diagram
 \begin{figure}[H]
-	\includegraphics[scale=0.7]{Gambar/kasus4}
+	\includegraphics[scale=0.8]{Gambar/kasus4}
 	\centering
-	\caption{Pengujian survei kasus 1}\label{fig:kasus4}
+	\caption{Pengujian survei kasus 4}\label{fig:kasus4}
 \end{figure}
 
-\subsection{Analisis Pengujian}
+\subsubsection{Analisis Kasus 4}
 
-Dari data-data hasil pengujian pada bagian subbab \ref{subsec:hasil_pengujian_fungsional} dan subbab \ref{subsec:hasil_pengujian_survei} akan dilakukan analisis. Untuk data hasil pengujian pada subbab \ref{subsec:hasil_pengujian_fungsional} akan dilakukan analisis mengenai tingkat keberhasilan implementasi \textit{secret sharing} shamir pada perangkat lunak yang dibangun. Untuk data hasil pengujian pada subbab \ref{subsec:hasil_pengujian_survei} akan dilakukan analisis kualitas pertanyaan keamanan yang dibangun serta hubungannya dengan tingkat keberhasilan mengembalikan \textit{password}.
+Dilihat dari grafik \ref{fig:kasus4} untuk topik kasus 4, tingkat keberhasilannya tetap tinggi walaupun topik kasus 4 ini merupakan gabungan dari topik kasus 1, 2, dan 3. Hal ini disebabkan karena mayoritas terdiri pertanyaan dari kasus 1 dan kasus 2.
 
-Dinilai dari tingkat keberhasilan implementasi \textit{secret sharing} shamir pada perangkat lunak bisa disebut berhasil. Dalam kasus untuk mengembalikan \textit{password} pada subbab \ref{subsec:hasil_pengujian_fungsional}, dengan menjawab benar 4 pertanyaan atau lebih, \textit{password} bisa dikembalikan, tetapi jika pertanyaan yang dijawab benar kurang 1 atau lebih, dalam kasus ini, kurang dari 4 pertanyaan yang dijawab benar, maka \textit{password} tidak bisa dikembalikan. Hal ini berarti implementasi \textit{secret sharing} shamir pada perangkat lunak bisa dinilai berhasil.
-
-Selanjutnya adalah analisis kualitas pertanyaan keamanan yang dibangun serta efek dan hubungannya dengan tingkat keberhasilan mengembalikan password. Dilihat dari grafik \ref{fig:kasus1} untuk topik kasus 1, karena mayoritas kemungkinan jawaban dari pertanyaan keamanan adalah kemungkinan biner dengan hanya 2 kemungkinan saja (Ya atau Tidak), maka responden bisa dengan mudah mengembalikan \textit{password}.
-
-Dilihat dari grafik \ref{fig:kasus2} untuk topik kasus 2, tingkat keberhasilan untuk mengembalikan password cukup tinggi karena hampir seluruh responden berhasil untuk mengembalikan password. Hal ini disebabkan karena kemungkinan jawaban dari pertanyaan keamanan hanya berupa angka saja, khususnya hanya tanggal ulang tahun, bulan lahir, atau tahun lahir.
-
-Responden dapat menjawab tanggal lahir karena hanya memiliki 30-31 kemungkinan, sedangkan untuk bulan hanya ada 12 kemungkinan, dan juga beberapa pertanyaan lain yang menyangkut angka. Dapat dilihat juga, bahwa beberapa jawaban untuk pertanyaan keamanan merupakan informasi yang sering ditunjukkan dalam profil sosial media, karena dari itu jawaban yang tepat bisa dengan mudah didapatkan.
-
-Untuk topik kasus 3, tidak ada responden yang berhasil mengembalikan \textit{password}. Hal ini karena beberapa pertanyaan sifatnya sangat personal yang bahkan hanya sebagian dari responden keluarga yang mengetahui jawabannya. Pertanyaan yang sifatnya sangat personal akan mempersulit untuk mengembalikan \textit{password} kecuali bagi pembuat pertanyaan.
-
-Dilihat dari grafik \ref{fig:kasus4} untuk topik kasus 4, tingkat keberhasilannya tetap tinggi walaupun topik kasus 4 ini merupakan gabungan dari topik kasus 1, 2, dan 3. Hal ini disebabkan karena mayoritas terdiri pertanyaan dari kasus 1 dan kasus 2 sehingga responden masih bisa mengembalikan \textit{password}.
-
-Responden hanya cukup menjawab 6 pertanyaan benar dari 15 pertanyaan dalam kasus 4, maka responden pun cukup menjawab 3 pertanyaan dari kasus 1 dan 3 pertanyaan dari kasus 2 dengan benar, responden tidak perlu menjawab satupun pertanyaan dari kasus 3. Dapat disimpulkan, bahwa gabungan tidak meningkatkan keamanan dari password untuk bisa dikembalikan hanya oleh pembuat pertanyaan.
+Responden hanya cukup menjawab 6 pertanyaan benar dari 15 pertanyaan dalam kasus 4, maka responden pun cukup menjawab 3 pertanyaan dari kasus 1 dan 3 pertanyaan dari kasus 2 dengan benar, responden tidak perlu menjawab satupun pertanyaan dari kasus 3. Dapat disimpulkan, bahwa meningkatkan banyak pertanyaan keamanan tidak mempersulit untuk mengembalikan \textit{password}.
 
 \subsection{Kesimpulan Pengujian}
 
@@ -298,7 +345,7 @@ Dari 4 kasus pengujian yang dilakukan maka bisa ditarik beberapa kesimpulan dala
 	Pertanyaan keamanan tidak boleh berubah seiring berjalannya waktu.
 	\item Mudah diingat \\
 	Pertanyaan keamanan harus sifatnya personal sehingga mudah untuk diingat.
-	\item Simpel \\
+	\item Sederhana \\
 	Pertanyaan keamanan harus sederhana tetapi sifatnya tetap personal.
 	\item Memiliki banyak kemungkinan jawaban \\
 	Pertanyaan keamanan tidak boleh hanya memiliki kemungkinan jawaban yang sedikit karena akan mudah ditebak (dengan teknik \textit{brute force}).
