@@ -87,8 +87,8 @@
 % - double : jarak yang lebih lebar lagi, jika pembimbing berniat memberi 
 %            catatan yg banyak di antara baris (dianjurkan untuk bimbingan)
 %=============================================================================
-\linespacing{single}
-% \linespacing{onehalf}
+%\linespacing{single}
+ \linespacing{onehalf}
 %\linespacing{double}
 %=============================================================================
 
@@ -179,10 +179,16 @@
 
 \abstrakINA{Otentikasi adalah proses untuk menentukan keaslian identitas dari entitas saat akan mengakses sumber daya sebuah sistem. Entitas yang diotentikasi dapat berupa manusia atau pengguna sistem. Sistem yang hendak diakses dapat berupa akun media sosial, akun \textit{email}, akun \textit{electronic banking}, dan sebagainya.
 
-Salah satu metode otentikasi adalah \textit{password}. \textit{Password} digunakan untuk mengakses sumber daya sebuah sistem. Kebutuhan untuk akses tidak hanya bergantung pada satu sistem saja. Karena itu, untuk banyak akses kepada sebuah sistem, membutuhkan banyak \textit{password}.
+Salah satu metode otentikasi adalah \textit{password}. \textit{Password} digunakan untuk mengakses sumber daya sebuah sistem. Kebutuhan akan sumber daya tidak hanya bergantung pada satu sistem saja. Karena itu, untuk memenuhi kebutuhan akan sumber daya, diperlukan akses ke banyak sistem. Dengan diperlukannya akses ke banyak sistem, maka membutuhkan banyak \textit{password} untuk masing-masing sistem.
+
+Permasalahan akan muncul jika salah satu dari banyak \textit{password} ini hilang, maka otomatis akses kepada sistem tertentu akan hilang juga. Beberapa sistem memiliki mekanisme dengan menyediakan pertanyaan keamanan yang harus dijawab untuk bisa mengembalikan \textit{password}. Pada penelitian ini, akan dikembangkan mekanisme yang sudah disebutkan untuk mengembalikan banyak \textit{password}. Mekanisme ini akan menggunakan metode \textit{secret sharing} Shamir dengan membagi \textit{password} menjadi beberapa bagian dan membuat pertanyaan keamanan untuk masing-masing \textit{password}.
+
+Untuk mengetahui apakah metode \textit{secret sharing} Shamir yang diterapkan untuk membagi banyak \textit{password} akan lebih baik dalam melindungi password, maka akan dilakukan pengujian berupa pembangunan perangkat lunak yang mengimplementasikan \textit{secret sharing} Shamir. Pengujian juga akan dilakukan dengan metode survei untuk mengetahui pengaruh dari pertanyaan keamanan terhadap mekanisme mengembalikan banyak \textit{password} ini.
+
+Berdasarkan hasil pengujian, pertanyaan keamanan memiliki pengaruh terhadap mekanisme mengembalikan banyak \textit{password}. Dengan membuat pertanyaan keamanan yang tepat, \textit{password} bisa dengan mudah dikembalikan oleh pemilik \textit{password} dan juga bisa mempersulit pihak selain pemilik \textit{password} untuk mengembalikan \textit{password}.
 }
 
-\abstrakENG{Abstrak inggris}
+\abstrakENG{Authentication is the process of confirming the truth of an entity when trying to access system resources.}
 
 %=============================================================================
 
@@ -194,9 +200,9 @@ Salah satu metode otentikasi adalah \textit{password}. \textit{Password} digunak
 % - kunciINA: kata-kata kunci dalam bahasa indonesia
 % - kunciENG: keywords in english
 %=============================================================================
-\kunciINA{Otentikasi, \textit{Password}, \textit{Secret Sharing} Shamir}
+\kunciINA{Otentikasi, \textit{Password}, Pertanyaan Keamanan, \textit{Secret Sharing} Shamir}
 
-\kunciENG{Authentication, Password, Shamir's Secret Sharing}
+\kunciENG{Authentication, Password, Security Questions, Shamir's Secret Sharing}
 %=============================================================================
 
 %_____________________________________________________________________________

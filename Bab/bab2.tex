@@ -38,14 +38,14 @@ Proses untuk mengubah \textit{plaintext} menjadi \textit{ciphertext} dinamakan e
 Dalam proses enkripsi, \textit{plaintext} dipetakan dengan fungsi enkripsi \begin{math}E\end{math} menjadi \textit{ciphertext} menggunakan kunci \begin{math}k\end{math}, seperti pada persamaan \ref{eq:enkripsi}.
 
 \begin{equation}
-	E(plaintext) = ciphertext
+	E_k(plaintext) = ciphertext
 	\label{eq:enkripsi}
 \end{equation}
 
 Sementara itu, dalam proses dekripsi, \textit{ciphertext} dipetakan dengan fungsi dekripsi \begin{math}D\end{math} menjadi \textit{plaintext} menggunakan kunci \begin{math}k\end{math} seperti pada persamaan \ref{eq:dekripsi}.
 
 \begin{equation}
-	D(ciphertext) = plaintext
+	D_k(ciphertext) = plaintext
 	\label{eq:dekripsi}
 \end{equation}
 
@@ -111,7 +111,14 @@ Sebagai contoh, posisi ke-1 dari matriks \begin{math}mp\end{math} menunjukkan an
 
 \subsection{Pembangunan Kunci Putaran}
 
-DES menggunakan kunci dengan panjang 64-\textit{bit}. Kunci ini perlu diubah menjadi kunci untuk setiap putaran DES dengan panjang masing-masing 48-\textit{bit}. Proses pembangunan kunci putaran terdiri dari \textit{parity drop}, \textit{shift left}, dan permutasi \textit{P-box}. Pada bagian ini akan dijelaskan proses pengubahan kunci 64-\textit{bit} menjadi kunci putaran dengan panjang 48-\textit{bit}.
+DES menggunakan kunci dengan panjang 64-\textit{bit}. Kunci ini perlu diubah menjadi kunci untuk setiap putaran DES dengan panjang masing-masing 48-\textit{bit}. Proses pembangunan kunci putaran terdiri dari \textit{parity drop}, \textit{shift left}, dan permutasi \textit{P-box}. Gambar \ref{fig:keygenerate} menunjukkan keseluruhan proses dari pembangunan kunci putaran. Pada bagian ini akan dijelaskan masing-masing proses dari pembangunan kunci putaran.
+
+%diagram
+\begin{figure}[H]
+	\includegraphics[scale=0.7]{Gambar/key_generate}
+	\centering
+	\caption{Proses Pembangunan Kunci Putaran}\label{fig:keygenerate}
+\end{figure}
 
 \subsubsection{\textit{Parity Drop}}
 
@@ -201,6 +208,8 @@ Tahap ini adalah proses permutasi untuk mengubah kunci dari proses \textit{Shift
 	\end{center}
 \end{table}
 
+Hasil keluaran dari proses ini adalah kunci putaran dengan panjang 48-\textit{bit} dan siap dipakai untuk masing-masing putaran.
+
 \subsection{Putaran}
 
 DES terdiri dari 16 putaran. Setiap putaran adalah jaringan Feistel yang akan dijelaskan pada bagian selanjutnya. Gambar \ref{fig:putarandes} menunjukkan ilustrasi dari 16 putaran dari DES.
@@ -235,20 +244,6 @@ Masukan dari jaringan Feistel adalah \textit{plaintext} dengan panjang 64-\texti
 		R_i = L_{i-1} \oplus f(R_{i-1}, K_i)
 		\label{eq:xor}
 	\end{equation}
-	\item Tetapi, untuk putaran ke-16, bagian kiri dari \textit{ciphertext} (\begin{math}L_i\end{math}) diperoleh dari bagian kiri dari \textit{plaintext} (\begin{math}L_{i-1}\end{math}) yang di \textit{exclusive-or} (XOR) hasil pemetaan bagian kanan dari \textit{plaintext} (\begin{math}R_{i-1}\end{math}) dan kunci putaran \begin{math}K_i\end{math} dengan fungsi \begin{math}f\end{math}. Persamaan \ref{eq:lastround1} menunjukkan langkah yang sudah dijelaskan.
-	
-	\begin{equation}
-		L_{16} = L_{15} \oplus f(R_{15}, K_{16})
-		\label{eq:lastround1}
-	\end{equation}
-	
-	Sementara itu, bagian kanan dari ciphertext (\begin{math}R_{i}\end{math}) diperoleh dari bagian kanan dari \textit{plaintext} (\begin{math}R_{i-1}\end{math}). Persamaan \ref{eq:lastround2} menunjukkan langkah yang sudah dijelaskan.
-	
-	\begin{equation}
-		R_{16} = R_{15}
-		\label{eq:lastround2}
-	\end{equation}
-	
 	\item Hasil akhirnya berupa \textit{ciphertext} dengan 2 bagian sama panjang, yaitu bagian kiri (\begin{math}L_i\end{math}) dan bagian kanan (\begin{math}R_i\end{math}). 
 \end{enumerate}
 
@@ -523,9 +518,9 @@ Tabel \ref{table:konstantaawal} menunjukkan nilai masing-masing konstanta.
 
 \subsection{Ekspansi Blok Message}\label{subsec:expansiblokmsg}
 
-Setelah inisialisasi konstanta awal, proses berikutnya adalah ekspansi blok \textit{message}. Sesudah blok \textit{message} di\textit{padding}, blok \textit{message} akan dibagi menjadi beberapa blok yang panjangnya masing-masing 1024-\textit{bit}. Kemudian, setelah dibagi menjadi beberapa blok, masing-masing dari blok akan dibagi lagi menjadi blok-blok dengan panjang 64-\textit{bit}. Blok dengan panjang 64-\textit{bit} ini dinamakan word.
+Setelah inisialisasi konstanta awal, proses berikutnya adalah ekspansi blok \textit{message}. Sesudah blok \textit{message} di\textit{padding}, blok \textit{message} akan dibagi menjadi beberapa blok yang panjangnya masing-masing 1024-\textit{bit}. Kemudian, setelah dibagi menjadi beberapa blok 1024-\textit{bit}, masing-masing dari 1024-\textit{bit} akan dibagi lagi menjadi blok-blok dengan panjang 64-\textit{bit}. Blok dengan panjang 64-\textit{bit} ini dinamakan \textit{word}.
 
-Satu blok 1024-bit terdiri dari 16 word. Proses ekspansi blok \textit{message} akan mengekspansi dari 16 \textit{word} menjadi 80 \textit{word}. Masing-masing \textit{word} ini akan diberi nama \begin{math}W_0\end{math} sampai \begin{math}W_{79}\end{math}. Untuk \begin{math}W_0\end{math} sampai \begin{math}W_{15}\end{math} berisi dari 16 \textit{word} pertama dari blok 1024-\textit{bit}. Sementara itu, \begin{math}W_{16}\end{math} sampai \begin{math}W_{79}\end{math} diperoleh dengan rumus dasar yang ditunjukkan oleh persamaan \ref{eq:ekspansiword1}.
+Satu blok 1024-\textit{bit} terdiri dari 16 \textit{word}. Proses ekspansi blok \textit{message} akan mengekspansi dari 16 \textit{word} dari 1 blok 1024-\textit{bit} menjadi 80 \textit{word}. Masing-masing \textit{word} ini akan diberi nama \begin{math}W_0\end{math} sampai \begin{math}W_{79}\end{math}. Untuk \begin{math}W_0\end{math} sampai \begin{math}W_{15}\end{math} berisi dari 16 \textit{word} pertama dari blok 1024-\textit{bit}. Sementara itu, \begin{math}W_{16}\end{math} sampai \begin{math}W_{79}\end{math} diperoleh dengan rumus dasar yang ditunjukkan oleh persamaan \ref{eq:ekspansiword1}.
 
 \begin{equation}
 	W_i = W_{i-16} \oplus RotShift_{1-8-7}(W_{i-15}) \oplus W_{i-7} \oplus RotShift_{19-61-6}(W_{i-2}) \label{eq:ekspansiword1}
@@ -613,7 +608,7 @@ Untuk nilai \textit{word} keluaran \textit{A} dan \textit{E} diperoleh dari \tex
 	Y = D + (Conditional(E,F,G) + Rotate(E) + W_i + K_i + H) \label{eq:fungsikhusus1}
 \end{equation}
 
-Nilai \begin{math}W_i\end{math} diperoleh dari proses Ekspansi Blok \textit{Message} (Subbab \ref{subsec:ekspansiblokmsg}), dimana \textit{i} menunjukkan urutan dari putaran. Nilai \begin{math}K_i\end{math} pada persamaan \ref{eq:fungsikhusus1} diperoleh dari nilai belakang koma akar kubik bilangan prima ke-\begin{math}(i+1)\end{math}. Kemudian, nilai belakang koma ini akan dikonversi menjadi heksadesimal. 
+Nilai \begin{math}W_i\end{math} diperoleh dari proses Ekspansi Blok \textit{Message} (Subbab \ref{subsec:expansiblokmsg}), dimana \textit{i} menunjukkan urutan dari putaran. Nilai \begin{math}K_i\end{math} pada persamaan \ref{eq:fungsikhusus1} diperoleh dari nilai belakang koma akar kubik bilangan prima ke-\begin{math}(i+1)\end{math}. Kemudian, nilai belakang koma ini akan dikonversi menjadi heksadesimal. 
 
 Bilangan prima yang digunakan untuk menghitung nilai \begin{math}K_i\end{math} dimulai dari 2 untuk \begin{math}K_0\end{math}, 3 untuk \begin{math}K_1\end{math}, dan seterusnya secara berurutan sampai 409 untuk \begin{math}K_{79}\end{math}. Persamaan \ref{eq:fungsikhusus2} menunjukkan cara untuk menghitung salah satu dari nilai \begin{math}K_i\end{math}.
 
@@ -650,9 +645,11 @@ Untuk operasi \textit{Conditional} dan \textit{Rotate} sudah dijelaskan pada per
 	Majority(x,y,z) = (x\: AND\: y) \oplus (y\: AND\: z) \oplus (z\: AND\: x) \label{eq:fungsikhusus6}
 \end{equation}
 
-Hasil akhir dari fungsi khusus adalah \textit{word} \begin{math}X\end{math} dan \textit{word} \begin{math}Y\end{math}. \textit{Word} \begin{math}X\end{math} akan menjadi \textit{word} keluaran\begin{math}A\end{math} dan \textit{word} \begin{math}Y\end{math} akan menjadi \textit{word} keluaran \begin{math}E\end{math}. Ilustrasi dari hasil keluaran ini dapat dilihat pada Gambar \ref{fig:masukankeluaranword}.
+Hasil akhir dari fungsi khusus adalah \textit{word} \begin{math}X\end{math} dan \textit{word} \begin{math}Y\end{math}. \textit{Word} \begin{math}X\end{math} akan menjadi \textit{word} keluaran \begin{math}A\end{math} dan \textit{word} \begin{math}Y\end{math} akan menjadi \textit{word} keluaran \begin{math}E\end{math}. Ilustrasi dari hasil keluaran ini ditunjukkan oleh Gambar \ref{fig:masukankeluaranword}.
 
-Setelah 80 putaran dilakukan, operasi pertambahan \textit{bit-bit} akan dilakukan pada hasil putaran ke-80 dengan masukan untuk putaran ke-1. Hasil operasi pertambahan \textit{bit-bit} ini berupa blok dengan panjang 512-\textit{bit} terdiri dari 8 \textit{word}. Blok 512-\textit{bit} ini akan menjadi hasil akhir (\textit{digest}) atau menjadi masukan untuk fungsi kompresi yang digunakan oleh blok \textit{message} ke-2 dan seterusnya. Gambar \ref{fig:digestcreate} menunjukkan proses yang sudah dijelaskan.
+Proses setelah 80 putaran dilakukan adalah operasi pertambahan masing-masing \textit{bit} dari blok 512-\textit{bit} hasil keluaran putaran ke-80 dengan masing-masing \textit{bit} dari blok 512-\textit{bit} masukan untuk putaran ke-1. Ilustrasi proses ini ditunjukkan oleh Gambar \ref{fig:compression_function}. 
+
+Kemudian, hasil akhir dari proses tersebut berupa blok dengan panjang 512-\textit{bit} terdiri dari 8 \textit{word}. Blok 512-\textit{bit} ini akan menjadi hasil akhir (\textit{digest}) atau menjadi masukan untuk fungsi kompresi yang digunakan oleh blok \textit{message} ke-2 dan seterusnya. Gambar \ref{fig:digestcreate} menunjukkan proses yang sudah dijelaskan.
 
 %diagram
 \begin{figure}[H]
@@ -677,7 +674,7 @@ Sementara itu, berdasarkan bentuknya\cite{forouzan2007cryptography}, otentikasi 
 	Sesuatu yang diketahui oleh pengirim pesan dan kebenarannya bisa dipastikan oleh penerima pesan. Contohnya antara lain adalah \textit{password}, nomor PIN, \textit{passphrase}, dan sebagainya.
 	\item Sesuatu yang dimiliki (\textit{something possessed}) \\
 	Sesuatu yang dimiliki adalah sesuatu yang menunjukkan identitas dari pengirim pesan. Contohnya adalah paspor, KTP, kartu kredit, SIM, dan sebagainya.
-	\item Sesuatu yang melekat (something inherent) \\
+	\item Sesuatu yang melekat (\textit{something inherent}) \\
 	Sesuatu yang melekat adalah sesuatu yang menempel atau sebagai bagian dari pengirim pesan. Contohnya adalah sidik jari, suara, pola retina, dan sebagainya.
 \end{enumerate}
 
@@ -956,7 +953,7 @@ Dari hasil pemetaan yang ditunjukkan persamaan \ref{eq:secretsharing4}, langkah 
 	a_0 + a_1\cdot k + a_2\cdot k^2 + ... + a_{k-1}\cdot k^{k-1} = D_k \qquad...\text{\textcircled{k}} \label{eq:secretsharing5}
 \end{gather}
 
-Setelah membentuk persamaan linear, langkah selanjutnya adalah menyelesaikan persamaan linear tersebut dengan metode Eliminasi Gauss-Jordan yang sudah dijelaskan pada Subbab \ref{sec:eliminasigaussjordan}. Tujuannya adalah untuk memperoleh nilai \begin{math}a_1, a_2, ..., a_{k-1}\end{math} kemudian bisa diperoleh nilai \begin{math}a_0\end{math} yang adalah data \begin{math}D\end{math}.
+Setelah membentuk persamaan linear, langkah selanjutnya adalah menyelesaikan persamaan linear tersebut dengan metode Eliminasi Gauss-Jordan yang sudah dijelaskan pada Subbab \ref{sec:eliminasigaussjordan}. Tujuannya adalah untuk memperoleh nilai \begin{math}a_1, a_2, ..., a_{k-1}\end{math}. Dengan menggunakan Proses Substitusi Balik dalam metode Eliminasi Gauss-Jordan, dapat diperoleh nilai \begin{math}a_0\end{math} yang adalah data \begin{math}D\end{math}.
 
 \section{Probabilitas}
 Probabilitas atau peluang merupakan salah cara dalam ilmu matematika untuk mengukur tingkat kepercayaan akan suatu kejadian. Teori probabilitas sangat luas penggunaannya, baik dalam kehidupan sehari-hari maupun dalam percobaan-percobaan ilmiah. Teori probabilitas ini seringkali digunakan oleh para pengambil keputusan untuk memprediksi suatu kejadian sehingga nantinya bisa mengambil keputusan yang tepat.

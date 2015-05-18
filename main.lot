@@ -1,28 +1,28 @@
 \select@language {bahasa}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Matriks Permutasi Awal\relax }}{7}{table.caption.5}
-\contentsline {table}{\numberline {2.2}{\ignorespaces Matriks Permutasi untuk \textit {Parity Drop}\relax }}{8}{table.caption.8}
-\contentsline {table}{\numberline {2.3}{\ignorespaces Matriks kompresi \textit {P-box}\relax }}{9}{table.caption.11}
-\contentsline {table}{\numberline {2.4}{\ignorespaces \textit {P-box}\relax }}{11}{table.caption.19}
-\contentsline {table}{\numberline {2.5}{\ignorespaces \textit {S-box} 1\relax }}{12}{table.caption.22}
-\contentsline {table}{\numberline {2.6}{\ignorespaces \textit {S-box} 2\relax }}{12}{table.caption.23}
-\contentsline {table}{\numberline {2.7}{\ignorespaces \textit {S-box} 3\relax }}{12}{table.caption.24}
-\contentsline {table}{\numberline {2.8}{\ignorespaces \textit {S-box} 4\relax }}{12}{table.caption.25}
-\contentsline {table}{\numberline {2.9}{\ignorespaces \textit {S-box} 5\relax }}{12}{table.caption.26}
-\contentsline {table}{\numberline {2.10}{\ignorespaces \textit {S-box} 6\relax }}{13}{table.caption.27}
-\contentsline {table}{\numberline {2.11}{\ignorespaces \textit {S-box} 7\relax }}{13}{table.caption.28}
-\contentsline {table}{\numberline {2.12}{\ignorespaces \textit {S-box} 8\relax }}{13}{table.caption.29}
-\contentsline {table}{\numberline {2.13}{\ignorespaces Matriks Permutasi \textit {m}\relax }}{14}{table.caption.31}
-\contentsline {table}{\numberline {2.14}{\ignorespaces Matriks Permutasi Akhir\relax }}{14}{table.caption.32}
-\contentsline {table}{\numberline {2.15}{\ignorespaces Konstanta Awal\relax }}{16}{table.caption.33}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Matriks Permutasi Awal\relax }}{8}{table.caption.5}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Matriks Permutasi untuk \textit {Parity Drop}\relax }}{9}{table.caption.9}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Matriks kompresi \textit {P-box}\relax }}{10}{table.caption.12}
+\contentsline {table}{\numberline {2.4}{\ignorespaces \textit {P-box}\relax }}{12}{table.caption.20}
+\contentsline {table}{\numberline {2.5}{\ignorespaces \textit {S-box} 1\relax }}{13}{table.caption.23}
+\contentsline {table}{\numberline {2.6}{\ignorespaces \textit {S-box} 2\relax }}{13}{table.caption.24}
+\contentsline {table}{\numberline {2.7}{\ignorespaces \textit {S-box} 3\relax }}{13}{table.caption.25}
+\contentsline {table}{\numberline {2.8}{\ignorespaces \textit {S-box} 4\relax }}{14}{table.caption.26}
+\contentsline {table}{\numberline {2.9}{\ignorespaces \textit {S-box} 5\relax }}{14}{table.caption.27}
+\contentsline {table}{\numberline {2.10}{\ignorespaces \textit {S-box} 6\relax }}{14}{table.caption.28}
+\contentsline {table}{\numberline {2.11}{\ignorespaces \textit {S-box} 7\relax }}{14}{table.caption.29}
+\contentsline {table}{\numberline {2.12}{\ignorespaces \textit {S-box} 8\relax }}{14}{table.caption.30}
+\contentsline {table}{\numberline {2.13}{\ignorespaces Matriks Permutasi \textit {m}\relax }}{15}{table.caption.32}
+\contentsline {table}{\numberline {2.14}{\ignorespaces Matriks Permutasi Akhir\relax }}{15}{table.caption.33}
+\contentsline {table}{\numberline {2.15}{\ignorespaces Konstanta Awal\relax }}{17}{table.caption.34}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Nilai \textit {x} untuk masing-masing \textit {f(x)}\relax }}{33}{table.caption.50}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Hasil Enkripsi setiap \textit {Share} untuk \textit {Password} Pertama\relax }}{34}{table.caption.52}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Hasil Dekripsi \textit {Share}\relax }}{36}{table.caption.54}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Tabel Pasangan $n$ dan $k$\relax }}{40}{table.caption.56}
-\contentsline {table}{\numberline {3.5}{\ignorespaces Skenario Menyimpan \textit {Password}\relax }}{43}{table.caption.60}
-\contentsline {table}{\numberline {3.6}{\ignorespaces Skenario Menyimpan \textit {Password}\relax }}{44}{table.caption.61}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Nilai \textit {x} untuk masing-masing \textit {f(x)}\relax }}{35}{table.caption.51}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Hasil Enkripsi setiap \textit {Share} untuk \textit {Password} Pertama\relax }}{37}{table.caption.53}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Hasil Dekripsi \textit {Share}\relax }}{39}{table.caption.55}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Tabel Pasangan $n$ dan $k$\relax }}{43}{table.caption.57}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Skenario Menyimpan \textit {Password}\relax }}{47}{table.caption.61}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Skenario Menyimpan \textit {Password}\relax }}{47}{table.caption.62}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

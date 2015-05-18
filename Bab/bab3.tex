@@ -62,7 +62,7 @@ Setelah memilih nilai \begin{math}n\end{math}, langkah berikutnya adalah memilih
 
 Langkah selanjutnya adalah memilih \begin{math}k-1\end{math} angka acak untuk masing-masing karakter \begin{math}c_1\end{math} sampai \begin{math}c_6\end{math}. Karena \begin{math}k=3\end{math}, maka dipilih 2 angka acak untuk masing-masing karakter. Berikut angka acak untuk masing-masing karakter.
 
-\begin{itemize}
+\begin{itemize}[itemsep=0mm]
 	\item \begin{math}c_1\end{math}: 12 dan 6.
 	\item \begin{math}c_2\end{math}: 15 dan 11.
 	\item \begin{math}c_3\end{math}: 22 dan 1.
@@ -128,7 +128,7 @@ Pada proses ini, sebelum masing-masing \textit{share} disimpan, masing-masing \t
 
 Kembali kepada kasus pada Subbab \ref{subsec:pengenalankasus}, misalkan \textit{password} yang akan dienkripsi \textit{share-share}nya adalah \begin{math}p_1\end{math}. Langkah pertama adalah membuat \begin{math}n\end{math} pertanyaan keamanan, karena \begin{math}n=5\end{math} maka ada 5 pertanyaan keamanan. Setiap pertanyaan keamanan akan diberi label \begin{math}q_1, q_2, ..., q_5\end{math}. Untuk kasus ini, diasumsikan pertanyaan keamanan yang dibuat adalah sebagai berikut.
 
-\begin{enumerate}
+\begin{enumerate}[itemsep=0mm]
 	\item Siapa nama anda? (\begin{math}q_1\end{math})
 	\item Dimana kota tempat anda tinggal? (\begin{math}q_2\end{math})
 	\item Apa jenis kelamin anda? (\begin{math}q_3\end{math})
@@ -138,7 +138,7 @@ Kembali kepada kasus pada Subbab \ref{subsec:pengenalankasus}, misalkan \textit{
 
 Setelah membuat pertanyaan keamanan yang akan digunakan, langkah selanjutnya adalah menentukan jawaban dari masing-masing pertanyaan keamanan. Setiap jawaban untuk pertanyaan keamanan akan diberi label \begin{math}a_1\end{math} untuk \begin{math}q_1\end{math}, \begin{math}a_2\end{math} untuk \begin{math}q_2\end{math}, dan seterusnya sampai \begin{math}a_5\end{math} untuk \begin{math}q_5\end{math}. Jawaban dari masing-masing pertanyaan keamanan adalah sebagai berikut.
 
-\begin{enumerate}
+\begin{enumerate}[itemsep=0mm]
 	\item Samuel (\begin{math}a_1\end{math})
 	\item Bandung (\begin{math}a_2\end{math})
 	\item Laki-laki (\begin{math}a_3\end{math})
@@ -165,17 +165,17 @@ Langkah selanjutnya adalah mengenkripsi setiap nilai \textit{share} yang sudah d
 		\caption{Hasil Enkripsi setiap \textit{Share} untuk \textit{Password} Pertama}\label{table:enkripsi1}
 		\begin{tabular}{| >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} |}
 				\hline
-						& E(f_1) 	& E(f_2) 	& E(f_3) 	& E(f_4) 	& E(f_5) 	& E(f_6) 	\\ \hline
-				h_1 & aa7cm	 	& a45sf 	& 1xz5q		& x15z6		& cx96v		& 6zx51		\\ \hline
-				h_2 & ff3ds 	& 5cv1s		& rf51s		& xcq89		& a9er8		& 9wrt8		\\ \hline
-				h_3 & fg9e5 	& afa65		& ge65r		& we65q		& s6dv5		& xf8xj		\\ \hline
-				h_4 & d3d64 	& eq89v		& 85vbn		& nm6f5		& 51gvq		& x91qw		\\ \hline
-				h_5 & a54q1 	& z1x56		& as46c		& na6e5		& cz98q		& ha658		\\ \hline
+						& c_1 		& c_2 		& c_3 		& c_4 		& c_5 		& c_6 	\\ \hline
+				s_1 & aa7cm	 	& a45sf 	& 1xz5q		& x15z6		& cx96v		& 6zx51		\\ \hline
+				s_2 & ff3ds 	& 5cv1s		& rf51s		& xcq89		& a9er8		& 9wrt8		\\ \hline
+				s_3 & fg9e5 	& afa65		& ge65r		& we65q		& s6dv5		& xf8xj		\\ \hline
+				s_4 & d3d64 	& eq89v		& 85vbn		& nm6f5		& 51gvq		& x91qw		\\ \hline
+				s_5 & a54q1 	& z1x56		& as46c		& na6e5		& cz98q		& ha658		\\ \hline
 		\end{tabular}
 	\end{center}
 \end{table}
 
-Angka yang ditunjuk oleh kolom \begin{math}E(f_1)\end{math} dan baris \begin{math}h_1\end{math} adalah hasil enkripsi untuk \textit{share} pertama dari fungsi pertama. Sementara itu, angka yang ditunjuk oleh kolom \begin{math}E(f_2)\end{math} dan baris \begin{math}h_1\end{math} adalah hasil enkripsi untuk \textit{share} pertama dari fungsi kedua dan seterusnya.
+Kolom pada Tabel \ref{table:enkripsi1} menunjukkan urutan karakter dari \textit{password}. Sementara itu, baris menunjukkan urutan \textit{share} dari masing-masing karakter. Sebagai contoh, kolom $c_1$ baris $s_1$ menunjukkan hasil enkripsi untuk \textit{share} pertama dari karakter pertama \textit{password} $p_1$.
 
 Langkah enkripsi setiap \textit{share} ini dilakukan untuk setiap \textit{password} \begin{math}p_2\end{math} sampai \begin{math}p_5\end{math}. Kemudian setelah proses enkripsi ini, pertanyaan keamanan, jawaban, hasil enkripsi (\textit{ciphertext}), nilai \textit{salt}, dan nilai \begin{math}k\end{math} akan disimpan.
 
@@ -201,7 +201,7 @@ Proses dekripsi \textit{share} adalah proses mengembalikan \textit{ciphertext} d
 
 Kembali kepada kasus yang dijelaskan pada Subbab \ref{subsec:pengenalankasus}, langkah pertama adalah menjawab pertanyaan keamanan yang sebelumnya disimpan. Berikut pertanyaan keamanan yang disimpan dan jawaban untuk masing-masing pertanyaan keamanan.
 
-\begin{enumerate}
+\begin{enumerate}[itemsep=0mm]
 	\item Siapa nama anda? (\begin{math}q_1\end{math}): Samuel (\begin{math}a'_1\end{math})
 	\item Dimana kota tempat anda tinggal? (\begin{math}q_2\end{math}): Bandung (\begin{math}a'_2\end{math})
 	\item Apa jenis kelamin anda? (\begin{math}q_3\end{math}): Laki-laki (\begin{math}a'_3\end{math})
@@ -233,7 +233,7 @@ Kemudian, proses dekripsi diulang untuk setiap \textit{share} dari \textit{passw
 		\caption{Hasil Dekripsi \textit{Share}}\label{table:tabeldekripsi1}
 		\begin{tabular}{| >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} | >{$}l<{$} |}
 				\hline
-						& 1		 		& 2		 		& 3		 		& 4		 		& 5		 		& 6		 	\\ \hline
+						& c_1		 	& c_2		 	& c_3		 	& c_4		 	& c_5		 	& c_6		 	\\ \hline
 				s_1 & 67	 		& 76 			& 74			& 76			& 80			& 96			\\ \hline
 				s_2 & 97 			& 124			& 99			& 106			& 123			& 172			\\ \hline
 				s_3 & 139 		& 194			& 126			& 142			& 182			& 282			\\ \hline
@@ -243,7 +243,7 @@ Kemudian, proses dekripsi diulang untuk setiap \textit{share} dari \textit{passw
 	\end{center}
 \end{table}
 
-Kolom pada Tabel \ref{table:tabeldekripsi1} menunjukkan urutan karakter dari \textit{password} \begin{math}p_1\end{math}, sedangkan baris pada Tabel \ref{table:tabeldekripsi1} menunjukkan urutan \textit{share} dari masing-masing karakter. Sebagai contoh, baris \begin{math}s_1\end{math} kolom 1 menunjukkan \textit{share} pertama untuk karakter pertama dari \textit{password} \begin{math}p_1\end{math} dan seterusnya sampai baris \begin{math}s_5\end{math} kolom 6 menunjukkan \textit{share} kelima untuk karakter keenam \textit{password} \begin{math}p_1\end{math}.
+Kolom pada Tabel \ref{table:tabeldekripsi1} menunjukkan urutan karakter dari \textit{password} \begin{math}p_1\end{math}, sedangkan baris pada Tabel \ref{table:tabeldekripsi1} menunjukkan urutan \textit{share} untuk masing-masing karakter. Sebagai contoh, baris \begin{math}s_1\end{math} kolom $c_1$ menunjukkan \textit{share} pertama untuk karakter pertama dari \textit{password} \begin{math}p_1\end{math} dan seterusnya sampai baris \begin{math}s_5\end{math} kolom $c_6$ menunjukkan \textit{share} kelima untuk karakter keenam \textit{password} \begin{math}p_1\end{math}.
 
 \subsubsection{Proses Rekonstruksi \textit{Password}}
 
@@ -411,7 +411,7 @@ Maka, dari persamaan \ref{eq:pilihn1} untuk $n$ pertanyaan, probabilitas dari $P
 
 $P_2$ akan mempengaruhi pasangan $n$ dan $k$ yang harus dipilih. Jika diasumsikan $P_0 = 0.95$ dan $P_2 = 0.99998$, maka pasangan $n$ dan $k$ yang ideal dari hasil penghitungan menggunakan persamaan \ref{eq:pilihn2}\cite{ellison2000protecting}:
 
-\begin{table}{H}
+\begin{table}[H]
 	\begin{center}
 		\caption{Tabel Pasangan $n$ dan $k$}\label{table:pilihn3}
 		\begin{tabular}{|| >{$}c<{$} | >{$}c<{$} || >{$}c<{$} | >{$}c<{$} || >{$}c<{$} | >{$}c<{$} ||}
@@ -450,7 +450,7 @@ Secara umum, proses penyimpanan \textit{password} memiliki tahapan yang sama. Pe
 	\item Tahap Pembangunan \textit{Share} \\
 	Pada tahap ini, dibutuhkan data-data masukan seperti $n$, $k$, dan $n$ \textit{password}. \textit{Password} diperoleh dari masukan pengguna. $n$ diperoleh dari banyak \textit{password} yang dimasukan pengguna. $k$ ditentukan dengan cara yang sudah dijelaskan pada Subbab \ref{subsec:pilihnk}.
 	\item Tahap Pembuatan Digest \\
-	Pada tahap ini, dibutuhkan data-data masukan juga seperti pertanyaan keamanan, jawaban dari pertanyaan keamanan, dan \textit{salt}. Pertanyaan keamanan dan jawaban dari pertanyaan keamanan diperoleh dari masukan pengguna. Sementara itu, \textit{salt} dipilih secara acak. Setelah itu, pertanyaan, jawaban, dan \textit{salt} akan dikonkatenasi menjadi sebuah \textit{string} yang akan dibuat \textit{digest}nya. Dalam tahap ini, pembuatan \textit{digest} akan menggunakan algoritma \textit{SHA}-512 (Subbab\ref{sec:SHA512}).
+	Pada tahap ini, dibutuhkan data-data masukan juga seperti pertanyaan keamanan, jawaban dari pertanyaan keamanan, dan \textit{salt}. Pertanyaan keamanan dan jawaban dari pertanyaan keamanan diperoleh dari masukan pengguna. Sementara itu, \textit{salt} dipilih secara acak. Setelah itu, pertanyaan, jawaban, dan \textit{salt} akan dikonkatenasi menjadi sebuah \textit{string} yang akan dibuat \textit{digest}nya. Dalam tahap ini, pembuatan \textit{digest} akan menggunakan algoritma \textit{SHA}-512 (Subbab \ref{sec:SHA512}).
 	\item Tahap Enkripsi \\
 	Pada tahap ini, \textit{share} yang dihasilkan pada tahap pembangunan \textit{share} akan dienkripsi dengan menggunakan \textit{Data Encryption Standard} (Subbab \ref{sec:des}). \textit{Digest} yang dihasilkan pada tahap pembuatan \textit{digest} akan digunakan sebagai kunci proses enkripsi. Kemudian, \textit{ciphertext} dari \textit{share} hasil enkripsi akan disimpan.
 \end{itemize}
@@ -511,7 +511,7 @@ Skenario untuk mengembalikan \textit{password} ditunjukkan oleh Tabel \ref{table
 
 \begin{table}[H]
 	\centering
-	\caption{Skenario Menyimpan \textit{Password}} \label{table:scenario1}
+	\caption{Skenario Menyimpan \textit{Password}} \label{table:scenario2}
 	\begin{tabular}{|l|p{12cm}|}
 		\hline
 		\textbf{Nama} 					& Mengembalikan \textit{Password} 																									\\ \hline
@@ -552,7 +552,7 @@ Selanjutnya, sistem akan melakukan proses dekripsi setiap \textit{share} yang su
 
 \subsection{Diagram Kelas}
 
-Pada bagian ini akan dibuat diagram kelas dari perangkat lunak yang akan dibangun. Kelas-kelas ini merupakan rancangan kelas yang dibutuhkan untuk membangun perangkat lunak dan dibuat berdasarkan proses-proses yang sudah dijelaskan pada Subbab \ref{sec:analisis}. Rancangan diagram kelas dari perangkat lunak yang dibangun ditunjukkan oleg Gambar \ref{fig:diagramkelasdummy}.
+Pada bagian ini akan dibuat diagram kelas dari perangkat lunak yang akan dibangun. Kelas-kelas ini merupakan rancangan kelas yang dibutuhkan untuk membangun perangkat lunak dan dibuat berdasarkan proses-proses yang sudah dijelaskan pada Subbab \ref{sec:analisis}. Rancangan diagram kelas dari perangkat lunak yang dibangun ditunjukkan oleh Gambar \ref{fig:diagramkelasdummy}.
 
 %diagram
 \begin{figure}[H]
