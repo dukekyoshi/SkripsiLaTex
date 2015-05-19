@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.12.9)  19 MAY 2015 21:30
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.12.9)  19 MAY 2015 21:50
 entering extended mode
 **main.tex
 (H:\Kuliah\Skripsi\SkripsiLaTex\main.tex
@@ -1276,7 +1276,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  19631 strings out of 493921
  284285 string characters out of 3147288
- 939022 words of memory out of 3000000
+ 939677 words of memory out of 3000000
  20140 multiletter control sequences out of 15000+200000
  22041 words of font info for 47 fonts, out of 3000000 for 9000
  845 hyphenation exceptions out of 8191
@@ -1299,9 +1299,9 @@ Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fi
 ts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (118 pages, 2845850 bytes).
+Output written on main.pdf (118 pages, 2846570 bytes).
 PDF statistics:
- 4729 PDF objects out of 5155 (max. 8388607)
+ 4730 PDF objects out of 5155 (max. 8388607)
  2368 named destinations out of 2487 (max. 500000)
  902 words of extra memory for PDF output out of 10000 (max. 10000000)
 
