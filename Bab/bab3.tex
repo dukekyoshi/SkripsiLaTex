@@ -387,17 +387,17 @@ Proses yang sama akan dilakukan untuk karakter kedua, ketiga, sampai karakter ke
 	p_1 = 123456 \label{eq:passwordbalik1}
 \end{equation}
 
-\section{Pemilihan \textit{n} dan \textit{k}}\label{subsec:pilihnk}
+\section{Pemilihan Nilai \textit{n} dan \textit{k}}\label{subsec:pilihnk}
 
 Pengguna dapat memilih \begin{math}n\end{math} dan \begin{math}k\end{math} sesuai dengan kebutuhan. Pemilihan \begin{math}n\end{math} dan \begin{math}k\end{math} yang baik, tidak hanya dapat membuat \textit{password} tidak akan mudah dikembalikan oleh pihak yang tidak berhak, tetapi dapat juga membuat pengguna bisa dengan mudah mengembalikan \textit{password}\cite{ellison2000protecting}. Pada bagian ini, akan dijelaskan bagaimana pemilihan \begin{math}n\end{math} dan \begin{math}k\end{math} dapat mempengaruhi kedua hal tersebut.
 
-\subsection{Pemilihan \textit{k}}
+\subsection{Pemilihan Nilai \textit{k}}
 
-Nilai \begin{math}k\end{math} adalah banyak minimal pertanyaan benar yang perlu dijawab agar bisa memperoleh \textit{password}. Setiap dari pertanyaan keamanan memiliki kemungkinan jawabannya masing-masing. Setiap kemungkinan jawaban dari pertanyaan ini memiliki nilai entropi \begin{math}e_i\end{math}. Pertanyaan keamanan yang memiliki kemungkinan jawaban hanya 2 (ya/tidak) memiliki nilai entropi \begin{math}e_i\end{math} yang besar sehingga mudah ditebak.
+Nilai \begin{math}k\end{math} adalah banyak minimal pertanyaan benar yang perlu dijawab agar bisa memperoleh \textit{password}. Setiap dari pertanyaan keamanan memiliki kemungkinan jawabannya masing-masing. Setiap pertanyaan keamanan ini memiliki nilai entropi \begin{math}e_i\end{math} dilihat dari kemungkinan jawaban setiap pertanyaan. Jenis pertanyaan keamanan yang dibuat akan mempengaruhi nilai entropi $e_i$.
 
-Maka dengan bertambahnya nilai \begin{math}k\end{math} dan diasumsikan \begin{math}e_i\end{math} dari setiap pertanyaan sangat kecil, maka kemungkinan jawaban dari setiap pertanyaan akan bervariasi. Namun, nilai \begin{math}k\end{math} yang terlalu besar juga akan menyulitkan pemilik \textit{password} untuk mengembalikan \textit{password} karena semakin banyak pertanyaan yang harus dijawab dengan tepat.
+Maka dengan bertambahnya nilai \begin{math}k\end{math} dan diasumsikan \begin{math}e_i\end{math} dari setiap pertanyaan sangat kecil, maka kemungkinan jawaban dari setiap pertanyaan akan bervariasi sehingga jawaban dari masing-masing pertanyaan keamanan tidak bisa dengan mudah ditebak atau diprediksi. Namun, nilai \begin{math}k\end{math} yang terlalu besar juga akan menyulitkan pemilik \textit{password} untuk mengembalikan \textit{password} karena semakin banyak pertanyaan yang harus dijawab dengan tepat.
 
-\subsection{Pemilihan \textit{n}}
+\subsection{Pemilihan Nilai \textit{n}}
 
 Nilai \begin{math}n\end{math} adalah banyak pertanyaan keamanan yang dibuat. Banyak pertanyaan yang dibuat, $n$, memiliki hubungan yang erat dengan kemampuan pengguna menjawab setiap pertanyaan dengan benar. Diasumsikan jika probabilitas sebuah pertanyaan dijawab dengan benar adalah $P_0$. Maka, probabilitas bahwa pengguna bisa menjawab benar $k$ pertanyaan dari $n$ pertanyaan\cite{ellison2000protecting}:
 

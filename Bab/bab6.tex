@@ -5,11 +5,10 @@ Bab ini berisi kesimpulan dan saran dari penelitian yang dilakukan. Kesimpulan a
 
 \section{Kesimpulan}
 
-Dari penelitian yang dilakukan, \textit{secret sharing} Shamir dapat melindungi \textit{password} dengan cara membagi \textit{password} menjadi beberapa bagian atau \textit{share} sehingga selain \textit{password} juga terlindungi dari pihak yang tidak berhak untuk mengetahui, \textit{password} juga terlindungi dari \textit{human error}, musibah, dan sebagainya yang bisa menyebabkan sebagian dari \textit{password} hilang.
+Dari hasil pengujian fungsional yang dilakukan, dapat dilihat bahwa pengguna cukup menjawab beberapa saja pertanyaan keamanan untuk mengembalikan banyak \textit{password} sehingga pengguna tidak perlu mengingat setiap jawaban dari pertanyaan keamanan. Dari hasil ini, dapat disimpulkan bahwa perangkat lunak yang mengimplementasikan \textit{secret sharing} Shamir berhasil dibangun.
 
-Selain itu, dengan adanya pertanyaan keamanan yang digunakan dalam metode \textit{secret sharing} Shamir, kerahasiaan \textit{password} juga terjamin. Melalui penelitian ini, dapat disimpulkan bahwa metode \textit{secret sharing} Shamir dapat melindungi \textit{password}.
+Dari hasil pengujian survei, dapat diambil hal penting yang berhubungan dengan pemilihan jenis pertanyaan keamanan yang dibuat. Jenis pertanyaan keamanan yang dibuat dapat dinilai dengan melihat 5 sifat berikut:
 
-Kualitas dari pertanyaan keamanan bisa dinilai dari 5 sifat:
 \begin{enumerate}[itemsep=0mm]
 	\item Aman
 	\item Stabil
@@ -17,8 +16,10 @@ Kualitas dari pertanyaan keamanan bisa dinilai dari 5 sifat:
 	\item Sederhana
 	\item Memiliki banyak kemungkinan jawaban
 \end{enumerate}
-Dari hasil penelitian juga dapat diketahui bahwa tidak ada pertanyaan keamanan yang memiliki kelima sifat secara sekaligus, beberapa dari sifat ada yang berlawanan sehingga tidak mungkin dapat dimiliki oleh sebuah pertanyaan keamanan sekaligus.
-Dari hasil penelitian yang dilakukan, dapat disimpulkan bahwa perangkat lunak yang mengimplementasikan \textit{secret sharing} shamir berhasil dibangun.
+
+Dari hasil pengujian survei juga, dapat diketahui bahwa tidak ada pertanyaan keamanan yang memiliki kelima sifat secara sekaligus, beberapa dari sifat ada yang berlawanan sehingga tidak mungkin dapat dimiliki oleh sebuah pertanyaan keamanan sekaligus. Selain itu, jenis pertanyaan keamanan yang dibuat dapat mempengaruhi nilai entropi dari pertanyaan keamanan. Pertanyaan keamanan yang memiliki nilai entropi tinggi dapat dengan mudah ditebak atau diprediksi.
+
+Jadi, dari hasil pengujian untuk penelitian yang dilakukan, dapat diambil kesimpulan bahwa metode \textit{secret sharing} Shamir dapat digunakan untuk mengembalikan $n$ password dengan $n$ pertanyaan keamanan, perangkat lunak pengingat \textit{password} yang mengimplementasikan metode \textit{secret sharing} Shamir berhasil dibangun, dan kualitas dari pertanyaan keamanan dapat dinilai dari 5 sifat yang sudah dipaparkan di atas.
 
 \section{Saran}
 

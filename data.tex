@@ -162,7 +162,7 @@
 %			 - Judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
 %=============================================================================
 
-\judulINA{Perlindungan \textit{Password} Dengan Entropi Personal}
+\judulINA{Analisa Metode Pengingat \textit{Password} Dengan \textit{Secret Sharing} Shamir}
 
 \judulENG{Protecting Password With Personal Entropy}
 
@@ -181,14 +181,27 @@
 
 Salah satu metode otentikasi adalah \textit{password}. \textit{Password} digunakan untuk mengakses sumber daya sebuah sistem. Kebutuhan akan sumber daya tidak hanya bergantung pada satu sistem saja. Karena itu, untuk memenuhi kebutuhan akan sumber daya, diperlukan akses ke banyak sistem. Dengan diperlukannya akses ke banyak sistem, maka membutuhkan banyak \textit{password} untuk masing-masing sistem.
 
-Permasalahan akan muncul jika salah satu dari banyak \textit{password} ini hilang, maka otomatis akses kepada sistem tertentu akan hilang juga. Beberapa sistem memiliki mekanisme dengan menyediakan pertanyaan keamanan yang harus dijawab untuk bisa mengembalikan \textit{password}. Pada penelitian ini, akan dikembangkan mekanisme yang sudah disebutkan untuk mengembalikan banyak \textit{password}. Mekanisme ini akan menggunakan metode \textit{secret sharing} Shamir dengan membagi \textit{password} menjadi beberapa bagian dan membuat pertanyaan keamanan untuk masing-masing \textit{password}.
+Permasalahan akan muncul jika salah satu dari banyak \textit{password} ini hilang, maka otomatis akses kepada sistem tertentu akan hilang juga. Beberapa sistem memiliki mekanisme dengan menyediakan pertanyaan keamanan yang harus dijawab untuk bisa mengembalikan \textit{password}. Pada penelitian ini, akan dikembangkan mekanisme untuk mengembalikan $n$ \textit{password} dengan menyediakan $n$ pertanyaan keamanan. Mekanisme ini akan menggunakan metode \textit{secret sharing} Shamir dengan membagi setiap \textit{password} menjadi beberapa bagian dan membuat pertanyaan keamanan untuk masing-masing \textit{password}.
 
-Untuk mengetahui apakah metode \textit{secret sharing} Shamir dengan membagi banyak \textit{password} akan lebih baik dalam melindungi \textit{password}, maka akan dilakukan pengujian berupa pembangunan perangkat lunak yang mengimplementasikan \textit{secret sharing} Shamir. Selain itu, akan dilakukan juga pengujian dengan metode survei untuk mengetahui pengaruh dari pertanyaan keamanan terhadap metode \textit{secret sharing} Shamir dalam mengembalikan banyak \textit{password} ini.
+Untuk mengetahui apakah mekanisme mengembalikan $n$ \textit{password} dengan menyediakan $n$ pertanyaan keamanan dengan menggunakan metode \textit{secret sharing} Shamir akan lebih baik dalam melindungi \textit{password}, maka akan dilakukan pembangunan perangkat lunak yang mengimplementasikan \textit{secret sharing} Shamir dan pengujian terhadap perangkat lunak yang dibangun. Selain itu, akan dilakukan juga pengujian dengan metode survei untuk mengetahui pengaruh dari pertanyaan keamanan terhadap metode \textit{secret sharing} Shamir dalam mengembalikan $n$ \textit{password} ini.
+
+Selain itu, untuk menjaga kerahasiaan password dan jawaban dari masing-masing pertanyaan keamanan, metode \textit{secret sharing} Shamir akan dikombinasikan dengan enkripsi dan fungsi \textit{hash}. Teknik enkripsi yang akan digunakan adalah \textit{Data Encryption Standard} dan algoritma fungsi \textit{hash} yang akan digunakan adalah \textit{Secure Hashing Algorithm} 512.
 
 Berdasarkan hasil pengujian, pertanyaan keamanan memiliki pengaruh terhadap mekanisme mengembalikan banyak \textit{password}. Dengan membuat pertanyaan keamanan yang tepat, \textit{password} bisa dengan mudah dikembalikan oleh pemilik \textit{password} dan juga bisa mempersulit pihak selain pemilik \textit{password} untuk mengembalikan \textit{password}.
 }
 
-\abstrakENG{Authentication is the process of confirming the truth of an entity trying to access system resources. An entity can be human or system user and a system can be a social media system, email system, electronic banking system, and etc.}
+\abstrakENG{Authentication is the process of confirming the truth of an entity trying to access system resources. An entity can be human or system user and a system can be a social media system, email system, electronic banking system, and etc.
+
+Password is one of the techniques to authenticate an entity. Password is used before an entity access system resources. The need of access to system resources does not rely on just a certain system only. To fulfill the need of access to system resources, an entity need to have many access to a lot of systems. By this way, an entity must have password for each system he/she has access to.
+
+The problem will appear if one of these passwords is missing. User will lost access to system resources for this certain password. Some of the systems have mechanism that can retrieve the missing password by answering a security questions. In this research, a new mechanism will be developed to retrieve $n$ passwords by creating $n$ security questions. This mechanism will use secret sharing Shamir to divide the each password into shares and creating security questions for each password.
+
+To find out if this developed mechanism that retrieve $n$ passwords by providing $n$ security questions using secret sharing Shamir will perform better in protecting passwords, we will develop a software which implementing secret sharing Shamir. Some tests will also be done to ensure this software development success. Furthermore, some survey tests will also be done to find out security questions effect on secret sharing Shamir in retrieving $n$ passwords.
+
+Moreover, to ensure the secrecy of the passwords and the secrecy of each security question, secret sharing Shamir will be combined with encryption technique and cryptographic hash function. Data Encryption Standard will be used as encryption technique and Secure Hashing Algorithm 512 will be used as cryptographic hash function.
+
+According to the test results, security questions have influence of retrieving many passwords mechanism. By creating appropriate security questions, passwords can be easily retrieved by passwords' owner and can make other parties difficult in retrieving passwords.
+}
 
 %=============================================================================
 

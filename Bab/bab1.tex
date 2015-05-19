@@ -10,15 +10,17 @@ Hal tersebut yang membuat \textit{password} menjadi sebuah hal yang penting dan 
 
 Namun, seorang pengguna tidak hanya membutuhkan sumber daya dari satu sistem saja. Pengguna membutuhkan akses ke banyak sistem. Akses pada sebuah sistem membutuhkan sebuah \textit{password}. Semakin bertambahnya akses ke sistem yang berbeda-beda, semakin bertambah pula \textit{password} yang harus dimiliki.
 
-Hal ini dapat menimbulkan masalah jika ada \textit{password} yang hilang atau dilupakan oleh pengguna. Pengguna akan kehilangan akses ke sistem tersebut. Oleh sebab itu, dibutuhkan suatu metode untuk mengatasi permasalahan ini. Salah satu cara untuk mengatasi permasalahan tersebut adalah dengan menggunakan metode \textit{secret sharing}.
+Hal ini dapat menimbulkan masalah jika ada \textit{password} yang hilang atau dilupakan oleh pengguna. Pengguna akan kehilangan akses ke sistem tersebut. Beberapa sistem memang memiliki mekanisme untuk mengembalikan password yang hilang dengan menyediakan sebuah pertanyaan keamanan yang harus dijawab oleh pengguna. Namun, mekanisme ini bisa menyulitkan pengguna karena pengguna harus mengingat seluruh jawaban dari pertanyaan keamanan untuk setiap \textit{password}.
 
-\textit{Secret sharing} adalah metode membagi sebuah pesan atau informasi menjadi beberapa bagian. Bagian-bagian tersebut disebut \textit{share} dan setiap bagian dibagikan kepada beberapa partisipan. Untuk memperoleh kembali informasi, dibutuhkan masing-masing \textit{share}. Terdapat beberapa metode \textit{secret sharing} yang dapat digunakan untuk membagi informasi. Dalam penelitian ini, metode \textit{secret sharing} yang digunakan adalah \textit{secret sharing} Shamir.
+Oleh sebab itu, dibutuhkan suatu mekanisme baru untuk bisa mengingat dan mengembalikan banyak \textit{password} ini. Pada penelitian ini, akan dikembangan mekanisme untuk mengembalikan $n$ \textit{password} dengan membuat $n$ pertanyaan. Mekanisme ini akan menggunakan metode \textit{secret sharing}.
 
-Dengan menggunakan metode \textit{secret sharing} Shamir, untuk memperoleh kembali informasi hanya perlu sebagian \textit{share} saja. Metode \textit{secret sharing} Shamir ini dapat diaplikasikan dengan membagi banyak \textit{password} menjadi beberapa \textit{share}. Setiap \textit{password} ini akan diasosiasikan dengan pertanyaan keamanan. Jadi, jika pengguna memiliki $n$ buah \textit{password}, maka pengguna harus membuat $n$ buah pertanyaan keamanan.
+\textit{Secret sharing} adalah metode membagi sebuah pesan atau informasi menjadi beberapa bagian. Bagian-bagian tersebut disebut \textit{share} dan setiap bagian dibagikan kepada beberapa partisipan. Untuk memperoleh kembali informasi, dibutuhkan masing-masing \textit{share}. Terdapat beberapa metode \textit{secret sharing} yang dapat digunakan untuk membagi informasi. Dalam penelitian ini, metode \textit{secret sharing} yang digunakan adalah \textit{secret sharing} Shamir. Metode \textit{secret sharing} Shamir adalah metode \textit{secret sharing} dengan membagi banyak informasi menjadi beberapa \textit{share} dan untuk mengembalikan informasi hanya dibutuhkan beberapa \textit{share} saja.
 
-Untuk setiap pertanyaan keamanan yang dijawab dengan benar, pengguna dapat mengembalikan \textit{password} yang diasosiasikan dengan pertanyaan keamanan tersebut. Dengan mengaplikasikan metode \textit{secret sharing} Shamir, pengguna juga tidak perlu menjawab seluruh pertanyaan keamanan dengan benar untuk memperoleh kembali seluruh \textit{password}. Pengguna cukup menjawab sebagian atau $k$ pertanyaan dari $n$ pertanyaan yang dibuat untuk memperoleh kembali seluruh \textit{password}.
+Metode secret sharing Shamir ini akan diaplikasikan untuk membagi \textit{password} menjadi beberapa \textit{share}. Setiap \textit{password} yang akan dibagi diasosiasikan dengan satu pertanyaan keamanan. Dengan menggunakan metode \textit{secret sharing} Shamir, pengguna cukup menjawab sebagian dari pertanyaan keamanan untuk mengembalikan $n$ \textit{password}.
 
-Dalam penelitian ini, akan dibahas mengenai cara kerja metode \textit{secret sharing} Shamir untuk mengembalikan banyak \textit{password}. Selain itu, pertanyaan keamanan yang dibuat akan dianalisis kualitasnya dan pengaruhnya terhadap metode \textit{secret sharing} Shamir dalam mengembalikan \textit{password}.
+Untuk menjaga kerahasiaan \textit{password} dan jawaban dari setiap pertanyaan keamanan, metode secret sharing ini akan dikombinasikan dengan enkripsi dan fungsi \textit{hash}. Pada penelitian ini, teknik enkripsi yang akan digunakan adalah \textit{Data Encryption Standard} dan algoritma fungsi hash yang akan digunakan adalah \textit{Secure Hashing Algorithm} 512.
+
+Dalam penelitian ini, akan dibahas mengenai cara kerja metode \textit{secret sharing} Shamir untuk mengembalikan $n$ \textit{password} dengan membuat $n$ pertanyaan keamanan. Selain itu, pertanyaan keamanan yang dibuat akan dianalisis kualitasnya dan pengaruhnya terhadap metode \textit{secret sharing} Shamir dalam mengembalikan banyak \textit{password}.
 
 \section{Rumusan Masalah}
 \label{sec:rumusanmasalah}
@@ -27,6 +29,7 @@ Berdasarkan latar belakang yang sudah dibuat, maka permasalahan yang akan dibaha
 \begin{itemize}
 	\item Bagaimana mengembalikan banyak \textit{password} dengan metode \textit{secret sharing} Shamir?
 	\item Bagaimana cara membangun perangkat lunak pengingat \textit{password} yang mengimplementasikan metode \textit{secret sharing} Shamir?
+	\item Bagaimana menilai kualitas dari metode \textit{secret sharing} Shamir lewat pertanyaan keamanan yang dibuat?
 \end{itemize}
 
 \section{Tujuan}
@@ -36,6 +39,7 @@ Berdasarkan rumusan masalah yang sudah ditetapkan, maka tujuan dari penelitian i
 \begin{itemize}
 	\item Mempelajari bagaimana metode \textit{secret sharing} Shamir dapat mengembalikan banyak \textit{password}.
 	\item Membangun perangkat lunak pengingat \textit{password} yang mengimplementasikan metode \textit{secret sharing} Shamir.
+	\item Melakukan pengujian terhadap perangkat lunak pengingat \textit{password} yang dibangun.
 \end{itemize}
 
 \section{Batasan Masalah}
