@@ -116,4 +116,4 @@
 \contentsline {section}{\numberline {6.2}Saran}{84}{section.6.2}
 \contentsline {chapter}{Daftar Referensi}{85}{chapter*.108}
 \renewcommand {\cftchappresnum }{\bf \scshape }
-\contentsline {chapter}{\numberline {A}The Program}{87}{appendix.A}
+\contentsline {chapter}{\numberline {A}The Source Code}{87}{appendix.A}
