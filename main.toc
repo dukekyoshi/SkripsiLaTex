@@ -19,18 +19,18 @@
 \contentsline {subsection}{\numberline {2.3.2}Struktur DES}{7}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Permutasi Awal}{7}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Pembangunan Kunci Putaran}{8}{subsection.2.3.4}
-\contentsline {subsubsection}{\textit {Parity Drop}}{9}{subsubsection*.8}
-\contentsline {subsubsection}{\textit {Shift Left}}{9}{subsubsection*.10}
-\contentsline {subsubsection}{Permutasi \textit {P-box}}{10}{subsubsection*.11}
+\contentsline {subsubsection}{\textit {Parity Drop}}{9}{subsubsection*.7}
+\contentsline {subsubsection}{\textit {Shift Left}}{9}{subsubsection*.9}
+\contentsline {subsubsection}{Permutasi \textit {P-box}}{10}{subsubsection*.10}
 \contentsline {subsection}{\numberline {2.3.5}Putaran}{11}{subsection.2.3.5}
-\contentsline {subsubsection}{Jaringan Feistel}{11}{subsubsection*.14}
-\contentsline {subsubsection}{Sejarah Singkat}{11}{subsubsection*.15}
-\contentsline {subsubsection}{Pembahasan}{11}{subsubsection*.16}
-\contentsline {subsubsection}{Fungsi DES}{12}{subsubsection*.18}
-\contentsline {subsubsection}{Ekspansi \textit {P-box}}{12}{subsubsection*.19}
-\contentsline {subsubsection}{Operasi XOR}{13}{subsubsection*.21}
-\contentsline {subsubsection}{Substitusi \textit {S-box}}{13}{subsubsection*.22}
-\contentsline {subsubsection}{Permutasi}{15}{subsubsection*.31}
+\contentsline {subsubsection}{Jaringan Feistel}{11}{subsubsection*.13}
+\contentsline {subsubsection}{Sejarah Singkat}{11}{subsubsection*.14}
+\contentsline {subsubsection}{Pembahasan}{11}{subsubsection*.15}
+\contentsline {subsubsection}{Fungsi DES}{12}{subsubsection*.17}
+\contentsline {subsubsection}{Ekspansi \textit {P-box}}{12}{subsubsection*.18}
+\contentsline {subsubsection}{Operasi XOR}{13}{subsubsection*.20}
+\contentsline {subsubsection}{Substitusi \textit {S-box}}{13}{subsubsection*.21}
+\contentsline {subsubsection}{Permutasi}{15}{subsubsection*.30}
 \contentsline {subsection}{\numberline {2.3.6}Permutasi Akhir}{15}{subsection.2.3.6}
 \contentsline {section}{\numberline {2.4}Fungsi \textit {Hash}}{15}{section.2.4}
 \contentsline {section}{\numberline {2.5}\textit {Secure Hashing Algorithm} 512 (SHA-512)}{16}{section.2.5}
@@ -38,58 +38,59 @@
 \contentsline {subsection}{\numberline {2.5.2}Inisialisasi Konstanta Awal}{17}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}Ekspansi Blok Message}{17}{subsection.2.5.3}
 \contentsline {subsection}{\numberline {2.5.4}Fungsi Kompresi dan Putaran}{18}{subsection.2.5.4}
-\contentsline {subsubsection}{Struktur Putaran}{19}{subsubsection*.35}
-\contentsline {subsubsection}{Struktur Fungsi Khusus}{20}{subsubsection*.38}
+\contentsline {subsubsection}{Struktur Putaran}{19}{subsubsection*.34}
+\contentsline {subsubsection}{Struktur Fungsi Khusus}{20}{subsubsection*.37}
 \contentsline {section}{\numberline {2.6}Otentikasi}{22}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}\textit {Password}}{23}{subsection.2.6.1}
-\contentsline {subsubsection}{Skema 1}{23}{subsubsection*.41}
-\contentsline {subsubsection}{Skema 2}{24}{subsubsection*.43}
-\contentsline {subsubsection}{Skema 3}{24}{subsubsection*.45}
+\contentsline {subsubsection}{Skema 1}{23}{subsubsection*.40}
+\contentsline {subsubsection}{Skema 2}{24}{subsubsection*.42}
+\contentsline {subsubsection}{Skema 3}{24}{subsubsection*.44}
 \contentsline {section}{\numberline {2.7}Eliminasi Gauss-Jordan}{25}{section.2.7}
 \contentsline {subsection}{\numberline {2.7.1}Proses Reduksi Matriks}{26}{subsection.2.7.1}
 \contentsline {subsection}{\numberline {2.7.2}Proses Substitusi Balik}{27}{subsection.2.7.2}
 \contentsline {section}{\numberline {2.8}\textit {Secret Sharing} Shamir}{28}{section.2.8}
 \contentsline {subsection}{\numberline {2.8.1}Sejarah Singkat}{28}{subsection.2.8.1}
 \contentsline {subsection}{\numberline {2.8.2}Pembahasan \textit {Secret Sharing} Shamir}{28}{subsection.2.8.2}
-\contentsline {subsubsection}{Skema \textit {Threshold}(\textit {k},\textit {n})}{28}{subsubsection*.47}
-\contentsline {subsubsection}{Proses Pembangunan \textit {Share}}{28}{subsubsection*.48}
-\contentsline {subsubsection}{Proses Rekonstruksi Rahasia}{29}{subsubsection*.49}
+\contentsline {subsubsection}{Skema \textit {Threshold}(\textit {k},\textit {n})}{28}{subsubsection*.46}
+\contentsline {subsubsection}{Proses Pembangunan \textit {Share}}{29}{subsubsection*.47}
+\contentsline {subsubsection}{Proses Rekonstruksi Rahasia}{29}{subsubsection*.48}
 \contentsline {section}{\numberline {2.9}Probabilitas}{30}{section.2.9}
 \contentsline {subsection}{\numberline {2.9.1}Distribusi Binom}{30}{subsection.2.9.1}
 \contentsline {section}{\numberline {2.10}Entropi}{31}{section.2.10}
 \contentsline {subsection}{\numberline {2.10.1}Sejarah Singkat}{31}{subsection.2.10.1}
 \contentsline {subsection}{\numberline {2.10.2}Pembahasan}{31}{subsection.2.10.2}
 \contentsline {chapter}{\numberline {3}Analisis}{33}{chapter.3}
-\contentsline {section}{\numberline {3.1}Studi Kasus}{33}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Pengenalan Kasus}{33}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Proses Penyimpanan \textit {Password}}{33}{subsection.3.1.2}
-\contentsline {subsubsection}{Proses Pembangunan \textit {Share}}{34}{subsubsection*.50}
-\contentsline {subsubsection}{Proses Enkripsi \textit {Share}}{36}{subsubsection*.52}
-\contentsline {subsection}{\numberline {3.1.3}Proses Pengembalian \textit {Password}}{37}{subsection.3.1.3}
-\contentsline {subsubsection}{Proses Dekripsi \textit {Share}}{37}{subsubsection*.54}
-\contentsline {subsubsection}{Proses Rekonstruksi \textit {Password}}{39}{subsubsection*.56}
-\contentsline {section}{\numberline {3.2}Pemilihan Nilai \textit {n} dan \textit {k}}{42}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Pemilihan Nilai \textit {k}}{42}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Pemilihan Nilai \textit {n}}{43}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Analisis Proses}{43}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Proses Penyimpanan \textit {Password}}{44}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Proses Rekonstruksi \textit {Password}}{45}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.1}Analisis Proses}{33}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Proses Penyimpanan \textit {Password}}{33}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Proses Rekonstruksi \textit {Password}}{34}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Studi Kasus}{35}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Pengenalan Kasus}{36}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Proses Penyimpanan \textit {Password}}{36}{subsection.3.2.2}
+\contentsline {subsubsection}{Proses Pembangunan \textit {Share}}{36}{subsubsection*.51}
+\contentsline {subsubsection}{Proses Enkripsi \textit {Share}}{38}{subsubsection*.53}
+\contentsline {subsection}{\numberline {3.2.3}Proses Pengembalian \textit {Password}}{40}{subsection.3.2.3}
+\contentsline {subsubsection}{Proses Dekripsi \textit {Share}}{40}{subsubsection*.55}
+\contentsline {subsubsection}{Proses Rekonstruksi \textit {Password}}{42}{subsubsection*.57}
+\contentsline {section}{\numberline {3.3}Pemilihan Nilai \textit {n} dan \textit {k}}{45}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Pemilihan Nilai \textit {k}}{45}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Pemilihan Nilai \textit {n}}{45}{subsection.3.3.2}
 \contentsline {section}{\numberline {3.4}Diagram}{46}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Diagram \textit {Use Case}}{46}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Diagram Aktivitas}{47}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Diagram Aktivitas}{48}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Diagram Kelas}{49}{subsection.3.4.3}
 \contentsline {chapter}{\numberline {4}Perancangan}{51}{chapter.4}
 \contentsline {section}{\numberline {4.1}Diagram Kelas Rinci}{51}{section.4.1}
 \contentsline {section}{\numberline {4.2}Deskripsi Kelas dan Fungsi}{51}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Kelas \textit {SHA512}}{51}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Kelas \textit {Function}}{54}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Kelas \textit {EquationSolver}}{54}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}Kelas \textit {EquationSolver}}{55}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}Kelas \textit {SecretSharing}}{55}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Kelas \textit {DESEncryption}}{56}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}Kelas \textit {DESDecryption}}{60}{subsection.4.2.6}
-\contentsline {subsection}{\numberline {4.2.7}Kelas \textit {DataReader}}{62}{subsection.4.2.7}
-\contentsline {subsection}{\numberline {4.2.8}Kelas \textit {DataWriter}}{63}{subsection.4.2.8}
-\contentsline {section}{\numberline {4.3}Perancangan Antarmuka}{64}{section.4.3}
+\contentsline {subsection}{\numberline {4.2.5}Kelas \textit {DataEncryptionStandard}}{57}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}Kelas \textit {Encryption}}{59}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {4.2.7}Kelas \textit {Decryption}}{60}{subsection.4.2.7}
+\contentsline {subsection}{\numberline {4.2.8}Kelas \textit {DataReader}}{61}{subsection.4.2.8}
+\contentsline {subsection}{\numberline {4.2.9}Kelas \textit {DataWriter}}{61}{subsection.4.2.9}
+\contentsline {section}{\numberline {4.3}Perancangan Antarmuka}{62}{section.4.3}
 \contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{67}{chapter.5}
 \contentsline {section}{\numberline {5.1}Implementasi Perangkat Lunak}{67}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Tampilan Antarmuka Perangkat Lunak}{67}{subsection.5.1.1}
@@ -98,11 +99,11 @@
 \contentsline {subsubsection}{Pengujian Fungsional}{71}{subsubsection*.86}
 \contentsline {subsubsection}{Pengujian Survei}{71}{subsubsection*.87}
 \contentsline {subsection}{\numberline {5.2.2}Hasil Pengujian Fungsional}{72}{subsection.5.2.2}
-\contentsline {subsubsection}{Kasus 1}{73}{subsubsection*.90}
-\contentsline {subsubsection}{Kasus 2}{74}{subsubsection*.93}
-\contentsline {subsection}{\numberline {5.2.3}Analisis Hasil Pengujian Fungsional}{75}{subsection.5.2.3}
+\contentsline {subsubsection}{Kasus 1}{74}{subsubsection*.90}
+\contentsline {subsubsection}{Kasus 2}{75}{subsubsection*.93}
+\contentsline {subsection}{\numberline {5.2.3}Analisis Hasil Pengujian Fungsional}{76}{subsection.5.2.3}
 \contentsline {subsection}{\numberline {5.2.4}Analisis dan Hasil Pengujian Survei}{76}{subsection.5.2.4}
-\contentsline {subsubsection}{Kasus 1}{76}{subsubsection*.96}
+\contentsline {subsubsection}{Kasus 1}{77}{subsubsection*.96}
 \contentsline {subsubsection}{Analisis Kasus 1}{77}{subsubsection*.98}
 \contentsline {subsubsection}{Kasus 2}{77}{subsubsection*.99}
 \contentsline {subsubsection}{Analisis Kasus 2}{78}{subsubsection*.101}

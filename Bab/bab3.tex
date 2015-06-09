@@ -1,7 +1,53 @@
 \chapter{Analisis}
 \label{chap:analisis}
 
-Pada bab ini akan dibahas analisis terhadap teori-teori yang telah dibahas sebelumnya. Analisis akan meliputi studi kasus untuk penerapan metode \textit{secret sharing} Shamir, pemilihan \begin{math}n\end{math} dan \begin{math}k\end{math}, analisis proses, dan perancangan diagram.
+Pada bab ini berisi analisis terhadap teori-teori yang telah dibahas sebelumnya. Analisis akan meliputi analisis proses, studi kasus untuk penerapan metode \textit{secret sharing} Shamir, pemilihan nilai \begin{math}n\end{math} dan \begin{math}k\end{math}, dan diagram-diagram mencakup diagram \textit{use case}, diagram aktivitas, dan rancangan diagram kelas.
+
+\section{Analisis Proses}\label{sec:analisis}
+
+Pada bagian ini dijelaskan mengenai perancangan perangkat lunak yang dibangun berdasarkan pada proses-proses yang sudah dipaparkan pada bagian sebelumnya. Pada bagian sebelumnya sudah dibahas mengenai proses penyimpanan \textit{password} dan proses rekonstruksi \textit{password}. Pada bagian ini dibahas setiap tahapan dari proses-proses tersebut dan setiap tahapan digambarkan dalam bentuk alur proses (\textit{flowchart}) sebelum dilakukan proses pembuatan diagram-diagram untuk membangun perangkat lunak.
+
+\subsection{Proses Penyimpanan \textit{Password}}
+
+Pada bagian ini dijelaskan tahapan dari proses penyimpanan \textit{password}. Flowchart dari proses penyimpanan password ditunjukkan pada Gambar \ref{fig:create_share}.
+
+%diagram
+\begin{figure}[H]
+	\centerline{\includegraphics[scale=0.7]{Gambar/flowchart_share}}
+	\caption{Proses Penyimpanan \textit{Password}}\label{fig:create_share}
+\end{figure}
+
+Tahapan-tahapan pada proses yang ditunjukkan oleh Gambar \ref{fig:create_share} adalah tahapan-tahapan untuk menyimpan \textit{password}. Dalam penelitian ini, tahapan pembangunan \textit{share} menggunakan metode \textit{secret sharing} Shamir. Berikut penjelasan masing-masing tahapan:
+
+\begin{itemize}
+	\item Tahap Pembangunan \textit{Share} \\
+	Pada tahap ini, dibutuhkan data-data masukan seperti $n$, $k$, dan $n$ \textit{password}. \textit{Password} diperoleh dari masukan pengguna. $n$ diperoleh dari banyak \textit{password} yang dimasukan pengguna. $k$ ditentukan dengan cara yang sudah dijelaskan pada Subbab \ref{subsec:pilihnk}.
+	\item Tahap Pembuatan Digest \\
+	Pada tahap ini, dibutuhkan data-data masukan juga seperti pertanyaan keamanan, jawaban dari pertanyaan keamanan, dan \textit{salt}. Pertanyaan keamanan dan jawaban dari pertanyaan keamanan diperoleh dari masukan pengguna. Sementara itu, \textit{salt} dipilih secara acak. Setelah itu, pertanyaan, jawaban, dan \textit{salt} dikonkatenasi menjadi sebuah \textit{string} yang akan dibuat \textit{digest}nya. Dalam tahap ini, pembuatan \textit{digest} menggunakan algoritma \textit{SHA}-512 (Subbab \ref{sec:SHA512}).
+	\item Tahap Enkripsi \\
+	Pada tahap ini, \textit{share} yang dihasilkan pada tahap pembangunan \textit{share} dienkripsi dengan menggunakan \textit{Data Encryption Standard} (Subbab \ref{sec:des}). \textit{Digest} yang dihasilkan pada tahap pembuatan \textit{digest} akan digunakan sebagai kunci proses enkripsi. Kemudian, \textit{ciphertext} dari \textit{share} hasil enkripsi akan disimpan.
+\end{itemize}
+
+\subsection{Proses Rekonstruksi \textit{Password}}
+
+Pada bagian ini dijelaskan tahapan dari proses rekonstruksi \textit{password}. Flowchart dari proses rekonstruksi password ditunjukkan pada Gambar \ref{fig:flowchart_reconstruct_secret}.
+
+%diagram
+\begin{figure}[H]
+	\centerline{\includegraphics[scale=0.65]{Gambar/flowchart_reconstruct}}
+	\caption{Proses Rekonstruksi \textit{Password}}\label{fig:flowchart_reconstruct_secret}
+\end{figure}
+
+Tahapan-tahapan pada proses yang ditunjukkan oleh Gambar \ref{fig:flowchart_reconstruct_secret} adalah tahapan-tahapan untuk merekonstruksi \textit{password}. Tujuan dari proses rekonstruksi \textit{password} adalah mengembalikan \textit{password} yang sudah disimpan. Berikut dijelaskan tahapan-tahapan dalam proses rekonstruksi \textit{password}:
+
+\begin{itemize}
+	\item Tahap Pembuatan \textit{Digest} \\
+	Tahap pembuatan \textit{digest} ini sama dengan tahap pembuatan \textit{digest} dalam proses penyimpanan \textit{password}. Perbedaannya adalah pertanyaan keamanan dan nilai \textit{salt} diperoleh dari berkas teks yang disimpan. Sementara itu, jawaban dari pertanyaan keamanan tetap diperoleh dari masukan pengguna.
+	\item Tahap Dekripsi \\
+	Pada tahap ini, \textit{ciphertext} yang sudah disimpan akan didekripsi. Namun, sebelum proses dekripsi dilakukan, dibutuhkan beberapa data masukan \textit{digest} yang diperoleh dari tahap pembuatan \textit{digest}. Data masukan \textit{digest} digunakan sebagai kunci dalam proses dekripsi. Proses dekripsi pada tahap ini menggunakan \textit{Data Encryption Standard} (Subbab \ref{sec:des}).
+	\item Tahap Rekonstruksi \textit{Share} \\
+	Pada tahap ini, \textit{share} yang dihasilkan dari tahap dekripsi akan direkonstruksi untuk memperoleh \textit{password}. Tidak ada masukan pengguna dalam tahap ini. Metode rekonstruksi \textit{password} yang digunakan pada tahap ini adalah \textit{secret sharing} Shamir.
+\end{itemize}
 
 \section{Studi Kasus}
 
@@ -11,7 +57,7 @@ Pada bagian ini akan dibahas studi kasus tentang bagaimana penerapan metode \tex
 
 Langkah awal yang dibutuhkan untuk mengembalikan banyak \textit{password} dengan metode \textit{secret sharing} Shamir, diperlukan beberapa tahap proses. Proses pertama adalah proses penyimpanan \textit{password}. Kemudian, proses selanjutnya adalah proses untuk mengembalikan banyak \textit{password}. Proses pertama membutuhkan beberapa \textit{password}. Untuk \begin{math}n\end{math} buah \textit{password}, maka akan dibuat \begin{math}n\end{math} buah pertanyaan keamanan. Sementara itu, untuk proses mengembalikan \textit{password} dibutuhkan pertanyaan keamanan yang sudah dibuat dalam proses sebelumnya.
 
-Untuk kedua proses di atas, diasumsikan banyak \textit{password} yang akan disimpan sebanyak 5 buah. Setiap \textit{password} akan diberi label \begin{math}p_1\end{math}, \begin{math}p_2\end{math}, sampai \begin{math}p_5\end{math}. Persamaan \ref{eq:passwords1} sampai \ref{eq:passwords5} menunjukkan \begin{math}p_1\end{math} sampai \begin{math}p_5\end{math}.
+Untuk kedua proses di atas, dimisalkan banyak \textit{password} yang akan disimpan sebanyak 5 buah \textit{password}. Setiap \textit{password} akan diberi label \begin{math}p_1\end{math}, \begin{math}p_2\end{math}, sampai \begin{math}p_5\end{math}. Persamaan \ref{eq:passwords1} sampai \ref{eq:passwords5} menunjukkan \begin{math}p_1\end{math} sampai \begin{math}p_5\end{math}.
 
 \begin{gather}
 	p_1 = 123456 \label{eq:passwords1} \\
@@ -119,14 +165,14 @@ Pada proses ini, sebelum masing-masing \textit{share} disimpan, masing-masing \t
 	\begin{equation}
 		h_n = H(q_n + a_n + r_s) \label{eq:itunghash}
 	\end{equation}
-	\item Setiap nilai \textit{share}, \begin{math}s_{11}, s_{21}, ..., s_{56}\end{math} akan dienkripsi dengan menggunakan digest sebagai kunci. Persamaan \ref{eq:enkripsi} menunjukkan langkah enkripsi \textit{share}.
+	\item Setiap nilai \textit{share}, \begin{math}s_{11}, s_{21}, ..., s_{56}\end{math} akan dienkripsi dengan menggunakan digest sebagai kunci. Persamaan \ref{eq:enkripsishare1} menunjukkan langkah enkripsi \textit{share}.
 	\begin{equation}
-		E_{h_n}(s_{nm}) = c_{nm}
+		E_{h_n}(s_{nm}) = c_{nm}\label{eq:enkripsishare1}
 	\end{equation}
-	Pada persamaan \ref{eq:enkripsi}, \begin{math}m\end{math} merupakan banyak karakter dari masing-masing \textit{password} \begin{math}p_i\end{math}.
+	Pada persamaan \ref{eq:enkripsishare1}, \begin{math}m\end{math} merupakan banyak karakter dari masing-masing \textit{password} \begin{math}p_i\end{math}.
 \end{enumerate}
 
-Kembali kepada kasus pada Subbab \ref{subsec:pengenalankasus}, misalkan \textit{password} yang akan dienkripsi \textit{share-share}nya adalah \begin{math}p_1\end{math}. Langkah pertama adalah membuat \begin{math}n\end{math} pertanyaan keamanan, karena \begin{math}n=5\end{math} maka ada 5 pertanyaan keamanan. Setiap pertanyaan keamanan akan diberi label \begin{math}q_1, q_2, ..., q_5\end{math}. Untuk kasus ini, diasumsikan pertanyaan keamanan yang dibuat adalah sebagai berikut.
+Kembali kepada kasus pada Subbab \ref{subsec:pengenalankasus}, misalkan \textit{password} yang akan dienkripsi \textit{share-share}nya adalah \begin{math}p_1\end{math}. Langkah pertama adalah membuat \begin{math}n\end{math} pertanyaan keamanan, karena \begin{math}n=5\end{math} maka ada 5 pertanyaan keamanan. Setiap pertanyaan keamanan akan diberi label \begin{math}q_1, q_2, ..., q_5\end{math}. Untuk kasus ini, dimisalkan pertanyaan keamanan yang dibuat adalah sebagai berikut.
 
 \begin{enumerate}[itemsep=0mm]
 	\item Siapa nama anda? (\begin{math}q_1\end{math})
@@ -148,7 +194,7 @@ Setelah membuat pertanyaan keamanan yang akan digunakan, langkah selanjutnya ada
 
 Langkah selanjutnya adalah memilih nilai \textit{salt}, \begin{math}r_s\end{math}. Untuk kasus ini, misalkan \begin{math}r_s=31\end{math}.
 
-Setelah memilih nilai \textit{salt}, langkah selanjutnya adalah menghitung \textit{digest}. Masing-masing dari pertanyaan keamanan akan dikonkatenasi dengan jawabannya dan \begin{math}r_s\end{math}. Asumsi hasil penghitungan \textit{digest}, \begin{math}h_n\end{math}, untuk setiap pertanyaan ditunjukkan pada persamaan \ref{eq:itungdigest1} sampai \ref{eq:itungdigest5}.
+Setelah memilih nilai \textit{salt}, langkah selanjutnya adalah menghitung \textit{digest}. Masing-masing dari pertanyaan keamanan akan dikonkatenasi dengan jawabannya dan \begin{math}r_s\end{math}. Contoh hasil penghitungan \textit{digest}, \begin{math}h_n\end{math}, untuk setiap pertanyaan ditunjukkan pada persamaan \ref{eq:itungdigest1} sampai \ref{eq:itungdigest5}.
 
 \begin{gather}
 	h_1 = (q_1 + a_1 + r_s) = 7a916 \label{eq:itungdigest1} \\
@@ -158,7 +204,7 @@ Setelah memilih nilai \textit{salt}, langkah selanjutnya adalah menghitung \text
 	h_5 = (q_5 + a_5 + r_s) = b59e9 \label{eq:itungdigest5}
 \end{gather}
 
-Langkah selanjutnya adalah mengenkripsi setiap nilai \textit{share} yang sudah dibangun dengan \textit{digest} yang sudah dihitung sebagai kuncinya. Asumsi hasil enkripsi setiap \textit{share} untuk \begin{math}p_1\end{math}, ditunjukkan pada Tabel \ref{table:enkripsi1}.
+Langkah selanjutnya adalah mengenkripsi setiap nilai \textit{share} yang sudah dibangun dengan \textit{digest} yang sudah dihitung sebagai kuncinya. Contoh hasil enkripsi setiap \textit{share} untuk \begin{math}p_1\end{math}, ditunjukkan pada Tabel \ref{table:enkripsi1}.
 
 \begin{table}[H]
 	\begin{center}
@@ -209,7 +255,7 @@ Kembali kepada kasus yang dijelaskan pada Subbab \ref{subsec:pengenalankasus}, l
 	\item Apa nama belakang anda? (\begin{math}q_5\end{math}): Christian (\begin{math}a'_5\end{math})
 \end{enumerate}
 
-Kemudian, langkah selanjutnya adalah menghitung \textit{digest} masing-masing konkatenasi dari pertanyaan yang disimpan, jawaban, dan \textit{salt} yang disimpan, \begin{math}r_s=31\end{math}. Asumsi hasil penghitungan \textit{digest}, \begin{math}h'_n\end{math}, untuk setiap pertanyaan ditunjukkan pada persamaan \ref{eq:itungdigestbalik1} sampai \ref{eq:itungdigestbalik5}.
+Kemudian, langkah selanjutnya adalah menghitung \textit{digest} masing-masing konkatenasi dari pertanyaan yang disimpan, jawaban, dan \textit{salt} yang disimpan, \begin{math}r_s=31\end{math}. Contoh hasil penghitungan \textit{digest}, \begin{math}h'_n\end{math}, untuk setiap pertanyaan ditunjukkan pada persamaan \ref{eq:itungdigestbalik1} sampai \ref{eq:itungdigestbalik5}.
 
 \begin{gather}
 	h'_1 = (q_1 + a'_1 + r_s) = 7a916 \label{eq:itungdigestbalik1} \\
@@ -285,7 +331,7 @@ Langkah selanjutnya adalah membentuk fungsi \begin{math}f(x)\end{math} untuk set
 
 Setelah itu, langkah selanjutnya adalah menghitung nilai \textit{share} yang dimiliki pada fungsi \begin{math}f(x)\end{math} yang sudah dibentuk. Untuk langkah ini, akan ditunjukkan proses pengembalian salah satu karakter dari \textit{password} \begin{math}p_1\end{math}, yaitu karakter pertama.
 
-Diasumsikan share yang digunakan untuk rekonstruksi karakter pertama adalah \begin{math}s_{11}, s_{21}, \end{math} dan \begin{math}s_{31}\end{math}. Maka, nilai masing-masing share ini pada fungsi \begin{math}f_1(x)\end{math} ditunjukkan pada persamaan \ref{eq:karakterpertamafx1} sampai \ref{eq:karakterpertamafx3}.
+Dimisalkan \textit{share} yang digunakan untuk rekonstruksi karakter pertama adalah \begin{math}s_{11}, s_{21}, \end{math} dan \begin{math}s_{31}\end{math}. Maka, nilai masing-masing share ini pada fungsi \begin{math}f_1(x)\end{math} ditunjukkan pada persamaan \ref{eq:karakterpertamafx1} sampai \ref{eq:karakterpertamafx3}.
 
 \begin{align}
 	f_1(1) = c + b + a = 67 \label{eq:karakterpertamafx1} \\
@@ -413,7 +459,7 @@ Maka, dari persamaan \ref{eq:pilihn1} untuk $n$ pertanyaan, probabilitas dari $P
 	\label{eq:pilihn2}
 \end{equation}
 
-$P_2$ akan mempengaruhi pasangan $n$ dan $k$ yang harus dipilih. Jika diasumsikan $P_0 = 0.95$ dan $P_2 = 0.99998$, maka pasangan $n$ dan $k$ yang ideal dari hasil penghitungan menggunakan persamaan \ref{eq:pilihn2}\cite{ellison2000protecting}:
+$P_2$ akan mempengaruhi pasangan $n$ dan $k$ yang harus dipilih. Jika dimisalkan $P_0 = 0.95$ dan $P_2 = 0.99998$, maka pasangan $n$ dan $k$ yang ideal dari hasil penghitungan menggunakan persamaan \ref{eq:pilihn2}\cite{ellison2000protecting}:
 
 \begin{table}[H]
 	\begin{center}
@@ -434,59 +480,13 @@ $P_2$ akan mempengaruhi pasangan $n$ dan $k$ yang harus dipilih. Jika diasumsika
 	\end{center}
 \end{table}
 
-\section{Analisis Proses}\label{sec:analisis}
-
-Pada bagian ini akan dijelaskan mengenai perancangan perangkat lunak yang akan dibangun berdasarkan pada proses-proses yang sudah dipaparkan pada bagian sebelumnya. Pada bagian sebelumnya sudah dibahas mengenai proses penyimpanan \textit{password} dan proses rekonstruksi \textit{password}. Pada bagian ini akan dibahas setiap tahapan dari proses-proses tersebut dan setiap tahapan akan digambarkan dalam bentuk alur proses (\textit{flowchart}) sebelum dilakukan proses pembuatan diagram-diagram untuk membangun perangkat lunak.
-
-\subsection{Proses Penyimpanan \textit{Password}}
-
-Pada bagian ini akan dijelaskan tahapan dari proses penyimpanan \textit{password}. Flowchart dari proses penyimpanan password ditunjukkan pada Gambar \ref{fig:create_share}.
-
-%diagram
-\begin{figure}[H]
-	\centerline{\includegraphics[scale=0.7]{Gambar/flowchart_share}}
-	\caption{Proses Penyimpanan \textit{Password}}\label{fig:create_share}
-\end{figure}
-
-Tahapan-tahapan pada proses yang ditunjukkan oleh Gambar \ref{fig:create_share} adalah tahapan-tahapan untuk menyimpan \textit{password}. Dalam penelitian ini, tahapan pembangunan \textit{share} menggunakan metode \textit{secret sharing} Shamir. Berikut penjelasan masing-masing tahapan:
-
-\begin{itemize}
-	\item Tahap Pembangunan \textit{Share} \\
-	Pada tahap ini, dibutuhkan data-data masukan seperti $n$, $k$, dan $n$ \textit{password}. \textit{Password} diperoleh dari masukan pengguna. $n$ diperoleh dari banyak \textit{password} yang dimasukan pengguna. $k$ ditentukan dengan cara yang sudah dijelaskan pada Subbab \ref{subsec:pilihnk}.
-	\item Tahap Pembuatan Digest \\
-	Pada tahap ini, dibutuhkan data-data masukan juga seperti pertanyaan keamanan, jawaban dari pertanyaan keamanan, dan \textit{salt}. Pertanyaan keamanan dan jawaban dari pertanyaan keamanan diperoleh dari masukan pengguna. Sementara itu, \textit{salt} dipilih secara acak. Setelah itu, pertanyaan, jawaban, dan \textit{salt} akan dikonkatenasi menjadi sebuah \textit{string} yang akan dibuat \textit{digest}nya. Dalam tahap ini, pembuatan \textit{digest} akan menggunakan algoritma \textit{SHA}-512 (Subbab \ref{sec:SHA512}).
-	\item Tahap Enkripsi \\
-	Pada tahap ini, \textit{share} yang dihasilkan pada tahap pembangunan \textit{share} akan dienkripsi dengan menggunakan \textit{Data Encryption Standard} (Subbab \ref{sec:des}). \textit{Digest} yang dihasilkan pada tahap pembuatan \textit{digest} akan digunakan sebagai kunci proses enkripsi. Kemudian, \textit{ciphertext} dari \textit{share} hasil enkripsi akan disimpan.
-\end{itemize}
-
-\subsection{Proses Rekonstruksi \textit{Password}}
-
-Pada bagian ini akan dijelaskan tahapan dari proses rekonstruksi \textit{password}. Flowchart dari proses rekonstruksi password ditunjukkan pada Gambar \ref{fig:flowchart_reconstruct_secret}.
-
-%diagram
-\begin{figure}[H]
-	\centerline{\includegraphics[scale=0.65]{Gambar/flowchart_reconstruct}}
-	\caption{Proses Rekonstruksi \textit{Password}}\label{fig:flowchart_reconstruct_secret}
-\end{figure}
-
-Tahapan-tahapan pada proses yang ditunjukkan oleh Gambar \ref{fig:flowchart_reconstruct_secret} adalah tahapan-tahapan untuk merekonstruksi \textit{password}. Tujuan dari proses rekonstruksi \textit{password} adalah mengembalikan \textit{password} yang sudah disimpan. Berikut dijelaskan tahapan-tahapan dalam proses rekonstruksi \textit{password}:
-
-\begin{itemize}
-	\item Tahap Pembuatan \textit{Digest} \\
-	Tahap pembuatan \textit{digest} ini sama dengan tahap pembuatan \textit{digest} dalam proses penyimpanan \textit{password}. Perbedaannya adalah pertanyaan keamanan dan nilai \textit{salt} diperoleh dari berkas teks yang disimpan. Sementara itu, jawaban dari pertanyaan keamanan tetap diperoleh dari masukan pengguna.
-	\item Tahap Dekripsi \\
-	Pada tahap ini, \textit{ciphertext} yang sudah disimpan akan didekripsi. Namun, sebelum proses dekripsi dilakukan, dibutuhkan beberapa data masukan \textit{digest} yang diperoleh dari tahap pembuatan \textit{digest}. Data masukan \textit{digest} digunakan sebagai kunci dalam proses dekripsi. Proses dekripsi pada tahap ini menggunakan \textit{Data Encryption Standard} (Subbab \ref{sec:des}).
-	\item Tahap Rekonstruksi \textit{Share} \\
-	Pada tahap ini, \textit{share} yang dihasilkan dari tahap dekripsi akan direkonstruksi untuk memperoleh \textit{password}. Tidak ada masukan pengguna dalam tahap ini. Metode rekonstruksi \textit{password} yang digunakan pada tahap ini adalah \textit{secret sharing} Shamir.
-\end{itemize}
-
 \section{Diagram}
 
-Pada bagian ini akan dibuat diagram-diagram untuk perangkat lunak yang akan dibangun. Diagram-diagram ini dibuat berdasarkan analisis proses yang sudah dijelaskan pada Subbab \ref{sec:analisis}.
+Pada bagian ini dibuat diagram-diagram untuk perangkat lunak yang dibangun. Diagram-diagram ini dibuat berdasarkan analisis proses yang sudah dijelaskan pada Subbab \ref{sec:analisis}.
 
 \subsection{Diagram \textit{Use Case}}
 
-Perangkat lunak yang dibangun akan memiliki 2 fitur utama, yaitu menyimpan \textit{password} beserta pertanyaan keamanan yang sifatnya personal dan mengembalikan \textit{password}. Saat menyimpan \textit{password}, pengguna akan diminta untuk menambahkan pertanyaan keamanan yang sifatnya personal dan saat mengembalikan \textit{password}, pengguna akan diminta untuk menjawab pertanyaan keamanan yang sudah disimpan saat menyimpan \textit{password}. Gambar \ref{fig:use_case} menunjukkan diagram \textit{use case} dari perangkat lunak.
+Perangkat lunak yang dibangun memiliki 2 fitur utama, yaitu menyimpan \textit{password} beserta pertanyaan keamanan yang sifatnya personal dan mengembalikan \textit{password}. Saat menyimpan \textit{password}, pengguna akan diminta untuk menambahkan pertanyaan keamanan yang sifatnya personal dan saat mengembalikan \textit{password}, pengguna akan diminta untuk menjawab pertanyaan keamanan yang sudah disimpan saat menyimpan \textit{password}. Gambar \ref{fig:use_case} menunjukkan diagram \textit{use case} dari perangkat lunak.
 
 %diagram
 \begin{figure}[H]
@@ -556,7 +556,7 @@ Selanjutnya, sistem akan melakukan proses dekripsi setiap \textit{share} yang su
 
 \subsection{Diagram Kelas}
 
-Pada bagian ini akan dibuat diagram kelas dari perangkat lunak yang akan dibangun. Kelas-kelas ini merupakan rancangan kelas yang dibutuhkan untuk membangun perangkat lunak dan dibuat berdasarkan proses-proses yang sudah dijelaskan pada Subbab \ref{sec:analisis}. Rancangan diagram kelas dari perangkat lunak yang dibangun ditunjukkan oleh Gambar \ref{fig:diagramkelasdummy}.
+Pada bagian ini berisi rancangan diagram kelas dari perangkat lunak yang dibangun. Kelas-kelas ini merupakan rancangan kelas yang dibutuhkan untuk membangun perangkat lunak dan dibuat berdasarkan proses-proses yang sudah dijelaskan pada Subbab \ref{sec:analisis}. Rancangan diagram kelas dari perangkat lunak yang dibangun ditunjukkan oleh Gambar \ref{fig:diagramkelasdummy}.
 
 %diagram
 \begin{figure}[H]

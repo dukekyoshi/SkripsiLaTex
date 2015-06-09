@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.12.9)  19 MAY 2015 21:57
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.12.9)  9 JUN 2015 21:47
 entering extended mode
 **main.tex
 (H:\Kuliah\Skripsi\SkripsiLaTex\main.tex
@@ -719,7 +719,7 @@ Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-<Gambar/logo-unpar.png, id=331, 360.59718pt x 356.0803pt>
+<Gambar/logo-unpar.png, id=335, 360.59718pt x 356.0803pt>
 File: Gambar/logo-unpar.png Graphic file (type png)
  <use Gambar/logo-unpar.png>
 Package pdftex.def Info: Gambar/logo-unpar.png used on input line 480.
@@ -788,10 +788,7 @@ Package pdftex.def Info: Gambar/logo-unpar.png used on input line 480.
 
  (H:\Kuliah\Skripsi\SkripsiLaTex\Bab/bab1.tex
 Bab 1.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 1.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
-File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [1
+[1
 
 
 
@@ -803,315 +800,327 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
-
-[2]) [3] (H:\Kuliah\Skripsi\SkripsiLaTex\Bab/bab2.tex [4
+ [2]) [3] (H:\Kuliah\Skripsi\SkripsiLaTex\Bab/bab2.tex
+[4
 
 
 
 ]
 Bab 2.
-[5] [6] <Gambar/proses_enkripsi_des.png, id=664, 296.60812pt x 320.69812pt>
+[5] [6] <Gambar/proses_enkripsi_des.png, id=668, 296.60812pt x 320.69812pt>
 File: Gambar/proses_enkripsi_des.png Graphic file (type png)
  <use Gambar/proses_enkripsi_des.png>
 Package pdftex.def Info: Gambar/proses_enkripsi_des.png used on input line 71.
 (pdftex.def)             Requested size: 237.2868pt x 256.55884pt.
 
 [7 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/proses_enkripsi_des.png>]
-<Gambar/proses_permutasi_awal.png, id=674, 454.69875pt x 99.37125pt>
-File: Gambar/proses_permutasi_awal.png Graphic file (type png)
- <use Gambar/proses_permutasi_awal.png>
-Package pdftex.def Info: Gambar/proses_permutasi_awal.png used on input line 107.
-(pdftex.def)             Requested size: 363.75949pt x 79.4971pt.
-
-<Gambar/key_generate.png, id=676, 407.27156pt x 447.92343pt>
+<Gambar/key_generate.png, id=678, 407.27156pt x 447.92343pt>
 File: Gambar/key_generate.png Graphic file (type png)
  <use Gambar/key_generate.png>
-Package pdftex.def Info: Gambar/key_generate.png used on input line 118.
+Package pdftex.def Info: Gambar/key_generate.png used on input line 111.
 (pdftex.def)             Requested size: 285.08813pt x 313.54427pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/proses_permutasi_awal.png>] [9 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/key_gen
-erate.png>] [10]
-<Gambar/putaran_des.png, id=713, 244.66406pt x 190.46156pt>
+ [8] [9 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/key_generate.png>] <Gambar/putaran_des.png, id=703, 244.66406pt x 190.461
+56pt>
 File: Gambar/putaran_des.png Graphic file (type png)
  <use Gambar/putaran_des.png>
-Package pdftex.def Info: Gambar/putaran_des.png used on input line 218.
+Package pdftex.def Info: Gambar/putaran_des.png used on input line 211.
 (pdftex.def)             Requested size: 195.7315pt x 152.36943pt.
- [11 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/putaran_des.png>] <Gambar/jaringan_feistel.png, id=732, 403.5075pt x 366.619
-69pt>
+ [10] [11 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/putaran_des.png>] <Gambar/jaringan_feistel.png, id=733, 403.5075pt x 36
+6.61969pt>
 File: Gambar/jaringan_feistel.png Graphic file (type png)
 
 <use Gambar/jaringan_feistel.png>
-Package pdftex.def Info: Gambar/jaringan_feistel.png used on input line 254.
+Package pdftex.def Info: Gambar/jaringan_feistel.png used on input line 247.
 (pdftex.def)             Requested size: 242.10637pt x 219.97351pt.
  [12 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/jaringan_feistel.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13] [14] [15] [16] [17] [18]
-<Gambar/compression_function.png, id=806, 499.8675pt x 443.40656pt>
+<Gambar/compression_function.png, id=807, 499.8675pt x 443.40656pt>
 File: Gambar/compression_function.png Graphic file (type png)
  <use Gambar/compression_function.png>
-Package pdftex.def Info: Gambar/compression_function.png used on input line 569.
+Package pdftex.def Info: Gambar/compression_function.png used on input line 562.
 (pdftex.def)             Requested size: 349.90486pt x 310.38248pt.
 
-<Gambar/sha_round.png, id=808, 319.1925pt x 155.83218pt>
+<Gambar/sha_round.png, id=809, 319.1925pt x 155.83218pt>
 File: Gambar/sha_round.png Graphic file (type png)
  <use Gambar/sha_round.png>
-Package pdftex.def Info: Gambar/sha_round.png used on input line 589.
+Package pdftex.def Info: Gambar/sha_round.png used on input line 582.
 (pdftex.def)             Requested size: 255.35434pt x 124.66591pt.
- [19 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/compression_function.png>] <Gambar/complex_function.png, id=816, 541.27219pt
+ [19 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/compression_function.png>] <Gambar/complex_function.png, id=817, 541.27219pt
  x 329.73187pt>
 File: Gambar/complex_function.png Graphic file (type png)
 
 <use Gambar/complex_function.png>
-Package pdftex.def Info: Gambar/complex_function.png used on input line 600.
+Package pdftex.def Info: Gambar/complex_function.png used on input line 593.
 (pdftex.def)             Requested size: 378.88794pt x 230.81071pt.
  [20 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/sha_round.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/complex_function.png>]
 
 
-LaTeX Warning: Reference `fig:compression_function' on page 21 undefined on input line 650.
+LaTeX Warning: Reference `fig:compression_function' on page 21 undefined on input line 643.
 
-<Gambar/digest_creation.png, id=844, 587.94656pt x 280.04625pt>
+<Gambar/digest_creation.png, id=845, 587.94656pt x 280.04625pt>
 File: Gambar/digest_creation.png Graphic file (type png)
  <use Gambar/digest_creation.png>
-Package pdftex.def Info: Gambar/digest_creation.png used on input line 656.
+Package pdftex.def Info: Gambar/digest_creation.png used on input line 649.
 (pdftex.def)             Requested size: 411.55978pt x 196.03102pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21] [22 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/digest_creation.png>] <Gambar/password_1.png, id=868, 607.51968pt x 189
+ [21] [22 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/digest_creation.png>] <Gambar/password_1.png, id=869, 607.51968pt x 189
 .70876pt>
 File: Gambar/password_1.png Graphic file (type png)
  <use Gambar/password_1.png>
-Package pdftex.def Info: Gambar/password_1.png used on input line 701.
+Package pdftex.def Info: Gambar/password_1.png used on input line 694.
 (pdftex.def)             Requested size: 425.26086pt x 132.79521pt.
- [23 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/password_1.png>] <Gambar/password_2.png, id=879, 591.71063pt x 182.93344pt>
+ [23 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/password_1.png>] <Gambar/password_2.png, id=880, 591.71063pt x 182.93344pt>
 File: Gambar/password_2.png Graphic file (type png)
 
 <use Gambar/password_2.png>
-Package pdftex.def Info: Gambar/password_2.png used on input line 716.
+Package pdftex.def Info: Gambar/password_2.png used on input line 709.
 (pdftex.def)             Requested size: 414.19461pt x 128.05252pt.
  [24 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/password_2.png>]
-<Gambar/password_3.png, id=889, 653.44125pt x 189.70876pt>
+<Gambar/password_3.png, id=890, 653.44125pt x 189.70876pt>
 File: Gambar/password_3.png Graphic file (type png)
  <use Gambar/password_3.png>
-Package pdftex.def Info: Gambar/password_3.png used on input line 733.
+Package pdftex.def Info: Gambar/password_3.png used on input line 726.
 (pdftex.def)             Requested size: 457.40576pt x 132.79521pt.
 
-Overfull \hbox (23.50122pt too wide) in paragraph at lines 733--735
+Overfull \hbox (23.50122pt too wide) in paragraph at lines 726--728
  [][] 
  []
 
-[25 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/password_3.png>] [26] [27] [28] [29] [30] [31]) [32]
+[25 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/password_3.png>] [26]
+Underfull \vbox (badness 2073) has occurred while \output is active []
+
+ [27] [28] [29] [30] [31]) [32]
 (H:\Kuliah\Skripsi\SkripsiLaTex\Bab/bab3.tex
 Bab 3.
-[33
-
-
-
-] [34] [35] [36] [37] [38] [39] [40]
-Underfull \vbox (badness 1902) has occurred while \output is active []
-
- [41] [42] [43]
-<Gambar/flowchart_share.png, id=1196, 564.60938pt x 409.53pt>
+<Gambar/flowchart_share.png, id=995, 564.60938pt x 409.53pt>
 File: Gambar/flowchart_share.png Graphic file (type png)
  <use Gambar/flowchart_share.png>
-Package pdftex.def Info: Gambar/flowchart_share.png used on input line 447.
+Package pdftex.def Info: Gambar/flowchart_share.png used on input line 16.
 (pdftex.def)             Requested size: 395.22386pt x 286.66904pt.
 
-Overfull \hbox (4.61218pt too wide) in paragraph at lines 451--452
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33
+
+
+
+]
+Overfull \hbox (4.61218pt too wide) in paragraph at lines 20--21
 []\T1/cmr/m/n/10.95 Tahapan-tahapan pa-da pro-ses yang di-tun-jukk-an oleh Gam-bar [][]3.1[][] ada-lah tahapan-tahapan
  []
 
-[44 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/flowchart_share.png>]
-<Gambar/flowchart_reconstruct.png, id=1207, 546.54187pt x 425.33907pt>
+<Gambar/flowchart_reconstruct.png, id=1005, 546.54187pt x 425.33907pt>
 File: Gambar/flowchart_reconstruct.png Graphic file (type png)
  <use Gambar/flowchart_reconstruct.png>
-Package pdftex.def Info: Gambar/flowchart_reconstruct.png used on input line 468.
+Package pdftex.def Info: Gambar/flowchart_reconstruct.png used on input line 37.
 (pdftex.def)             Requested size: 355.248pt x 276.4671pt.
-
-Overfull \hbox (4.61218pt too wide) in paragraph at lines 472--473
+ [34 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/flowchart_share.png>]
+Overfull \hbox (4.61218pt too wide) in paragraph at lines 41--42
 []\T1/cmr/m/n/10.95 Tahapan-tahapan pa-da pro-ses yang di-tun-jukk-an oleh Gam-bar [][]3.2[][] ada-lah tahapan-tahapan
  []
 
-[45 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/flowchart_reconstruct.png>]
-<Gambar/use_case.png, id=1217, 737.75626pt x 521.69907pt>
+[35 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/flowchart_reconstruct.png>] [36]
+Underfull \vbox (badness 4024) has occurred while \output is active []
+
+ [37] [38] [39] [40] [41]
+Underfull \vbox (badness 1231) has occurred while \output is active []
+
+ [42] [43] [44] [45]
+<Gambar/use_case.png, id=1219, 737.75626pt x 521.69907pt>
 File: Gambar/use_case.png Graphic file (type png)
  <use Gambar/use_case.png>
 Package pdftex.def Info: Gambar/use_case.png used on input line 493.
 (pdftex.def)             Requested size: 368.87723pt x 260.84889pt.
 
+Underfull \vbox (badness 8000) has occurred while \output is active []
+
+ [46]
 Overfull \hbox (20.76804pt too wide) in paragraph at lines 502--512
  [][] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [46 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/use_case.png>]
 Overfull \hbox (20.76804pt too wide) in paragraph at lines 519--529
  [][] 
  []
 
-<Gambar/sharing-secret.png, id=1226, 1139.75812pt x 560.0925pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/use_case.png>] <Gambar/sharing-secret.png, id=1237, 1139.75812pt x 560.0925p
+t>
 File: Gambar/sharing-secret.png Graphic file (type png)
  <use Gambar/sharing-secret.png>
 Package pdftex.def Info: Gambar/sharing-secret.png used on input line 537.
 (pdftex.def)             Requested size: 455.89517pt x 224.03302pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [47]
-<Gambar/reconstruct-secret.png, id=1238, 1100.61188pt x 548.0475pt>
+ [48 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/sharing-secret.png>] <Gambar/reconstruct-secret.png, id=1247, 1100.61188pt x
+ 548.0475pt>
 File: Gambar/reconstruct-secret.png Graphic file (type png)
- <use Gambar/reconstruct-secret.png>
+
+<use Gambar/reconstruct-secret.png>
 Package pdftex.def Info: Gambar/reconstruct-secret.png used on input line 549.
 (pdftex.def)             Requested size: 440.23695pt x 219.2151pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/sharing-secret.png>] <Gambar/engine-class-diagram.png, id=1246, 528.47438pt 
-x 295.1025pt>
+ <Gambar/engine-class-diagram.png, id=1250, 528.47438pt x 295.1025pt>
 File: Gambar/engine-class-diagram.png Graphic file (type png)
- <use Gambar/engine-class-diagram.png>
+
+<use Gambar/engine-class-diagram.png>
 Package pdftex.def Info: Gambar/engine-class-diagram.png used on input line 563.
 (pdftex.def)             Requested size: 317.08707pt x 177.06285pt.
 
-[49 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/reconstruct-secret.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/engine-class-d
-iagram.png>]) [50] (H:\Kuliah\Skripsi\SkripsiLaTex\Bab/bab4.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/reconstruct-secret.png>]) [50 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/engine-
+class-diagram.png>]
+(H:\Kuliah\Skripsi\SkripsiLaTex\Bab/bab4.tex
 Bab 4.
-<Gambar/final_class_diagram.png, id=1267, 1410.77063pt x 913.91437pt>
+<Gambar/final_class_diagram.png, id=1271, 1277.52281pt x 978.65625pt>
 File: Gambar/final_class_diagram.png Graphic file (type png)
  <use Gambar/final_class_diagram.png>
 Package pdftex.def Info: Gambar/final_class_diagram.png used on input line 19.
-(pdftex.def)             Requested size: 1410.7672pt x 913.91212pt.
+(pdftex.def)             Requested size: 1277.5197pt x 978.65387pt.
 
-Overfull \hbox (23.05151pt too wide) in paragraph at lines 19--20
+Overfull \hbox (55.4224pt too wide) in paragraph at lines 19--20
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Gambar/class_sha512.png, id=1270, 413.29407pt x 360.59718pt>
+<Gambar/class_sha512.png, id=1274, 358.33875pt x 322.20375pt>
 File: Gambar/class_sha512.png Graphic file (type png)
  <use Gambar/class_sha512.png>
 Package pdftex.def Info: Gambar/class_sha512.png used on input line 33.
-(pdftex.def)             Requested size: 206.64651pt x 180.29814pt.
+(pdftex.def)             Requested size: 179.16893pt x 161.10147pt.
  [51
 
 
 
  <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_sha512.png>] [52]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 93.
- [53] <Gambar/class_function.png, id=1321, 178.41656pt x 88.07906pt>
+ [53] <Gambar/class_function.png, id=1326, 178.41656pt x 88.07906pt>
 File: Gambar/class_function.png Graphic file (type png)
 
 <use Gambar/class_function.png>
-Package pdftex.def Info: Gambar/class_function.png used on input line 117.
+Package pdftex.def Info: Gambar/class_function.png used on input line 133.
 (pdftex.def)             Requested size: 124.89072pt x 61.6549pt.
- <Gambar/class_equation_solver.png, id=1325, 477.28313pt x 140.02313pt>
+ [54 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_function.png>]
+<Gambar/class_equation_solver.png, id=1340, 477.28313pt x 140.02313pt>
 File: Gambar/class_equation_solver.png Graphic file (type png)
-
-<use Gambar/class_equation_solver.png>
-Package pdftex.def Info: Gambar/class_equation_solver.png used on input line 150.
+ <use Gambar/class_equation_solver.png>
+Package pdftex.def Info: Gambar/class_equation_solver.png used on input line 166.
 (pdftex.def)             Requested size: 334.0959pt x 98.01552pt.
- [54 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_function.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_equation_so
-lver.png>]
 
-LaTeX Warning: Reference `fig:classsecretsharing' on page 55 undefined on input line 176.
 
-<Gambar/class_secret_sharing.png, id=1335, 334.24875pt x 179.92218pt>
+LaTeX Warning: Reference `fig:classsecretsharing' on page 55 undefined on input line 192.
+
+<Gambar/class_secret_sharing.png, id=1341, 334.24875pt x 179.92218pt>
 File: Gambar/class_secret_sharing.png Graphic file (type png)
  <use Gambar/class_secret_sharing.png>
-Package pdftex.def Info: Gambar/class_secret_sharing.png used on input line 180.
+Package pdftex.def Info: Gambar/class_secret_sharing.png used on input line 196.
 (pdftex.def)             Requested size: 233.97252pt x 125.94466pt.
- [55 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_secret_sharing.png>]
-<Gambar/class_des_encryption.png, id=1352, 310.15875pt x 493.845pt>
+
+Underfull \vbox (badness 1314) has occurred while \output is active []
+
+ [55 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_equation_solver.png>] [56 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class
+_secret_sharing.png>]
+<Gambar/class_des.png, id=1370, 271.76532pt x 334.24875pt>
+File: Gambar/class_des.png Graphic file (type png)
+ <use Gambar/class_des.png>
+Package pdftex.def Info: Gambar/class_des.png used on input line 236.
+(pdftex.def)             Requested size: 163.06044pt x 200.55078pt.
+ [57 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_des.png>] [58] <Gambar/class_des_encryption.png, id=1404, 170.88844pt 
+x 173.89969pt>
 File: Gambar/class_des_encryption.png Graphic file (type png)
- <use Gambar/class_des_encryption.png>
-Package pdftex.def Info: Gambar/class_des_encryption.png used on input line 220.
-(pdftex.def)             Requested size: 186.09668pt x 296.30928pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [56] [57 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_des_encryption.png>] [58] <Gambar/class_des_decryption.png, id=13
-97, 347.79938pt x 499.11469pt>
+<use Gambar/class_des_encryption.png>
+Package pdftex.def Info: Gambar/class_des_encryption.png used on input line 310.
+(pdftex.def)             Requested size: 102.53384pt x 104.3406pt.
+ [59 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_des_encryption.png>]
+<Gambar/class_des_decryption.png, id=1421, 165.61874pt x 112.16907pt>
 File: Gambar/class_des_decryption.png Graphic file (type png)
-
-<use Gambar/class_des_decryption.png>
-Package pdftex.def Info: Gambar/class_des_decryption.png used on input line 312.
-(pdftex.def)             Requested size: 208.68123pt x 299.47112pt.
- [59] [60 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_des_decryption.png>]
-[61] <Gambar/class_data_reader.png, id=1449, 194.22563pt x 138.5175pt>
+ <use Gambar/class_des_decryption.png>
+Package pdftex.def Info: Gambar/class_des_decryption.png used on input line 352.
+(pdftex.def)             Requested size: 99.37201pt x 67.30194pt.
+ [60 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_des_decryption.png>]
+<Gambar/class_data_reader.png, id=1438, 194.22563pt x 138.5175pt>
 File: Gambar/class_data_reader.png Graphic file (type png)
  <use Gambar/class_data_reader.png>
-Package pdftex.def Info: Gambar/class_data_reader.png used on input line 394.
+Package pdftex.def Info: Gambar/class_data_reader.png used on input line 377.
 (pdftex.def)             Requested size: 155.3807pt x 110.81413pt.
- [62 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_data_reader.png>] <Gambar/class_data_writer.png, id=1466, 184.43906pt 
-x 126.4725pt>
-File: Gambar/class_data_writer.png Graphic file (type png)
 
-<use Gambar/class_data_writer.png>
-Package pdftex.def Info: Gambar/class_data_writer.png used on input line 424.
+<Gambar/class_data_writer.png, id=1440, 184.43906pt x 126.4725pt>
+File: Gambar/class_data_writer.png Graphic file (type png)
+ <use Gambar/class_data_writer.png>
+Package pdftex.def Info: Gambar/class_data_writer.png used on input line 407.
 (pdftex.def)             Requested size: 147.55144pt x 101.17813pt.
- [63 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_data_writer.png>]
-<Gambar/tampilan-utama.png, id=1481, 471.7625pt x 321.2pt>
+
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+ [61 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_data_reader.png>] <Gambar/tampilan-utama.png, id=1453, 471.7625pt x 32
+1.2pt>
 File: Gambar/tampilan-utama.png Graphic file (type png)
  <use Gambar/tampilan-utama.png>
-Package pdftex.def Info: Gambar/tampilan-utama.png used on input line 454.
+Package pdftex.def Info: Gambar/tampilan-utama.png used on input line 437.
 (pdftex.def)             Requested size: 235.88066pt x 160.59961pt.
-
-<Gambar/store_password.png, id=1483, 544.0325pt x 358.33875pt>
+ [62 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/class_data_writer.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan-utama
+.png>]
+<Gambar/store_password.png, id=1465, 544.0325pt x 358.33875pt>
 File: Gambar/store_password.png Graphic file (type png)
  <use Gambar/store_password.png>
-Package pdftex.def Info: Gambar/store_password.png used on input line 462.
-(pdftex.def)             Requested size: 272.01558pt x 179.16893pt.
- [64 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan-utama.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/store_password.pn
-g>]
-<Gambar/retrieve_password.png, id=1492, 544.0325pt x 358.33875pt>
-File: Gambar/retrieve_password.png Graphic file (type png)
- <use Gambar/retrieve_password.png>
-Package pdftex.def Info: Gambar/retrieve_password.png used on input line 474.
+Package pdftex.def Info: Gambar/store_password.png used on input line 445.
 (pdftex.def)             Requested size: 272.01558pt x 179.16893pt.
 
-<Gambar/password.png, id=1495, 495.8525pt x 218.8175pt>
+<Gambar/retrieve_password.png, id=1468, 544.0325pt x 358.33875pt>
+File: Gambar/retrieve_password.png Graphic file (type png)
+ <use Gambar/retrieve_password.png>
+Package pdftex.def Info: Gambar/retrieve_password.png used on input line 457.
+(pdftex.def)             Requested size: 272.01558pt x 179.16893pt.
+ [63 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/store_password.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/retrieve_password
+.png>]
+<Gambar/password.png, id=1477, 495.8525pt x 218.8175pt>
 File: Gambar/password.png Graphic file (type png)
  <use Gambar/password.png>
-Package pdftex.def Info: Gambar/password.png used on input line 484.
+Package pdftex.def Info: Gambar/password.png used on input line 467.
 (pdftex.def)             Requested size: 247.92564pt x 109.40848pt.
-) [65 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/retrieve_password.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/password.png>
-] [66 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/final_class_diagram.png>] (H:\Kuliah\Skripsi\SkripsiLaTex\Bab/bab5.tex
+) [64 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/password.png>] [65 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/final_class_diagr
+am.png>]
+(H:\Kuliah\Skripsi\SkripsiLaTex\Bab/bab5.tex [66
+
+
+
+]
 Bab 5.
-<Gambar/tampilan1.png, id=1509, 675.27281pt x 445.665pt>
+<Gambar/tampilan1.png, id=1494, 675.27281pt x 445.665pt>
 File: Gambar/tampilan1.png Graphic file (type png)
  <use Gambar/tampilan1.png>
 Package pdftex.def Info: Gambar/tampilan1.png used on input line 21.
 (pdftex.def)             Requested size: 337.63557pt x 222.83195pt.
- [67
-
-
-
- <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan1.png>] <Gambar/tampilan2.png, id=1517, 671.50874pt x 448.67625pt>
+ [67 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan1.png>] <Gambar/tampilan2.png, id=1502, 671.50874pt x 448.67625pt>
 File: Gambar/tampilan2.png Graphic file (type png)
  <use Gambar/tampilan2.png>
 Package pdftex.def Info: Gambar/tampilan2.png used on input line 37.
 (pdftex.def)             Requested size: 335.75356pt x 224.33757pt.
 
-<Gambar/tampilan2_2.png, id=1518, 674.52pt x 446.41782pt>
+<Gambar/tampilan2_2.png, id=1503, 674.52pt x 446.41782pt>
 File: Gambar/tampilan2_2.png Graphic file (type png)
  <use Gambar/tampilan2_2.png>
 Package pdftex.def Info: Gambar/tampilan2_2.png used on input line 44.
 (pdftex.def)             Requested size: 337.25917pt x 223.20836pt.
  [68 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan2.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan2_2.png>]
-<Gambar/tampilan2_1.png, id=1526, 676.02562pt x 442.65375pt>
+<Gambar/tampilan2_1.png, id=1511, 676.02562pt x 442.65375pt>
 File: Gambar/tampilan2_1.png Graphic file (type png)
  <use Gambar/tampilan2_1.png>
 Package pdftex.def Info: Gambar/tampilan2_1.png used on input line 53.
 (pdftex.def)             Requested size: 338.01198pt x 221.32632pt.
 
-<Gambar/tampilan3.png, id=1528, 762.59906pt x 478.78876pt>
+<Gambar/tampilan3.png, id=1513, 762.59906pt x 478.78876pt>
 File: Gambar/tampilan3.png Graphic file (type png)
  <use Gambar/tampilan3.png>
 Package pdftex.def Info: Gambar/tampilan3.png used on input line 69.
@@ -1119,13 +1128,13 @@ Package pdftex.def Info: Gambar/tampilan3.png used on input line 69.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan2_1.png>] <Gambar/tampilan4.png, id=1536, 772.38562pt x 283.0575pt>
+ [69 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan2_1.png>] <Gambar/tampilan4.png, id=1521, 772.38562pt x 283.0575pt>
 File: Gambar/tampilan4.png Graphic file (type png)
  <use Gambar/tampilan4.png>
 Package pdftex.def Info: Gambar/tampilan4.png used on input line 78.
 (pdftex.def)             Requested size: 386.19186pt x 141.5284pt.
 
-<Gambar/tampilan4_1.png, id=1538, 765.6103pt x 264.99pt>
+<Gambar/tampilan4_1.png, id=1523, 765.6103pt x 264.99pt>
 File: Gambar/tampilan4_1.png Graphic file (type png)
  <use Gambar/tampilan4_1.png>
 Package pdftex.def Info: Gambar/tampilan4_1.png used on input line 87.
@@ -1134,67 +1143,73 @@ Package pdftex.def Info: Gambar/tampilan4_1.png used on input line 87.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [70 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan3.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan4.png>] [71 <H
-:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan4_1.png>] <Gambar/simpan_password.png, id=1555, 490.83376pt x 444.15938pt>
+:/Kuliah/Skripsi/SkripsiLaTex/Gambar/tampilan4_1.png>] <Gambar/simpan_password.png, id=1540, 490.83376pt x 444.15938pt>
 File: Gambar/simpan_password.png Graphic file (type png)
  <use Gambar/simpan_password.png>
-Package pdftex.def Info: Gambar/simpan_password.png used on input line 129.
+Package pdftex.def Info: Gambar/simpan_password.png used on input line 131.
 (pdftex.def)             Requested size: 392.66753pt x 355.32797pt.
- [72 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/simpan_password.png>] <Gambar/fungsional1.png, id=1568, 700.11563pt x 350.81
-062pt>
-File: Gambar/fungsional1.png Graphic file (type png)
-
-<use Gambar/fungsional1.png>
-Package pdftex.def Info: Gambar/fungsional1.png used on input line 142.
-(pdftex.def)             Requested size: 420.07262pt x 210.48799pt.
- <Gambar/fungsional2.png, id=1570, 697.8572pt x 350.81062pt>
-File: Gambar/fungsional2.png Graphic file (type png)
- <use Gambar/fungsional2.png>
-Package pdftex.def Info: Gambar/fungsional2.png used on input line 153.
-(pdftex.def)             Requested size: 418.71754pt x 210.48799pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/fungsional1.png>] <Gambar/fungsional3.png, id=1581, 557.83406pt x 287.57437p
-t>
+ [72]
+<Gambar/fungsional1.png, id=1552, 700.11563pt x 350.81062pt>
+File: Gambar/fungsional1.png Graphic file (type png)
+ <use Gambar/fungsional1.png>
+Package pdftex.def Info: Gambar/fungsional1.png used on input line 144.
+(pdftex.def)             Requested size: 420.07262pt x 210.48799pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [73 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/simpan_password.png>] <Gambar/fungsional2.png, id=1559, 697.8572pt x 350.810
+62pt>
+File: Gambar/fungsional2.png Graphic file (type png)
+ <use Gambar/fungsional2.png>
+Package pdftex.def Info: Gambar/fungsional2.png used on input line 155.
+(pdftex.def)             Requested size: 418.71754pt x 210.48799pt.
+
+<Gambar/fungsional3.png, id=1564, 557.83406pt x 287.57437pt>
 File: Gambar/fungsional3.png Graphic file (type png)
  <use Gambar/fungsional3.png>
-Package pdftex.def Info: Gambar/fungsional3.png used on input line 164.
+Package pdftex.def Info: Gambar/fungsional3.png used on input line 166.
 (pdftex.def)             Requested size: 390.48117pt x 201.30069pt.
-
-<Gambar/fungsional4.png, id=1583, 698.61pt x 349.305pt>
+ [74 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/fungsional1.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/fungsional2.png>]
+<Gambar/fungsional4.png, id=1573, 698.61pt x 349.305pt>
 File: Gambar/fungsional4.png Graphic file (type png)
  <use Gambar/fungsional4.png>
-Package pdftex.def Info: Gambar/fungsional4.png used on input line 175.
+Package pdftex.def Info: Gambar/fungsional4.png used on input line 177.
 (pdftex.def)             Requested size: 419.16924pt x 209.58461pt.
- [74 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/fungsional2.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/fungsional3.png>]
-<Gambar/fungsional5.png, id=1593, 558.58687pt x 140.02313pt>
+
+<Gambar/fungsional5.png, id=1576, 558.58687pt x 140.02313pt>
 File: Gambar/fungsional5.png Graphic file (type png)
  <use Gambar/fungsional5.png>
-Package pdftex.def Info: Gambar/fungsional5.png used on input line 186.
+Package pdftex.def Info: Gambar/fungsional5.png used on input line 188.
 (pdftex.def)             Requested size: 391.00815pt x 98.01552pt.
- [75 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/fungsional4.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/fungsional5.png>]
-<Gambar/kasus1.png, id=1601, 369.63094pt x 225.09094pt>
+ [75 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/fungsional3.png> <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/fungsional4.png>]
+Underfull \vbox (badness 1721) has occurred while \output is active []
+
+ [76 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/fungsional5.png>] <Gambar/kasus1.png, id=1590, 369.63094pt x 225.09094pt>
 File: Gambar/kasus1.png Graphic file (type png)
  <use Gambar/kasus1.png>
-Package pdftex.def Info: Gambar/kasus1.png used on input line 230.
+Package pdftex.def Info: Gambar/kasus1.png used on input line 232.
 (pdftex.def)             Requested size: 295.70514pt x 180.07298pt.
- [76]
-<Gambar/kasus2.png, id=1619, 369.63094pt x 222.8325pt>
+ [77 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/kasus1.png>] <Gambar/kasus2.png, id=1613, 369.63094pt x 222.8325pt>
 File: Gambar/kasus2.png Graphic file (type png)
  <use Gambar/kasus2.png>
-Package pdftex.def Info: Gambar/kasus2.png used on input line 260.
+Package pdftex.def Info: Gambar/kasus2.png used on input line 262.
 (pdftex.def)             Requested size: 295.70514pt x 178.26624pt.
- [77 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/kasus1.png>] <Gambar/kasus3.png, id=1640, 368.1253pt x 222.8325pt>
+ [78 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/kasus2.png>] <Gambar/kasus3.png, id=1635, 368.1253pt x 222.8325pt>
 File: Gambar/kasus3.png Graphic file (type png)
  <use Gambar/kasus3.png>
-Package pdftex.def Info: Gambar/kasus3.png used on input line 292.
+Package pdftex.def Info: Gambar/kasus3.png used on input line 294.
 (pdftex.def)             Requested size: 294.50064pt x 178.26624pt.
- [78 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/kasus2.png>] <Gambar/kasus4.png, id=1659, 368.87813pt x 224.33812pt>
+
+[79 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/kasus3.png>] <Gambar/kasus4.png, id=1659, 368.87813pt x 224.33812pt>
 File: Gambar/kasus4.png Graphic file (type png)
- <use Gambar/kasus4.png>
-Package pdftex.def Info: Gambar/kasus4.png used on input line 327.
+
+<use Gambar/kasus4.png>
+Package pdftex.def Info: Gambar/kasus4.png used on input line 329.
 (pdftex.def)             Requested size: 295.10289pt x 179.47073pt.
- [79 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/kasus3.png>]) [80 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/kasus4.png>] [81]
+ [80 <H:/Kuliah/Skripsi/SkripsiLaTex/Gambar/kasus4.png>]) [81]
 (H:\Kuliah\Skripsi\SkripsiLaTex\Bab/bab6.tex [82
 
 
@@ -1264,7 +1279,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 519.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 519.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 519.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 600BE916E12416ACF78BBA83A81F3C56;12554.
+(rerunfilecheck)             Checksum: E8C581E1A1E7C26946DAAA696F1BB992;12730.
 
 
 LaTeX Warning: There were undefined references.
@@ -1274,34 +1289,33 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 19631 strings out of 493921
- 284285 string characters out of 3147288
- 939677 words of memory out of 3000000
- 20140 multiletter control sequences out of 15000+200000
- 22041 words of font info for 47 fonts, out of 3000000 for 9000
+ 19398 strings out of 493921
+ 281982 string characters out of 3147288
+ 929204 words of memory out of 3000000
+ 19927 multiletter control sequences out of 15000+200000
+ 21269 words of font info for 46 fonts, out of 3000000 for 9000
  845 hyphenation exceptions out of 8191
- 45i,15n,53p,902b,1836s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk> <C:\Users\Sam\AppData\Local\Mi
-KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx0600.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
+ 45i,15n,53p,902b,1820s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx0600.pk> <C:\Users\Sam\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
 \ec\dpi600\eccc1095.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk> <C:\Users
 \Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1200.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fon
 ts\pk\ljfour\jknappen\ec\dpi600\ecbi1095.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
 cti1000.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Sam\AppData
 \Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1000.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\ecss0600.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1095.pk> 
-<C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Sam\AppData\Local\MiKTe
-X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
-\dpi600\ecbx1095.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1440.pk> <C:\Users\Sa
-m\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (118 pages, 2846744 bytes).
+\jknappen\ec\dpi600\ecxc1095.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> 
+<C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Sam\AppData\Local\MiKTe
+X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\ecbi1440.pk> <C:\Users\Sam\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+mi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (118 pages, 2639359 bytes).
 PDF statistics:
- 4730 PDF objects out of 5155 (max. 8388607)
- 2368 named destinations out of 2487 (max. 500000)
- 902 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4711 PDF objects out of 5155 (max. 8388607)
+ 2352 named destinations out of 2487 (max. 500000)
+ 910 words of extra memory for PDF output out of 10000 (max. 10000000)
 

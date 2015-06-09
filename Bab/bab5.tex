@@ -105,7 +105,7 @@ Kasus yang digunakan dalam pengujian fungsional terdiri dari 2 kasus. Kasus pert
 
 \subsubsection{Pengujian Survei}
 
-Pengujian survei bertujuan untuk menguji kualitas dari pertanyaan keamanan yang dibuat saat proses menyimpan \textit{password}. Pengujian survei akan menguji pertanyaan keamanan dibuat berpengaruh pada mudah atau tidaknya password bisa dikembalikan. Setiap pertanyaan ini akan dikelompokkan menjadi beberapa topik kasus yang sesuai dengan jenisnya.
+Pengujian survei bertujuan untuk menguji kualitas dari pertanyaan keamanan yang dibuat saat proses menyimpan \textit{password}. Pengujian survei akan menguji pertanyaan keamanan dibuat berpengaruh pada mudah atau tidaknya \textit{password} bisa dikembalikan. Setiap pertanyaan ini akan dikelompokkan menjadi beberapa topik kasus yang sesuai dengan jenisnya.
 
 Kasus yang digunakan dalam terdiri dari 4 kasus yang masing-masing terbagi atas topiknya masing-masing. Berikut penjelasan masing-masing topik kasus.
 
@@ -119,6 +119,8 @@ Kasus yang digunakan dalam terdiri dari 4 kasus yang masing-masing terbagi atas 
 	\item Topik 4 \\
 	Topik 4 akan berisi gabungan dari topik 1, topik 2, dan topik 3.
 \end{enumerate}
+
+Dalam pengujian survei ini, responden diberikan waktu tidak terbatas untuk mencoba menjawab pertanyaan keamanan yang sudah dibuat sampai \textit{password} dapat dikembalikan. Responden pun diberikan kebebasan untuk mengakses berbagai media sebagai bantuan untuk memperoleh jawaban dari setiap pertanyaan keamanan yang dibuat. Tetapi, responden tidak boleh menanyakan jawaban dari setiap pertanyaan keamanan yang dibuat kepada pembuat pertanyaan keamanan. Dalam pengujian survei ini juga, banyak percobaan untuk mengembalikan \textit{password} tidak dibatasi, responden boleh mencoba untuk mengembalikan password dengan menjawab pertanyaan keamanan yang dibuat sampai \textit{password} bisa dikembalikan atau responden tidak ingin mencoba lagi.
 
 \subsection{Hasil Pengujian Fungsional}\label{subsec:hasil_pengujian_fungsional}
 
@@ -337,18 +339,22 @@ Responden hanya cukup menjawab 6 pertanyaan benar dari 15 pertanyaan dalam kasus
 
 \subsection{Kesimpulan Pengujian}
 
-Dari 4 kasus pengujian yang dilakukan maka bisa ditarik beberapa kesimpulan dalam penilaian kualitas pertanyaan keamanan personal. Pertanyaan keamanan personal harus memiliki 5 sifat:
-\begin{itemize}
-	\item Aman \\
-	Pertanyaan keamanan harus tidak mudah ditebak dan tidak mudah diselidiki (\textit{googling}).
+Dari pengujian fungsional dan pengujian survei yang dilakukan maka bisa ditarik beberapa kesimpulan. Dari pengujian fungsional dapat ditarik kesimpulan bahwa pertanyaan keamanan yang dibuat sebaiknya memiliki sifat-sifat sebagai berikut.
+\begin{enumerate}[itemsep=0mm]
 	\item Stabil \\
 	Pertanyaan keamanan tidak boleh berubah seiring berjalannya waktu.
 	\item Mudah diingat \\
 	Pertanyaan keamanan harus sifatnya personal sehingga mudah untuk diingat.
 	\item Sederhana \\
 	Pertanyaan keamanan harus sederhana tetapi sifatnya tetap personal.
-	\item Memiliki banyak kemungkinan jawaban \\
-	Pertanyaan keamanan tidak boleh hanya memiliki kemungkinan jawaban yang sedikit karena akan mudah ditebak (dengan teknik \textit{brute force}).
-\end{itemize}
+\end{enumerate}
 
-Namun, beberapa pertanyaan keamanan mungkin memiliki banyak kemungkinan jawaban dan aman sehingga tidak mudah ditebak tetapi tidak mudah diingat karena jawabannya terlalu rumit. Beberapa pertanyaan keamanan juga mungkin tidak sesuai dengan situasi atau keadaan dari pembuat pertanyaan. Sehingga, tidak ada pertanyaan keamanan yang memiliki tepat 5 sifat yang diatas.
+Sementara itu, dari hasil pengujian survei dapat ditarik kesimpulan bahwa pertanyaan keamanan yang dibuat sebaiknya juga memiliki sifa-sifat sebagai berikut.
+\begin{enumerate}[itemsep=0mm]
+	\item Aman \\
+	Pertanyaan keamanan harus tidak mudah ditebak dan tidak mudah diselidiki jawabannya.
+	\item Memiliki banyak kemungkinan jawaban \\
+	Pertanyaan keamanan tidak boleh memiliki sedikit kemungkinan jawaban karena akan mudah ditebak.
+\end{enumerate}
+
+Namun, beberapa pertanyaan keamanan mungkin memiliki banyak kemungkinan jawaban dan aman sehingga tidak mudah ditebak tetapi tidak mudah diingat karena jawabannya terlalu rumit. Beberapa pertanyaan keamanan juga mungkin tidak sesuai dengan situasi atau keadaan dari pembuat pertanyaan. Sehingga, tidak ada pertanyaan keamanan yang memiliki seluruh sifat yang sudah dijelaskan di atas.

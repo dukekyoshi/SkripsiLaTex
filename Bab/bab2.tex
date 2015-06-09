@@ -100,14 +100,7 @@ Cara kerja dari proses permutasi adalah sebagai berikut. Angka yang ditunjukkan 
 	\label{eq:permutasi}
 \end{equation}
 
-Sebagai contoh, posisi ke-1 dari matriks \begin{math}mp\end{math} menunjukkan angka 58. Maka, \textit{bit} ke-58 dari masukan akan menjadi \textit{bit} ke-1 dari keluaran. Gambar \ref{fig:prosespermutasi} menunjukkan ilustrasi dari proses permutasi yang sudah dijelaskan.
-
-%diagram
-\begin{figure}[H]
-\includegraphics[scale=0.8]{Gambar/proses_permutasi_awal}
-\centering
-\caption{Proses Permutasi}\label{fig:prosespermutasi}
-\end{figure}
+Sebagai contoh, posisi ke-1 dari matriks \begin{math}mp\end{math} menunjukkan angka 58. Maka, \textit{bit} ke-58 dari masukan akan menjadi \textit{bit} ke-1 dari keluaran. Contoh lainnya, posisi ke-62 dari matriks $mp$ menunjukkan angka 23. Maka, \textit{bit} ke-23 dari masukan akan menjadi \textit{bit} ke-62 dari keluaran.
 
 \subsection{Pembangunan Kunci Putaran}
 
@@ -151,7 +144,7 @@ Pada proses ini, kunci hasil proses \textit{parity drop} dibagi menjadi 2 bagian
 	\item Untuk putaran ke-3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, dan 15, \begin{math}L\end{math} dan \begin{math}R\end{math} akan digeser ke arah kiri secara sirkular sebanyak 2 \textit{bit}.
 \end{itemize}
 
-Sebagai contoh, diasumsikan \begin{math}L\end{math} dan \begin{math}R\end{math} pada persamaan \ref{eq:L} dan \ref{eq:R}.
+Sebagai contoh, misalkan \begin{math}L\end{math} dan \begin{math}R\end{math} pada persamaan \ref{eq:L} dan \ref{eq:R}.
 
 \begin{equation}
 	L = 1001\: 1010\: 1000\: 0110\: 0110\: 1111\: 1101
@@ -404,7 +397,7 @@ Pada bagian ini, akan dilakukan substitusi pada \begin{math}R\end{math} dengan m
 
 Proses subsitusi terjadi sebagai berikut. Kombinasi \textit{bit} ke-1 dan \textit{bit} ke-6 pada blok akan menunjukkan posisi baris pada \textit{S-box}. Kemudian, kombinasi dari \textit{bit} ke-2 sampai ke-5 menunjukkan posisi kolom pada \textit{S-box}. Setelah itu, angka yang ditunjuk oleh baris dan kolom pada \textit{S-box} ini akan menjadi blok keluaran.
 
-Sebagai contoh, diasumsikan masukan dari \textit{S-box} pertama adalah 110011. Maka, kombinasi \textit{bit}nya adalah 11 untuk baris dan 1001 untuk kolom. Jadi, baris yang dipilih adalah baris ke-3 dan kolom yang dipilih adalah kolom ke-9. Angka yang ditunjuk oleh \textit{S-box} pertama pada baris ke-3 dan kolom ke-9 adalah 11. Maka, blok keluaran untuk \textit{S-box} pertama adalah 1011. Lalu, setelah seluruh blok masukan diproses dengan \textit{S-box} masing-masing, seluruh blok keluaran digabungkan menjadi blok dengan panjang 32-\textit{bit}.
+Sebagai contoh, misalkan masukan dari \textit{S-box} pertama adalah 110011. Maka, kombinasi \textit{bit}nya adalah 11 untuk baris dan 1001 untuk kolom. Jadi, baris yang dipilih adalah baris ke-3 dan kolom yang dipilih adalah kolom ke-9. Angka yang ditunjuk oleh \textit{S-box} pertama pada baris ke-3 dan kolom ke-9 adalah 11. Maka, blok keluaran untuk \textit{S-box} pertama adalah 1011. Lalu, setelah seluruh blok masukan diproses dengan \textit{S-box} masing-masing, seluruh blok keluaran digabungkan menjadi blok dengan panjang 32-\textit{bit}.
 
 \subsubsection{Permutasi}
 
@@ -538,7 +531,7 @@ Sebagai contoh untuk memperoleh nilai dari \begin{math}W_{60}\end{math}, maka ru
 	RotShift_{l-m-n}(x) = RotR_l(x) \oplus RotR_m(x) \oplus ShL_n(x) \label{eq:ekspansiword3}
 \end{equation}
 
-\begin{math}RotR_i(x)\end{math} pada persamaan \ref{eq:ekspansiword3} adalah rotasi ke kanan \begin{math}x\end{math} sebanyak \begin{math}i\end{math} \textit{bit}. Sebagai contoh, diasumsikan \begin{math}i=2\end{math} dan \begin{math}x=1001\end{math}, maka hasil dari \begin{math}RotR_2(1001)\end{math} ditunjukkan pada persamaan \ref{eq:ekspansiword4}.
+\begin{math}RotR_i(x)\end{math} pada persamaan \ref{eq:ekspansiword3} adalah rotasi ke kanan \begin{math}x\end{math} sebanyak \begin{math}i\end{math} \textit{bit}. Sebagai contoh, misalkan \begin{math}i=2\end{math} dan \begin{math}x=1001\end{math}, maka hasil dari \begin{math}RotR_2(1001)\end{math} ditunjukkan pada persamaan \ref{eq:ekspansiword4}.
 
 \begin{align}
 	i = 1 \qquad\Rightarrow\qquad x = 1100 \nonumber \\
@@ -546,7 +539,7 @@ Sebagai contoh untuk memperoleh nilai dari \begin{math}W_{60}\end{math}, maka ru
 	RotR_2(1001) = 0110 \nonumber
 \end{align}
 
-Sementara itu, \begin{math}ShL_i(x)\end{math} pada persamaan \ref{eq:ekspansiword3} adalah operasi \textit{shift left} \begin{math}x\end{math} sebanyak \begin{math}i\end{math} \textit{bit} di\textit{padding} dengan angka 0. Sebagai contoh, diasumsikan \begin{math}i=2\end{math} dan \begin{math}x=1011\end{math}, maka hasil dari \begin{math}ShL_2(1011)\end{math} ditunjukkan pada persamaan \ref{eq:ekspansiword5}.
+Sementara itu, \begin{math}ShL_i(x)\end{math} pada persamaan \ref{eq:ekspansiword3} adalah operasi \textit{shift left} \begin{math}x\end{math} sebanyak \begin{math}i\end{math} \textit{bit} di\textit{padding} dengan angka 0. Sebagai contoh, misalkan \begin{math}i=2\end{math} dan \begin{math}x=1011\end{math}, maka hasil dari \begin{math}ShL_2(1011)\end{math} ditunjukkan pada persamaan \ref{eq:ekspansiword5}.
 
 \begin{align}
 	i = 1 \qquad\Rightarrow\qquad x = 0110 \nonumber \\
@@ -771,7 +764,7 @@ Sebagai contoh, matriks-matriks eselon baris tereduksi ditunjukkan oleh Matriks 
 	\end{gather}
 \end{center}
 
-Proses eliminasi Gauss-Jordan dibagi menjadi 2 proses, yaitu proses mereduksi matriks menjadi bentuk eselon baris dan proses substitusi balik ke sistem persamaan linear untuk memperoleh solusi sistem persamaan linear. Diasumsikan sistem persamaan linear yang akan dicari solusinya ditunjukkan oleh persamaan \ref{eq:gaussmatriks0}. Berikut akan dijelaskan proses mereduksi matriks menjadi bentuk eselon baris.
+Proses eliminasi Gauss-Jordan dibagi menjadi 2 proses, yaitu proses mereduksi matriks menjadi bentuk eselon baris dan proses substitusi balik ke sistem persamaan linear untuk memperoleh solusi sistem persamaan linear. Dimisalkan sistem persamaan linear yang akan dicari solusinya ditunjukkan oleh persamaan \ref{eq:gaussmatriks0}. Berikut akan dijelaskan proses mereduksi matriks menjadi bentuk eselon baris.
 
 \begin{gather}
 	x + y + z = 10 \nonumber \\
@@ -789,7 +782,7 @@ Proses mereduksi matriks menjadi eselon baris dilakukan dengan cara operasi bari
 	\item Mengurangi sebuah baris dengan baris lainnya.
 \end{enumerate}
 
-Sebagai contoh, diasumsikan bentuk matriks dari persamaan \ref{eq:gaussmatriks0} ditunjukkan oleh Matriks \ref{eq:gaussmatriks2}.
+Langkah paling awal adalah mengubah persamaan \ref{eq:gaussmatriks0} menjadi matriks. Konstanta dari variabel ke-$i$ dari persamaan ke-$j$ akan menjadi elemen matriks kolom ke-$i$ dan baris ke-$j$. Sebagai contoh, variabel ke-1 dan persamaan ke-1 dari persamaan \ref{eq:gaussmatriks0} adalah $x$ dengan konstanta 1, maka elemen matriks kolom ke-1 baris ke-1 adalah 1. Contoh lainnya, variabel ke-2 dan persamaan ke-3 persamaan \ref{eq:gaussmatriks0} adalah $3y$ dengan konstanta 3, maka elemen matriks kolom ke-2 baris ke-3 adalah 3. Hasil pengubahan persamaan \ref{eq:gaussmatriks0} menjadi matriks ditunjukkan oleh Matriks \ref{eq:gaussmatriks2}.
 
 \begin{center}
 	\setlength\arraycolsep{10pt}
@@ -894,7 +887,7 @@ Permasalahan muncul jika share dan partisipan bertambah banyak. Proses untuk men
 
 \subsection{Pembahasan \textit{Secret Sharing} Shamir}
 
-Untuk mengatasi permasalahan yang sudah dibahas, Shamir mengubah cara untuk mendapatkan kembali informasi. Misalkan, informasi diasumsikan sebagai data \textit{D}. Dalam metode \textit{secret sharing} Shamir data \textit{D} yang dibagi menjadi \begin{math}n\end{math} \textit{share} hanya memerlukan minimal \begin{math}k\end{math} \textit{share} untuk memperoleh kembali \begin{math}D\end{math}. Skema yang dikembangkan Shamir ini dinamakan skema \textit{threshold}(\textit{k},\textit{n}),
+Untuk mengatasi permasalahan yang sudah dibahas, Shamir mengubah cara untuk mendapatkan kembali informasi. Misalkan, informasi dilambangkan dengan data \textit{D}. Dalam metode \textit{secret sharing} Shamir data \textit{D} yang dibagi menjadi \begin{math}n\end{math} \textit{share} hanya memerlukan minimal \begin{math}k\end{math} \textit{share} untuk memperoleh kembali \begin{math}D\end{math}. Skema yang dikembangkan Shamir ini dinamakan skema \textit{threshold}(\textit{k},\textit{n}),
 
 \subsubsection{Skema \textit{Threshold}(\textit{k},\textit{n})}
 
@@ -905,7 +898,7 @@ Skema \textit{threshold}(\textit{k},\textit{n}) adalah skema \textit{secret shar
 	\item Jika \textit{share} yang ada hanya sebanyak \textit{k-1} atau kurang maka \textit{D} tidak bisa dibentuk kembali.
 \end{itemize}
 
-Ada 2 proses dalam skema \textit{threshold}(\textit{k},\textit{n}), yaitu proses pembangunan \textit{share} dari rahasia dan proses rekonstruksi rahasia dari \textit{share} yang dimiliki. Diasumsikan rahasia adalah \begin{math}D\end{math}. Proses pertama adalah proses pembangunan \textit{share} dari \begin{math}D\end{math}. Berikut akan dijelaskan proses pembangunan \textit{share}.
+Ada 2 proses dalam skema \textit{threshold}(\textit{k},\textit{n}), yaitu proses pembangunan \textit{share} dari rahasia dan proses rekonstruksi rahasia dari \textit{share} yang dimiliki. Dimisalkan rahasia adalah \begin{math}D\end{math}. Proses pertama adalah proses pembangunan \textit{share} dari \begin{math}D\end{math}. Berikut akan dijelaskan proses pembangunan \textit{share}.
 
 \subsubsection{Proses Pembangunan \textit{Share}}
 
@@ -984,7 +977,7 @@ Setiap eksperimen atau percobaan yang dilakukan secara berkali-kali pasti memili
 	\item Probabilitas bahwa hasil keluarannya sukses, \begin{math}p\end{math}, harus selalu sama untuk setiap kali perulangan.
 \end{enumerate}
 
-Percobaan Bernouli digunakan untuk menghitung probabilitas \begin{math}x\end{math} buah hasil keluaran yang sukses dari \begin{math}n\end{math} percobaan. Diasumsikan bahwa probabilitas hasil keluaran setiap perulangan sukses adalah \begin{math}p\end{math}. Sebaliknya, probabilitas hasil keluaran setiap perulangan gagal adalah \begin{math}q=1-p\end{math}. Persamaan \ref{eq:binom} untuk menghitung probabilitas \begin{math}x\end{math} hasil keluaran yang sukses dari \begin{math}n\end{math} percobaan.
+Percobaan Bernouli digunakan untuk menghitung probabilitas \begin{math}x\end{math} buah hasil keluaran yang sukses dari \begin{math}n\end{math} percobaan. Dimisalkan bahwa probabilitas hasil keluaran setiap perulangan sukses adalah \begin{math}p\end{math}. Sebaliknya, probabilitas hasil keluaran setiap perulangan gagal adalah \begin{math}q=1-p\end{math}. Persamaan \ref{eq:binom} untuk menghitung probabilitas \begin{math}x\end{math} hasil keluaran yang sukses dari \begin{math}n\end{math} percobaan.
 
 \begin{gather}
 	P(x,n,p) = \left( {\begin{array}{c}n \\ x \end{array}} \right) p^x q^{n-x} \label{eq:binom} \\
@@ -1009,10 +1002,10 @@ Nilai entropi yang tinggi menunjukkan bahwa informasi yang dimiliki sebuah pesan
 
 Sebagai contoh, nilai entropi akan rendah untuk memastikan panjang umur seseorang karena tidak bisa diketahui kapan orang tersebut akan meninggal. Contoh yang lain adalah nilai entropi akan tinggi untuk kasus melemparkan koin karena hasilnya hanya ada dua kemungkinan yaitu, kepala atau buntut.
 
-Dari penjelasan mengenai entropi yang sudah dijelaskan, diasumsikan probabilitias kemunculan informasi \begin{math}x_i\end{math} dalam sebuah pesan \begin{math}X\end{math} adalah \begin{math}p_i\end{math}. \begin{math}p_i\end{math} ditunjukkan oleh persamaan \ref{eq:entropi1}.
+Dari penjelasan mengenai entropi yang sudah dijelaskan, dimisalkan probabilitias kemunculan informasi \begin{math}x_i\end{math} dalam sebuah pesan \begin{math}X\end{math} adalah \begin{math}p_i\end{math}. Maka, nilai entropi $x_i$ adalah \begin{math}H(x_i)\end{math} berdasarkan probabilitas kemuncul informasi $x_i$ yang dilambangkan oleh $p_i$. Persamaan \ref{eq:entropi1} menunjukkan perhitungan dari $H(x_i)$.
 
 \begin{equation}
-	P(x_i) = p_i\: log(\frac{1}{p_i})
+	H(x_i) = p_i\: log(\frac{1}{p_i})
 	\label{eq:entropi1}
 \end{equation}
 

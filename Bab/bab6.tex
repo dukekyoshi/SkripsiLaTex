@@ -5,26 +5,30 @@ Bab ini berisi kesimpulan dan saran dari penelitian yang dilakukan. Kesimpulan a
 
 \section{Kesimpulan}
 
-Dari hasil pengujian fungsional yang dilakukan, dapat dilihat bahwa pengguna cukup menjawab beberapa saja pertanyaan keamanan untuk mengembalikan banyak \textit{password} sehingga pengguna tidak perlu mengingat setiap jawaban dari pertanyaan keamanan. Dari hasil ini, dapat disimpulkan bahwa perangkat lunak yang mengimplementasikan \textit{secret sharing} Shamir berhasil dibangun.
+Dari hasil pengujian fungsional yang dilakukan, dapat dilihat bahwa pengguna cukup menjawab beberapa saja pertanyaan keamanan untuk mengembalikan banyak \textit{password} sehingga pengguna tidak perlu mengingat setiap jawaban dari pertanyaan keamanan. Dari hasil ini, dapat disimpulkan bahwa perangkat lunak yang mengimplementasikan \textit{secret sharing} Shamir berhasil dibangun. Dari pengujian fungsional yang sudah dilakukan juga, dapat ditarik kesimpulan bahwa pertanyaan keamanan yang dibuat sebaiknya juga memiliki sifa-sifat sebagai berikut.
+
+\begin{enumerate}[itemsep=0mm]
+	\item Stabil
+	\item Mudah diingat
+	\item Sederhana
+\end{enumerate}
 
 Dari hasil pengujian survei, dapat diambil hal penting yang berhubungan dengan pemilihan jenis pertanyaan keamanan yang dibuat. Jenis pertanyaan keamanan yang dibuat dapat dinilai dengan melihat 5 sifat berikut:
 
 \begin{enumerate}[itemsep=0mm]
 	\item Aman
-	\item Stabil
-	\item Mudah diingat
-	\item Sederhana
 	\item Memiliki banyak kemungkinan jawaban
 \end{enumerate}
 
-Dari hasil pengujian survei juga, dapat diketahui bahwa tidak ada pertanyaan keamanan yang memiliki kelima sifat secara sekaligus, beberapa dari sifat ada yang berlawanan sehingga tidak mungkin dapat dimiliki oleh sebuah pertanyaan keamanan sekaligus. Selain itu, jenis pertanyaan keamanan yang dibuat dapat mempengaruhi nilai entropi dari pertanyaan keamanan. Pertanyaan keamanan yang memiliki nilai entropi tinggi dapat dengan mudah ditebak atau diprediksi.
+Dari hasil pengujian fungsional dan survei juga, dapat diketahui bahwa tidak ada pertanyaan keamanan yang memiliki seluruh sifat di atas, beberapa dari sifat di atas ada yang berlawanan sehingga tidak mungkin dapat dimiliki oleh sebuah pertanyaan keamanan sekaligus. Selain itu, jenis pertanyaan keamanan yang dibuat dapat mempengaruhi nilai entropi dari pertanyaan keamanan. Pertanyaan keamanan yang memiliki nilai entropi tinggi dapat dengan mudah ditebak atau diprediksi.
 
 Jadi, dari hasil pengujian untuk penelitian yang dilakukan, dapat diambil kesimpulan bahwa metode \textit{secret sharing} Shamir dapat digunakan untuk mengembalikan $n$ password dengan $n$ pertanyaan keamanan, perangkat lunak pengingat \textit{password} yang mengimplementasikan metode \textit{secret sharing} Shamir berhasil dibangun, dan kualitas dari pertanyaan keamanan dapat dinilai dari 5 sifat yang sudah dipaparkan di atas.
 
 \section{Saran}
 
 Dari penelitian ini, terdapat beberapa saran untuk pengembangan perangkat lunak lebih lanjut, yaitu:
-\begin{itemize}
-	\item Algoritma enkripsi yang digunakan bisa diganti dengan menggunakan algoritma enkripsi yang menggunakan panjang kunci lebih panjang dari 64-\textit{bit}. Pada penelitian ini, algoritma enkripsi yang digunakan adalah \textit{data encryption standard} (DES) dengan panjang kunci maksimal 64-\textit{bit}. Untuk ukuran keamanan informasi, 64-\textit{bit} merupakan ukuran yang kurang dan nantinya untuk pengembangan lebih lanjut bisa digunakan algoritma enkripsi yang memiliki panjang kunci lebih dari 64-\textit{bit}.
+\begin{itemize}[itemsep=0mm]
+	\item Algoritma enkripsi yang digunakan, yaitu \textit{data encryption standard} sebaiknya diganti dengan menggunakan algoritma enkripsi yang menggunakan panjang kunci lebih panjang dari 64-\textit{bit}.
 	\item Metode \textit{secret sharing} Shamir diharapkan dapat diimplementasikan tidak hanya pada perangkat lunak perorangan seperti dalam penelitian ini, tetapi bisa diimplementasikan pada sebuah sistem besar yang memiliki subsistem dan masing-masing dari subsistem ini menyimpan banyak informasi penting.
+	\item Banyak percobaan untuk mengembalikan \textit{password} harus dibatasi.
 \end{itemize}
